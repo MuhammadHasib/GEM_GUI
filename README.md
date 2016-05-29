@@ -24,15 +24,15 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Code structure  ###
 
-gen_xml                                
-Uploads                          
-images                  
-plugins
-backup                           
-bootstrap-datetimepicker   
-jQuery-Multiple-Select      
-shellscript
-bootstrap-datetimepicker-master
+* gen_xml                                
+* Uploads                          
+* images                  
+* plugins
+* backup                           
+* bootstrap-datetimepicker   
+* jQuery-Multiple-Select      
+* shellscript
+* bootstrap-datetimepicker-master
 
 
 * search.php [  Search for parts page ]
@@ -44,37 +44,37 @@ bootstrap-datetimepicker-master
 * foot.htm  [ Footer for all pages, contains all JS ]
 * contact.php [ Contact page ] 
     
-show_chamber.php
-show_drift.php
-show_gem.php  
-show_qc_iv.php
-show_qc_inspxn.php 
-show_readout.php  
-show_sup_chamber.php 
-show_vfat.php   
+* show_chamber.php
+* show_drift.php
+* show_gem.php  
+* show_qc_iv.php
+* show_qc_inspxn.php 
+* show_readout.php  
+* show_sup_chamber.php 
+* show_vfat.php   
 
-list_parts.php
-list_parts_drift.php                  
-list_parts_gem.php  
-list_parts_readout.php  
-list_parts_vfat.php    
-list_qc.php
-list_sup_chambers.php
-*list_chambers.php 
+* list_parts.php
+* list_parts_drift.php                  
+* list_parts_gem.php  
+* list_parts_readout.php  
+* list_parts_vfat.php    
+* list_qc.php
+* list_sup_chambers.php
+* list_chambers.php 
 
-edit_chamber.php                  
-edit_drift.php                      
-edit_gem.php                                  
-edit_readout.php                    
-edit_sup_chamber.php                     
-edit_vfat.php 
+* edit_chamber.php                  
+* edit_drift.php                      
+* edit_gem.php                                  
+* edit_readout.php                    
+* edit_sup_chamber.php                     
+* edit_vfat.php 
 
 
-*new_readout.php
-*new_vfat.php
-*new_sup_chamber.php 
-new_chamber1.php 
- new_drift.php 
-new_chamber.php  
-new_gem.php
-    new_qc_inspxn.php
+* new_readout.php
+* new_vfat.php
+* new_sup_chamber.php 
+* new_chamber1.php 
+* new_drift.php 
+* new_chamber.php  
+* new_gem.php
+* new_qc_inspxn.php
