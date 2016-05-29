@@ -56,7 +56,7 @@ The Application backend generates XML files and automatically load it to the spo
 * show_drift.php
 * show_gem.php  
 * show_qc_iv.php
-* show_qc_inspxn.php 
+* show_qc_inspxn.php  **!!**
 * show_readout.php  
 * show_sup_chamber.php 
 * show_vfat.php   
@@ -89,4 +89,4 @@ The Application backend generates XML files and automatically load it to the spo
 * new_drift.php 
 * new_chamber.php  
 * new_gem.php
-* new_qc_inspxn.php
+* new_qc_inspxn.php **!!**
