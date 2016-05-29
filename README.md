@@ -7,12 +7,13 @@
 
 this GUI is to automate the process of loading GEM construction data into database.
 Data producers can do the following through it:
-* - Add parts ( PCBs, Foils, Vfats, GEB, Optohybrid,, etc..).
-* - Build chambers & super chambers
-* - Add QC data.
-* - Edit data
-  * De-attach/Attach parts from/to chamber
-  * De-attach/Attach chamber from/to super chamber
+
+- Add parts ( PCBs, Foils, Vfats, GEB, Optohybrid,, etc..).
+- Build chambers & super chambers
+- Add QC data.
+- Edit data
+*  - De-attach/Attach parts from/to chamber
+*  - De-attach/Attach chamber from/to super chamber
 
 The Application backend generates XML files and automatically load it to the spool Area where the dbloader map it to the database. 
 
@@ -63,7 +64,7 @@ The Application backend generates XML files and automatically load it to the spo
 * show_vfat.php   
 
 * list_parts.php
-* list_parts_drift.php                  
+* list_parts_drift.php
 * list_parts_gem.php  
 * list_parts_readout.php  
 * list_parts_vfat.php    
@@ -72,7 +73,7 @@ The Application backend generates XML files and automatically load it to the spo
 * list_chambers.php 
 
 * edit_chamber.php                  
-* edit_drift.php                      
+* edit_drift.php
 * edit_gem.php                                  
 * edit_readout.php                    
 * edit_sup_chamber.php                     
