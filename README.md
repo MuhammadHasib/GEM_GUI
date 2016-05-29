@@ -1,11 +1,20 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
 * GEM Database Graphical user interface
 * Dev 0.1
+
+this GUI is to automate the process of loading GEM construction data into database.
+Data producers can do the following through it:
+* - Add parts ( PCBs, Foils, Vfats, GEB, Optohybrid,, etc..).
+* - Build chambers & super chambers
+* - Add QC data.
+* - Edit data
+  * De-attach/Attach parts from/to chamber
+  * De-attach/Attach chamber from/to super chamber
+
+The Application backend generates XML files and automatically load it to the spool Area where the dbloader map it to the database. 
 
 ### How do I get set up? ###
 
