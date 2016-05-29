@@ -22,9 +22,11 @@ The Application backend generates XML files and automatically load it to the spo
 -------
 ### Code structure  ###
 
+**note that**: **!!** means not used yet or for testing purposes
+
 [ *** Directories *** ] 
 
-*functions [ Contain all scripts with the back-end functions ]
+* functions [ Contain all scripts with the back-end functions ]
 * - SendXML.php  [ responsible for sending the XML to the spool area hosting server ]
 * - ajaxActions.php  [ responsible for all Ajax requests/responses ]
 * - functions.php   [ Hold functions with all back-end database queries  ]
