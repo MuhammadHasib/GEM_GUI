@@ -35,14 +35,14 @@ shellscript
 bootstrap-datetimepicker-master
 
 
-*search.php [  Search for parts page ]
-*head.php   [ Header of all pages, contains all file includes , globals , etc ]                                              
-*first.php [ Main 1st page navigate to 4 sections ]
-*Default.htm  [ Landing page ]
-*test.php  [ for testing perpose ]  **!!**
-*side.php  [ Sidebar ]  **!!**                                 
-*foot.htm  [ Footer for all pages, contains all JS ]
-*contact.php [ Contact page ] 
+* search.php [  Search for parts page ]
+* head.php   [ Header of all pages, contains all file includes , globals , etc ]                                              
+* first.php [ Main 1st page navigate to 4 sections ]
+* Default.htm  [ Landing page ]
+* test.php  [ for testing perpose ]  **!!**
+* side.php  [ Sidebar ]  **!!**                                 
+* foot.htm  [ Footer for all pages, contains all JS ]
+* contact.php [ Contact page ] 
     
 show_chamber.php
 show_drift.php
@@ -78,5 +78,3 @@ new_chamber1.php
 new_chamber.php  
 new_gem.php
     new_qc_inspxn.php
- 
-                        
