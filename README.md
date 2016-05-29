@@ -22,22 +22,61 @@ This README would normally document whatever steps are necessary to get your app
 * Code review
 * Other guidelines
 
-### Who do I talk to? ###
-GEM                              gen_xml                 new_readout.php
-Global.asax                      generateXML.php         new_sup_chamber.php
-Site Documentation.pages         head.php                new_vfat.php
-Uploads                          images                  plugins
-backup                           jQuery-Multiple-Select  search.php
-bootstrap-datetimepicker         list_chambers.php       shellscript
-bootstrap-datetimepicker-master  list_parts.php          show_chamber.php
-contact.php                      list_parts_drift.php    show_drift.php
-css                              list_parts_gem.php      show_gem.php
-edit_chamber.php                 list_parts_readout.php  show_qc_inspxn.php
-edit_drift.php                   list_parts_vfat.php     show_qc_iv.php
-edit_gem.php                     list_qc.php             show_readout.php
-edit_readout.php                 list_sup_chambers.php   show_sup_chamber.php
-edit_sup_chamber.php             new_chamber.php         show_vfat.php
-edit_vfat.php                    new_chamber1.php        side.php
-empty.php                        new_drift.php           test.php
-first.php                        new_gem.php             web.config
-foot.htm                         new_qc_inspxn.php
+### Code structure  ###
+
+gen_xml                                
+Uploads                          
+images                  
+plugins
+backup                           
+bootstrap-datetimepicker   
+jQuery-Multiple-Select      
+shellscript
+bootstrap-datetimepicker-master
+
+
+*search.php [  Search for parts page ]
+*head.php   [ Header of all pages, contains all file includes , globals , etc ]                                              
+*first.php [ Main 1st page navigate to 4 sections ]
+*Default.htm  [ Landing page ]
+*test.php  [ for testing perpose ]  **!!**
+*side.php  [ Sidebar ]  **!!**                                 
+*foot.htm  [ Footer for all pages, contains all JS ]
+*contact.php [ Contact page ] 
+    
+show_chamber.php
+show_drift.php
+show_gem.php  
+show_qc_iv.php
+show_qc_inspxn.php 
+show_readout.php  
+show_sup_chamber.php 
+show_vfat.php   
+
+list_parts.php
+list_parts_drift.php                  
+list_parts_gem.php  
+list_parts_readout.php  
+list_parts_vfat.php    
+list_qc.php
+list_sup_chambers.php
+*list_chambers.php 
+
+edit_chamber.php                  
+edit_drift.php                      
+edit_gem.php                                  
+edit_readout.php                    
+edit_sup_chamber.php                     
+edit_vfat.php 
+
+
+*new_readout.php
+*new_vfat.php
+*new_sup_chamber.php 
+new_chamber1.php 
+ new_drift.php 
+new_chamber.php  
+new_gem.php
+    new_qc_inspxn.php
+ 
+                        
