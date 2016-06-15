@@ -162,6 +162,26 @@ echo $cmd;
 $out = shell_exec ( $cmd );
 var_dump($out);
 
+$username= "gemdbusr";
+$password= "Piwanu72";
+$host= "gem-machine-b";
+$target_url= "gem-machine-a:/home/dbspool/data/gem/int2r/";
+
+$file_name_with_full_path = realpath($LocalFilePATH);
+$post = array('FILE'=>'@'.$file_name_with_full_path);
+
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL,$target_url);
+curl_setopt($ch, CURLOPT_HEADER, 1);
+curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$return = curl_exec($ch);
+curl_close($ch);
 
 
 }

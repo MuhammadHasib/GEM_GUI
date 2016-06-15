@@ -1,55 +1,44 @@
-<?php 
-
-
+<?php
 include "head.php";
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
- echo " Hello World!";
- 
- $connection = ssh2_connect('gem-machine-a', 22);
-echo "tt".$connection;
-echo ssh2_auth_password($connection, 'gemdbusr', 'Piwanu72');
-//
-echo ssh2_scp_send($connection, '/local/filename', '/home/dbspool/data/int2r', 0644);
 
- ?>
- 
- <div class="container">
-  
- <form>
+/* $header = "POST /someendpoint HTTP/1.1\r\n".
+  "Host:example.com\n".
+  "Content-Type: application/x-www-form-urlencoded\r\n".
+  "User-Agent: PHP-Code\r\n".
+  "Content-Length: " . strlen($req) . "\r\n".
+  "Authorization: Basic ".base64_encode($username.':'.$password)."\r\n".
+  "Connection: close\r\n\r\n";
+ */
 
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  
-  <div class="form-group">
-  <input class="form-control input-lg" type="text" placeholder=".input-lg">
-<input class="form-control" type="text" placeholder="Default input">
-<input class="form-control input-sm" type="text" placeholder=".input-sm">
+$username= "gemdbusr";
+$password= "Piwanu72";
+$host= "gem-machine-b";
+$data= array();
+$ch = curl_init($host);
+//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml', $additionalHeaders));
+curl_setopt($ch, CURLOPT_URL,$target_url);
+curl_setopt($ch, CURLOPT_HEADER, 1);
+curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$return = curl_exec($ch);
+curl_close($ch);
 
-<select class="form-control input-lg">...</select>
-<select class="form-control">...</select>
-<select class="form-control input-sm">...</select>
-  </div>
-  
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+?>
+
+<div class="container">
+
+    <form>
+
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 
 </div>
 <?php
