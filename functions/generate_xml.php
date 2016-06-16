@@ -162,6 +162,7 @@ echo $cmd;
 $out = shell_exec ( $cmd );
 var_dump($out);
 
+//CURL
 $username= "gemdbusr";
 $password= "Piwanu72";
 $host= "gem-machine-b";
