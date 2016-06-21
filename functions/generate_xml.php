@@ -128,7 +128,7 @@ function generateXml($arr) {
     //Generate the file and save it on directory
     $xml->save("gen_xml/" . $serialNum . ".xml"); // or die("Error");
     // Send the file to the spool area
-    SendXML($LocalFilePATH, $LocalFileName);
+    //SendXML($LocalFilePATH, $LocalFileName);
 
     return 1;
 }
@@ -141,9 +141,9 @@ function generateXml($arr) {
  */
 function SendXML($LocalFilePATH, $LocalFileName)
 {
-$connection = ssh2_connect('gem-machine-a', 22);
-var_dump($connection);
-ssh2_auth_password($connection, 'gemdbusr', 'Piwanu72');
+//$connection = ssh2_connect('gem-machine-a', 22);
+//var_dump($connection);
+//ssh2_auth_password($connection, 'gemdbusr', 'Piwanu72');
 //$auth_methods = ssh2_auth_none($connection, 'gemdbusr');
 //var_dump($auth_methods);
 //ssh2_scp_send($connection, $LocalFilePATH, '/home/dbspool/data/gem/int2r/'.$LocalFileName, 0644);
@@ -156,11 +156,11 @@ ssh2_auth_password($connection, 'gemdbusr', 'Piwanu72');
 //ssh2_exec($connection, 'exit'); 
 
 //$cmd = "scp ".$LocalFilePATH." gemdbusr@gem-machine-a:/home/dbspool/data/gem/int2r/".$LocalFileName;
-$cmd = "bash shellscript/authsend";
-echo $cmd;
+//$cmd = "bash shellscript/authsend";
+//echo $cmd;
 //$cmd = 'pwd';
-$out = shell_exec ( $cmd );
-var_dump($out);
+//$out = shell_exec ( $cmd );
+//var_dump($out);
 
 //CURL
 $username= "gemdbusr";
