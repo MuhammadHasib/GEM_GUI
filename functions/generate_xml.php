@@ -162,8 +162,9 @@ curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $return = curl_exec($ch);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
 
 echo "status code:".$status_code;
 echo "exec return:".$return;
