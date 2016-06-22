@@ -128,7 +128,7 @@ function generateXml($arr) {
     //Generate the file and save it on directory
     $xml->save("gen_xml/" . $serialNum . ".xml"); // or die("Error");
     // Send the file to the spool area
-    SendXML($LocalFilePATH, $LocalFileName);
+    SendXML($LocalFilePATH);
 
     return 1;
 }
@@ -139,28 +139,10 @@ function generateXml($arr) {
  * Description:  start a SSH connection with gem-machine-a to send files from GUI to spool area there
  * Author: Ola Aboamer [o.aboamer@cern.ch] 
  */
-function SendXML($LocalFilePATH, $LocalFileName)
+function SendXML($LocalFilePATH)
 {
-//$connection = ssh2_connect('gem-machine-a', 22);
-//var_dump($connection);
-//ssh2_auth_password($connection, 'gemdbusr', 'Piwanu72');
-//$auth_methods = ssh2_auth_none($connection, 'gemdbusr');
-//var_dump($auth_methods);
-//ssh2_scp_send($connection, $LocalFilePATH, '/home/dbspool/data/gem/int2r/'.$LocalFileName, 0644);
-
-
-//if (in_array('password', $auth_methods)) {
-//  echo "Server supports password based authentication\n";
-//}
-// Add this to flush buffers/close session 
-//ssh2_exec($connection, 'exit'); 
-
-//$cmd = "scp ".$LocalFilePATH." gemdbusr@gem-machine-a:/home/dbspool/data/gem/int2r/".$LocalFileName;
-//$cmd = "bash shellscript/authsend";
-//echo $cmd;
-//$cmd = 'pwd';
-//$out = shell_exec ( $cmd );
-//var_dump($out);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 //CURL
 $username= "gemdbusr";
@@ -183,8 +165,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $return = curl_exec($ch);
 
-echo $status_code;
-echo $return;
+echo "status code:".$status_code;
+echo "exec return:".$return;
 
 curl_close($ch);
 
