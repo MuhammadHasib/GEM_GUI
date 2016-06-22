@@ -152,14 +152,16 @@ $target_url= " http://gem-machine-a:8888/gem/int2r";
 
 $file_name_with_full_path = realpath($LocalFilePATH);
 $post = array('file'=>'@'.$file_name_with_full_path,'det'=>'gem','dat'=>'', 'user'=> $_SESSION['user']);
-echo $_SESSION['user'];
+$headers = array(
+    'Content-Type:application/json',
+    'Authorization: Basic '. base64_encode($username.":".$password) // <---
+);
 
 //&det=gem&dat=int2r1-v.cern.ch:10121/int2r.cern.ch
-$ch = curl_init();
+$ch = curl_init($target_url);
 
 curl_setopt($ch, CURLOPT_URL,$target_url);
-curl_setopt($ch, CURLOPT_HEADER, 1);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
 curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
 curl_setopt($ch, CURLOPT_TIMEOUT, 30);
