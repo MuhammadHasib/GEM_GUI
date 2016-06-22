@@ -579,7 +579,7 @@ include "foot.htm";
          * [1] Ajax to refresh the Id once enter the page ( 1st time landing )
          */
         $.ajax({
-            url: 'functions/ajaxActions.php?kindid='<?= $CHAMBER_KIND_OF_PART_ID; ?>,
+            url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>',
             success: function () { /*alert('test');*/
             }
         });
@@ -593,7 +593,7 @@ include "foot.htm";
         function ajaxCall() {
             if ($("#vers").text() == "L-") {
                 $.ajax({
-                    url: 'functions/ajaxActions.php?kindid='<?= $CHAMBER_KIND_OF_PART_ID; ?>'&version=-L-',
+                    url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>&version=-L-',
                     success: function (data) {
                         $(".id").text(data);
                         $(".serialInput").val($(".serial").text());
@@ -608,7 +608,7 @@ include "foot.htm";
             }
             else if ($("#vers").text() == "S-") {
                 $.ajax({
-                    url: 'functions/ajaxActions.php?kindid='<?= $CHAMBER_KIND_OF_PART_ID; ?>'&version=-S-',
+                    url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>&version=-S-',
                     success: function (data) {
                         $(".id").text(data);
                         $(".serialInput").val($(".serial").text());
@@ -621,7 +621,7 @@ include "foot.htm";
             }
             else {
                 $.ajax({
-                    url: 'functions/ajaxActions.php?kindid='<?= $CHAMBER_KIND_OF_PART_ID; ?>,
+                    url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>',
                     success: function () { /*alert('test');*/
                     }
                 });
@@ -653,7 +653,7 @@ include "foot.htm";
             });
             $("#vers").text("L-");
             $.ajax({
-                url: 'functions/ajaxActions.php?kindid='<?= $CHAMBER_KIND_OF_PART_ID; ?>'&version=-L-',
+                url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>&version=-L-',
                 success: function (data) {
                     $(".id").text(data);
                     $(".serialInput").val($(".serial").text());
@@ -673,7 +673,7 @@ include "foot.htm";
             });
             $("#vers").text("S-");
             $.ajax({
-                url: 'functions/ajaxActions.php?kindid='<?= $CHAMBER_KIND_OF_PART_ID; ?>'&version=-S-',
+                url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>&version=-S-',
                 success: function (data) {
                     $(".id").text(data);
                     $(".serialInput").val($(".serial").text());
