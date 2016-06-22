@@ -165,8 +165,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $return = curl_exec($ch);
 $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-
-echo "status code:".$status_code;
+echo "status code:";
+print_r($status_code) ;
 echo "exec return:".$return;
 
 curl_close($ch);
