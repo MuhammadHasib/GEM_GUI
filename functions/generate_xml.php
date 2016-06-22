@@ -165,11 +165,11 @@ function SendXML($LocalFilePATH, $LocalFileName)
 //CURL
 $username= "gemdbusr";
 $password= "Piwanu72";
-$host= "gem-machine-b";
-$target_url= "gem-machine-a:/home/dbspool/data/gem/int2r/";
+
+$target_url= " http://gem-machine-a:8888/gem/int2r";
 
 $file_name_with_full_path = realpath($LocalFilePATH);
-$post = array('FILE'=>'@'.$file_name_with_full_path);
+$post = array('file'=>'@'.$file_name_with_full_path);
 
 $ch = curl_init();
 
@@ -182,6 +182,10 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $return = curl_exec($ch);
+
+echo $status_code;
+echo $return;
+
 curl_close($ch);
 
 
