@@ -58,7 +58,7 @@ $xml = simplexml_load_string($result);
 $userInfo = (array)$xml;
 
 $_SESSION['user'] = $userInfo['login'];
-print_r($userInfo);
+//print_r($userInfo);
 //echo $userInfo['name'];
 /*****************************************/
 /******* End Get user Information ********/

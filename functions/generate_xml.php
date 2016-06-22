@@ -152,6 +152,7 @@ $target_url= " http://gem-machine-a:8888/gem/int2r";
 
 $file_name_with_full_path = realpath($LocalFilePATH);
 $post = array('file'=>'@'.$file_name_with_full_path,'det'=>'gem','dat'=>'', 'user'=> $_SESSION['user']);
+echo $_SESSION['user'];
 
 //&det=gem&dat=int2r1-v.cern.ch:10121/int2r.cern.ch
 $ch = curl_init();
