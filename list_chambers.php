@@ -31,16 +31,16 @@ include "head.php";
                 </tr>
               </thead>
               <tbody>
-                  <?php $drifts=  get_list_part_ID("10000000000001719");
-          //print_r($drifts);
-          foreach( $drifts as $drift){
+                  <?php $chambers=  get_list_part_ID($CHAMBER_KIND_OF_PART_ID);
+          //print_r($chambers);
+          foreach( $chambers as $chamber){
                
               echo '<tr>
-                  <td>'.$drift['PART_ID'].'</td>
-                  <td>'.$drift['SERIAL_NUMBER'].'</td>
+                  <td>'.$chamber['PART_ID'].'</td>
+                  <td>'.$chamber['SERIAL_NUMBER'].'</td>
                   
-                  <td><span aria-hidden="true" class="glyphicon glyphicon-user"> '.$drift['RECORD_INSERTION_USER'].' </span></td>
-                  <td><a href="show_chamber.php?id='.$drift['SERIAL_NUMBER'].'"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Show</button></a></td>
+                  <td><span aria-hidden="true" class="glyphicon glyphicon-user"> '.$chamber['RECORD_INSERTION_USER'].' </span></td>
+                  <td><a href="show_chamber.php?id='.$chamber['SERIAL_NUMBER'].'"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Show</button></a></td>
                 </tr>';
           }
           

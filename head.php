@@ -72,6 +72,7 @@ $_SESSION['user'] = $userInfo['login'];
 <?php
 include "functions/functions.php";
 include "functions/generate_xml.php";
+include "functions/globals.php";
 
 ?>
 

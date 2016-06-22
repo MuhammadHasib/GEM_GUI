@@ -1,5 +1,7 @@
 <?php
 
+include "globals.php";
+
 /*
  * Name: database_connection
  * Description:  Start db connection
@@ -381,8 +383,8 @@ function list_chambers(){
     
     // Database connection 
     $conn = database_connection();
-    
-    $sql = "SELECT SERIAL_NUMBER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='10000000000001719'"; //select data or insert data
+    global $CHAMBER_KIND_OF_PART_ID;
+    $sql = "SELECT SERIAL_NUMBER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='".$CHAMBER_KIND_OF_PART_ID."'"; //select data or insert data
     
     // Execute query  
     $query = oci_parse($conn, $sql);
