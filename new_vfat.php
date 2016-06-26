@@ -3,7 +3,7 @@ include "head.php";
 ?>
 
 <?php
-$serial_num_of_newest_part = get_part_ID('10000000000001699',"-1-");
+$serial_num_of_newest_part = get_part_ID($VFAT_KIND_OF_PART_ID,"-1-");
 if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
     $serial_num = explode('-', $serial_num_of_newest_part);
     
@@ -231,7 +231,7 @@ include "foot.htm";
          * [1] Ajax to refresh the Id once enter the page ( 1st time landing )
          */
         $.ajax({
-            url: 'functions/ajaxActions.php?kindid=10000000000001699',
+            url: 'functions/ajaxActions.php?kindid=<?= $VFAT_KIND_OF_PART_ID; ?>',
             success: function () { /*alert('test');*/
             }
         });
@@ -245,7 +245,7 @@ include "foot.htm";
         function ajaxCall() {
             if ($("#vers").text() == "1-") {
                 $.ajax({
-                    url: 'functions/ajaxActions.php?kindid=10000000000001699&version=-1-',
+                    url: 'functions/ajaxActions.php?kindid=<?= $VFAT_KIND_OF_PART_ID; ?>&version=-1-',
                     success: function (data) {
                         $(".id").text(data);
                         $(".serialInput").val($(".serial").text());
@@ -256,7 +256,7 @@ include "foot.htm";
             }
             else if ($("#vers").text() == "2-") {
                 $.ajax({
-                    url: 'functions/ajaxActions.php?kindid=10000000000001699&version=-2-',
+                    url: 'functions/ajaxActions.php?kindid=<?= $VFAT_KIND_OF_PART_ID; ?>&version=-2-',
                     success: function (data) {
                         $(".id").text(data);
                         $(".serialInput").val($(".serial").text());
@@ -266,7 +266,7 @@ include "foot.htm";
             }
             else {
                 $.ajax({
-                    url: 'functions/ajaxActions.php?kindid=10000000000001699',
+                    url: 'functions/ajaxActions.php?kindid=<?= $VFAT_KIND_OF_PART_ID; ?>',
                     success: function () { /*alert('test');*/
                     }
                 });
@@ -298,7 +298,7 @@ include "foot.htm";
             });
             $("#vers").text("1-");
             $.ajax({
-                url: 'functions/ajaxActions.php?kindid=10000000000001699&version=-1-',
+                url: 'functions/ajaxActions.php?kindid=<?= $VFAT_KIND_OF_PART_ID; ?>&version=-1-',
                 success: function (data) {
                     $(".id").text(data);
                     $(".serialInput").val($(".serial").text());
@@ -314,7 +314,7 @@ include "foot.htm";
             });
             $("#vers").text("2-");
             $.ajax({
-                url: 'functions/ajaxActions.php?kindid=10000000000001699&version=-2-',
+                url: 'functions/ajaxActions.php?kindid=<?= $VFAT_KIND_OF_PART_ID; ?>&version=-2-',
                 success: function (data) {
                     $(".id").text(data);
                     $(".serialInput").val($(".serial").text());

@@ -370,7 +370,7 @@ if ($serial_num_of_newest_part) {
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                            <?php get_available_parts("10000000000001659", "-S-"); ?>
+                                                            <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-S-"); ?>
                                                         </ul>
 
                                                     </div>
@@ -385,7 +385,7 @@ if ($serial_num_of_newest_part) {
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                            <?php get_available_parts("10000000000001659", "-S-"); ?>
+                                                            <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-S-"); ?>
                                                         </ul>
 
                                                     </div>
@@ -399,7 +399,7 @@ if ($serial_num_of_newest_part) {
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                            <?php get_available_parts("10000000000001659", "-S-"); ?>
+                                                            <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-S-"); ?>
                                                         </ul>
 
                                                     </div>
@@ -423,7 +423,7 @@ if ($serial_num_of_newest_part) {
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                            <?php get_available_parts("10000000000001659", "-L-"); ?>
+                                                            <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-L-"); ?>
                                                         </ul>
 
                                                     </div>
@@ -438,7 +438,7 @@ if ($serial_num_of_newest_part) {
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                            <?php get_available_parts("10000000000001659", "-L-"); ?>
+                                                            <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-L-"); ?>
                                                         </ul>
 
                                                     </div>
@@ -452,7 +452,7 @@ if ($serial_num_of_newest_part) {
                                                             <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                            <?php get_available_parts("10000000000001659", "-L-"); ?>
+                                                            <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-L-"); ?>
                                                         </ul>
 
                                                     </div>
@@ -479,7 +479,7 @@ if ($serial_num_of_newest_part) {
                                                         <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                        <?php get_available_parts("10000000000001599", "-S-"); ?>
+                                                        <?php get_available_parts($DRIFT_KIND_OF_PART_ID, "-S-"); ?>
                                                     </ul>
 
                                                 </div>
@@ -498,7 +498,7 @@ if ($serial_num_of_newest_part) {
                                                         <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                        <?php get_available_parts("10000000000001599", "-L-"); ?>
+                                                        <?php get_available_parts($DRIFT_KIND_OF_PART_ID, "-L-"); ?>
                                                     </ul>
 
                                                 </div>
@@ -522,7 +522,7 @@ if ($serial_num_of_newest_part) {
                                                         <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                        <?php get_available_parts("10000000000001679", "-S-"); ?>
+                                                        <?php get_available_parts($READOUT_KIND_OF_PART_ID, "-S-"); ?>
                                                     </ul>
 
                                                 </div>
@@ -541,7 +541,7 @@ if ($serial_num_of_newest_part) {
                                                         <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                        <?php get_available_parts("10000000000001679", "-L-"); ?>
+                                                        <?php get_available_parts($READOUT_KIND_OF_PART_ID, "-L-"); ?>
                                                     </ul>
 
                                                 </div>

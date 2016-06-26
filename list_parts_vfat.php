@@ -29,7 +29,7 @@ include "head.php";
                 </tr>
               </thead>
               <tbody>
-                  <?php $drifts=  get_list_part_ID("10000000000001699");
+                  <?php $drifts=  get_list_part_ID($VFAT_KIND_OF_PART_ID);
           //print_r($drifts);
           foreach( $drifts as $drift){
                
