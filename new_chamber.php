@@ -86,7 +86,7 @@ if ($serial_num_of_newest_part) {
                         $temp['BARCODE'] = $_POST['barcode'];
                     }
 
-                    $kindOfPart = "GEM Chamber";
+                    $kindOfPart = $CHAMBER_KIND_OF_PART_NAME;
                     //echo  $kindOfPart;
                     $temp['KIND_OF_PART'] = $kindOfPart;
 
@@ -107,17 +107,17 @@ if ($serial_num_of_newest_part) {
                     $subchild = array();
                     if (!empty($_POST['ros'])) {
                         $child['SERIAL_NUMBER'] = $_POST['ros'];
-                        $child['KIND_OF_PART'] = "GEM Readout PCB";
+                        $child['KIND_OF_PART'] = $READOUT_KIND_OF_PART_NAME;
                         $childs[] = $child;
                     }
                     if (!empty($_POST['drifts'])) {
                         $child['SERIAL_NUMBER'] = $_POST['drifts'];
-                        $child['KIND_OF_PART'] = "GEM Drift PCB";
+                        $child['KIND_OF_PART'] = $DRIFT_KIND_OF_PART_NAME;
                         $childs[] = $child;
                     }
                     if (!empty($_POST['foil1s'])) {
                         $child['SERIAL_NUMBER'] = $_POST['foil1s'];
-                        $child['KIND_OF_PART'] = "GEM Foil";
+                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
                         $subchild['NAME'] = "Foil Position";
                         $subchild['VALUE'] = "1";
                         $child ['attr'] = $subchild;
@@ -125,7 +125,7 @@ if ($serial_num_of_newest_part) {
                     }
                     if (!empty($_POST['foil2s'])) {
                         $child['SERIAL_NUMBER'] = $_POST['foil2s'];
-                        $child['KIND_OF_PART'] = "GEM Foil";
+                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
                         $subchild['NAME'] = "Foil Position";
                         $subchild['VALUE'] = "2";
                         $child ['attr'] = $subchild;
@@ -133,7 +133,7 @@ if ($serial_num_of_newest_part) {
                     }
                     if (!empty($_POST['foil3s'])) {
                         $child['SERIAL_NUMBER'] = $_POST['foil3s'];
-                        $child['KIND_OF_PART'] = "GEM Foil";
+                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
                         $subchild['NAME'] = "Foil Position";
                         $subchild['VALUE'] = "3";
                         $child ['attr'] = $subchild;
@@ -142,17 +142,17 @@ if ($serial_num_of_newest_part) {
 
                     if (!empty($_POST['rol'])) {
                         $child['SERIAL_NUMBER'] = $_POST['rol'];
-                        $child['KIND_OF_PART'] = "GEM Readout PCB";
+                        $child['KIND_OF_PART'] = $READOUT_KIND_OF_PART_NAME;
                         $childs[] = $child;
                     }
                     if (!empty($_POST['driftl'])) {
                         $child['SERIAL_NUMBER'] = $_POST['driftl'];
-                        $child['KIND_OF_PART'] = "GEM Drift PCB";
+                        $child['KIND_OF_PART'] = $DRIFT_KIND_OF_PART_NAME;
                         $childs[] = $child;
                     }
                     if (!empty($_POST['foil1l'])) {
                         $child['SERIAL_NUMBER'] = $_POST['foil1l'];
-                        $child['KIND_OF_PART'] = "GEM Foil";
+                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
                         $subchild['NAME'] = "Foil Position";
                         $subchild['VALUE'] = "1";
                         $child ['attr'] = $subchild;
@@ -160,7 +160,7 @@ if ($serial_num_of_newest_part) {
                     }
                     if (!empty($_POST['foil2l'])) {
                         $child['SERIAL_NUMBER'] = $_POST['foil2l'];
-                        $child['KIND_OF_PART'] = "GEM Foil";
+                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
                         $subchild['NAME'] = "Foil Position";
                         $subchild['VALUE'] = "2";
                         $child ['attr'] = $subchild;
@@ -168,7 +168,7 @@ if ($serial_num_of_newest_part) {
                     }
                     if (!empty($_POST['foil3l'])) {
                         $child['SERIAL_NUMBER'] = $_POST['foil3l'];
-                        $child['KIND_OF_PART'] = "GEM Foil";
+                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
                         $subchild['NAME'] = "Foil Position";
                         $subchild['VALUE'] = "3";
                         $child ['attr'] = $subchild;

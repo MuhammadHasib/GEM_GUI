@@ -379,6 +379,13 @@ function getSerialById($id){
     return $result;
 }
 
+/*
+ * Name: list_chambers
+ * Description: list all chambers
+ * usage: list chambers page
+ * return: html
+ * Autor: Ola Aboamer [o.aboamer@cern.ch]
+*/ 
 function list_chambers(){
     
     // Database connection 

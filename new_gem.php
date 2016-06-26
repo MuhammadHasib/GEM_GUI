@@ -50,7 +50,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                         $temp['BARCODE'] = $_POST['barcode'];
                     }
                     
-                        $kindOfPart = "GEM Foil";
+                        $kindOfPart = $FOIL_KIND_OF_PART_NAME;
                         //echo  $kindOfPart;
                         $temp['KIND_OF_PART'] = $kindOfPart;
                     

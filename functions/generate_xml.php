@@ -18,36 +18,6 @@ function generateXml($arr) {
     $parts = $xml->createElement("PARTS");
     $root->appendChild($parts);
 
-
-
-//    $serial = $xml->createElement("SERIAL_NUMBER");
-//    $serialText = $xml->createTextNode('0001');
-//    $serialNum = "0002";
-//    $serial->appendChild($serialText);
-//    $barcode = $xml->createElement("BARCODE");
-//    $barcodeText = $xml->createTextNode('Pjgfdgsfs');
-//    $barcode->appendChild($barcodeText);
-//
-//    $kindofpart = $xml->createElement("KIND_OF_PART");
-//    $kindofpartText = $xml->createTextNode('Pjgfdgsfs');
-//    $kindofpart->appendChild($kindofpartText);
-//
-//    $namelabel = $xml->createElement("NAME_LABEL");
-//    $namelabelText = $xml->createTextNode('GEM Part');
-//    $namelabel->appendChild($namelabelText);
-//
-//    $commentdesc = $xml->createElement("COMMENT_DESCRIPTION");
-//    $commentdescText = $xml->createTextNode('test test');
-//    $commentdesc->appendChild($commentdescText);
-//
-//    $location = $xml->createElement("LOCATION");
-//    $locationText = $xml->createTextNode('CERN');
-//    $location->appendChild($locationText);
-//
-//    $user = $xml->createElement("RECORD_INSERTION_USER");
-//    $userText = $xml->createTextNode('user');
-//    $user->appendChild($userText);
-
     $part = $xml->createElement("PART");
     $serialNum = "Default";
     $flag = 0;
@@ -105,13 +75,6 @@ function generateXml($arr) {
         }
     }
 
-//    $part->appendChild($serial);
-//    $part->appendChild($barcode);
-//    $part->appendChild($kindofpart);
-//    $part->appendChild($namelabel);
-//    $part->appendChild($commentdesc);
-//    $part->appendChild($location);    
-//    $part->appendChild($user);
     if ($flag) {
         $part->appendChild($child);
     }
