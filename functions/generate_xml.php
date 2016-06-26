@@ -11,10 +11,10 @@ function generateXml($arr) {
 
     //print_r($arr);
 
-/*Error Reporting */
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
-        
+    /* Error Reporting */
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
     $xml = new DOMDocument("1.0");
     $root = $xml->createElement("ROOT");
     $xml->appendChild($root);
@@ -38,7 +38,7 @@ function generateXml($arr) {
             } else if ($key == "children") {
                 $flag = 1;
                 $child = $xml->createElement("CHILDREN");
-                
+
                 for ($j = 0; $j < sizeof($value); $j++) {
                     $part1 = $xml->createElement("PART");
 
@@ -46,18 +46,16 @@ function generateXml($arr) {
                         if ($key1 == "attr") {
                             $preattr = $xml->createElement("PREDEFINED_ATTRIBUTES");
                             $attr = $xml->createElement("ATTRIBUTE");
-                            
 
-                                foreach ($value1 as $key2 => $value2) {
-                                    $tag = $xml->createElement($key2);
-                                    $tagText = $xml->createTextNode($value2);
-                                    $tag->appendChild($tagText);
-                                    $attr->appendChild($tag);
-                                    
-                                }
-                                $preattr->appendChild($attr);
-                                $part1->appendChild($preattr);
-                            
+
+                            foreach ($value1 as $key2 => $value2) {
+                                $tag = $xml->createElement($key2);
+                                $tagText = $xml->createTextNode($value2);
+                                $tag->appendChild($tagText);
+                                $attr->appendChild($tag);
+                            }
+                            $preattr->appendChild($attr);
+                            $part1->appendChild($preattr);
                         } else {
 
                             $tag = $xml->createElement($key1);
@@ -94,54 +92,51 @@ function generateXml($arr) {
     //Generate the file and save it on directory
     $xml->save("gen_xml/" . $serialNum . ".xml"); // or die("Error");
     // Send the file to the spool area
-    //SendXML($LocalFilePATH);
+    SendXML($LocalFilePATH);
 
     return 1;
 }
-
 
 /*
  * Name: SendXML
  * Description:  start a SSH connection with gem-machine-a to send files from GUI to spool area there
  * Author: Ola Aboamer [o.aboamer@cern.ch] 
  */
-function SendXML($LocalFilePATH)
-{
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
+function SendXML($LocalFilePATH) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
 //CURL
-$username= "gemdbusr";
-$password= "Piwanu72";
+    $username = "gemdbusr";
+    $password = "Piwanu72";
 
-$target_url= " http://gem-machine-a:8888/gem/int2r";
+    $target_url = " http://gem-machine-a:8888/gem/int2r";
 
-$file_name_with_full_path = realpath($LocalFilePATH);
-$post = array('file'=>'@'.$file_name_with_full_path,'det'=>'gem','dat'=>'', 'user'=> $_SESSION['user']);
-$headers = array(
-    'Content-Type:application/json',
-    'Authorization: Basic '. base64_encode($username.":".$password) // <---
-);
+    $file_name_with_full_path = realpath($LocalFilePATH);
+    $post = array('file' => '@' . $file_name_with_full_path, 'det' => 'gem', 'dat' => '', 'user' => $_SESSION['user']);
+    $headers = array(
+        'Content-Type:application/json',
+        'Authorization: Basic ' . base64_encode($username . ":" . $password) // <---
+    );
 
 //&det=gem&dat=int2r1-v.cern.ch:10121/int2r.cern.ch
-$ch = curl_init($target_url);
+    $ch = curl_init($target_url);
 
-curl_setopt($ch, CURLOPT_URL,$target_url);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
-curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
-curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-$return = curl_exec($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_setopt($ch, CURLOPT_URL, $target_url);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $return = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-echo "status code:";
-print_r($status_code) ;
-echo "exec return:".$return;
+    echo "status code:";
+    print_r($status_code);
+    echo "exec return:" . $return;
 
-curl_close($ch);
-
-
+    curl_close($ch);
 }

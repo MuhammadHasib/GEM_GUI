@@ -35,34 +35,34 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                     echo '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully created Gem FOIL <strong>ID:</strong> ' . $_POST['serial'] .
                     '</div>';
-                    $temp['SERIAL_NUMBER'] = $_POST['serial'];
-                    $temp['NAME_LABEL'] = $_POST['serial'];
+                    $temp[$SERIAL_NUMBER] = $_POST['serial'];
+                    $temp[$NAME_LABEL] = $_POST['serial'];
                     if (isset($_POST['location']) && !empty($_POST['location'])) {
                         //echo $_POST['location'];
-                        $temp['LOCATION'] = $_POST['location'];
+                        $temp[$LOCATION] = $_POST['location'];
                     }
                     if (isset($_POST['comment']) && !empty($_POST['comment'])) {
                         //echo $_POST['comment'];
-                        $temp['COMMENT_DESCRIPTION'] = $_POST['comment'];
+                        $temp[$COMMENT_DESCRIPTION] = $_POST['comment'];
                     }
                     if (isset($_POST['barcode']) && !empty($_POST['barcode'])) {
                         //echo $_POST['barcode'];
-                        $temp['BARCODE'] = $_POST['barcode'];
+                        $temp[$BARCODE] = $_POST['barcode'];
                     }
                     
                         $kindOfPart = $FOIL_KIND_OF_PART_NAME;
                         //echo  $kindOfPart;
-                        $temp['KIND_OF_PART'] = $kindOfPart;
+                        $temp[$KIND_OF_PART] = $kindOfPart;
                     
                     
                     if (isset($logName)) {
                         //echo $logName;
-                        $temp['RECORD_INSERTION_USER'] = $logName;
+                        $temp[$RECORD_INSERTION_USER] = $logName;
                     }
                   
                     if (isset($_POST['manufacturer']) && !empty($_POST['manufacturer'])) {
                         //echo $_POST['manufacturer'];
-                        $temp['MANUFACTURER'] = $_POST['manufacturer'];
+                        $temp[$MANUFACTURER] = $_POST['manufacturer'];
                     }
                     $arr[] = $temp;
                     

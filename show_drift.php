@@ -44,11 +44,11 @@ include "head.php";
                                                 <td><?= $data[0]['SERIAL_NUMBER'] ?></td>
                                             </tr> <?php
                                     }
-                                    if (!empty($data[0]['NAME_LABEL'])) {
+                                    if (!empty($data[0][$NAME_LABEL])) {
                                         ?> 
                                             <tr>
                                                 <th>Name:</th>
-                                                <td><?= $data[0]['NAME_LABEL'] ?></td>
+                                                <td><?= $data[0][$NAME_LABEL] ?></td>
                                             </tr>
                                             <?php
                                     }

@@ -33,10 +33,8 @@ $VFAT_KIND_OF_PART_NAME = "GEM VFAT";
 
 /***********************************************/
 
-/*Forms fields names */
 
-/*Tables fields names */
-// 1st Set of XML tags names Common between all forms
+// 1st Set of XML tags names Common between all parts
 $SERIAL_NUMBER = "SERIAL_NUMBER";
 $NAME_LABEL = "NAME_LABEL";
 $LOCATION = "LOCATION";
@@ -45,3 +43,6 @@ $BARCODE = "BARCODE";
 $KIND_OF_PART = "KIND_OF_PART";
 $RECORD_INSERTION_USER = "RECORD_INSERTION_USER";
 $MANUFACTURER = "MANUFACTURER";
+
+// 2nd Set of XML sub tags names for chamber 
+
