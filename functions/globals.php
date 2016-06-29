@@ -18,7 +18,19 @@ $FOIL_KIND_OF_PART_ID = "10000000000001659";
 $READOUT_KIND_OF_PART_ID = "10000000000001679";
 //Kind of part id for VFAT chips
 $VFAT_KIND_OF_PART_ID = "10000000000001699";
-
+//Kind of part id for Optohybrids
+$OPTOHYBRID_KIND_OF_PART_ID = "10000000000002399";
+//Kind of part id for AMCs
+$AMC_KIND_OF_PART_ID = "10000000000002419";
+//Kind of part id for AMC13
+$AMC13_KIND_OF_PART_ID = "10000000000002439";
+//Kind of part id for HUBs
+$HUB_KIND_OF_PART_ID = "10000000000002459";
+//Kind of part id for MicroTCAs
+$MICROTCA_KIND_OF_PART_ID = "10000000000002479";
+//Kind of part id for GEBs
+$GEB_KIND_OF_PART_ID = "10000000000002799"; 
+ 
 //2nd Names
 //Kind of part name for Chambers
 $CHAMBER_KIND_OF_PART_NAME = "GEM Chamber";
@@ -30,7 +42,20 @@ $FOIL_KIND_OF_PART_NAME = "GEM Foil";
 $READOUT_KIND_OF_PART_NAME = "GEM Readout PCB";
 //Kind of part name for VFAT chips
 $VFAT_KIND_OF_PART_NAME = "GEM VFAT";
-
+//Kind of part name for Optohybrids
+$OPTOHYBRID_KIND_OF_PART_NAME = "GEM Opto Hybrid";
+//Kind of part name for AMCs
+$AMC_KIND_OF_PART_NAME = "GEM AMC Gigabit Link Interface Board";
+//Kind of part name for AMC13
+$AMC13_KIND_OF_PART_NAME = "GEM AMC13 Board";
+//Kind of part name for HUBs
+$HUB_KIND_OF_PART_NAME = "GEM Main Carrier HUB";
+//Kind of part name for MicroTCAs
+$MICROTCA_KIND_OF_PART_NAME = "GEM Micro TCA Crate";
+//Kind of part name for GEBs
+$GEB_KIND_OF_PART_NAME = "GEM Electronics Board"; 
+ 
+ 
 /***********************************************/
 
 
