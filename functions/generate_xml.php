@@ -108,26 +108,19 @@ function SendXML($LocalFilePATH) {
     ini_set('display_errors', 1);
 
 //CURL
-    $username = "gemdbusr";
-    $password = "Piwanu72";
 
-    $target_url = " http://gem-machine-a:8888/gem/int2r";
+    $username = $_SESSION['user'];
+    $password = "kucr3PREruVUchAwEc";
+    $target_url = " http://gem-machine-a/cmsdbldr/gem/int2r";
 
     $file_name_with_full_path = realpath($LocalFilePATH);
-    $post = array('file' => '@' . $file_name_with_full_path, 'det' => 'gem', 'dat' => '', 'user' => $_SESSION['user']);
-    $headers = array(
-        'Content-Type:application/json',
-        'Authorization: Basic ' . base64_encode($username . ":" . $password) // <---
-    );
+    $post = array('file' => '@' . $file_name_with_full_path);
 
-//&det=gem&dat=int2r1-v.cern.ch:10121/int2r.cern.ch
     $ch = curl_init($target_url);
-
     curl_setopt($ch, CURLOPT_URL, $target_url);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 120);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
