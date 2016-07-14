@@ -42,7 +42,7 @@ $data = array('UserName' => $logName);
 // use key 'http' even if you send the request to https://...
 $options = array(
     'http' => array(
-        'header'  => "Authorization: Basic " . base64_encode("gemdbusr:Piwanu72"),//"Content-type: application/x-www-form-urlencoded\r\n",
+        'header'  => "Authorization: Basic " . base64_encode("gemdbusr:Dixa-Saku"),//"Content-type: application/x-www-form-urlencoded\r\n",
         'method'  => 'POST',
         'content' => http_build_query($data),
     ),
@@ -58,9 +58,9 @@ $xml = simplexml_load_string($result);
 $userInfo = (array)$xml;
 
 $_SESSION['user'] = $userInfo['login'];
-print_r($userInfo);
-print_r($data);
-echo $userInfo['name'];
+//print_r($userInfo);
+//print_r($data);
+//echo $userInfo['name'];
 /*****************************************/
 /******* End Get user Information ********/
 /*****************************************/
