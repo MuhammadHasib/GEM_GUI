@@ -59,6 +59,7 @@ $userInfo = (array)$xml;
 
 $_SESSION['user'] = $userInfo['login'];
 print_r($userInfo);
+print_r($data);
 echo $userInfo['name'];
 /*****************************************/
 /******* End Get user Information ********/
