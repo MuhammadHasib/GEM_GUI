@@ -53,16 +53,16 @@ include "head.php";
         
              <div class="row">
   <div class="col-xs-6">
-  <h4 class="sub-header"><img src="images/a.jpg" width="8%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> GEM Electronic Board GEB </h4>
+         <h4 class="sub-header"><img src="images/GEB.png" width="8%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> GEM Electronic Board GEB </h4>
   
-      <a href="new_geb.php.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
+      <a href="new_geb.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
     <a href="list_parts_geb.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
   </div>
   <div class="col-xs-6">
-    <h4 class="sub-header"><img src="images/b.jpg" width="8%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> X </h4>
+              <h4 class="sub-header"><img src="images/opto1.png" width="8%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> OptoHybrids </h4>
   
-<!--    <a href="new_vfat.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
-    <a href="list_parts_vfat.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>-->
+      <a href="new_opto.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
+    <a href="list_parts_opto.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
   </div>
           
         </div>

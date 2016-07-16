@@ -10,9 +10,9 @@ include "head.php";
       <div class="row">
 <?php  include "side.php"; ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header"><img src="images/GEB.png" width="4%"> GEB List</h1>
+            <h1 class="page-header"><img src="images/opto1.png" width="4%"> OptoHybrids List</h1>
 
-<a href="new_geb.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new GEB</button></a>
+            <a href="new_opto.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new OptoHybrid</button></a>
 <!--<form class="navbar-form navbar-right">
            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> <input class="form-control" placeholder="Search for drift" type="text">
           </form> -->
@@ -30,7 +30,7 @@ include "head.php";
                 </tr>
               </thead>
               <tbody>
-                  <?php $drifts=  get_list_part_ID($GEB_KIND_OF_PART_ID);
+                  <?php $drifts=  get_list_part_ID($OPTOHYBRID_KIND_OF_PART_ID);
           //print_r($drifts);
           foreach( $drifts as $drift){
                
