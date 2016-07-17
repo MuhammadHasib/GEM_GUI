@@ -34,7 +34,8 @@ include "head.php";
                             <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>Attached parts information</h3>
                         </div>
                         <div class="panel-body">
-                            <label for="exampleInputFile" >Version</label>
+                            <label for="exampleInputFile" >(1) Choose Version L/S ?</label>
+                            <input name="version" value="" hidden>
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     Choose Version
@@ -47,7 +48,7 @@ include "head.php";
                             </div>
 
                             
-                                <label for="exampleInputFile" >Readout where GEB will be mounted</label>
+                                <label for="exampleInputFile" > (2)Pick a Readout (Parent of GEB) </label>
                                 
                                 <!-- Readout S-->
                                 <div class="form-group shortreads" style="display: none">
@@ -81,10 +82,10 @@ include "head.php";
                             
                             <!--Long GEBs-->
                             <div class="form-group longgebs">
-                                    <label for="exampleInputFile">GEB(s)</label>
+                                    <label for="exampleInputFile"> (3) Pick a GEB (Child of Readout)</label>
                                     <input class="gebl" name="gebl" value="" hidden><br>
                                     <!--multiple=""-->
-                                    <select tabindex="-1"  class="chosen-select" style="width: 350px; " data-placeholder="Choose Long GEB ">
+                                    <select tabindex="-1"  class="chosen-select-gebl" style="width: 350px; " data-placeholder="Choose Long GEB ">
                                         <option value=""></option>
                                         <optgroup label="Long">
                                             <?php $arr= get_available_parts_nohtml($GEB_KIND_OF_PART_ID, "-L-"); 
@@ -101,9 +102,9 @@ include "head.php";
                                 </div>
                              <div class="form-group shortgebs" >
                                     <label for="exampleInputFile">GEB(s)</label>
-                                    <input class="gebs" name="gebl" value="" hidden><br>
+                                    <input class="gebs" name="gebs" value="" hidden><br>
                                     <!--multiple=""-->
-                                    <select tabindex="-1"  class="chosen-select" style="width: 350px; " data-placeholder="Choose Short GEB ">
+                                    <select tabindex="-1"  class="chosen-select-gebs" style="width: 350px; " data-placeholder="Choose Short GEB ">
                                         <option value=""></option>
                                         <optgroup label="Short">
                                             <?php $ar = get_available_parts_nohtml($GEB_KIND_OF_PART_ID, "-S-"); 
@@ -155,7 +156,22 @@ include "foot.htm";
             $(".rol,.gebl").val("");
 
         }
+        
+        
 
 
     })
+    
+   
+   $('.chosen-select-gebl').on('change', function(evt, params) {
+        $('.gebl').val($(this).chosen().val());
+        alert($(this).chosen().val()) ;
+  });
+    
+   $('.chosen-select-gebs').on('change', function(evt, params) {
+        $('.gebs').val($(this).chosen().val());
+        alert($(this).chosen().val()) ;
+  });
+    
+    
 </script>
