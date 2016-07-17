@@ -26,10 +26,10 @@ include "head.php";
                         echo '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully attached GEB [' . $_POST['gebl'] . '] to Readout [' . $_POST['rol'] . ']   </div>';
                         $temp[$SERIAL_NUMBER] = $_POST['rol'];
-                        $temp[$KIND_OF_PART] = $READOUT_KIND_OF_PART_ID;
+                        $temp[$KIND_OF_PART] = $READOUT_KIND_OF_PART_NAME;
                         
                         $child['SERIAL_NUMBER'] = $_POST['gebl'];
-                        $child['KIND_OF_PART'] = $GEB_KIND_OF_PART_ID;
+                        $child['KIND_OF_PART'] = $GEB_KIND_OF_PART_NAME;
                         $childs[] = $child;
                     }
                     if ($_POST['version'] == "S") {
@@ -37,10 +37,10 @@ include "head.php";
       <strong>Well done!</strong> You successfully attached GEB [' . $_POST['gebs'] . '] to Readout [' . $_POST['ros'] . ']   </div>';
                     
                         $temp[$SERIAL_NUMBER] = $_POST['ros'];
-                        $temp[$KIND_OF_PART] = $READOUT_KIND_OF_PART_ID;
+                        $temp[$KIND_OF_PART] = $READOUT_KIND_OF_PART_NAME;
                         
                         $child['SERIAL_NUMBER'] = $_POST['gebs'];
-                        $child['KIND_OF_PART'] = $GEB_KIND_OF_PART_ID;
+                        $child['KIND_OF_PART'] = $GEB_KIND_OF_PART_NAME;
                         $childs[] = $child;
                     }
                     $temp['children'] = $childs;
