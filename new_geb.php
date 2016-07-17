@@ -326,6 +326,7 @@ include "foot.htm";
         }
 
 
+  })
   
      jQuery(document).ready(function($) {
 $("#partslist").show();

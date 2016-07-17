@@ -32,7 +32,7 @@ include "head.php";
                                 </ul>
                             </div>
 
-                            <div class="rellists">
+                            
                                 <label for="exampleInputFile" >Readout where GEB will be mounted</label>
                                 
                                 <!-- Readout S-->
@@ -64,32 +64,42 @@ include "head.php";
 
                                     </div>
                                 </div>
-                            </div>
                             
-                            <div class="form-group">
+                            <!--Long GEBs-->
+                            <div class="form-group longgebs">
                                     <label for="exampleInputFile">GEB(s)</label>
-                                    <input name="vfatIds" value="" hidden><br>
+                                    <input class="gebl" name="gebl" value="" hidden><br>
                                     <!--multiple=""-->
-                                    <select tabindex="-1"  class="chosen-select" style="width: 350px; " data-placeholder="Choose 16 VFAT(s) ">
+                                    <select tabindex="-1"  class="chosen-select" style="width: 350px; " data-placeholder="Choose Long GEB ">
                                         <option value=""></option>
                                         <optgroup label="Long">
-                                            <option>VFAT-VI-1-CERN-0001</option>
-                                            <option>VFAT-VI-1-BARI-0002</option>
-                                            <option>VFAT-VI-1-GHENT-0003</option>
-                                            <option>VFAT-VI-1-CERN-0004</option>
+                                            <?php $arr= get_available_parts_nohtml($GEB_KIND_OF_PART_ID, "-L-"); 
+                                                foreach ($arr as $value) {
+                                                        echo "<option>".$value['SERIAL_NUMBER']."</option>";
+                                                    }
+                                            ?>
+                                            
                                         </optgroup>
-                                        <optgroup label="Version 2">
-                                            <option>VFAT-VI-2-CERN-0001</option>
-                                            <option>VFAT-VI-2-BARI-0002</option>
-                                            <option>VFAT-VI-2-GHENT-0003</option>
-                                            <option>VFAT-VI-2-CERN-0004</option>
+                                       
+                                    </select>
+
+
+                                </div>
+                             <div class="form-group shortgebs" style="display: none">
+                                    <label for="exampleInputFile">GEB(s)</label>
+                                    <input class="gebs" name="gebl" value="" hidden><br>
+                                    <!--multiple=""-->
+                                    <select tabindex="-1"  class="chosen-select" style="width: 350px; " data-placeholder="Choose Short GEB ">
+                                        <option value=""></option>
+                                        <optgroup label="Short">
+                                            <?php $arr= get_available_parts_nohtml($GEB_KIND_OF_PART_ID, "-S-"); 
+                                                foreach ($arr as $value) {
+                                                        echo "<option>".$value['SERIAL_NUMBER']."</option>";
+                                                    }
+                                            ?>
+                                            
                                         </optgroup>
-                                        <optgroup label="Version 3">
-                                            <option>VFAT-VI-3-CERN-0001</option>
-                                            <option>VFAT-VI-3-BARI-0002</option>
-                                            <option>VFAT-VI-3-GHENT-0003</option>
-                                            <option>VFAT-VI-3-CERN-0004</option>
-                                        </optgroup>
+                                       
                                     </select>
 
 
@@ -116,17 +126,17 @@ include "foot.htm";
 
         if ($(this).html() == "Long") {
 
-            $(".longreads").show();
-            $(".shortreads").hide();
-            $(".ros").val("");
+            $(".longreads,.longgebs").show();
+            $(".shortreads,.shortgebs").hide();
+            $(".ros,.gebs").val("");
 
         }
 
         if ($(this).html() == "Short") {
 
-            $(".shortreads").show();
-            $(".longreads").hide();
-            $(".rol").val("");
+            $(".shortreads,.shortgebs").show();
+            $(".longreads,.longgebs").hide();
+            $(".rol,.gebl").val("");
 
         }
 
