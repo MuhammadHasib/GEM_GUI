@@ -67,11 +67,12 @@ include "head.php";
                             </div>
                             
                             <div class="form-group">
-                                    <label for="exampleInputFile">VFAT(s)</label>
+                                    <label for="exampleInputFile">GEB(s)</label>
                                     <input name="vfatIds" value="" hidden><br>
-                                    <select tabindex="-1" multiple="" class="chosen-select" style="width: 350px; " data-placeholder="Choose 16 VFAT(s) ">
+                                    <!--multiple=""-->
+                                    <select tabindex="-1"  class="chosen-select" style="width: 350px; " data-placeholder="Choose 16 VFAT(s) ">
                                         <option value=""></option>
-                                        <optgroup label="Version 1">
+                                        <optgroup label="Long">
                                             <option>VFAT-VI-1-CERN-0001</option>
                                             <option>VFAT-VI-1-BARI-0002</option>
                                             <option>VFAT-VI-1-GHENT-0003</option>
