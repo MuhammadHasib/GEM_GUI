@@ -164,6 +164,11 @@ include "head.php";
 
 
 
+    
 <?php
 include "foot.htm";
 ?>
+<script>
+        $("#partlist”).show();
+$("<?= $FOIL_KIND_OF_PART_NAME; ?>").attr("class","active");
+</script>

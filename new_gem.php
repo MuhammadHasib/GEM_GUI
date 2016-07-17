@@ -327,4 +327,7 @@ include "foot.htm";
 
 
     })
+    
+    $("#partlist”).show();
+$("<?= $FOIL_KIND_OF_PART_NAME; ?>").attr("class","active");
 </script>
