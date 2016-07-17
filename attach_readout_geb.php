@@ -13,6 +13,20 @@ include "head.php";
             <h1 class="page-header">Attach GEB to Readout</h1>
             <img src="images/READOUT-GEB.png" width="10%" style="margin-bottom: 10px; border-radius: 20px;">
 
+                <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    
+                    if(true){
+                        var_dump($_POST);
+    echo '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully attached GEB [] to Readout []   </div>';}
+                    
+} else {
+    
+    echo '<div style="display: none" role="alert" class="alert alert-danger ">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
+    </div>';
+    ?> 
+            
             <form method="POST" action="attach_readout_geb.php">
                 <div class="row">
                     <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
@@ -85,7 +99,7 @@ include "head.php";
 
 
                                 </div>
-                             <div class="form-group shortgebs" style="display: none">
+                             <div class="form-group shortgebs" >
                                     <label for="exampleInputFile">GEB(s)</label>
                                     <input class="gebs" name="gebl" value="" hidden><br>
                                     <!--multiple=""-->
@@ -111,7 +125,7 @@ include "head.php";
                 </div>
                 <button type="submit" class="btn btn-default btn-lg subbutt_ch">Submit</button> 
             </form>
-
+ <?php } ?>
 
         </div>
     </div>
