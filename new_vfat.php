@@ -327,4 +327,7 @@ include "foot.htm";
 
 
     })
+    
+            $("#partlist").show();
+$("<?= $VFAT_ID; ?>").attr("class","active");
 </script>

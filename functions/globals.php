@@ -71,3 +71,26 @@ $MANUFACTURER = "MANUFACTURER";
 
 // 2nd Set of XML sub tags names for chamber 
 
+
+/****SideBar list Tags IDs ****/
+
+// Drift boards
+$DRIFT_ID = "GEMDriftPCB";
+//Kind of part name for GEM Foils
+$FOIL_ID = "GEMFoil";
+//Kind of part name for Readout boards
+$READOUT_ID = "GEMReadoutPCB";
+//Kind of part name for VFAT chips
+$VFAT_ID = "GEMVFAT";
+//Kind of part name for Optohybrids
+$OPTOHYBRID_ID = "GEMOptoHybrid";
+//Kind of part name for AMCs
+$AMC_ID = "GEMAMCGigabitLinkInterfaceBoard";
+//Kind of part name for AMC13
+$AMC13_ID = "GEMAMC13Board";
+//Kind of part name for HUBs
+$HUB_ID = "GEMMainCarrierHUB";
+//Kind of part name for MicroTCAs
+$MICROTCA_ID = "GEMMicroTCACrate";
+//Kind of part name for GEBs
+$GEB_ID = "GEMElectronicsBoard";

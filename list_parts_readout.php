@@ -10,7 +10,7 @@ include "head.php";
       <div class="row">
 <?php  include "side.php"; ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header"><img src="images/ROPCB.PNG" width="4%"> Readouts List</h1>
+            <h1 class="page-header"><img src="images/ROPCB.png" width="4%"> Readouts List</h1>
 
 <a href="new_readout.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new Readout</button></a>
 <!--<form class="navbar-form navbar-right">
@@ -123,5 +123,5 @@ include "foot.htm";
 ?>
 <script>
         $("#partlist").show();
-$("<?= $READOUT_KIND_OF_PART_NAME; ?>").attr("class","active");
+$("<?= $READOUT_ID; ?>").attr("class","active");
 </script>

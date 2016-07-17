@@ -128,3 +128,7 @@ include "head.php";
 include "foot.htm";
 
 ?>
+<script>
+        $("#partlist").show();
+$("<?= $VFAT_ID; ?>").attr("class","active");
+</script>

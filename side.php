@@ -3,12 +3,12 @@
         <li id="dash" class=""><a href="first.php">Dashboard <span class="sr-only">(current)</span></a></li>
         <li id="part" class=""><a href="list_parts.php">Parts</a>
             <ul id="partslist" style="display: none;">
-                <li id="<?= $FOIL_KIND_OF_PART_NAME; ?>" class=""><a href="list_parts_gem.php">FOILs</a>
-                <li id="<?= $GEB_KIND_OF_PART_NAME; ?>" class=""><a href="list_parts_geb.php">GEBs</a>
-                <li id="<?= $DRIFT_KIND_OF_PART_NAME; ?>" class=""><a href="list_parts_drift.php">DRIFTs</a>
-                <li id="<?= $READOUT_KIND_OF_PART_NAME; ?>" class=""><a href="list_parts_readout.php">READOUTs</a>  
-                <li id="<?= $OPTOHYBRID_KIND_OF_PART_NAME; ?>" class=""><a href="list_parts_opto.php">OPTOHYBRIDs</a>
-                <li id="<?= $VFAT_KIND_OF_PART_NAME; ?>" class=""><a href="list_parts_vfat.php">VFATs</a>
+                <li id="<?= $FOIL_ID; ?>" class=""><a href="list_parts_gem.php">FOILs</a>
+                <li id="<?= $GEB_ID; ?>" class=""><a href="list_parts_geb.php">GEBs</a>
+                <li id="<?= $DRIFT_ID; ?>" class=""><a href="list_parts_drift.php">DRIFTs</a>
+                <li id="<?= $READOUT_ID; ?>" class=""><a href="list_parts_readout.php">READOUTs</a>  
+                <li id="<?= $OPTOHYBRID_ID; ?>" class=""><a href="list_parts_opto.php">OPTOHYBRIDs</a>
+                <li id="<?= $VFAT_ID; ?>" class=""><a href="list_parts_vfat.php">VFATs</a>
             </ul>
         </li>
         <li id="chamber" class=""><a href="list_chambers.php">Chambers</a></li>

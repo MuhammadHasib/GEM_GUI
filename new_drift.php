@@ -350,5 +350,5 @@ include "foot.htm";
     })
     
     $("#partlist").show();
-$("<?= $DRIFT_KIND_OF_PART_NAME; ?>").attr("class","active");
+$("<?= $DRIFT_ID; ?>").attr("class","active");
 </script>

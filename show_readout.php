@@ -171,5 +171,5 @@ include "foot.htm";
 
 <script>
         $("#partlist").show();
-$("<?= $READOUT_KIND_OF_PART_NAME; ?>").attr("class","active");
+$("<?= $READOUT_ID; ?>").attr("class","active");
 </script>
