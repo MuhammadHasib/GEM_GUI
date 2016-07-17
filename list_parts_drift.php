@@ -123,6 +123,6 @@ include "foot.htm";
 ?>
 <script>
 
-    $("#partlist”).show();
+    $("#partlist").show();
 $("<?= $DRIFT_KIND_OF_PART_NAME; ?>").attr("class","active");
 </script>

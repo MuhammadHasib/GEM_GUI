@@ -122,6 +122,6 @@ include "foot.htm";
 
 ?>
 <script>
-$("#partlist”).show();
+$("#partlist").show();
 $("<?= $GEB_KIND_OF_PART_NAME; ?>").attr("class","active");
 </script>
