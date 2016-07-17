@@ -15,10 +15,12 @@ include "head.php";
 
                 <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     
-                    if(true){
-                        var_dump($_POST);
-    echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully attached GEB [] to Readout []   </div>';}
+                    if( (isset($_POST['version']) && isset($_POST['rol']) && isset($_POST['gebl']) ) || (isset($_POST['version']) && isset($_POST['ros']) && isset($_POST['gebs'])) ){
+                        if($_POST['version'] == "L"){echo '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully attached GEB ['.$_POST['gebl'].'] to Readout ['.$_POST['rol'].']   </div>';}
+                        if($_POST['version'] == "S"){echo '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully attached GEB ['.$_POST['gebs'].'] to Readout ['.$_POST['ros'].']   </div>';}
+    }
                     
 } else {
     
@@ -35,7 +37,7 @@ include "head.php";
                         </div>
                         <div class="panel-body">
                             <label for="exampleInputFile" >(1) Choose Version L/S ?</label>
-                            <input name="version" value="" hidden>
+                            <input class="version" name="version" value="" hidden>
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     Choose Version
