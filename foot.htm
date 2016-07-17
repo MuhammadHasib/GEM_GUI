@@ -38,10 +38,12 @@
         
         if ($(this).html() == "Long") {
             $(".version").text("L");
+            $(".version").val('L');
             $(".serialInput").val($(".serial").text());
         }
         if ($(this).html() == "Short") {
             $(".version").text("S");
+            $(".version").val('S');
             $(".serialInput").val($(".serial").text());
         }
         if ($(this).html() == "Bari") {
