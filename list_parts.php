@@ -74,13 +74,13 @@ include "head.php";
 
                     <h2 class="sub-header">  parts </h2>
                     <div class="row">
-                        <a href="#"><img src="images/READOUT-GEB.png" width="50%"> </a>
+                        <a href="#" class="imgclick readoutch"><img src="images/READOUT-GEB.png" width="50%" style="margin-bottom: 10px; border-radius: 20px;"> </a>
                     </div>
                     <div class="row">
-                        <a href="#"><img src="images/GEB-OPTO.png" width="50%"> </a>
+                        <a href="#" class="imgclick readoutch"><img src="images/GEB-OPTO.png" width="50%" style="margin-bottom: 10px; border-radius: 20px;"> </a>
                     </div>
                     <div class="row">
-                        <a href="#"><img src="images/GEB-VFAT.png" width="50%"> </a>
+                        <a href="#" class="imgclick readoutch"><img src="images/GEB-VFAT.png" width="50%" style="margin-bottom: 10px; border-radius: 20px;"> </a>
                     </div>
                     
                     
