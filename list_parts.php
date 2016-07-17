@@ -50,7 +50,7 @@ include "head.php";
   </div>
           
         </div>
-        
+        <hr>
              <div class="row">
   <div class="col-xs-6">
          <h4 class="sub-header"><img src="images/GEB.png" width="8%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> GEM Electronic Board GEB </h4>

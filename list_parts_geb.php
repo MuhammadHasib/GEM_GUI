@@ -39,7 +39,7 @@ include "head.php";
                   <td>'.$drift['SERIAL_NUMBER'].'</td>
                   
                   <td><span aria-hidden="true" class="glyphicon glyphicon-user"> '.$drift['RECORD_INSERTION_USER'].' </span></td>
-                  <td><a href="show_gem.php?id='.$drift['SERIAL_NUMBER'].'"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Show</button></a></td>
+                  <td><a href="show_geb.php?id='.$drift['SERIAL_NUMBER'].'"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Show</button></a></td>
                 </tr>';
           }
           
