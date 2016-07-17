@@ -14,7 +14,7 @@ include "head.php";
             <img src="images/READOUT-GEB.png" width="10%" style="margin-bottom: 10px; border-radius: 20px;">
 
                 <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    
+     var_dump($_POST);
                     if( (isset($_POST['version']) && isset($_POST['rol']) && isset($_POST['gebl']) ) || (isset($_POST['version']) && isset($_POST['ros']) && isset($_POST['gebs'])) ){
                         if($_POST['version'] == "L"){echo '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully attached GEB ['.$_POST['gebl'].'] to Readout ['.$_POST['rol'].']   </div>';}
