@@ -126,7 +126,7 @@ include "head.php";
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default btn-lg subbutt_ch">Submit</button> 
+                <button type="submit" class="btn btn-default btn-lg subbutt_at">Submit</button> 
             </form>
  <?php } ?>
 
@@ -175,5 +175,13 @@ include "foot.htm";
         alert($(this).chosen().val()) ;
   });
     
+    
+     $(".subbutt_at").click(function () {
+         if($(".version").val().length == 0 ) { $('.alert-danger').show(); return false;}
+         if(($(".gebs").val().length == 0 && $(".gebl").val().length == 0) || ($(".rol").val().length == 0 && $(".ros").val().length == 0) )
+         {
+             $('.alert-danger').show(); return false;
+         }
+     })
     
 </script>
