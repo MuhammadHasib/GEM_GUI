@@ -2,7 +2,7 @@
     <ul class="nav nav-sidebar">
         <li id="dash" class=""><a href="first.php">Dashboard <span class="sr-only">(current)</span></a></li>
         <li id="part" class=""><a href="list_parts.php">Parts</a>
-            <ul id="partslist" style="display: none;" class="nav nav-sidebar ">
+            <ul id="partslist" style="display: none; margin-left: 0px;" class=" nav-sidebar ">
                 <li id="<?= $FOIL_ID; ?>" class=""><a href="list_parts_gem.php">FOILs</a>
                 <li id="<?= $GEB_ID; ?>" class=""><a href="list_parts_geb.php">GEBs</a>
                 <li id="<?= $DRIFT_ID; ?>" class=""><a href="list_parts_drift.php">DRIFTs</a>
