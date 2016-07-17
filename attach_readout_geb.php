@@ -177,11 +177,12 @@ include "foot.htm";
     
     
      $(".subbutt_at").click(function () {
-         if($(".version").val().length == 0 ) { $('.alert-danger').show(); return false;}
+         if($(".version").html().length == 0 ) { $('.alert-danger').show(); return false;}
          if(($(".gebs").val().length == 0 && $(".gebl").val().length == 0) || ($(".rol").val().length == 0 && $(".ros").val().length == 0) )
          {
              $('.alert-danger').show(); return false;
          }
      })
-    
+//    alert($(".version").val().length);
+//    alert($(".gebs").val().length);alert($(".gebl").val().length);alert($(".rol").val().length );alert($(".ros").val().length);
 </script>
