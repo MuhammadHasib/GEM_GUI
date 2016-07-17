@@ -22,7 +22,7 @@ include "head.php";
                     <!-- Columns are always 50% wide -->
                     <div class="row">
                         <div class="col-xs-6 center-block">
-                        <h4 class="sub-header"> <img src="images/ROPCB.png" width="20%"><!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span> --> Readout boards </h4>
+                        <h4 class="sub-header"> <img src="images/ROPCB.png" width="20%"><!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span> --> Readout board </h4>
 
                             <a href="new_readout.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
                             <a href="list_parts_readout.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
@@ -37,7 +37,7 @@ include "head.php";
                     <hr>
                     <div class="row">
                         <div class="col-xs-6">
-                        <h4 class="sub-header"><img src="images/DRIFTPCB.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> Drift </h4>
+                        <h4 class="sub-header"><img src="images/DRIFTPCB.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> Drift board </h4>
 
                             <a href="new_drift.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
                             <a href="list_parts_drift.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
@@ -53,13 +53,13 @@ include "head.php";
                     <hr>
                     <div class="row">
                         <div class="col-xs-6">
-                               <h4 class="sub-header"><img src="images/GEB.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> GEM Electronic Board GEB </h4>
+                               <h4 class="sub-header"><img src="images/GEB.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> GEM Electronic Board </h4>
 
                             <a href="new_geb.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
                             <a href="list_parts_geb.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
                         </div>
                         <div class="col-xs-6">
-                                    <h4 class="sub-header"><img src="images/opto1.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> OptoHybrids </h4>
+                                    <h4 class="sub-header"><img src="images/opto1.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> OptoHybrid </h4>
 
                             <a href="new_opto.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
                             <a href="list_parts_opto.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
@@ -73,14 +73,14 @@ include "head.php";
                     <h1 class="page-header">Attach</h1>
 
                     <h2 class="sub-header">  parts </h2>
-                    <div class="row">
-                        <a href="#" class="imgclick readoutch"><img src="images/READOUT-GEB.png" width="50%" style="margin-bottom: 10px; border-radius: 20px;"> </a>
+                    <div class="row hover13" style="text-align: center">
+                        <a href="attach_readout_geb.php" class="imgclick readoutch"><img src="images/READOUT-GEB.png" width="50%" style="margin-bottom: 10px; border-radius: 20px;"> </a>
                     </div>
-                    <div class="row">
-                        <a href="#" class="imgclick readoutch"><img src="images/GEB-OPTO.png" width="50%" style="margin-bottom: 10px; border-radius: 20px;"> </a>
+                    <div class="row hover13" style="text-align: center">
+                        <a href="attach_geb_opto.php" class="imgclick readoutch"><img src="images/GEB-OPTO.png" width="50%" style="margin-bottom: 10px; border-radius: 20px;"> </a>
                     </div>
-                    <div class="row">
-                        <a href="#" class="imgclick readoutch"><img src="images/GEB-VFAT.png" width="50%" style="margin-bottom: 10px; border-radius: 20px;"> </a>
+                    <div class="row hover13" style="text-align: center">
+                        <a href="attach_geb_vfat.php" class="imgclick readoutch"><img src="images/GEB-VFAT.png" width="50%" style="margin-bottom: 10px; border-radius: 20px;"> </a>
                     </div>
                     
                     
