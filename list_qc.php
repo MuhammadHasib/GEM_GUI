@@ -24,17 +24,18 @@ include "head.php";
             </div>
           </div></li>-->
          
-            <li class="list-group-item"><div class="panel panel-default">
+<!--            <li class="list-group-item"><div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">IV Characteristics</h3>
             </div>
             <div class="panel-body">
              <a href="new_qc_iv.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new IV Characteristics</button></a>
             </div>
-          </div></li>
-
-          
-          
+          </div></li>-->
+<li class="list-group-item" style="text-align:center">
+        <span class="label label-warning"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Notification !!</span>
+          <div class="alert alert-warning" role="alert" style="text-align: center;"><span aria-hidden="true" class="glyphicon glyphicon-wrench"></span> Still Under Development, We'll keep you informed Soon <span aria-hidden="true" class="glyphicon glyphicon-hourglass"></span></div>
+</li>
           </ul>
           
         </div>
