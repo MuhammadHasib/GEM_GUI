@@ -170,7 +170,7 @@ include "foot.htm";
 ?>
 <script>
          jQuery(document).ready(function($) {
-        $("#partlist").show();
+        $("#partslist").show();
 $("#<?= $FOIL_ID; ?>").attr("class","active");
 })
 </script>

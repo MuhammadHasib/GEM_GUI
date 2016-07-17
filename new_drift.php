@@ -350,7 +350,7 @@ include "foot.htm";
     })
     
  jQuery(document).ready(function($) {
-    $("#partlist").show();
+    $("#partslist").show();
 $("#<?= $DRIFT_ID; ?>").attr("class","active");
 })
 </script>

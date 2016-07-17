@@ -131,7 +131,7 @@ include "foot.htm";
 <script>
  jQuery(document).ready(function($) {
  
- $("#partlist").show();
+ $("#partslist").show();
 $("#<?= $VFAT_ID; ?>").attr("class","active");
 
  }) 

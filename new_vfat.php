@@ -329,7 +329,7 @@ include "foot.htm";
     })
  jQuery(document).ready(function($) {
  
- $("#partlist").show();
+ $("#partslist").show();
 $("#<?= $VFAT_ID; ?>").attr("class","active");
 
  })   

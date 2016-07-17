@@ -123,7 +123,7 @@ include "foot.htm";
 ?>
 <script>
                  jQuery(document).ready(function($) {
-        $("#partlist").show();
+        $("#partslist").show();
 $("#<?= $READOUT_ID; ?>").attr("class","active");
 })
 
