@@ -277,7 +277,7 @@ function get_institutes(){
 
 
 /*
- * Name: get_available_parts
+ * Name: get_available_parts (parts with no parent)
  * Description: Get list of parts ( Foil,Drift,Readout, chamber) not attached to chambers according to v (L or S) and kind
  * return: Array
  * Autor: Ola Aboamer [o.aboamer@cern.ch]
@@ -305,8 +305,10 @@ function get_available_parts($part_id, $version) {
     return 1;
 }
 
+
+
 /*
- * Name: get_available_parts_nohtml
+ * Name: get_available_parts_nohtml (Parts with no parent)
  * Description: Get list of parts ( Foil,Drift,Readout, chamber) not attached to chambers according to v (L or S) and kind
  * return: Array
  * Autor: Ola Aboamer [o.aboamer@cern.ch]
@@ -332,6 +334,36 @@ function get_available_parts_nohtml($part_id, $version) {
     }
     return $result_arr;
 }
+
+/*
+ * Name: get_available_parts_nochild ( Parts with no childrens )
+ * Description: Get list of parts ( Foil,Drift,Readout, chamber) not attached to chambers according to v (L or S) and kind
+ * return: Array
+ * Autor: Ola Aboamer [o.aboamer@cern.ch]
+*/
+
+function get_available_parts_nochild($part_id, $version) {
+    // Database connection 
+    $conn = database_connection();
+
+    $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND PART_ID not in (select PART_PARENT_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; //select data or insert data 
+    
+    
+    $query = oci_parse($conn, $sql);
+    //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
+    $arr = oci_execute($query);
+
+    $result_arr = array();
+    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+        echo '<li><a href="#" class="availablepart" >' . $row['SERIAL_NUMBER'] . '</a></li>';
+
+//                $temp['man_id']= $row['MANUFACTURER_ID'];
+//                $temp['man_name']= $row['MANUFACTURER_NAME'];
+//            $result_arr[] = $temp;
+    }
+    return 1;
+}
+
 /*
  * Name: get_attached_parts
  * Description: Get list of parts ( Foil,Drift,Readout, chamber)  attached to chamber/super chamber 
