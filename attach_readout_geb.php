@@ -33,12 +33,10 @@ include "head.php";
                             </div>
 
                             <div class="rellists">
+                                <label for="exampleInputFile" >Readout where GEB will be mounted</label>
+                                
                                 <!-- Readout S-->
-                                <div class="form-group shortreads" style="background: rgb(236, 249, 249) none repeat scroll 0 0;border: 1px outset;border-radius: 15px;  <?php
-                                if ($serial_num[2] == "L") {
-                                    echo "display: none;";
-                                }
-                                ?>">
+                                <div class="form-group shortreads" style="display: none">
                                     <input class="ros" name="ros"  hidden>
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -53,11 +51,7 @@ include "head.php";
                                 </div>
 
                                 <!-- Readout L-->
-                                <div class="form-group longreads" style="background: rgb(236, 249, 249) none repeat scroll 0 0;border: 1px outset;border-radius: 15px;  <?php
-                                if ($serial_num[2] == "S") {
-                                    echo "display: none;";
-                                }
-                                ?>">
+                                <div class="form-group longreads" >
                                     <input class="rol" name="rol"  hidden>
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -70,7 +64,36 @@ include "head.php";
 
                                     </div>
                                 </div>
-                            </div>   
+                            </div>
+                            
+                            <div class="form-group">
+                                    <label for="exampleInputFile">VFAT(s)</label>
+                                    <input name="vfatIds" value="" hidden><br>
+                                    <select tabindex="-1" multiple="" class="chosen-select" style="width: 350px; " data-placeholder="Choose 16 VFAT(s) ">
+                                        <option value=""></option>
+                                        <optgroup label="Version 1">
+                                            <option>VFAT-VI-1-CERN-0001</option>
+                                            <option>VFAT-VI-1-BARI-0002</option>
+                                            <option>VFAT-VI-1-GHENT-0003</option>
+                                            <option>VFAT-VI-1-CERN-0004</option>
+                                        </optgroup>
+                                        <optgroup label="Version 2">
+                                            <option>VFAT-VI-2-CERN-0001</option>
+                                            <option>VFAT-VI-2-BARI-0002</option>
+                                            <option>VFAT-VI-2-GHENT-0003</option>
+                                            <option>VFAT-VI-2-CERN-0004</option>
+                                        </optgroup>
+                                        <optgroup label="Version 3">
+                                            <option>VFAT-VI-3-CERN-0001</option>
+                                            <option>VFAT-VI-3-BARI-0002</option>
+                                            <option>VFAT-VI-3-GHENT-0003</option>
+                                            <option>VFAT-VI-3-CERN-0004</option>
+                                        </optgroup>
+                                    </select>
+
+
+                                </div>
+                            
                         </div>
                     </div>
                 </div>
