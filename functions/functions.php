@@ -327,8 +327,7 @@ function get_available_parts_nohtml($part_id, $version) {
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
 //        echo '<li><a href="#" class="availablepart" >' . $row['SERIAL_NUMBER'] . '</a></li>';
 
-                $temp['man_id']= $row['MANUFACTURER_ID'];
-                $temp['man_name']= $row['MANUFACTURER_NAME'];
+                $temp['SERIAL_NUMBER']= $row['SERIAL_NUMBER'];
             $result_arr[] = $temp;
     }
     return $result_arr;

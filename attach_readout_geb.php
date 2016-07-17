@@ -92,8 +92,9 @@ include "head.php";
                                     <select tabindex="-1"  class="chosen-select" style="width: 350px; " data-placeholder="Choose Short GEB ">
                                         <option value=""></option>
                                         <optgroup label="Short">
-                                            <?php $arr= get_available_parts_nohtml($GEB_KIND_OF_PART_ID, "-S-"); 
-                                                foreach ($arr as $value) {
+                                            <?php $ar = get_available_parts_nohtml($GEB_KIND_OF_PART_ID, "-S-"); 
+                                                print_r($ar);
+                                                foreach ($ar as $value) {
                                                         echo "<option>".$value['SERIAL_NUMBER']."</option>";
                                                     }
                                             ?>
@@ -135,6 +136,7 @@ include "foot.htm";
         if ($(this).html() == "Short") {
 
             $(".shortreads,.shortgebs").show();
+            $(".chosen-select").chosen();
             $(".longreads,.longgebs").hide();
             $(".rol,.gebl").val("");
 
