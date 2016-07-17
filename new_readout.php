@@ -352,7 +352,9 @@ include "foot.htm";
 
     })
     
-    $("#partlist").show();
-$("<?= $READOUT_ID; ?>").attr("class","active");
+                 jQuery(document).ready(function($) {
+        $("#partlist").show();
+$("#<?= $READOUT_ID; ?>").attr("class","active");
+})
     
 </script>

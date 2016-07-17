@@ -328,6 +328,8 @@ include "foot.htm";
 
     })
     
-    $("#partlist").show();
-$("<?= $FOIL_ID; ?>").attr("class","active");
+         jQuery(document).ready(function($) {
+        $("#partlist").show();
+$("#<?= $FOIL_ID; ?>").attr("class","active");
+})
 </script>

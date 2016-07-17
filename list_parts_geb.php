@@ -122,6 +122,8 @@ include "foot.htm";
 
 ?>
 <script>
+     jQuery(document).ready(function($) {
 $("#partlist").show();
-$("<?= $GEB_ID; ?>").attr("class","active");
+$("#<?= $GEB_ID; ?>").attr("class","active");
+})
 </script>

@@ -326,10 +326,10 @@ include "foot.htm";
         }
 
 
-    })
-    
-
+  
+     jQuery(document).ready(function($) {
 $("#partlist").show();
-$("<?= $GEB_ID; ?>").attr("class","active");
+$("#<?= $GEB_ID; ?>").attr("class","active");
+})
 
 </script>

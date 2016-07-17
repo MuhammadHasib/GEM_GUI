@@ -122,6 +122,9 @@ include "foot.htm";
 
 ?>
 <script>
+             jQuery(document).ready(function($) {
     $("#partlist").show();
-$("<?= $OPTOHYBRID_ID; ?>").attr("class","active");
+$("#<?= $OPTOHYBRID_ID; ?>").attr("class","active");
+})
+
 </script>

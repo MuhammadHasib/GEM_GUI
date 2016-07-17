@@ -170,6 +170,8 @@ include "foot.htm";
 ?>
 
 <script>
+                 jQuery(document).ready(function($) {
         $("#partlist").show();
-$("<?= $READOUT_ID; ?>").attr("class","active");
+$("#<?= $READOUT_ID; ?>").attr("class","active");
+})
 </script>

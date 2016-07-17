@@ -169,6 +169,8 @@ include "head.php";
 include "foot.htm";
 ?>
 <script>
+         jQuery(document).ready(function($) {
         $("#partlist").show();
-$("<?= $FOIL_ID; ?>").attr("class","active");
+$("#<?= $FOIL_ID; ?>").attr("class","active");
+})
 </script>

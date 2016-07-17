@@ -122,7 +122,8 @@ include "foot.htm";
 
 ?>
 <script>
-
+ jQuery(document).ready(function($) {
     $("#partlist").show();
-$("<?= $DRIFT_ID; ?>").attr("class","active");
+$("#<?= $DRIFT_ID; ?>").attr("class","active");
+})
 </script>
