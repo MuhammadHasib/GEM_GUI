@@ -113,7 +113,7 @@ include "functions/globals.php";
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <a class="navbar-brand" href="#"> <img src="images/logo.jpg" style="height:35px;
+            <a class="navbar-brand" href="first.php"> <img src="images/logo.jpg" style="height:35px;
 width:35px;
 display:inline-block;    
 text-decoration: none;
