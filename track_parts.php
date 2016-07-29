@@ -11,7 +11,7 @@ include "head.php";
 <link rel="stylesheet" href="ace-master/assets/css/fonts.googleapis.com.css" />
 
 <!-- ace styles -->
-<link rel="stylesheet" href="ace-master/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+<!--<link rel="stylesheet" href="ace-master/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />-->
 
 <!--[if lte IE 9]>
         <link rel="stylesheet" href="ace-master/assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
