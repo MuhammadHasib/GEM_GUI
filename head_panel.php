@@ -1,5 +1,5 @@
 <!-- bootstrap & fontawesome -->
-<link rel="stylesheet" href="ace-master/assets/css/bootstrap.min.css" />
+<!--<link rel="stylesheet" href="ace-master/assets/css/bootstrap.min.css" />-->
 <link rel="stylesheet" href="ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 <!-- page specific plugin styles -->
