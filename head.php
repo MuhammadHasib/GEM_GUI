@@ -135,3 +135,4 @@ vertical-align:text-center; border-radius: 25px; margin-top: -8px;">  GEM Detect
         </div>
       </div>
     </nav>
+<?php include "head_panel.php"; ?>
