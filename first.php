@@ -17,30 +17,48 @@ include "head.php";
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="images/parts.png" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 150px;">
               <h4>Parts</h4>
-              <span class="text-muted">List detector parts</span>
+              <span class="text-muted">Add/Edit/List detector parts</span>
             </div>
             </a>
             <a href="list_chambers.php">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="images/c1.bmp" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 150px;">
               <h4>Chambers</h4>
-              <span class="text-muted">List single chambers</span>
+              <span class="text-muted">Add/Edit/List single chambers</span>
             </div>
             </a>
             <a href="list_sup_chambers.php">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="images/sc1.bmp" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 150px;">
               <h4>Super Chambers</h4>
-              <span class="text-muted">List Super chambers</span>
+              <span class="text-muted">Add/Edit/List Super chambers</span>
             </div>
             </a>
             <a href="list_qc.php">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="images/qc.png" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 150px;">
               <h4>Quality controls</h4>
-              <span class="text-muted">List Quality controls</span>
+              <span class="text-muted">Add/Edit/List Quality controls</span>
             </div>
             </a>
+          </div>
+          
+          <div class="row placeholders">
+            <a href="#">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="images/tracking1.png" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 150px;">
+              <h4>Track Parts</h4>
+              <span class="text-muted">track all components</span>
+            </div>
+            </a>
+            <a href="#">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="images/tracking_channels1.png" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 150px;">
+              <h4>GEM Channel Mapping</h4>
+              <span class="text-muted">Search for connector pin numbers</span>
+            </div>
+            </a>
+            
           </div>
 <!--
           <h2 class="sub-header">Section title</h2>
