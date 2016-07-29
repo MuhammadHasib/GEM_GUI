@@ -2,7 +2,7 @@
     <ul class="nav nav-sidebar">
         <li id="dash" class=""><a href="first.php"><i class="menu-icon fa fa-tachometer"></i> Dashboard <span class="sr-only">(current)</span></a></li>
         <li id="part" class=""><a href="list_parts.php"><i class="menu-icon fa fa-file-o"></i> Parts</a>
-            <ul id="partslist" style="display: none; margin-left: 0px;" class="  ">
+            <ul id="partslist" style="display: none; margin-left: 45px;" class="  ">
                 <li id="<?= $FOIL_ID; ?>" class=""><a href="list_parts_gem.php">FOILs</a>
                 <li id="<?= $GEB_ID; ?>" class=""><a href="list_parts_geb.php">GEBs</a>
                 <li id="<?= $DRIFT_ID; ?>" class=""><a href="list_parts_drift.php">DRIFTs</a>
