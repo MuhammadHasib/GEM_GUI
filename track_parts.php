@@ -27,7 +27,7 @@ include "side.php";
 
                 <div class="page-content">
 
-                    <div class="page-header">
+<!--                    <div class="page-header">
                         <h1>
                             Tables
                             <small>
@@ -35,7 +35,8 @@ include "side.php";
                                 Static &amp; Dynamic Tables
                             </small>
                         </h1>
-                    </div><!-- /.page-header -->
+                    </div>-->
+                    <!-- /.page-header -->
 
                     <div class="row">
                         <div class="col-xs-12">

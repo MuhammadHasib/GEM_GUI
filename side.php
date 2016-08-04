@@ -15,7 +15,7 @@
         <li id="schamber" class=""><a href="list_sup_chambers.php"><i class="menu-icon fa fa-file-o"></i> SuperChambers</a></li>
         <li id="qc" class=""><a href="list_qc.php"><i class="menu-icon fa fa-file-o"></i> Quality Controls</a></li>
         <li id="track" class=""><a href="track_parts.php"><span aria-hidden="true" class="glyphicon glyphicon-globe"></span> Tracking Parts</a></li>
-        <li id="map" class=""><a href="list_qc.php"><span aria-hidden="true" class="glyphicon glyphicon-search"></span> Channel mapping</a></li>
+        <li id="map" class=""><a href="search_channels_pin.php"><span aria-hidden="true" class="glyphicon glyphicon-search"></span> Channel mapping</a></li>
     </ul>
     <!-- <ul class="nav nav-sidebar">
        <li><a href="">Nav item</a></li>

@@ -10,13 +10,13 @@
                     <ul class="breadcrumb">
                         <li>
                             <i class="ace-icon fa fa-home home-icon"></i>
-                            <a href="#">Home</a>
+                            <a href="first.php">Home</a>
                         </li>
 
                         <li>
-                            <a href="#">Tables</a>
+                            <a href="#" lass="active">Tracking parts</a>
                         </li>
-                        <li class="active">Simple &amp; Dynamic</li>
+                       
                     </ul><!-- /.breadcrumb -->
 
                     <div class="nav-search" id="nav-search">
