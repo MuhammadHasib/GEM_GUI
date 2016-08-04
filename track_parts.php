@@ -40,30 +40,32 @@ include "side.php";
                     <div class="row">
                         <div class="col-xs-12">
                             <!-- PAGE CONTENT BEGINS -->
-                            <h3 class="header smaller lighter blue">jQuery dataTables</h3>
+                            <!--<h3 class="header smaller lighter blue">jQuery dataTables</h3>
 
 										<div class="clearfix">
 											<div class="pull-right tableTools-container"></div>
-										</div>
+										</div>-->
                             <div class="row">
                                 <div class="col-xs-12">
                                     <table id="simple-table" class="table  table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th class="center">
-                                                    <label class="pos-rel">
+<!--                                                    <label class="pos-rel">
                                                         <input type="checkbox" class="ace" />
                                                         <span class="lbl"></span>
-                                                    </label>
+                                                    </label>-->
+                                                    #
                                                 </th>
-                                                <th class="detail-col">Details</th>
-                                                <th>Domain</th>
-                                                <th>Price</th>
-                                                <th class="hidden-480">Clicks</th>
+                                                <th>Details</th>
+                                                <th class="detail-col">Barcode/Serial</th>
+                                                <th>Kind of Part</th>
+                                                
+                                                <th class="hidden-480">User Responsible</th>
 
                                                 <th>
                                                     <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-                                                    Update
+                                                    Created at
                                                 </th>
                                                 <th class="hidden-480">Status</th>
 
@@ -74,10 +76,7 @@ include "side.php";
                                         <tbody>
                                             <tr>
                                                 <td class="center">
-                                                    <label class="pos-rel">
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
+                                                    1
                                                 </td>
 
                                                 <td class="center">
@@ -90,14 +89,14 @@ include "side.php";
                                                 </td>
 
                                                 <td>
-                                                    <a href="#">ace.com</a>
+                                                    <a href="#">878657575675</a>
                                                 </td>
-                                                <td>$45</td>
-                                                <td class="hidden-480">3,330</td>
+                                                <td>GEM FOIL</td>
+                                                <td class="hidden-480">Alex</td>
                                                 <td>Feb 12</td>
 
                                                 <td class="hidden-480">
-                                                    <span class="label label-sm label-warning">Expiring</span>
+                                                    <span class="label label-sm label-warning">Shipped</span>
                                                 </td>
 
                                                 <td>
@@ -161,7 +160,7 @@ include "side.php";
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-2">
                                                                 <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/avatars/profile-pic.jpg" />
+                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/placeholder/255x150.pngg" />
                                                                     <br />
                                                                     <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
                                                                         <div class="inline position-relative">
@@ -192,12 +191,12 @@ include "side.php";
 
                                                                         <div class="profile-info-value">
                                                                             <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>Netherlands, Amsterdam</span>
+                                                                            <span>CERN</span>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Age </div>
+                                                                        <div class="profile-info-name"> From/To </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>38</span>
@@ -205,7 +204,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Joined </div>
+                                                                        <div class="profile-info-name"> Date shipping </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>2010/06/20</span>
@@ -213,7 +212,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last Online </div>
+                                                                        <div class="profile-info-name"> Last modified </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>3 hours ago</span>
@@ -221,7 +220,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> About Me </div>
+                                                                        <div class="profile-info-name"> Description  </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>Bio</span>
@@ -230,7 +229,7 @@ include "side.php";
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-xs-12 col-sm-3">
+<!--                                                            <div class="col-xs-12 col-sm-3">
                                                                 <div class="space visible-xs"></div>
                                                                 <h4 class="header blue lighter less-margin">Send a message to Alex</h4>
 
@@ -255,7 +254,7 @@ include "side.php";
                                                                         </button>
                                                                     </div>
                                                                 </form>
-                                                            </div>
+                                                            </div>-->
                                                         </div>
                                                     </div>
                                                 </td>
@@ -263,10 +262,7 @@ include "side.php";
 
                                             <tr>
                                                 <td class="center">
-                                                    <label class="pos-rel">
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
+                                                    2
                                                 </td>
 
                                                 <td class="center">
@@ -350,7 +346,7 @@ include "side.php";
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-2">
                                                                 <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/avatars/profile-pic.jpg" />
+                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/placeholder/255x150.pngg" />
                                                                     <br />
                                                                     <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
                                                                         <div class="inline position-relative">
@@ -381,12 +377,12 @@ include "side.php";
 
                                                                         <div class="profile-info-value">
                                                                             <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>Netherlands, Amsterdam</span>
+                                                                            <span>DELHI</span>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Age </div>
+                                                                        <div class="profile-info-name"> From/To </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>38</span>
@@ -394,7 +390,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Joined </div>
+                                                                        <div class="profile-info-name"> Date shipping </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>2010/06/20</span>
@@ -402,7 +398,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last Online </div>
+                                                                        <div class="profile-info-name"> Last modified </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>3 hours ago</span>
@@ -410,7 +406,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> About Me </div>
+                                                                        <div class="profile-info-name"> Description  </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>Bio</span>
@@ -419,32 +415,7 @@ include "side.php";
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-xs-12 col-sm-3">
-                                                                <div class="space visible-xs"></div>
-                                                                <h4 class="header blue lighter less-margin">Send a message to Alex</h4>
-
-                                                                <div class="space-6"></div>
-
-                                                                <form>
-                                                                    <fieldset>
-                                                                        <textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
-                                                                    </fieldset>
-
-                                                                    <div class="hr hr-dotted"></div>
-
-                                                                    <div class="clearfix">
-                                                                        <label class="pull-left">
-                                                                            <input type="checkbox" class="ace" />
-                                                                            <span class="lbl"> Email me a copy</span>
-                                                                        </label>
-
-                                                                        <button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
-                                                                            Submit
-                                                                            <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </td>
@@ -452,10 +423,7 @@ include "side.php";
 
                                             <tr>
                                                 <td class="center">
-                                                    <label class="pos-rel">
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
+                                                    3
                                                 </td>
 
                                                 <td class="center">
@@ -539,7 +507,7 @@ include "side.php";
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-2">
                                                                 <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/avatars/profile-pic.jpg" />
+                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/placeholder/255x150.pngg" />
                                                                     <br />
                                                                     <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
                                                                         <div class="inline position-relative">
@@ -570,12 +538,12 @@ include "side.php";
 
                                                                         <div class="profile-info-value">
                                                                             <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>Netherlands, Amsterdam</span>
+                                                                            <span>INFN</span>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Age </div>
+                                                                        <div class="profile-info-name"> From/To </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>38</span>
@@ -583,7 +551,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Joined </div>
+                                                                        <div class="profile-info-name"> Date shipping </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>2010/06/20</span>
@@ -591,7 +559,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last Online </div>
+                                                                        <div class="profile-info-name"> Last modified </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>3 hours ago</span>
@@ -599,7 +567,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> About Me </div>
+                                                                        <div class="profile-info-name"> Description  </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>Bio</span>
@@ -608,32 +576,7 @@ include "side.php";
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-xs-12 col-sm-3">
-                                                                <div class="space visible-xs"></div>
-                                                                <h4 class="header blue lighter less-margin">Send a message to Alex</h4>
-
-                                                                <div class="space-6"></div>
-
-                                                                <form>
-                                                                    <fieldset>
-                                                                        <textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
-                                                                    </fieldset>
-
-                                                                    <div class="hr hr-dotted"></div>
-
-                                                                    <div class="clearfix">
-                                                                        <label class="pull-left">
-                                                                            <input type="checkbox" class="ace" />
-                                                                            <span class="lbl"> Email me a copy</span>
-                                                                        </label>
-
-                                                                        <button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
-                                                                            Submit
-                                                                            <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </td>
@@ -641,10 +584,7 @@ include "side.php";
 
                                             <tr>
                                                 <td class="center">
-                                                    <label class="pos-rel">
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
+                                                    4
                                                 </td>
 
                                                 <td class="center">
@@ -728,7 +668,7 @@ include "side.php";
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-2">
                                                                 <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/avatars/profile-pic.jpg" />
+                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/placeholder/255x150.pngg" />
                                                                     <br />
                                                                     <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
                                                                         <div class="inline position-relative">
@@ -759,12 +699,12 @@ include "side.php";
 
                                                                         <div class="profile-info-value">
                                                                             <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>Netherlands, Amsterdam</span>
+                                                                            <span>TIF</span>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Age </div>
+                                                                        <div class="profile-info-name"> From/To </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>38</span>
@@ -772,7 +712,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Joined </div>
+                                                                        <div class="profile-info-name"> Date shipping </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>2010/06/20</span>
@@ -780,7 +720,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last Online </div>
+                                                                        <div class="profile-info-name"> Last modified </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>3 hours ago</span>
@@ -788,7 +728,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> About Me </div>
+                                                                        <div class="profile-info-name"> Description  </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>Bio</span>
@@ -797,32 +737,7 @@ include "side.php";
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-xs-12 col-sm-3">
-                                                                <div class="space visible-xs"></div>
-                                                                <h4 class="header blue lighter less-margin">Send a message to Alex</h4>
-
-                                                                <div class="space-6"></div>
-
-                                                                <form>
-                                                                    <fieldset>
-                                                                        <textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
-                                                                    </fieldset>
-
-                                                                    <div class="hr hr-dotted"></div>
-
-                                                                    <div class="clearfix">
-                                                                        <label class="pull-left">
-                                                                            <input type="checkbox" class="ace" />
-                                                                            <span class="lbl"> Email me a copy</span>
-                                                                        </label>
-
-                                                                        <button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
-                                                                            Submit
-                                                                            <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </td>
@@ -830,10 +745,7 @@ include "side.php";
 
                                             <tr>
                                                 <td class="center">
-                                                    <label class="pos-rel">
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>
+                                                    5
                                                 </td>
 
                                                 <td class="center">
@@ -853,7 +765,7 @@ include "side.php";
                                                 <td>Jan 21</td>
 
                                                 <td class="hidden-480">
-                                                    <span class="label label-sm label-success">Registered</span>
+                                                   <span class="label label-sm label-info arrowed arrowed-righ">Sold</span>
                                                 </td>
 
                                                 <td>
@@ -917,7 +829,7 @@ include "side.php";
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-2">
                                                                 <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/avatars/profile-pic.jpg" />
+                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="ace-master/assets/images/placeholder/255x150.png" />
                                                                     <br />
                                                                     <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
                                                                         <div class="inline position-relative">
@@ -948,12 +860,12 @@ include "side.php";
 
                                                                         <div class="profile-info-value">
                                                                             <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>Netherlands, Amsterdam</span>
+                                                                            <span>904</span>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Age </div>
+                                                                        <div class="profile-info-name"> From/To </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>38</span>
@@ -961,7 +873,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Joined </div>
+                                                                        <div class="profile-info-name"> Date shipping </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>2010/06/20</span>
@@ -969,7 +881,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last Online </div>
+                                                                        <div class="profile-info-name"> Last modified </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>3 hours ago</span>
@@ -977,7 +889,7 @@ include "side.php";
                                                                     </div>
 
                                                                     <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> About Me </div>
+                                                                        <div class="profile-info-name"> Description  </div>
 
                                                                         <div class="profile-info-value">
                                                                             <span>Bio</span>
@@ -986,32 +898,7 @@ include "side.php";
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-xs-12 col-sm-3">
-                                                                <div class="space visible-xs"></div>
-                                                                <h4 class="header blue lighter less-margin">Send a message to Alex</h4>
-
-                                                                <div class="space-6"></div>
-
-                                                                <form>
-                                                                    <fieldset>
-                                                                        <textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
-                                                                    </fieldset>
-
-                                                                    <div class="hr hr-dotted"></div>
-
-                                                                    <div class="clearfix">
-                                                                        <label class="pull-left">
-                                                                            <input type="checkbox" class="ace" />
-                                                                            <span class="lbl"> Email me a copy</span>
-                                                                        </label>
-
-                                                                        <button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
-                                                                            Submit
-                                                                            <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </td>
