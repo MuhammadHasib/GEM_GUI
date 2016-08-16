@@ -108,7 +108,7 @@ function SendXML($LocalFilePATH) {
     ini_set('display_errors', 1);
 
 //CURL
-
+echo $LocalFilePATH;
     $username = $_SESSION['user'];
     $password = "kucr3PREruVUchAwEc";
     $target_url = "http://gem-machine-a.cern.ch/cmsdbldr/gem/int2r";
