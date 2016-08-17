@@ -12,8 +12,8 @@ function generateXml($arr) {
     //print_r($arr);
 
     /* Error Reporting */
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+//    error_reporting(E_ALL);
+//    ini_set('display_errors', 1);
 
     $xml = new DOMDocument("1.0");
     $root = $xml->createElement("ROOT");
