@@ -86,7 +86,7 @@ function generateXml($arr) {
     //echo $xml_contents;
     $serialNum = str_replace("/", "-", $serialNum);
     //echo exec('whoami');
-    chmod("gen_xml/", 0755);
+    //chmod("gen_xml/", 0755);
     $LocalFilePATH = "gen_xml/" . $serialNum . ".xml";
     $LocalFileName = $serialNum . ".xml";
     //Generate the file and save it on directory
