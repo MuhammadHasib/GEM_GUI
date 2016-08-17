@@ -111,7 +111,9 @@ function SendXML($LocalFilePATH) {
 echo $LocalFilePATH;
     $username = $_SESSION['user'];
     $password = "kucr3PREruVUchAwEc";
-    $target_url = "http://gem-machine-a.cern.ch/cmsdbldr/gem/int2r";
+    //$target_url = "http://gem-machine-a.cern.ch/cmsdbldr/gem/int2r";
+    $target_url = "http://gem-machine-b.cern.ch/cmsdbldr/gem/int2r";
+     
 echo $username;
     $file_name_with_full_path = realpath($LocalFilePATH);
     $post = array('file' => '@' . $file_name_with_full_path);
