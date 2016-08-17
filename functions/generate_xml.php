@@ -115,7 +115,7 @@ echo $LocalFilePATH;
 echo $username;
     $file_name_with_full_path = realpath($LocalFilePATH);
     $post = array('file' => '@' . $file_name_with_full_path);
-
+echo $file_name_with_full_path;
     $ch = curl_init($target_url);
     curl_setopt($ch, CURLOPT_URL, $target_url);
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
