@@ -114,10 +114,10 @@ echo $LocalFilePATH;
     //$target_url = "http://gem-machine-a.cern.ch/cmsdbldr/gem/int2r";
     $target_url = "http://gem-machine-b.cern.ch/cmsdbldr/gem/int2r";
      
-echo $username;
+
     $file_name_with_full_path = realpath($LocalFilePATH);
     $post = array('file' => '@' . $file_name_with_full_path);
-echo $file_name_with_full_path;
+
     $ch = curl_init($target_url);
     curl_setopt($ch, CURLOPT_URL, $target_url);
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
@@ -129,9 +129,9 @@ echo $file_name_with_full_path;
     $return = curl_exec($ch);
     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-    echo "status code:";
+    echo "</br>status code:";
     print_r($status_code);
-    echo "exec return:" . $return;
+    echo "<hr>exec return:" . $return;
 
     curl_close($ch);
 }
