@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 0 (Child of GEB)</label>
                                                     <input class="vfat0" name="vfat0" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat0" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat0" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 8 (Child of GEB)</label>
                                                     <input class="vfat8" name="vfat8" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat8" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat8" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -163,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 16 (Child of GEB)</label>
                                                     <input class="vfat16" name="vfat16" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat16" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat16" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -187,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 1 (Child of GEB)</label>
                                                     <input class="vfat1" name="vfat1" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat1" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat1" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -208,7 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 9 (Child of GEB)</label>
                                                     <input class="vfat9" name="vfat9" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat9" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat9" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -229,7 +229,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 17 (Child of GEB)</label>
                                                     <input class="vfat17" name="vfat17" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat17" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat17" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -253,7 +253,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 2 (Child of GEB)</label>
                                                     <input class="vfat2" name="vfat2" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat2" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat2" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -274,7 +274,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 10 (Child of GEB)</label>
                                                     <input class="vfat10" name="vfat10" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat10" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat10" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -295,7 +295,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 18 (Child of GEB)</label>
                                                     <input class="vfat18" name="vfat18" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat18" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat18" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -319,7 +319,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 3 (Child of GEB)</label>
                                                     <input class="vfat3" name="vfat3" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat3" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat3" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -340,7 +340,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 11 (Child of GEB)</label>
                                                     <input class="vfat11" name="vfat11" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat11" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat11" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -361,7 +361,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 19 (Child of GEB)</label>
                                                     <input class="vfat19" name="vfat19" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat19" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat19" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -385,7 +385,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 4 (Child of GEB)</label>
                                                     <input class="vfat4" name="vfat4" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat23" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat23" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -406,7 +406,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 12 (Child of GEB)</label>
                                                     <input class="vfat12" name="vfat12" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat12" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat12" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -427,7 +427,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 20 (Child of GEB)</label>
                                                     <input class="vfat20" name="vfat20" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat20" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat20" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -451,7 +451,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 5 (Child of GEB)</label>
                                                     <input class="vfat5" name="vfat5" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat5" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat5" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -472,7 +472,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 13 (Child of GEB)</label>
                                                     <input class="vfat13" name="vfat13" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat13" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat13" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -493,7 +493,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 21 (Child of GEB)</label>
                                                     <input class="vfat21" name="vfat21" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat21" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat21" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -517,7 +517,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 6 (Child of GEB)</label>
                                                     <input class="vfat6" name="vfat6" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat6" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat6" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -538,7 +538,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 14 (Child of GEB)</label>
                                                     <input class="vfat14" name="vfat14" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat14" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat14" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -559,7 +559,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 22 (Child of GEB)</label>
                                                     <input class="vfat22" name="vfat22" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat22" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat22" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -583,7 +583,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 7 (Child of GEB)</label>
                                                     <input class="vfat7" name="vfat7" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat7" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat7" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -604,7 +604,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 15 (Child of GEB)</label>
                                                     <input class="vfat15" name="vfat15" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat15" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat15" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
@@ -625,7 +625,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     <label for="exampleInputFile">VFAT 23 (Child of GEB)</label>
                                                     <input class="vfat23" name="vfat23" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat23" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
+                                                    <select tabindex="-1"  class="chosen-select-vfat23" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
