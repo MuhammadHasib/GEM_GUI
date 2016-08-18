@@ -98,7 +98,7 @@ include "head.php";
 
                                 <!-- GEB L-->
                                 <div class="form-group longreads" >
-                                    <input class="gebl" name="opto"  hidden>
+                                    <input class="gebl" name="gebl"  hidden>
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             Choose Readout GEB
@@ -112,13 +112,13 @@ include "head.php";
                                 </div>
 
                                 <!-- Optohybrid -->
-                                <div class="form-group longgebs">
+                                <div class="form-group">
                                     <label for="exampleInputFile"> (3) Pick a OptoHybrid (Child of GEB)</label>
-                                    <input class="opto" name="opto" value="" ><br>
+                                    <input class="opto" name="opto" value="" hidden><br>
                                     <!--multiple=""-->
                                     <select tabindex="-1"  class="chosen-select-opto" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
                                         <option value=""></option>
-                                        <optgroup label="Long">
+                                        
                                             <?php
                                             $arr = get_available_parts_nohtml_noversion($OPTOHYBRID_KIND_OF_PART_ID);
                                             foreach ($arr as $value) {
@@ -126,7 +126,6 @@ include "head.php";
                                             }
                                             ?>
 
-                                        </optgroup>
 
                                     </select>
 
@@ -174,6 +173,12 @@ include "foot.htm";
 
 
     })
+
+
+$('.chosen-select-opto').on('change', function (evt, params) {
+        $('.opto').val($(this).chosen().val());
+        //alert($(this).chosen().val());
+    });
 
 
     $('.chosen-select-gebl').on('change', function (evt, params) {
