@@ -118,7 +118,7 @@ include "head.php";
                                     <!--multiple=""-->
                                     <select tabindex="-1"  class="chosen-select-opto" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
                                         <option value=""></option>
-                                        <optgroup label="Long">
+                                        <optgroup label="OptoHybrids">
                                             <?php
                                             $arr = get_available_parts_nohtml_noversion($OPTOHYBRID_KIND_OF_PART_ID);
                                             foreach ($arr as $value) {
