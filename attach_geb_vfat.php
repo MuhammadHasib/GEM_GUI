@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $subchild = array();
         if ($_POST['version'] == "L") {
             echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully attached OptoHybrid [' . $_POST['opto'] . '] to GEB [' . $_POST['gebl'] . ']   </div>';
+      <strong>Well done!</strong> You successfully attached 24 VFATs [' . $_POST['opto'] . '] to GEB [' . $_POST['gebl'] . ']   </div>';
             $temp[$SERIAL_NUMBER] = $_POST['gebl'];
             $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
 
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
 
 
-                                <label for="exampleInputFile" > (2)Pick a GEB (Parent of OptoHybrid) </label>
+                                <label for="exampleInputFile" > (2)Pick a GEB (Parent of VFAT) </label>
 
                                 <!-- GEB S-->
                                 <div class="form-group shortreads" style="display: none">
@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                                 <!-- VFATS -->
                                 <div class="form-group">
-                                    <label for="exampleInputFile"> (3) Pick a OptoHybrid (Child of GEB)</label>
+                                    <label for="exampleInputFile"> (3) Pick a VFAT (Child of GEB)</label>
                                     <!-- ***** VFAT layout begin ******* -->
                                     <div style="border: #000;  text-center">
                                         <!-- 1st Row-->
@@ -654,7 +654,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         <div style="padding-left: 0px; padding-right: 0px;" class="col-xs-6 panel-info panel">
 
-                            <img src="images/vfats_slots.png" style=" width: 57.5%;">
+                            <img src="images/vfats_slots.png" style=" width: 59%;">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-default btn-lg subbutt_at">Submit</button> 
