@@ -654,7 +654,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         <div style="padding-left: 0px; padding-right: 0px;" class="col-xs-6 panel-info panel">
 
-                            <img src="images/vfats_slots.png.png" style=" width: 57.5%;">
+                            <img src="images/vfats_slots.png" style=" width: 57.5%;">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-default btn-lg subbutt_at">Submit</button> 
