@@ -118,7 +118,7 @@ include "head.php";
                                     <!--multiple=""-->
                                     <select tabindex="-1"  class="chosen-select-opto" style="width: 350px; " data-placeholder="Choose OptoHybrid ">
                                         <option value=""></option>
-                                        
+                                        <optgroup label="Long">
                                             <?php
                                             $arr = get_available_parts_nohtml_noversion($OPTOHYBRID_KIND_OF_PART_ID);
                                             foreach ($arr as $value) {
@@ -126,7 +126,7 @@ include "head.php";
                                             }
                                             ?>
 
-
+                                        </optgroup>
                                     </select>
 
 
@@ -177,18 +177,19 @@ include "foot.htm";
 
 $('.chosen-select-opto').on('change', function (evt, params) {
         $('.opto').val($(this).chosen().val());
-        //alert($(this).chosen().val());
+        alert($(this).chosen().val());
+        alert($(".opto").val().length);
     });
 
 
     $('.chosen-select-gebl').on('change', function (evt, params) {
         $('.gebl').val($(this).chosen().val());
-        //alert($(this).chosen().val());
+        alert($(this).chosen().val());
     });
 
     $('.chosen-select-gebs').on('change', function (evt, params) {
         $('.gebs').val($(this).chosen().val());
-        //alert($(this).chosen().val());
+        alert($(this).chosen().val());
     });
 
 
