@@ -41,7 +41,7 @@ $FOIL_KIND_OF_PART_NAME = "GEM Foil";
 //Kind of part name for Readout boards
 $READOUT_KIND_OF_PART_NAME = "GEM Readout PCB";
 //Kind of part name for VFAT chips
-$VFAT_KIND_OF_PART_NAME = "GEM VFAT";
+$VFAT_KIND_OF_PART_NAME = "GEM VFAT2";
 //Kind of part name for Optohybrids
 $OPTOHYBRID_KIND_OF_PART_NAME = "GEM Opto Hybrid";
 //Kind of part name for AMCs
