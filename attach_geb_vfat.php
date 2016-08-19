@@ -696,11 +696,17 @@ include "foot.htm";
     })
 
 
-    $('.chosen-select-opto').on('change', function (evt, params) {
-        $('.opto').val($(this).chosen().val());
-        alert($(this).chosen().val());
-        alert($(".opto").val().length);
+  
+        $('.chosen-select-vfat0,.chosen-select-vfat1, .chosen-select-vfat2, .chosen-select-vfat3, .chosen-select-vfat4, .chosen-select-vfat5, .chosen-select-vfat6, .chosen-select-vfat7, .chosen-select-vfat8, .chosen-select-vfat9, .chosen-select-vfat9, .chosen-select-vfat10, .chosen-select-vfat11, .chosen-select-vfat12, .chosen-select-vfat13, .chosen-select-vfat14, .chosen-select-vfat15, .chosen-select-vfat16, .chosen-select-vfat17, .chosen-select-vfat18, .chosen-select-vfat19, .chosen-select-vfat20, .chosen-select-vfat21, .chosen-select-vfat22, .chosen-select-vfat23').on('change', function (evt, params) {
+        if($(this).attr('class') == "chosen-select-vfat0" ){
+            $('.vfat0').val($(this).chosen().val());
+            alert($(this).chosen().val());
+            alert($(".vfat0").val().length);
+        }
+       // ,.chosen-select-vfat1, .chosen-select-vfat2, .chosen-select-vfat3, .chosen-select-vfat4, .chosen-select-vfat5, .chosen-select-vfat6, .chosen-select-vfat7, .chosen-select-vfat8, .chosen-select-vfat9, .chosen-select-vfat9, .chosen-select-vfat10, .chosen-select-vfat11, .chosen-select-vfat12, .chosen-select-vfat13, .chosen-select-vfat14, .chosen-select-vfat15, .chosen-select-vfat16, .chosen-select-vfat17, .chosen-select-vfat18, .chosen-select-vfat19, .chosen-select-vfat20, .chosen-select-vfat21, .chosen-select-vfat22, .chosen-select-vfat23
+        
     });
+    
 
 
     $('.chosen-select-gebl').on('change', function (evt, params) {
