@@ -702,6 +702,7 @@ include "foot.htm";
             $('.vfat0').val($(this).chosen().val());
             alert($(this).chosen().val());
             alert($(".vfat0").val().length);
+            
         }
        // ,.chosen-select-vfat1, .chosen-select-vfat2, .chosen-select-vfat3, .chosen-select-vfat4, .chosen-select-vfat5, .chosen-select-vfat6, .chosen-select-vfat7, .chosen-select-vfat8, .chosen-select-vfat9, .chosen-select-vfat9, .chosen-select-vfat10, .chosen-select-vfat11, .chosen-select-vfat12, .chosen-select-vfat13, .chosen-select-vfat14, .chosen-select-vfat15, .chosen-select-vfat16, .chosen-select-vfat17, .chosen-select-vfat18, .chosen-select-vfat19, .chosen-select-vfat20, .chosen-select-vfat21, .chosen-select-vfat22, .chosen-select-vfat23
         
