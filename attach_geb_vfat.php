@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $subchild = array();
         if ($_POST['version'] == "L") {
             echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully attached 24 VFATs [' . $_POST['opto'] . '] to GEB [' . $_POST['gebl'] . ']   </div>';
+      <strong>Well done!</strong> You successfully attached 24 VFATs to GEB [' . $_POST['gebl'] . ']   </div>';
             $temp[$SERIAL_NUMBER] = $_POST['gebl'];
             $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         if ($_POST['version'] == "S") {
             echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully attached OptoHybrid [' . $_POST['opto'] . '] to GEB [' . $_POST['gebs'] . ']   </div>';
+      <strong>Well done!</strong> You successfully attached 24 VFATs to GEB [' . $_POST['gebs'] . ']   </div>';
 
             $temp[$SERIAL_NUMBER] = $_POST['gebs'];
             $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
