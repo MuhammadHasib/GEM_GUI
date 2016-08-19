@@ -704,6 +704,77 @@ include "foot.htm";
             alert($(".vfat0").val().length);
             
         }
+        if($(this).attr('class') == "chosen-select-vfat1" ){
+            $('.vfat1').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat2" ){
+            $('.vfat2').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat3" ){
+            $('.vfat3').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat4" ){
+            $('.vfat4').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat5" ){
+            $('.vfat5').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat6" ){
+            $('.vfat6').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat7" ){
+            $('.vfat7').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat8" ){
+            $('.vfat8').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat9" ){
+            $('.vfat9').val($(this).chosen().val());
+        }
+        
+         if($(this).attr('class') == "chosen-select-vfat10" ){
+            $('.vfat10').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat11" ){
+            $('.vfat11').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat12" ){
+            $('.vfat12').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat13" ){
+            $('.vfat13').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat14" ){
+            $('.vfat14').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat15" ){
+            $('.vfat15').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat16" ){
+            $('.vfat16').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat17" ){
+            $('.vfat17').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat18" ){
+            $('.vfat18').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat19" ){
+            $('.vfat19').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat20" ){
+            $('.vfat20').val($(this).chosen().val());
+        }
+         if($(this).attr('class') == "chosen-select-vfat21" ){
+            $('.vfat21').val($(this).chosen().val());
+        }
+        if($(this).attr('class') == "chosen-select-vfat22" ){
+            $('.vfat22').val($(this).chosen().val());
+        }
+        if($(this).attr('class') == "chosen-select-vfat23" ){
+            $('.vfat23').val($(this).chosen().val());
+        }
+        
        // ,.chosen-select-vfat1, .chosen-select-vfat2, .chosen-select-vfat3, .chosen-select-vfat4, .chosen-select-vfat5, .chosen-select-vfat6, .chosen-select-vfat7, .chosen-select-vfat8, .chosen-select-vfat9, .chosen-select-vfat9, .chosen-select-vfat10, .chosen-select-vfat11, .chosen-select-vfat12, .chosen-select-vfat13, .chosen-select-vfat14, .chosen-select-vfat15, .chosen-select-vfat16, .chosen-select-vfat17, .chosen-select-vfat18, .chosen-select-vfat19, .chosen-select-vfat20, .chosen-select-vfat21, .chosen-select-vfat22, .chosen-select-vfat23
         
     });
