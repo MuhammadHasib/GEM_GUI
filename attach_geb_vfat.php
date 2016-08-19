@@ -54,6 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo '<div style="display: none" geble="alert" class="alert alert-danger ">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
     </div>';
+    echo '<div style="display: none" geble="alert" class="alert alert-danger doublication">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Attention!</strong> Make sure you did not dublicate same VFAT.
+    </div>';
+    
     ?> 
 
                 <form method="POST" action="attach_geb_opto.php">
@@ -803,9 +807,28 @@ include "foot.htm";
             return false;
         }
         
+        // Check if not doublication in selection the VFATS
+     var arr = $(".vfatinput").map(function(){
+                return $(this).val();
+            }).toArray();
+            //console.log(arr);
+     var allHaveSameValue = uniqueArray(arr).length == 1;
+     if(allHaveSameValue == true){
+         $('.doublication').show();
+            return false;
+     }
         
         
     })
+    
+    
+
+
+function uniqueArray(arr){
+return $.grep(arr,function(v,k){
+    return $.inArray(v,arr) !== k;
+});
+}
     
 
 
