@@ -77,7 +77,6 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
 
 
             <form method="POST" action="new_vfat.php">
-
                     <div class="row">
                         <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
                             <div class="panel-heading">
