@@ -807,8 +807,7 @@ include "foot.htm";
         
     })
     
- 
-}
+
 
 
 //    alert($(".version").val().length);
