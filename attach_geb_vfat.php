@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $arr[] = $temp;
         print_r($arr);
 
-        generateXml($arr);
+       // generateXml($arr);
     }
 } else {
 
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     ?> 
 
-                <form method="POST" action="attach_geb_opto.php">
+            <form method="POST" action="attach_geb_vfat.php">
                     <div class="row">
                         <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
                             <div class="panel-heading">
