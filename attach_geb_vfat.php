@@ -123,6 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 0 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat0" name="vfat0" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat0" style="" data-placeholder="Choose VFAT">
@@ -144,6 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 8 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat8" name="vfat8" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat8" style="" data-placeholder="Choose VFAT">
@@ -165,6 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 16 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat16" name="vfat16" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat16" style="" data-placeholder="Choose VFAT">
@@ -189,6 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 1 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat1" name="vfat1" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat1" style="" data-placeholder="Choose VFAT">
@@ -210,6 +214,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 9 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat9" name="vfat9" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat9" style="" data-placeholder="Choose VFAT">
@@ -231,6 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 17 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat17" name="vfat17" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat17" style="" data-placeholder="Choose VFAT">
@@ -255,6 +261,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 2 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat2" name="vfat2" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat2" style="" data-placeholder="Choose VFAT">
@@ -276,6 +283,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 10 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat10" name="vfat10" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat10" style="" data-placeholder="Choose VFAT">
@@ -297,6 +305,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 18 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat18" name="vfat18" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat18" style="" data-placeholder="Choose VFAT">
@@ -321,6 +330,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 3 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat3" name="vfat3" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat3" style="" data-placeholder="Choose VFAT">
@@ -342,6 +352,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 11 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat11" name="vfat11" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat11" style="" data-placeholder="Choose VFAT">
@@ -363,6 +374,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 19 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat19" name="vfat19" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat19" style="" data-placeholder="Choose VFAT">
@@ -387,6 +399,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 4 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat4" name="vfat4" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat23" style="" data-placeholder="Choose VFAT">
@@ -408,6 +421,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 12 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat12" name="vfat12" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat12" style="" data-placeholder="Choose VFAT">
@@ -429,6 +443,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 20 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat20" name="vfat20" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat20" style="" data-placeholder="Choose VFAT">
@@ -453,6 +468,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 5 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat5" name="vfat5" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat5" style="" data-placeholder="Choose VFAT">
@@ -474,6 +490,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 13 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat13" name="vfat13" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat13" style="" data-placeholder="Choose VFAT">
@@ -495,6 +512,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 21 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat21" name="vfat21" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat21" style="" data-placeholder="Choose VFAT">
@@ -519,6 +537,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 6 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat6" name="vfat6" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat6" style="" data-placeholder="Choose VFAT">
@@ -540,6 +559,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 14 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat14" name="vfat14" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat14" style="" data-placeholder="Choose VFAT">
@@ -561,6 +581,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 22 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat22" name="vfat22" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat22" style="" data-placeholder="Choose VFAT">
@@ -585,6 +606,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 7 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat7" name="vfat7" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat7" style="" data-placeholder="Choose VFAT">
@@ -606,6 +628,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 15 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat15" name="vfat15" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat15" style="" data-placeholder="Choose VFAT">
@@ -627,6 +650,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 23 (Child of GEB)</label>
+                                                    <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat23" name="vfat23" value="" hidden><br>
                                                     <!--multiple=""-->
                                                     <select tabindex="-1"  class="chosen-select-vfat23" style="" data-placeholder="Choose VFAT">
@@ -808,27 +832,59 @@ include "foot.htm";
         }
         
         // Check if not doublication in selection the VFATS
-     var arr = $(".vfatinput").map(function(){
-                return $(this).val();
-            }).toArray();
-            //console.log(arr);
-     var allHaveSameValue = uniqueArray(arr).length == 1;
-     if(allHaveSameValue == true){
-         $('.doublication').show();
-            return false;
-     }
-        
+//     var arr = $(".vfatinput").map(function(){
+//                return $(this).val();
+//            }).toArray();
+//            //console.log(arr);
+//     var allHaveSameValue = uniqueArray(arr).length == 1;
+//     if(allHaveSameValue == true){
+//         $('.doublication').show();
+//            return false;
+//     }
+//     
+     
+     /****** Check for Emptiness/doublication Solution 2 *******/
+     // Check if one of them is empty
+     $('.vfatinput').each(function() {
+            if ($(this).val() == '') {
+                console.log('empty');
+            }
+     });
+    // Check for doublicated fields values
+    var count = 0;
+    $('.vfatinput').each(function() {
+        if ($(this).val() != '') {
+            var val1= $(this).val();
+            var elem1 = $(this);
+            console.log(val1);
+            $('.vfatinput').each(function() {
+                if ($(this).val() != '') {
+                    if(val1 === $(this).val())
+                    {   count= count+1; //if found itself and another field, counter would be = 2
+                        if(count > 1){
+                            console.log(val1+$(this).val());
+                            console.log('error');
+                            elem1.prev().show();
+                            $(this).prev().show();
+                        }
+                    }
+                }
+            });
+            count = 0;
+        }
+    });
+    /*******End********/
         
     })
     
     
 
 
-function uniqueArray(arr){
-return $.grep(arr,function(v,k){
-    return $.inArray(v,arr) !== k;
-});
-}
+//function uniqueArray(arr){
+//return $.grep(arr,function(v,k){
+//    return $.inArray(v,arr) !== k;
+//});
+//}
     
 
 
