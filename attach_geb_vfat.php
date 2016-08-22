@@ -826,13 +826,13 @@ include "foot.htm";
     });
 
 
-    $(".subbutt_at").click(function () {
+    $(".subbutt_at").click(function (e) {
         
                 /****** Check for Emptiness/doublication Solution 2 *******/
         // Check if one of them is empty
-        check_vfats_empty();
+        check_vfats_empty(e);
         // Check for doublicated fields values
-        check_vfats_different();
+        check_vfats_different(e);
         
         /*******End********/
         
@@ -872,7 +872,7 @@ include "foot.htm";
 //});
 //}
 
-function check_vfats_empty(){
+function check_vfats_empty(e){
     try{
     var flag = true;
     $('.vfatinput').each(function () {
@@ -889,12 +889,13 @@ function check_vfats_empty(){
         
     }
     catch(e){ 
-        alert('catch');
+        //alert('catch');
+        e.preventDefault(); 
         return false; 
     }
 }
 
-function check_vfats_different(){
+function check_vfats_different(e){
     try{ var count = 0;
         var flag = true;
         $('.vfatinput').each(function () {
@@ -932,7 +933,8 @@ function check_vfats_different(){
             }
         });}
     catch(e){
-        alert('catch');
+        //alert('catch');
+        e.preventDefault(); 
         return false;
     }
     
