@@ -19,7 +19,7 @@ include "head.php";
                 // Flag that refers to all vfats ar Set or Not
                 $flag = 1;
                 for( $i= 0; $i<24 ; $i++ )
-                { echo "VFAT".$_POST['vfat'.$i]; if(!isset($_POST['vfat'.$i])){ $flag = 0;} }
+                { echo "VFAT".$_POST['vfat'.$i]; echo isset($_POST['vfat'.$i]); if(!isset($_POST['vfat'.$i])){ $flag = 0;} }
                 echo $flag;
                 
                 if ((isset($_POST['version']) && isset($_POST['gebl']) && $flag ) || (isset($_POST['version']) && isset($_POST['gebs']) && $flag  )) {
@@ -842,6 +842,10 @@ include "foot.htm";
         // Check for doublicated fields values
         var count = 0;
         $('.vfatinput').each(function () {
+            if ($(this).val() == '') {
+                $('.doublication').show();
+                return false;
+            }
             if ($(this).val() != '') {
                 var val1 = $(this).val();
                 var elem1 = $(this);
