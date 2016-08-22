@@ -17,12 +17,12 @@ include "head.php";
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //     var_dump($_POST);
                 // Flag that refers to all vfats ar Set or Not
-                $flag = true;
+                $flag = 1;
                 for( $i= 0; $i>24 ; $i++ )
-                { echo $_POST['vfat'.$i]; if(!isset($_POST['vfat'.$i])){ $flag = false;} }
+                { echo "VFAT".$_POST['vfat'.$i]; if(!isset($_POST['vfat'.$i])){ $flag = 0;} }
                 echo $flag;
                 
-                if ((isset($_POST['version']) && isset($_POST['gebl']) && $flag == true ) || (isset($_POST['version']) && isset($_POST['gebs']) && $flag == true )) {
+                if ((isset($_POST['version']) && isset($_POST['gebl']) && $flag ) || (isset($_POST['version']) && isset($_POST['gebs']) && $flag  )) {
                     
                     $temp = array();
                     $arr = array();
