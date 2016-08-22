@@ -828,49 +828,11 @@ include "foot.htm";
 
     $(".subbutt_at").click(function () {
         
-                /****** Check for Emptiness/doublication Solution 2 *******/
+        /****** Check for Emptiness/doublication Solution 2 *******/
         // Check if one of them is empty
-        $('.vfatinput').each(function () {
-            if ($(this).val() == '') {
-                //console.log('empty');
-                $(this).prev().show();
-                $('.alert-danger').show();
-                return false;
-
-            }
-        });
+        check_vfats_empty();
         // Check for doublicated fields values
-        var count = 0;
-        $('.vfatinput').each(function () {
-            if ($(this).val() == '') {
-                $('.doublication').show();
-                alert('stop');
-                return false;
-            }
-            if ($(this).val() != '') {
-                var val1 = $(this).val();
-                var elem1 = $(this);
-                //console.log(val1);
-                $('.vfatinput').each(function () {
-                    if ($(this).val() != '') {
-                        if (val1 === $(this).val())
-                        {
-                            count = count + 1; //if found itself and another field, counter would be = 2
-                            if (count > 1) {
-                                //console.log(val1+$(this).val());
-                                //console.log('error');
-                                elem1.prev().show();
-                                $(this).prev().show();
-                                $('.doublication').show();
-                                alert('stop');
-                                return false;
-                            }
-                        }
-                    }
-                });
-                count = 0;
-            }
-        });
+        check_vfats_different();
         /*******End********/
         
         
@@ -909,8 +871,52 @@ include "foot.htm";
 //});
 //}
 
+function check_vfats_empty(){
+    var flag = true;
+    $('.vfatinput').each(function () {
+            if ($(this).val() === '') {
+                //console.log('empty');
+                $(this).prev().show();
+                $('.alert-danger').show();
+                flag = false;
+                return false;
 
+            }
+        });
+        return flag;
+}
 
+function check_vfats_different(){
+    var count = 0;
+        var flag = true;
+       
+            if ($(this).val() !== '') {
+                var val1 = $(this).val();
+                var elem1 = $(this);
+                //console.log(val1);
+                $('.vfatinput').each(function () {
+                    if ($(this).val() !== '') {
+                        if (val1 === $(this).val())
+                        {
+                            count = count + 1; //if found itself and another field, counter would be = 2
+                            if (count > 1) {
+                                //console.log(val1+$(this).val());
+                                //console.log('error');
+                                elem1.prev().show();
+                                $(this).prev().show();
+                                $('.doublication').show();
+                                //alert('stop');
+                                flag = false;
+                                return false;
+                            }
+                        }
+                    }
+                });
+                count = 0;
+            }
+        });
+        return flag;
+}
 
 //    alert($(".version").val().length);
 //    alert($(".gebs").val().length);alert($(".opto").val().length);alert($(".gebl").val().length );alert($(".gebs").val().length);
