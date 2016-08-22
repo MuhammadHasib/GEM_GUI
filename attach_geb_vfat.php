@@ -828,11 +828,12 @@ include "foot.htm";
 
     $(".subbutt_at").click(function () {
         
-        /****** Check for Emptiness/doublication Solution 2 *******/
+                /****** Check for Emptiness/doublication Solution 2 *******/
         // Check if one of them is empty
         check_vfats_empty();
         // Check for doublicated fields values
         check_vfats_different();
+        
         /*******End********/
         
         
@@ -874,7 +875,7 @@ include "foot.htm";
 function check_vfats_empty(){
     var flag = true;
     $('.vfatinput').each(function () {
-            if ($(this).val() === '') {
+            if ($(this).val() == '') {
                 //console.log('empty');
                 $(this).prev().show();
                 $('.alert-danger').show();
@@ -889,7 +890,13 @@ function check_vfats_empty(){
 function check_vfats_different(){
     var count = 0;
         var flag = true;
-       
+        $('.vfatinput').each(function () {
+            if ($(this).val() === '') {
+                $('.doublication').show();
+                alert('stop');
+                flag = false;
+                return false;
+            }
             if ($(this).val() !== '') {
                 var val1 = $(this).val();
                 var elem1 = $(this);
@@ -905,7 +912,7 @@ function check_vfats_different(){
                                 elem1.prev().show();
                                 $(this).prev().show();
                                 $('.doublication').show();
-                                //alert('stop');
+                                alert('stop');
                                 flag = false;
                                 return false;
                             }
