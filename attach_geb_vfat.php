@@ -408,7 +408,7 @@ include "head.php";
                                                     <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat4" name="vfat4" value="" hidden><br>
                                                     <!--multiple=""-->
-                                                    <select tabindex="-1"  class="chosen-select-vfat23" style="" data-placeholder="Choose VFAT">
+                                                    <select tabindex="-1"  class="chosen-select-vfat4" style="" data-placeholder="Choose VFAT">
                                                         <option value=""></option>
                                                         <optgroup label="vfats">
                                                             <?php
