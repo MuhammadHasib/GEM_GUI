@@ -18,7 +18,7 @@ include "head.php";
 //     var_dump($_POST);
                 // Flag that refers to all vfats ar Set or Not
                 $flag = 1;
-                for( $i= 0; $i>24 ; $i++ )
+                for( $i= 0; $i<24 ; $i++ )
                 { echo "VFAT".$_POST['vfat'.$i]; if(!isset($_POST['vfat'.$i])){ $flag = 0;} }
                 echo $flag;
                 
