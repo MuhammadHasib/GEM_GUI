@@ -873,6 +873,7 @@ include "foot.htm";
 //}
 
 function check_vfats_empty(){
+    try{
     var flag = true;
     $('.vfatinput').each(function () {
             if ($(this).val() == '') {
@@ -880,22 +881,25 @@ function check_vfats_empty(){
                 $(this).prev().show();
                 $('.alert-danger').show();
                 flag = false;
+                throw "Exit Error";
                 return false;
 
             }
         });
-        return flag;
+        
+    }
+    catch{return false;}
 }
 
 function check_vfats_different(){
-    var count = 0;
+    try{ var count = 0;
         var flag = true;
         $('.vfatinput').each(function () {
             if ($(this).val() === '') {
                 $('.doublication').show();
                 alert('stop');
                 flag = false;
-                 break;
+                throw "Exit Error";
                 return false;
             }
             if ($(this).val() !== '') {
@@ -915,7 +919,7 @@ function check_vfats_different(){
                                 $('.doublication').show();
                                 alert('stop');
                                 flag = false;
-                                 break;
+                                throw "Exit Error";
                                 return false;
                             }
                         }
@@ -923,8 +927,12 @@ function check_vfats_different(){
                 });
                 count = 0;
             }
-        });
-        return flag;
+        });}
+    catch{
+        return false;
+    }
+    
+   
 }
 
 //    alert($(".version").val().length);
