@@ -889,6 +889,7 @@ function check_vfats_empty(){
         
     }
     catch(e){ 
+        alert('catch');
         return false; 
     }
 }
@@ -931,6 +932,7 @@ function check_vfats_different(){
             }
         });}
     catch(e){
+        alert('catch');
         return false;
     }
     
