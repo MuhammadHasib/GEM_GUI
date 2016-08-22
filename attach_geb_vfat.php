@@ -878,7 +878,7 @@ function check_vfats_empty(e){
     var flag = true;
     $('.vfatinput').each(function () {
             if ($(this).val() == '') {
-                //console.log('empty');
+                console.log('empty');
                 $(this).prev().show();
                 $('.alert-danger').show();
                 flag = false;
@@ -918,8 +918,8 @@ function check_vfats_different(e){
                         {
                             count = count + 1; //if found itself and another field, counter would be = 2
                             if (count > 1) {
-                                //console.log(val1+$(this).val());
-                                //console.log('error');
+                                console.log(val1+$(this).val());
+                                console.log('error');
                                 elem1.prev().show();
                                 $(this).prev().show();
                                 $('.doublication').show();
