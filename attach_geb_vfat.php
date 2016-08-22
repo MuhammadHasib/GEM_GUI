@@ -895,6 +895,7 @@ function check_vfats_different(){
                 $('.doublication').show();
                 alert('stop');
                 flag = false;
+                 break;
                 return false;
             }
             if ($(this).val() !== '') {
@@ -914,6 +915,7 @@ function check_vfats_different(){
                                 $('.doublication').show();
                                 alert('stop');
                                 flag = false;
+                                 break;
                                 return false;
                             }
                         }
