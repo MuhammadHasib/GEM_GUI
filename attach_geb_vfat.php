@@ -899,7 +899,7 @@ function check_vfats_different(){
         $('.vfatinput').each(function () {
             if ($(this).val() === '') {
                 $('.doublication').show();
-                alert('stop');
+                //alert('stop');
                 flag = false;
                 throw "Exit Error";
                 return false;
@@ -919,7 +919,7 @@ function check_vfats_different(){
                                 elem1.prev().show();
                                 $(this).prev().show();
                                 $('.doublication').show();
-                                alert('stop');
+                                //alert('stop');
                                 flag = false;
                                 throw "Exit Error";
                                 return false;
