@@ -847,7 +847,11 @@ include "foot.htm";
      // Check if one of them is empty
      $('.vfatinput').each(function() {
             if ($(this).val() == '') {
-                console.log('empty');
+                //console.log('empty');
+                $(this).prev().show();
+                 $('.alert-danger').show();
+                 return false;
+                
             }
      });
     // Check for doublicated fields values
@@ -856,16 +860,18 @@ include "foot.htm";
         if ($(this).val() != '') {
             var val1= $(this).val();
             var elem1 = $(this);
-            console.log(val1);
+            //console.log(val1);
             $('.vfatinput').each(function() {
                 if ($(this).val() != '') {
                     if(val1 === $(this).val())
                     {   count= count+1; //if found itself and another field, counter would be = 2
                         if(count > 1){
-                            console.log(val1+$(this).val());
-                            console.log('error');
+                            //console.log(val1+$(this).val());
+                            //console.log('error');
                             elem1.prev().show();
                             $(this).prev().show();
+                            $('.doublication').show();
+                            return false;
                         }
                     }
                 }
