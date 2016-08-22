@@ -888,7 +888,9 @@ function check_vfats_empty(){
         });
         
     }
-    catch{return false;}
+    catch{ 
+        return false; 
+    }
 }
 
 function check_vfats_different(){
