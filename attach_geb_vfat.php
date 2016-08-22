@@ -7,60 +7,59 @@ include "head.php";
 <div class="container-fluid">
     <div class="row">
 
-<?php include "side.php"; ?>
+        <?php include "side.php"; ?>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">Attach VFATs to GEB</h1>
             <img src="images/GEB-VFAT.png" width="20%" style="margin-bottom: 10px; border-radius: 20px;">
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //     var_dump($_POST);
-    if ((isset($_POST['version']) && isset($_POST['gebl']) && isset($_POST['opto']) ) || (isset($_POST['version']) && isset($_POST['gebs']) && isset($_POST['gebs']))) {
-        $temp = array();
-        $arr = array();
-        $childs = array();
-        $child = array();
-        $subchild = array();
-        if ($_POST['version'] == "L") {
-            echo '<div role="alert" class="alert alert-success">
+                if ((isset($_POST['version']) && isset($_POST['gebl']) && isset($_POST['opto']) ) || (isset($_POST['version']) && isset($_POST['gebs']) && isset($_POST['gebs']))) {
+                    $temp = array();
+                    $arr = array();
+                    $childs = array();
+                    $child = array();
+                    $subchild = array();
+                    if ($_POST['version'] == "L") {
+                        echo '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully attached 24 VFATs to GEB [' . $_POST['gebl'] . ']   </div>';
-            $temp[$SERIAL_NUMBER] = $_POST['gebl'];
-            $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
+                        $temp[$SERIAL_NUMBER] = $_POST['gebl'];
+                        $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
 
-            $child['SERIAL_NUMBER'] = $_POST['opto'];
-            $child['KIND_OF_PART'] = $OPTOHYBRID_KIND_OF_PART_NAME;
-            $childs[] = $child;
-        }
-        if ($_POST['version'] == "S") {
-            echo '<div role="alert" class="alert alert-success">
+                        $child['SERIAL_NUMBER'] = $_POST['opto'];
+                        $child['KIND_OF_PART'] = $OPTOHYBRID_KIND_OF_PART_NAME;
+                        $childs[] = $child;
+                    }
+                    if ($_POST['version'] == "S") {
+                        echo '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully attached 24 VFATs to GEB [' . $_POST['gebs'] . ']   </div>';
 
-            $temp[$SERIAL_NUMBER] = $_POST['gebs'];
-            $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
+                        $temp[$SERIAL_NUMBER] = $_POST['gebs'];
+                        $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
 
-            $child['SERIAL_NUMBER'] = $_POST['opto'];
-            $child['KIND_OF_PART'] = $OPTOHYBRID_KIND_OF_PART_NAME;
-            $childs[] = $child;
-        }
-        $temp['children'] = $childs;
-        $arr[] = $temp;
-        print_r($arr);
+                        $child['SERIAL_NUMBER'] = $_POST['opto'];
+                        $child['KIND_OF_PART'] = $OPTOHYBRID_KIND_OF_PART_NAME;
+                        $childs[] = $child;
+                    }
+                    $temp['children'] = $childs;
+                    $arr[] = $temp;
+                    print_r($arr);
 
-       // generateXml($arr);
-    }
-} else {
+                    // generateXml($arr);
+                }
+            } else {
 
-    echo '<div style="display: none" geble="alert" class="alert alert-danger ">
+                echo '<div style="display: none" geble="alert" class="alert alert-danger ">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
     </div>';
-    echo '<div style="display: none" geble="alert" class="alert alert-danger doublication">
+                echo '<div style="display: none" geble="alert" class="alert alert-danger doublication">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Attention!</strong> Make sure you did not dublicate same VFAT.
     </div>';
-    
-    ?> 
+                ?> 
 
-            <form method="POST" action="attach_geb_vfat.php">
+                <form method="POST" action="attach_geb_vfat.php">
                     <div class="row">
                         <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
                             <div class="panel-heading">
@@ -92,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <?php get_available_parts_nochild($GEB_KIND_OF_PART_ID, "-S-"); ?>
+                                            <?php get_available_parts_nochild($GEB_KIND_OF_PART_ID, "-S-"); ?>
                                         </ul>
 
                                     </div>
@@ -107,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <?php get_available_parts_nochild($GEB_KIND_OF_PART_ID, "-L-"); ?>
+                                            <?php get_available_parts_nochild($GEB_KIND_OF_PART_ID, "-L-"); ?>
                                         </ul>
 
                                     </div>
@@ -604,7 +603,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <!-- 8th Row -->
                                         <div class="row">
                                             <div class="col-md-4">
-                                               <div class="form-group">
+                                                <div class="form-group">
                                                     <label for="exampleInputFile">VFAT 7 (Child of GEB)</label>
                                                     <span class="alert-danger vfatalert" hidden> !* </span>
                                                     <input class="vfatinput vfat7" name="vfat7" value="" hidden><br>
@@ -687,7 +686,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                     <button type="submit" class="btn btn-default btn-lg subbutt_at">Submit</button> 
                 </form>
-<?php } ?>
+            <?php } ?>
 
         </div>
     </div>
@@ -724,89 +723,89 @@ include "foot.htm";
     })
 
 
-  
-        $('.chosen-select-vfat0,.chosen-select-vfat1, .chosen-select-vfat2, .chosen-select-vfat3, .chosen-select-vfat4, .chosen-select-vfat5, .chosen-select-vfat6, .chosen-select-vfat7, .chosen-select-vfat8, .chosen-select-vfat9, .chosen-select-vfat9, .chosen-select-vfat10, .chosen-select-vfat11, .chosen-select-vfat12, .chosen-select-vfat13, .chosen-select-vfat14, .chosen-select-vfat15, .chosen-select-vfat16, .chosen-select-vfat17, .chosen-select-vfat18, .chosen-select-vfat19, .chosen-select-vfat20, .chosen-select-vfat21, .chosen-select-vfat22, .chosen-select-vfat23').on('change', function (evt, params) {
-        if($(this).attr('class') == "chosen-select-vfat0" ){
+
+    $('.chosen-select-vfat0,.chosen-select-vfat1, .chosen-select-vfat2, .chosen-select-vfat3, .chosen-select-vfat4, .chosen-select-vfat5, .chosen-select-vfat6, .chosen-select-vfat7, .chosen-select-vfat8, .chosen-select-vfat9, .chosen-select-vfat9, .chosen-select-vfat10, .chosen-select-vfat11, .chosen-select-vfat12, .chosen-select-vfat13, .chosen-select-vfat14, .chosen-select-vfat15, .chosen-select-vfat16, .chosen-select-vfat17, .chosen-select-vfat18, .chosen-select-vfat19, .chosen-select-vfat20, .chosen-select-vfat21, .chosen-select-vfat22, .chosen-select-vfat23').on('change', function (evt, params) {
+        if ($(this).attr('class') == "chosen-select-vfat0") {
             $('.vfat0').val($(this).chosen().val());
 //            alert($(this).chosen().val());
 //            alert($(".vfat0").val().length);
-            
+
         }
-        if($(this).attr('class') == "chosen-select-vfat1" ){
+        if ($(this).attr('class') == "chosen-select-vfat1") {
             $('.vfat1').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat2" ){
+        if ($(this).attr('class') == "chosen-select-vfat2") {
             $('.vfat2').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat3" ){
+        if ($(this).attr('class') == "chosen-select-vfat3") {
             $('.vfat3').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat4" ){
+        if ($(this).attr('class') == "chosen-select-vfat4") {
             $('.vfat4').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat5" ){
+        if ($(this).attr('class') == "chosen-select-vfat5") {
             $('.vfat5').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat6" ){
+        if ($(this).attr('class') == "chosen-select-vfat6") {
             $('.vfat6').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat7" ){
+        if ($(this).attr('class') == "chosen-select-vfat7") {
             $('.vfat7').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat8" ){
+        if ($(this).attr('class') == "chosen-select-vfat8") {
             $('.vfat8').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat9" ){
+        if ($(this).attr('class') == "chosen-select-vfat9") {
             $('.vfat9').val($(this).chosen().val());
         }
-        
-         if($(this).attr('class') == "chosen-select-vfat10" ){
+
+        if ($(this).attr('class') == "chosen-select-vfat10") {
             $('.vfat10').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat11" ){
+        if ($(this).attr('class') == "chosen-select-vfat11") {
             $('.vfat11').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat12" ){
+        if ($(this).attr('class') == "chosen-select-vfat12") {
             $('.vfat12').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat13" ){
+        if ($(this).attr('class') == "chosen-select-vfat13") {
             $('.vfat13').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat14" ){
+        if ($(this).attr('class') == "chosen-select-vfat14") {
             $('.vfat14').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat15" ){
+        if ($(this).attr('class') == "chosen-select-vfat15") {
             $('.vfat15').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat16" ){
+        if ($(this).attr('class') == "chosen-select-vfat16") {
             $('.vfat16').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat17" ){
+        if ($(this).attr('class') == "chosen-select-vfat17") {
             $('.vfat17').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat18" ){
+        if ($(this).attr('class') == "chosen-select-vfat18") {
             $('.vfat18').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat19" ){
+        if ($(this).attr('class') == "chosen-select-vfat19") {
             $('.vfat19').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat20" ){
+        if ($(this).attr('class') == "chosen-select-vfat20") {
             $('.vfat20').val($(this).chosen().val());
         }
-         if($(this).attr('class') == "chosen-select-vfat21" ){
+        if ($(this).attr('class') == "chosen-select-vfat21") {
             $('.vfat21').val($(this).chosen().val());
         }
-        if($(this).attr('class') == "chosen-select-vfat22" ){
+        if ($(this).attr('class') == "chosen-select-vfat22") {
             $('.vfat22').val($(this).chosen().val());
         }
-        if($(this).attr('class') == "chosen-select-vfat23" ){
+        if ($(this).attr('class') == "chosen-select-vfat23") {
             $('.vfat23').val($(this).chosen().val());
         }
-        
-       // ,.chosen-select-vfat1, .chosen-select-vfat2, .chosen-select-vfat3, .chosen-select-vfat4, .chosen-select-vfat5, .chosen-select-vfat6, .chosen-select-vfat7, .chosen-select-vfat8, .chosen-select-vfat9, .chosen-select-vfat9, .chosen-select-vfat10, .chosen-select-vfat11, .chosen-select-vfat12, .chosen-select-vfat13, .chosen-select-vfat14, .chosen-select-vfat15, .chosen-select-vfat16, .chosen-select-vfat17, .chosen-select-vfat18, .chosen-select-vfat19, .chosen-select-vfat20, .chosen-select-vfat21, .chosen-select-vfat22, .chosen-select-vfat23
-        
+
+        // ,.chosen-select-vfat1, .chosen-select-vfat2, .chosen-select-vfat3, .chosen-select-vfat4, .chosen-select-vfat5, .chosen-select-vfat6, .chosen-select-vfat7, .chosen-select-vfat8, .chosen-select-vfat9, .chosen-select-vfat9, .chosen-select-vfat10, .chosen-select-vfat11, .chosen-select-vfat12, .chosen-select-vfat13, .chosen-select-vfat14, .chosen-select-vfat15, .chosen-select-vfat16, .chosen-select-vfat17, .chosen-select-vfat18, .chosen-select-vfat19, .chosen-select-vfat20, .chosen-select-vfat21, .chosen-select-vfat22, .chosen-select-vfat23
+
     });
-    
+
 
 
     $('.chosen-select-gebl').on('change', function (evt, params) {
@@ -821,16 +820,58 @@ include "foot.htm";
 
 
     $(".subbutt_at").click(function () {
+        
+                /****** Check for Emptiness/doublication Solution 2 *******/
+        // Check if one of them is empty
+        $('.vfatinput').each(function () {
+            if ($(this).val() == '') {
+                //console.log('empty');
+                $(this).prev().show();
+                $('.alert-danger').show();
+                return false;
+
+            }
+        });
+        // Check for doublicated fields values
+        var count = 0;
+        $('.vfatinput').each(function () {
+            if ($(this).val() != '') {
+                var val1 = $(this).val();
+                var elem1 = $(this);
+                //console.log(val1);
+                $('.vfatinput').each(function () {
+                    if ($(this).val() != '') {
+                        if (val1 === $(this).val())
+                        {
+                            count = count + 1; //if found itself and another field, counter would be = 2
+                            if (count > 1) {
+                                //console.log(val1+$(this).val());
+                                //console.log('error');
+                                elem1.prev().show();
+                                $(this).prev().show();
+                                $('.doublication').show();
+                                return false;
+                            }
+                        }
+                    }
+                });
+                count = 0;
+            }
+        });
+        /*******End********/
+        
+        
         if ($(".version").html().length == 0) {
             $('.alert-danger').show();
             return false;
         }
-        if (($(".gebs").val().length == 0 && $(".gebl").val().length == 0) || ($(".opto").val().length == 0))
+        
+        if (($(".gebs").val().length == 0 && $(".gebl").val().length == 0) )
         {
             $('.alert-danger').show();
             return false;
         }
-        
+
         // Check if not doublication in selection the VFATS
 //     var arr = $(".vfatinput").map(function(){
 //                return $(this).val();
@@ -841,49 +882,12 @@ include "foot.htm";
 //         $('.doublication').show();
 //            return false;
 //     }
-//     
-     
-     /****** Check for Emptiness/doublication Solution 2 *******/
-     // Check if one of them is empty
-     $('.vfatinput').each(function() {
-            if ($(this).val() == '') {
-                //console.log('empty');
-                $(this).prev().show();
-                 $('.alert-danger').show();
-                 return false;
-                
-            }
-     });
-    // Check for doublicated fields values
-    var count = 0;
-    $('.vfatinput').each(function() {
-        if ($(this).val() != '') {
-            var val1= $(this).val();
-            var elem1 = $(this);
-            //console.log(val1);
-            $('.vfatinput').each(function() {
-                if ($(this).val() != '') {
-                    if(val1 === $(this).val())
-                    {   count= count+1; //if found itself and another field, counter would be = 2
-                        if(count > 1){
-                            //console.log(val1+$(this).val());
-                            //console.log('error');
-                            elem1.prev().show();
-                            $(this).prev().show();
-                            $('.doublication').show();
-                            return false;
-                        }
-                    }
-                }
-            });
-            count = 0;
-        }
-    });
-    /*******End********/
-        
+
+
+
     })
-    
-    
+
+
 
 
 //function uniqueArray(arr){
@@ -891,7 +895,7 @@ include "foot.htm";
 //    return $.inArray(v,arr) !== k;
 //});
 //}
-    
+
 
 
 
