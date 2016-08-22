@@ -873,6 +873,7 @@ include "foot.htm";
 //}
 
 function check_vfats_empty(e){
+    var ev = e;
     try{
     var flag = true;
     $('.vfatinput').each(function () {
@@ -890,12 +891,13 @@ function check_vfats_empty(e){
     }
     catch(e){ 
         //alert('catch');
-        e.preventDefault(); 
+        ev.preventDefault(); 
         return false; 
     }
 }
 
 function check_vfats_different(e){
+    var ev = e;
     try{ var count = 0;
         var flag = true;
         $('.vfatinput').each(function () {
@@ -934,7 +936,7 @@ function check_vfats_different(e){
         });}
     catch(e){
         //alert('catch');
-        e.preventDefault(); 
+        ev.preventDefault(); 
         return false;
     }
     
