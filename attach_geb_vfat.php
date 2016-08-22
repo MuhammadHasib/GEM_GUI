@@ -844,6 +844,7 @@ include "foot.htm";
         $('.vfatinput').each(function () {
             if ($(this).val() == '') {
                 $('.doublication').show();
+                alert('stop');
                 return false;
             }
             if ($(this).val() != '') {
@@ -861,6 +862,7 @@ include "foot.htm";
                                 elem1.prev().show();
                                 $(this).prev().show();
                                 $('.doublication').show();
+                                alert('stop');
                                 return false;
                             }
                         }
