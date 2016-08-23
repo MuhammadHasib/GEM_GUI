@@ -20,7 +20,7 @@ include "head.php";
                 $flag = 1;
                 for( $i= 0; $i<24 ; $i++ )
                 { echo "VFAT".$_POST['vfat'.$i]; echo isset($_POST['vfat'.$i]); if(!isset($_POST['vfat'.$i])){ $flag = 0;} }
-                echo $flag;
+                
                 
                 if ((isset($_POST['version']) && isset($_POST['gebl']) && $flag ) || (isset($_POST['version']) && isset($_POST['gebs']) && $flag  )) {
                     
@@ -34,10 +34,16 @@ include "head.php";
       <strong>Well done!</strong> You successfully attached 24 VFATs to GEB [' . $_POST['gebl'] . ']   </div>';
                         $temp[$SERIAL_NUMBER] = $_POST['gebl'];
                         $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
-
-                        $child['SERIAL_NUMBER'] = $_POST['opto'];
-                        $child['KIND_OF_PART'] = $OPTOHYBRID_KIND_OF_PART_NAME;
-                        $childs[] = $child;
+                        for( $i= 0; $i<24 ; $i++ )
+                        { 
+                            $child['SERIAL_NUMBER'] = $_POST['vfat'.$i];
+                            $child['KIND_OF_PART'] = $VFAT_KIND_OF_PART_NAME;
+                            $subchild['NAME'] = "VFAT Position";
+                            $subchild['VALUE'] = $i;
+                            $child ['attr'] = $subchild;
+                            $childs[] = $child;
+                        }
+                        
                     }
                     if ($_POST['version'] == "S") {
                         echo '<div role="alert" class="alert alert-success">
@@ -46,15 +52,21 @@ include "head.php";
                         $temp[$SERIAL_NUMBER] = $_POST['gebs'];
                         $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
 
-                        $child['SERIAL_NUMBER'] = $_POST['opto'];
-                        $child['KIND_OF_PART'] = $OPTOHYBRID_KIND_OF_PART_NAME;
-                        $childs[] = $child;
+                        for( $i= 0; $i<24 ; $i++ )
+                        { 
+                            $child['SERIAL_NUMBER'] = $_POST['vfat'.$i];
+                            $child['KIND_OF_PART'] = $VFAT_KIND_OF_PART_NAME;
+                            $subchild['NAME'] = "VFAT Position";
+                            $subchild['VALUE'] = $i;
+                            $child ['attr'] = $subchild;
+                            $childs[] = $child;
+                        }
                     }
                     $temp['children'] = $childs;
                     $arr[] = $temp;
                     print_r($arr);
 
-                    // generateXml($arr);
+                    generateXml($arr);
                 }
             } else {
 
