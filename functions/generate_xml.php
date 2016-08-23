@@ -24,6 +24,8 @@ function generateXml($arr) {
     $part = $xml->createElement("PART");
     $serialNum = "Default";
     $flag = 0;
+    $filename_isset = 0;
+    $filename = "";
     for ($i = 0; $i < sizeof($arr); $i++) {
 
         foreach ($arr[$i] as $key => $value) {
@@ -67,6 +69,10 @@ function generateXml($arr) {
 
                     $child->appendChild($part1);
                 }
+            }else if ($key == "filename") {
+                $filename_isset = 1;
+                $filename = $value;
+                
             } else {
                 $tag = $xml->createElement($key);
                 $tagText = $xml->createTextNode($value);
@@ -84,6 +90,9 @@ function generateXml($arr) {
     $xml->formatOutput = true;
     //echo "<xmp>". $xml->saveXML() ."</xmp>";
     //echo $xml_contents;
+    
+    // if file name is set to specific value 
+    if($filename_isset) $serialNum = $filename;
     $serialNum = str_replace("/", "-", $serialNum);
     //echo exec('whoami');
     //chmod("gen_xml/", 0755);

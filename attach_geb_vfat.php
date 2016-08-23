@@ -43,7 +43,7 @@ include "head.php";
                             $child ['attr'] = $subchild;
                             $childs[] = $child;
                         }
-                        
+                        $temp['filename'] = $_POST['gebl']."to24VFATS";
                     }
                     if ($_POST['version'] == "S") {
                         echo '<div role="alert" class="alert alert-success">
@@ -61,6 +61,7 @@ include "head.php";
                             $child ['attr'] = $subchild;
                             $childs[] = $child;
                         }
+                        $temp['filename'] = $_POST['gebs']."to24VFATS";
                     }
                     $temp['children'] = $childs;
                     $arr[] = $temp;
