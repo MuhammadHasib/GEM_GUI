@@ -19,7 +19,7 @@ include "head.php";
                 // Flag that refers to all vfats ar Set or Not
                 $flag = 1;
                 for( $i= 0; $i<24 ; $i++ )
-                { echo "VFAT".$_POST['vfat'.$i]; echo isset($_POST['vfat'.$i]); if(!isset($_POST['vfat'.$i])){ $flag = 0;} }
+                {  if(!isset($_POST['vfat'.$i])){ $flag = 0;} }
                 
                 
                 if ((isset($_POST['version']) && isset($_POST['gebl']) && $flag ) || (isset($_POST['version']) && isset($_POST['gebs']) && $flag  )) {
@@ -66,6 +66,7 @@ include "head.php";
                     $temp['children'] = $childs;
                     $arr[] = $temp;
                     //print_r($arr);
+                   
 
                     generateXml($arr);
                 }
