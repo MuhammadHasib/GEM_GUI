@@ -38,7 +38,7 @@ include "head.php";
                         { 
                             $child['SERIAL_NUMBER'] = $_POST['vfat'.$i];
                             $child['KIND_OF_PART'] = $VFAT_KIND_OF_PART_NAME;
-                            $subchild['NAME'] = "VFAT Position";
+                            $subchild['NAME'] = "VFAT2 Position";
                             $subchild['VALUE'] = $i;
                             $child ['attr'] = $subchild;
                             $childs[] = $child;
@@ -56,7 +56,7 @@ include "head.php";
                         { 
                             $child['SERIAL_NUMBER'] = $_POST['vfat'.$i];
                             $child['KIND_OF_PART'] = $VFAT_KIND_OF_PART_NAME;
-                            $subchild['NAME'] = "VFAT Position";
+                            $subchild['NAME'] = "VFAT2 Position";
                             $subchild['VALUE'] = $i;
                             $child ['attr'] = $subchild;
                             $childs[] = $child;
