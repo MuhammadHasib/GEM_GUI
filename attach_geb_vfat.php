@@ -65,7 +65,7 @@ include "head.php";
                     }
                     $temp['children'] = $childs;
                     $arr[] = $temp;
-                    print_r($arr);
+                    //print_r($arr);
 
                     generateXml($arr);
                 }
