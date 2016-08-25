@@ -212,6 +212,7 @@ $('.detach').click(function(){
         //txt = "You pressed OK!";
         $.ajax({
                     url: 'functions/ajaxActions.php?detach=true&partid='+item.attr('id')+'&kind='+item.attr('kind'),
+                    type: 'POST',
                     success: function (data) {
                         console.log(data);
                         item.parent().remove();
