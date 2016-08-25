@@ -61,7 +61,7 @@ include "head.php";
                             $child ['attr'] = $subchild;
                             $childs[] = $child;
                         }
-                        $temp['filename'] = $_POST['gebs']."to24VFATS";
+                        $temp['filename'] = $_POST['gebs']."toVFATS";
                     }
                     $temp['children'] = $childs;
                     $arr[] = $temp;

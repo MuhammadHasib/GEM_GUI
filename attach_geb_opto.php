@@ -33,6 +33,8 @@ include "head.php";
                         $child['SERIAL_NUMBER'] = $_POST['opto'];
                         $child['KIND_OF_PART'] = $OPTOHYBRID_KIND_OF_PART_NAME;
                         $childs[] = $child;
+                        
+                        $temp['filename'] = $_POST['gebl']."toOpto".$_POST['opto'];
                     }
                     if ($_POST['version'] == "S") {
                         echo '<div role="alert" class="alert alert-success">
@@ -44,6 +46,8 @@ include "head.php";
                         $child['SERIAL_NUMBER'] = $_POST['opto'];
                         $child['KIND_OF_PART'] = $OPTOHYBRID_KIND_OF_PART_NAME;
                         $childs[] = $child;
+                        
+                        $temp['filename'] = $_POST['gebs']."toOpto".$_POST['opto'];
                     }
                     $temp['children'] = $childs;
                     $arr[] = $temp;

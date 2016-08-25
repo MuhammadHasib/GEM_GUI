@@ -31,6 +31,8 @@ include "head.php";
                         $child['SERIAL_NUMBER'] = $_POST['gebl'];
                         $child['KIND_OF_PART'] = $GEB_KIND_OF_PART_NAME;
                         $childs[] = $child;
+                        
+                        $temp['filename'] = $_POST['rol']."toGEB".$_POST['gebl'];
                     }
                     if ($_POST['version'] == "S") {
                         echo '<div role="alert" class="alert alert-success">
@@ -42,6 +44,8 @@ include "head.php";
                         $child['SERIAL_NUMBER'] = $_POST['gebs'];
                         $child['KIND_OF_PART'] = $GEB_KIND_OF_PART_NAME;
                         $childs[] = $child;
+                        
+                        $temp['filename'] = $_POST['ros']."toGEB".$_POST['gebs'];
                     }
                     $temp['children'] = $childs;
                     $arr[] = $temp;
