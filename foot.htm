@@ -202,6 +202,27 @@ $(window).load(function(){
 });
 
 });
+
+
+$('.detach').click(function(){
+    var item = $(this);
+    //<span style='color: red;'>You are going to detach this part from current parent part, Proceed?</span>
+    var r = confirm("ATTENTION!\nYou are going to detach this part from current parent part, Proceed?");
+    if (r == true) {
+        //txt = "You pressed OK!";
+        $.ajax({
+                    url: 'functions/ajaxActions.php?detach=true&partid='+item.attr('id'),
+                    success: function (data) {
+                        console.log(data);
+                        item.parent().remove();
+                    }
+                });
+    } else {
+        //txt = "You pressed Cancel!";
+    }
+
+    
+})
     </script>
 
 

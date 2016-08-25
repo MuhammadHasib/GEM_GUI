@@ -34,3 +34,8 @@ if (isset($_GET['kindid'])) {
         }
     }
 }
+
+// Check if the call is for deattach part function
+if (isset($_GET['detach']) && isset($_GET['partid'])) {
+    echo "you are here detach ";
+}
