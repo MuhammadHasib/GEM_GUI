@@ -400,6 +400,14 @@ function get_available_parts_nochild($part_id, $version) {
 */
 
 function get_attached_parts($part_id) {
+    
+    global $VFAT2_TO_GEB;
+    global $OPTOHYBRID_TO_GEB;
+    global $GEB_TO_READOUT;
+    global $READOUT_TO_CHAMBER;
+    global $DRIFT_TO_CHAMBER;
+    global $FOIL_TO_CHAMBER;
+    
     // Database connection 
     $conn = database_connection();
 
@@ -415,23 +423,42 @@ function get_attached_parts($part_id) {
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
         
         // foil -> chamber
-        if($row['RELATIONSHIP_ID'] === "10000000000002001"){
+        if($row['RELATIONSHIP_ID'] === $FOIL_TO_CHAMBER){
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
             echo '<li class="list-group-item"><label> GEM Foil:</label> <a href="show_gem.php?id='.$serial.'">'.$serial.'</a> </li>';
         }
         // Drift -> chamber
-        else if($row['RELATIONSHIP_ID'] === "10000000000002002"){
+        else if($row['RELATIONSHIP_ID'] === $DRIFT_TO_CHAMBER){
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
             echo '<li class="list-group-item"><label> Drift:</label> <a href="show_drift.php?id='.$serial.'">'.$serial.'</a> </li>';
         }
         // Readout -> chamber
-        else if($row['RELATIONSHIP_ID'] === "10000000000002000"){
+        else if($row['RELATIONSHIP_ID'] === $READOUT_TO_CHAMBER){
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
             echo '<li class="list-group-item"><label> Readout:</label> <br> <a href="show_readout.php?id='.$serial.'">'.$serial.'</a> </li>';
-        }else{}
+        }
+        // geb -> readout
+        else if($row['RELATIONSHIP_ID'] === $GEB_TO_READOUT){
+            $serialarr = getSerialById($row['PART_ID']);
+            $serial = $serialarr[0]['SERIAL_NUMBER'];
+            echo '<li class="list-group-item"><label> GEB:</label> <a href="show_geb.php?id='.$serial.'">'.$serial.'</a> </li>';
+        }
+        // optohybrid -> geb
+        else if($row['RELATIONSHIP_ID'] === $OPTOHYBRID_TO_GEB){
+            $serialarr = getSerialById($row['PART_ID']);
+            $serial = $serialarr[0]['SERIAL_NUMBER'];
+            echo '<li class="list-group-item"><label> Optohybrid:</label> <a href="show_opto.php?id='.$serial.'">'.$serial.'</a> </li>';
+        }
+        // vfat -> geb
+        else if($row['RELATIONSHIP_ID'] === $VFAT2_TO_GEB){
+            $serialarr = getSerialById($row['PART_ID']);
+            $serial = $serialarr[0]['SERIAL_NUMBER'];
+            echo '<li class="list-group-item"><label> VFAT:</label> <a href="show_vfat.php?id='.$serial.'">'.$serial.'</a> </li>';
+        }
+        else{}
         
         
     }
