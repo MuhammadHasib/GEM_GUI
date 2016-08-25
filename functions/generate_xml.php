@@ -45,7 +45,8 @@ function generateDetachXml($partid, $kind) {
 //    $LocalFilePATH = "gen_xml/" . $serialNum . ".xml";
 //    $LocalFileName = $serialNum . ".xml";
     //Generate the file and save it on directory
-    echo $xml->save("gen_xml/" . $serialNum . "_detach.xml"); // or die("Error");
+    $xml->save("gen_xml/" . $serialNum . "_detach.xml"); // or die("Error");
+    echo "test test";
     // Send the file to the spool area
     //SendXML($LocalFilePATH);
 
