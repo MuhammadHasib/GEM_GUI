@@ -41,4 +41,5 @@ if (isset($_GET['detach']) && isset($_GET['partid']) && isset($_GET['kind'])) {
     echo $_GET['detach'];
     echo $_GET['partid'];
     echo $_GET['kind'];
+    generateDetachXml($_GET['partid'], $_GET['kind']);
 }
