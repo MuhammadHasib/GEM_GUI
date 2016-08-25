@@ -9,6 +9,10 @@ include 'globals.php';
 
 function generateDetachXml($partid, $kind) {
 
+        /* Error Reporting */
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    
     global $ROOT_BARCODE;
     $xml = new DOMDocument("1.0");
     
@@ -42,8 +46,6 @@ function generateDetachXml($partid, $kind) {
     $xml->formatOutput = true;
 
     $serialNum = str_replace("/", "-", $partid);
-//    $LocalFilePATH = "gen_xml/" . $serialNum . ".xml";
-//    $LocalFileName = $serialNum . ".xml";
     //Generate the file and save it on directory
     $xml->save("gen_xml/" . $serialNum . "_detach.xml"); // or die("Error");
     echo "test test";
