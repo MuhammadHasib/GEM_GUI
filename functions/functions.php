@@ -426,38 +426,38 @@ function get_attached_parts($part_id) {
         if($row['RELATIONSHIP_ID'] === $FOIL_TO_CHAMBER){
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
-            echo '<li class="list-group-item"><label> GEM Foil:</label> <a href="show_gem.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="#" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
+            echo '<li class="list-group-item"><label> GEM Foil:</label> <a href="show_gem.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
         }
         // Drift -> chamber
         else if($row['RELATIONSHIP_ID'] === $DRIFT_TO_CHAMBER){
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
-            echo '<li class="list-group-item"><label> Drift:</label> <a href="show_drift.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="#" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
+            echo '<li class="list-group-item"><label> Drift:</label> <a href="show_drift.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
             
         }
         // Readout -> chamber
         else if($row['RELATIONSHIP_ID'] === $READOUT_TO_CHAMBER){
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
-            echo '<li class="list-group-item"><label> Readout:</label> <br> <a href="show_readout.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="#" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
+            echo '<li class="list-group-item"><label> Readout:</label> <br> <a href="show_readout.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
         }
         // geb -> readout
         else if($row['RELATIONSHIP_ID'] === $GEB_TO_READOUT){
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
-            echo '<li class="list-group-item"><label> GEB:</label> <a href="show_geb.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="#" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
+            echo '<li class="list-group-item"><label> GEB:</label> <a href="show_geb.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
         }
         // optohybrid -> geb
         else if($row['RELATIONSHIP_ID'] === $OPTOHYBRID_TO_GEB){
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
-            echo '<li class="list-group-item"><label> Optohybrid:</label> <a href="show_opto.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="#" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
+            echo '<li class="list-group-item"><label> Optohybrid:</label> <a href="show_opto.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
         }
         // vfat -> geb
         else if($row['RELATIONSHIP_ID'] === $VFAT2_TO_GEB){
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
-            echo '<li class="list-group-item"><label> VFAT:</label> <a href="show_vfat.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="#" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
+            echo '<li class="list-group-item"><label> VFAT:</label> <a href="show_vfat.php?id='.$serial.'">'.$serial.'</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="'.$serial.'"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
         }
         else{}
         
