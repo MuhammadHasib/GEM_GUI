@@ -763,5 +763,5 @@ if ($i == 0) {
 </div>
 
 <?php
-include "foot.htm";
+include "foot.php";
 ?>

@@ -105,7 +105,7 @@ include "head.php";
 
 
 <?php
-include "foot.htm";
+include "foot.php";
 ?>
 <script type="text/javascript">
     $(document).ready(function () {

@@ -182,5 +182,5 @@ include "head.php";
 </div>
 
 <?php
-include "foot.htm";
+include "foot.php";
 ?>

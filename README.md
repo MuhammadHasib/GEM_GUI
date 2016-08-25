@@ -47,7 +47,7 @@ The Application backend generates XML files and automatically load it to the spo
 * Default.htm  [ Landing page ]
 * test.php  [ for testing perpose ]  **!!**
 * side.php  [ Sidebar ]  **!!**                                 
-* foot.htm  [ Footer for all pages, contains all JS ]
+* foot.php  [ Footer for all pages, contains all JS ]
 * contact.php [ Contact page ] 
 -------
 [ ***Show item pages *** ] 

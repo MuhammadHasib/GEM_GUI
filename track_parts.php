@@ -748,7 +748,7 @@ include "side.php";
     </div><!-- /.main-container -->
 
 <?php
-include "foot.htm";
+include "foot.php";
 include "foot_panel.html";
 
 ?>

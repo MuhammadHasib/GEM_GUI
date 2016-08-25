@@ -95,7 +95,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
 
 
 <?php 
-include "foot.htm";
+include "foot.php";
 
 
 ?>

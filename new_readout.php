@@ -238,7 +238,7 @@ if ($serial_num_of_newest_part) {
 </div>
 
 <?php
-include "foot.htm";
+include "foot.php";
 ?>
 
 <script>

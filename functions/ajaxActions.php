@@ -38,6 +38,6 @@ if (isset($_GET['kindid'])) {
 
 // Check if the call is for deattach part function
 if (isset($_GET['detach']) && isset($_GET['partid']) && isset($_GET['kind'])) {
-
+    $_SESSION['user'] = $_GET['user'];
     generateDetachXml($_GET['partid'], $_GET['kind']);
 }

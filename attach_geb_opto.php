@@ -148,7 +148,7 @@ include "head.php";
     </div>
 </div>
 <?php
-include "foot.htm";
+include "foot.php";
 ?>
 <script>
     /**

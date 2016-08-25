@@ -42,5 +42,5 @@ curl_close($ch);
 
 </div>
 <?php
-include "foot.htm";
+include "foot.php";
 ?>

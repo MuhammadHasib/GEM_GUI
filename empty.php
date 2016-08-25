@@ -150,6 +150,6 @@ include "head.php";
 
 
   <?php 
-include "foot.htm";
+include "foot.php";
 
 ?>
