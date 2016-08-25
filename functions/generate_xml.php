@@ -42,10 +42,10 @@ function generateDetachXml($partid, $kind) {
     $xml->formatOutput = true;
 
     $serialNum = str_replace("/", "-", $partid);
-    $LocalFilePATH = "gen_xml/" . $serialNum . ".xml";
-    $LocalFileName = $serialNum . ".xml";
+//    $LocalFilePATH = "gen_xml/" . $serialNum . ".xml";
+//    $LocalFileName = $serialNum . ".xml";
     //Generate the file and save it on directory
-    $xml->save("gen_xml/" . $serialNum . "_detach.xml"); // or die("Error");
+    echo $xml->save("gen_xml/" . $serialNum . "_detach.xml"); // or die("Error");
     // Send the file to the spool area
     //SendXML($LocalFilePATH);
 
