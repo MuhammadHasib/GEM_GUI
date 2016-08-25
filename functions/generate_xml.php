@@ -28,21 +28,22 @@ function generateDetachXml($partid, $kind) {
     $barcode->appendChild($barcodeText);
     $part->appendChild($barcode);
     
-    $part1 = $xml->createElement("PART");
+    
     $child = $xml->createElement("CHILDREN");
+    $part1 = $xml->createElement("PART");
     
     $serial = $xml->createElement("SERIAL_NUMBER");
     $serialText = $xml->createTextNode($partid);
     $serial->appendChild($serialText);
-    $child->appendChild($serial);
+    $part1->appendChild($serial);
     
     $kindofpart = $xml->createElement("KIND_OF_PART");
     $kindofpartText = $xml->createTextNode($kind);
     $kindofpart->appendChild($kindofpartText);
-    $child->appendChild($kindofpart);
+    $part1->appendChild($kindofpart);
     
-    $part1->appendChild($child);
-    $part->appendChild($part1);
+    $child->appendChild($part1);
+    $part->appendChild($child);
     $parts->appendChild($part);
 
     $xml->formatOutput = true;
