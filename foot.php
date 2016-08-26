@@ -213,14 +213,15 @@ $('.detach').click(function(){
         $.ajax({
                     type: 'POST',
                     data: 'detach=true&partid='+item.attr('id')+'&kind='+item.attr('kind')+'&user=<?php echo $_SESSION['user']; ?>',
-                    url: 'functions/ajaxActions.php',                    
+                    url: 'functions/ajaxActions.php',               
                     success: function (data) {
                         console.log(data);
                         item.parent().remove();
-                    }
+                    },
                     error: function(jqXHR, textStatus, errorThrown){
                         alert(errorThrown);
                     }
+                    
                 });
     } else {
         //txt = "You pressed Cancel!";
