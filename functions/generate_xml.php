@@ -49,7 +49,7 @@ function generateDetachXml($partid, $kind) {
     $xml->formatOutput = true;
 
     $serialNum = str_replace("/", "-",$partid);
-    $LocalFilePATH = "gen_xml/" . $serialNum . "-detach.xml";
+    $LocalFilePATH = "../gen_xml/" . $serialNum . "-detach.xml";
     //Generate the file and save it on directory
     $xml->save("../gen_xml/" . $serialNum . "-detach.xml"); // or die("Error");
     echo "test test";
