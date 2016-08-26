@@ -212,7 +212,7 @@ $('.detach').click(function(){
         //txt = "You pressed OK!";
         $.ajax({
                     type: 'POST',                    
-                    url: 'functions/ajaxActions.phpdetach=true&partid='+item.attr('id')+'&kind='+item.attr('kind')+'&user=<?php echo $_SESSION['user']; ?>',               
+                    url: 'functions/ajaxActions.php?detach=true&partid='+item.attr('id')+'&kind='+item.attr('kind')+'&user=<?php echo $_SESSION['user']; ?>',               
                     success: function (data) {
                         console.log(data);
                         item.parent().remove();
