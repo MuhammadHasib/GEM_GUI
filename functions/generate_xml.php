@@ -183,9 +183,11 @@ function SendXML($LocalFilePATH) {
      
 
     $file_name_with_full_path = realpath($LocalFilePATH);
+    echo $file_name_with_full_path;
     $post = array('file' => '@' . $file_name_with_full_path);
 
     $ch = curl_init($target_url);
+    echo $ch;
     curl_setopt($ch, CURLOPT_URL, $target_url);
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
