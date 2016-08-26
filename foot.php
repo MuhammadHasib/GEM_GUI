@@ -211,11 +211,15 @@ $('.detach').click(function(){
     if (r == true) {
         //txt = "You pressed OK!";
         $.ajax({
-                    url: 'functions/ajaxActions.php?detach=true&partid='+item.attr('id')+'&kind='+item.attr('kind')+'&user=<?php echo $_SESSION['user']; ?>',
                     type: 'POST',
+                    data: 'detach=true&partid='+item.attr('id')+'&kind='+item.attr('kind')+'&user=<?php echo $_SESSION['user']; ?>',
+                    url: 'functions/ajaxActions.php',                    
                     success: function (data) {
                         console.log(data);
                         item.parent().remove();
+                    }
+                    error: function(jqXHR, textStatus, errorThrown){
+                        alert(errorThrown);
                     }
                 });
     } else {
