@@ -129,7 +129,8 @@ vertical-align:text-center; border-radius: 25px; margin-top: -8px;">  GEM Detect
             <li><a href="first.php">Dashboard</a></li>
             <!-- <li><a href="#">Settings</a></li> -->
             <!--  <li><a href="profile.php">Profile</a></li> -->
-            <li><a href="contact.php">Help</a></li>
+            <li><a href="how_to_use.php">How to use</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
            
         </div>
