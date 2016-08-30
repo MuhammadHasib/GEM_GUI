@@ -375,7 +375,7 @@ function get_available_parts_nochild($part_id, $version) {
     $conn = database_connection();
     global $GEB_KIND_OF_PART_ID;
     if($part_id == $GEB_KIND_OF_PART_ID ){
-       $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND (select COUNT(PART_PARENT_ID) from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) < 25 ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; 
+       $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND 25 != (select COUNT(PART_PARENT_ID) from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE)  ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; 
        //echo $sql;
     }
     else{
