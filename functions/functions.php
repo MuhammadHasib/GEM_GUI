@@ -373,9 +373,14 @@ function get_available_parts_nohtml_noversion($part_id) {
 function get_available_parts_nochild($part_id, $version) {
     // Database connection 
     $conn = database_connection();
-
+    global $GEB_KIND_OF_PART_ID;
+    if($part_id == $GEB_KIND_OF_PART_ID ){
+       $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND (select count(PART_PARENT_ID) from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) < 25 ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; 
+       echo $sql;
+    }
+    else{
     $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND PART_ID not in (select PART_PARENT_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; //select data or insert data 
-    
+    }
     
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
