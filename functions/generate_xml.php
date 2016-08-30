@@ -198,9 +198,20 @@ function SendXML($LocalFilePATH) {
     $return = curl_exec($ch);
     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-    echo "</br>status code:";
-    print_r($status_code);
-    echo "<hr>exec return:" . $return;
+    //Printing Status Code and execution return 
+    if($status_code == "200"){
+        echo '</br><span class="label label-success"> <b>Status code:</b>'.$status_code.'</span> ';
+        echo '<hr><div class="alert alert-success" role="alert"><b>Execution return:</b>'.$return.'</div>exec return:';
+    }
+    else if($status_code == "503"){
+        echo '</br><span class="label label-danger"> <b>Status code:</b>'.$status_code.'</span> ';
+        echo '<hr><div class="alert alert-danger" role="alert"><b>Execution return:</b>'.$return.'</div>exec return:';
+    }
+    else{
+        echo '</br><span class="label label-warning"> <b>Status code:</b>'.$status_code.'</span> ';
+        echo '<hr><div class="alert alert-warning" role="alert"><b>Execution return:</b>'.$return.'</div>exec return:';
+    }
+    
 
     curl_close($ch);
 }
