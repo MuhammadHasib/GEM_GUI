@@ -183,11 +183,9 @@ function SendXML($LocalFilePATH) {
      
 
     $file_name_with_full_path = realpath($LocalFilePATH);
-    echo $file_name_with_full_path;
     $post = array('file' => '@' . $file_name_with_full_path);
 
     $ch = curl_init($target_url);
-    echo $ch;
     curl_setopt($ch, CURLOPT_URL, $target_url);
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
@@ -201,15 +199,15 @@ function SendXML($LocalFilePATH) {
     //Printing Status Code and execution return 
     if($status_code == "200"){
         echo '</br><span class="label label-success"> <b>Status code:</b>'.$status_code.'</span> ';
-        echo '<hr><div class="alert alert-success" role="alert"><b>Execution return:</b>'.$return.'</div>exec return:';
+        echo '<hr><div class="alert alert-success" role="alert"><b>Execution return:</b>'.$return.'</div>';
     }
     else if($status_code == "503"){
         echo '</br><span class="label label-danger"> <b>Status code:</b>'.$status_code.'</span> ';
-        echo '<hr><div class="alert alert-danger" role="alert"><b>Execution return:</b>'.$return.'</div>exec return:';
+        echo '<hr><div class="alert alert-danger" role="alert"><b>Execution return:</b>'.$return.'</div>';
     }
     else{
         echo '</br><span class="label label-warning"> <b>Status code:</b>'.$status_code.'</span> ';
-        echo '<hr><div class="alert alert-warning" role="alert"><b>Execution return:</b>'.$return.'</div>exec return:';
+        echo '<hr><div class="alert alert-warning" role="alert"><b>Execution return:</b>'.$return.'</div>';
     }
     
 
