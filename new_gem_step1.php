@@ -15,7 +15,7 @@ include "head.php";
           <h1 class="page-header">Add GEM foil</h1>
 
 
-       <a href="new_gem.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new Foil</button></a>
+       <a href="new_gem.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add 1 new Foil</button></a>
 <a href="new_gem_multi.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Multiple new Foils</button></a>
 
         </div>
