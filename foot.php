@@ -185,46 +185,56 @@
         $(".chosen-select-vfat16").chosen();
         $(".chosen-select-vfat17").chosen();
         $(".chosen-select-vfat18").chosen();
-        $(".chosen-select-vfat19").chosen();
-        $(".chosen-select-vfat20").chosen();
-        $(".chosen-select-vfat21").chosen();
-        $(".chosen-select-vfat22").chosen();
-        $(".chosen-select-vfat23").chosen();
-        
-        
-        
-        
-        jQuery(document).ready(function($) {  
+            $(".chosen-select-vfat19").chosen();
+            $(".chosen-select-vfat20").chosen();
+            $(".chosen-select-vfat21").chosen();
+            $(".chosen-select-vfat22").chosen();
+            $(".chosen-select-vfat23").chosen();
+
+
+
+
+            jQuery(document).ready(function ($) {
 
 // site preloader -- also uncomment the div in the header and the css style for #preloader
-$(window).load(function(){
-	$('#preloader').fadeOut('fast',function(){/*$(this).remove();*/});
-});
-
-});
-
-
-$('.detach').click(function(){
-    var item = $(this);
-    //<span style='color: red;'>You are going to detach this part from current parent part, Proceed?</span>
-    var r = confirm("ATTENTION!\nYou are going to detach this part from current parent part, Proceed?");
-    if (r == true) {
-        //txt = "You pressed OK!";
-        $.ajax({
-                    type: 'POST',                    
-                    url: 'functions/ajaxActions.php?detach=true&partid='+item.attr('id')+'&kind='+item.attr('kind')+'&user=<?php echo $_SESSION['user']; ?>',               
-                    success: function (data) {
-                        console.log(data);
-                        item.parent().remove();
-                    },
-                    error: function(jqXHR, textStatus, errorThrown){
-                        alert(errorThrown);
-                    }
-                    
+                $(window).load(function () {
+                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
+                    });
                 });
-    } else {
-        //txt = "You pressed Cancel!";
-    }
+
+            });
+
+
+            $('.detach').click(function () {
+                var item = $(this);
+                //<span style='color: red;'>You are going to detach this part from current parent part, Proceed?</span>
+                var r = confirm("ATTENTION!\nYou are going to detach this part from current parent part, Proceed?");
+                if (r == true) {
+                    //txt = "You pressed OK!";
+                    $.ajax({
+                        type: 'POST',
+                        url: 'functions/ajaxActions.php?detach=true&partid=' + item.attr('id') + '&kind=' + item.attr('kind') + '&user=<?php echo $_SESSION['user']; ?>',
+                        success: function (data) {
+                            console.log(data);
+                            item.parent().remove();
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            alert(errorThrown);
+                        }
+
+                    });
+                    $('body').load(
+                            'https://gemdb.web.cern.ch/gemdb/proxy.php', {
+                                csurl: 'https://gemdb.web.cern.ch/gemdb/functions/ajaxActions.php',
+                                detach: true,
+                                partid: item.attr('id'),
+                                kind: item.attr('kind'),
+                                user: <?php echo $_SESSION['user']; ?>
+                            }
+                    );
+                } else {
+                    //txt = "You pressed Cancel!";
+                }
 
     
 })
