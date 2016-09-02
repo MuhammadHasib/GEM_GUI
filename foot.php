@@ -229,7 +229,7 @@
                                 detach: true,
                                 partid: item.attr('id'),
                                 kind: item.attr('kind'),
-                                usr: <?php echo $_SESSION['user']; ?>
+                                user: '<?php echo $_SESSION['user']; ?>'
                             }
                     );
                 } else {
