@@ -206,17 +206,22 @@
 
 
             $('.detach').click(function () {
+                
                 var item = $(this);
                 //<span style='color: red;'>You are going to detach this part from current parent part, Proceed?</span>
                 var r = confirm("ATTENTION!\nYou are going to detach this part from current parent part, Proceed?");
                 if (r == true) {
                     //txt = "You pressed OK!";
+                    $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
+                    });
                     $.ajax({
                         type: 'POST',
                         url: 'functions/ajaxActions.php?detach=true&partid=' + item.attr('id') + '&kind=' + item.attr('kind') + '&user=<?php echo $_SESSION['user']; ?>',
                         success: function (data) {
                             console.log(data);
                             item.parent().remove();
+                            $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
+                    });
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
                             alert(errorThrown);
