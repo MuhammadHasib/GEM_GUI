@@ -94,7 +94,7 @@ include "head.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <?php get_available_parts_nochild($GEB_KIND_OF_PART_ID, "-S-"); ?>
+            <?php get_available_parts_nochild($GEB_KIND_OF_PART_ID, "-S-",$OPTOHYBRID_TO_GEB); ?>
                                         </ul>
 
                                     </div>
@@ -109,7 +109,7 @@ include "head.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <?php get_available_parts_nochild($GEB_KIND_OF_PART_ID, "-L-"); ?>
+                <?php get_available_parts_nochild($GEB_KIND_OF_PART_ID, "-L-",$OPTOHYBRID_TO_GEB); ?>
                                         </ul>
 
                                     </div>
