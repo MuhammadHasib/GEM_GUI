@@ -330,7 +330,7 @@ include "foot.php";
     
     $(".serialValidation").on('blur', function(){
         if($(this).val() != "" ){
-            $('.id').html('-'+$(this).val());
+            $('.id').html($(this).val());
             $(this).remove();
             $(".serialInput").val($(".serial").text());
             //check value inserted is not in DB
