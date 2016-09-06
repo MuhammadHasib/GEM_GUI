@@ -305,9 +305,10 @@ include "foot.php";
          * @param {type} param2
          */
         $(".subbutt").on('click', function () {
-
+            validateInput($(".serial").text());
             if ($(".serialInput").val() != "") {
                 $('#preloader').fadeIn('fast');
+                
             }
         });
     })
@@ -373,6 +374,7 @@ function validateInput(serial){
                             if(data == 1){
                                 $(".exist").show('');
                                 $(".serialValidation").addClass('alert-danger');
+                                return false;
                             }
                             else{
                                 $('.exist').hide();
