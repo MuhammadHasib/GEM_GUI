@@ -365,8 +365,8 @@ function validateInput(serial){
                             else{
                                 $('.exist').hide();
                                 $(".serialValidation").removeClass('alert-danger');
-                                
-                                window.setTimeout('$(".newId").show();', 2000 );
+                                $(".newId").show();
+                                window.setTimeout(function() {$(".newId").hide('blind', {}, 500)}, 200 );
                                 
                             }
                         }
