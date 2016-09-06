@@ -295,16 +295,18 @@ include "foot.php";
 
         if ($(this).html() == "Long") {
             $('#preloader').fadeIn('fast', function () {});
+            $("#vers").text("L-");
             $(".serialInput").val($(".serial").text());
-            $('#preloader').fadeOut('fast', function () {});
             validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
         }
 
         if ($(this).html() == "Short") {
             $('#preloader').fadeIn('fast', function () {});
+            $("#vers").text("S-");
             $(".serialInput").val($(".serial").text());
-            $('#preloader').fadeOut('fast', function () {});
             validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
         }
 
 
@@ -312,10 +314,11 @@ include "foot.php";
     
     $(".serialValidation").on('blur', function(){
         if($(this).val() != "" ){
-            $('.id').html($(this).val());
-           //$(this).remove();
+            $('#preloader').fadeIn('fast', function () {});
+            $('.id').html($(this).val()+$(this));
             $(".serialInput").val($(".serial").text());
             validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
 
         }
         
