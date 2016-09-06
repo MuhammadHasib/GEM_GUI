@@ -103,7 +103,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                                         </ul>
                                     </div><br>
                                     <div class="form-group">
-                                        <label> Barcode </label><br>
+                                        <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
                                         <input name="barcode" >
                                     </div>
                                     <div class="form-group">
