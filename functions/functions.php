@@ -175,7 +175,7 @@ function part_is_insertd($partid){
     $conn = database_connection();
 
     $sql = "SELECT SERIAL_NUMBER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE SERIAL_NUMBER='" . $partid . "'"; 
-    
+    echo $sql;
     // Execute query  
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
@@ -185,9 +185,9 @@ function part_is_insertd($partid){
     $result = array();
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
         $result[] = $row;
-        if (!empty($result[0]['SERIAL_NUMBER'])) {
+        
         $flag= 1;
-    }
+    
     }
     
     echo $flag;
