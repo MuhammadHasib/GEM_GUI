@@ -87,7 +87,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">FOIL-B1-</span><span id="vers" ><?= $serial_num[2]; ?></span><span class="id">-<input placeholder="XXXX" class="serialValidation"><?php /*str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT);*/ ?></span></div>
+                                    <div class="serial"><span class="name">FOIL-B1-</span><span id="vers" ><?= $serial_num[2]; ?></span><span class="id">-XXXX<?php /*str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT);*/ ?></span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -101,6 +101,24 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                                             <li><a href="#">Long</a></li>
                                             <li><a href="#">Short</a></li>
                                         </ul>
+                                    </div><br>
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Choose Batch
+                                            <span class="caret"></span>
+                                        </button> 
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#">6</a></li>
+                                        </ul>
+                                    </div><br>
+                                    <div class="dropdown">
+                                        <label> 4 digits Serial </label><br>
+                                    <input placeholder="XXXX" class="serialValidation">
                                     </div><br>
                                     <div class="form-group">
                                         <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
@@ -315,7 +333,7 @@ include "foot.php";
     $(".serialValidation").on('blur', function(){
         if($(this).val() != "" ){
             $('#preloader').fadeIn('fast', function () {});
-            $('.id').html($(this).val()+$(this));
+            $('.id').html($(this).val());
             $(".serialInput").val($(".serial").text());
             validateInput($(".serial").text());
             $('#preloader').fadeOut('fast', function () {});
