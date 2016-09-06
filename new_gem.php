@@ -87,7 +87,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">FOIL-B1-</span><span id="vers" ><?= $serial_num[2]; ?></span><span class="id">-<?= str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT); ?></span></div>
+                                    <div class="serial"><span class="name">FOIL-B1-</span><span id="vers" ><?= $serial_num[2]; ?></span><span class="id">-<input placeholder="XXXX" onblur="$('.id').html('-'+$(this).val()); $(this).remove();"><?php /*str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT);*/ ?></span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
