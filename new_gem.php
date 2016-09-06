@@ -119,6 +119,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                                     <div class="dropdown">
                                         <label> 4 digits Serial </label><br>
                                     <input placeholder="XXXX" class="serialValidation">
+                                    <i class="ace-icon fa fa-times-circle alert-danger exist" hidden="">Already in  Databse</i>
                                     </div><br>
                                     <div class="form-group">
                                         <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
@@ -357,10 +358,12 @@ function validateInput(serial){
                 url: 'functions/ajaxActions.php?validateserial=true&partid='+serial,
                 success: function(data){
                             if(data == 1){
-                                $(".serialValidation").append('<i class="ace-icon fa fa-times-circle alert-danger">Already in  Databse</i>');
+                                $(".exist").show('');
+                                $(".serialValidation").addClass('alert-danger');
                             }
                             else{
-                                $('.alert-danger').remove();
+                                $('.exist').hide();
+                                $(".serialValidation").removeClass('alert-danger');
                             }
                         }
             });
