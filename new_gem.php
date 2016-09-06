@@ -120,7 +120,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                                         <label> 4 digits Serial </label><br>
                                     <input placeholder="XXXX" class="serialValidation">
                                     <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Databse</i>
-                                    <i class="ace-icon fa fa-check-circle newId" style="display: none"> Valid Serial</i>
+                                    <i class="ace-icon fa fa-check-circle alert-success newId" style="display: none"> Valid Serial</i>
                                     </div><br>
                                     <div class="form-group">
                                         <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
@@ -365,8 +365,11 @@ function validateInput(serial){
                             else{
                                 $('.exist').hide();
                                 $(".serialValidation").removeClass('alert-danger');
+                                $(".serialValidation").addClass('alert-success');
                                 $(".newId").show();
-                                $(".newId").delay(500).fadeOut('fast');
+                                
+                                $(".newId").delay(700).fadeOut('fast');
+                                $(".serialValidation").delay(700).removeClass('alert-success');
                                 
                             }
                         }
