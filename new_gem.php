@@ -87,7 +87,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">FOIL-B1-</span><span id="vers" ><?= $serial_num[2]; ?></span><span class="id">-XXXX<?php /*str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT);*/ ?></span></div>
+                                    <div class="serial"><span class="name">FOIL-B<span class="batch">1</span>-</span><span id="vers" ><?= $serial_num[2]; ?></span><span class="id">-XXXX<?php /*str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT);*/ ?></span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -108,12 +108,16 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                                             <span class="caret"></span>
                                         </button> 
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">6</a></li>
+                                            <li><a href="#" class="batchnum">1</a></li>
+                                            <li><a href="#" class="batchnum">2</a></li>
+                                            <li><a href="#" class="batchnum">3</a></li>
+                                            <li><a href="#" class="batchnum">4</a></li>
+                                            <li><a href="#" class="batchnum">5</a></li>
+                                            <li><a href="#" class="batchnum">6</a></li>
+                                            <li><a href="#" class="batchnum">7</a></li>
+                                            <li><a href="#" class="batchnum">8</a></li>
+                                            <li><a href="#" class="batchnum">9</a></li>
+                                            <li><a href="#" class="batchnum">10</a></li>
                                         </ul>
                                     </div><br>
                                     <div class="dropdown">
@@ -329,6 +333,14 @@ include "foot.php";
             $('#preloader').fadeOut('fast', function () {});
         }
 
+        if ($(this).attr('class') == "batchnum") {
+            $('#preloader').fadeIn('fast', function () {});
+            $(".batch").text($(this).html());
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
+
+        }
 
     })
     
