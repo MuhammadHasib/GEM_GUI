@@ -328,10 +328,10 @@ include "foot.php";
 
     })
     
-    function serialValidation(t){
-        if(t.val() != "" ){
-            $('.id').html('-'+t.val());
-            t.remove();
+    function serialValidation(){
+        if($(this).val() != "" ){
+            $('.id').html('-'+$(this).val());
+            $(this).remove();
         }
          
         
