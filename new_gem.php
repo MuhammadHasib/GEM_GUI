@@ -247,7 +247,7 @@ include "foot.php";
                 $.ajax({
                     url: 'functions/ajaxActions.php?kindid=<?= $FOIL_KIND_OF_PART_ID; ?>&version=-L-',
                     success: function (data) {
-                        $(".id").text(data);
+                        //$(".id").text(data);
                         $(".serialInput").val($(".serial").text());
 
                     }
@@ -258,7 +258,7 @@ include "foot.php";
                 $.ajax({
                     url: 'functions/ajaxActions.php?kindid=<?= $FOIL_KIND_OF_PART_ID; ?>&version=-S-',
                     success: function (data) {
-                        $(".id").text(data);
+                        //$(".id").text(data);
                         $(".serialInput").val($(".serial").text());
                     }
                 });
