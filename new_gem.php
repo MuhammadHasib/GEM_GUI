@@ -356,7 +356,7 @@ function validateInput(serial){
             $.ajax({
                 url: 'functions/ajaxActions.php?validateserial=true&partid='+serial,
                 success: function(data){
-                            if(data=1){
+                            if(data == '1'){
                                 $(".serialValidation").append('<i class="ace-icon fa fa-times-circle alert-danger">Already in  Databse</i>');
                             }
                             else{
