@@ -175,7 +175,6 @@ function part_is_insertd($partid){
     $conn = database_connection();
 
     $sql = "SELECT SERIAL_NUMBER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE SERIAL_NUMBER='" . $partid . "'"; 
-    echo $sql;
     // Execute query  
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed

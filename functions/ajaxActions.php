@@ -46,5 +46,5 @@ if (isset($_GET['detach']) && isset($_GET['partid']) && isset($_GET['kind'])) {
 }
 
 if(isset($_GET['validateserial']) && isset($_GET['partid']) ){
-    part_is_insertd($partid);
+    part_is_insertd($_GET['partid']);
 }
