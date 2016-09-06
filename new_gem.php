@@ -328,7 +328,7 @@ include "foot.php";
 
     })
     
-    function serialValidation(){
+    function serialValidation(this){
         if($(this).val() != "" ){
             $('.id').html('-'+$(this).val());
             $(this).remove();
