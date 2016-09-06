@@ -300,7 +300,7 @@ include "foot.php";
             $.ajax({
                 url: 'functions/ajaxActions.php?kindid=<?= $FOIL_KIND_OF_PART_ID; ?>&version=-L-',
                 success: function (data) {
-                    $(".id").text(data);
+                    //$(".id").text(data);
                     $(".serialInput").val($(".serial").text());
                     $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
                     });
@@ -316,7 +316,7 @@ include "foot.php";
             $.ajax({
                 url: 'functions/ajaxActions.php?kindid=<?= $FOIL_KIND_OF_PART_ID; ?>&version=-S-',
                 success: function (data) {
-                    $(".id").text(data);
+                    //$(".id").text(data);
                     $(".serialInput").val($(".serial").text());
                     $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
                     });
@@ -332,7 +332,18 @@ include "foot.php";
         if($(this).val() != "" ){
             $('.id').html('-'+$(this).val());
             $(this).remove();
+            $(".serialInput").val($(".serial").text());
+            //check value inserted is not in DB
+//            $.ajax({
+//                url: 'functions/ajaxActions.php?kindid=<?= $FOIL_KIND_OF_PART_ID; ?>&version=-S-',
+//                success: function(data){
+//                            if(data=""){
+//                                $(".serialValidation").append('<i class="ace-icon fa fa-times-circle alert-danger">Already in  Databse</i>');
+//                            }
+//                        }
+//            });
         }
+        
          
         
     })
