@@ -164,6 +164,34 @@ function get_part_by_ID($part_id) {
 }
 
 /*
+ * Name: part_is_insertd
+ * Description: check if part by serial if it is already inserted into db
+ * Parameters: $partid [ String ] part serial number
+ * Return: return 1 | 0
+ * Author: Ola Aboamer [o.aboamer@cern.ch]
+ */
+function part_is_insertd($partid){
+        // Database connection 
+    $conn = database_connection();
+
+    $sql = "SELECT SERIAL_NUMBER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE SERIAL_NUMBER='" . $partid . "'"; 
+    // Execute query  
+    $query = oci_parse($conn, $sql);
+    //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
+    $arr = oci_execute($query);
+
+    $flag = 0;
+    $result = array();
+    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+        $result[] = $row;
+    }
+    if (!empty($result[0]['SERIAL_NUMBER'])) {
+        $flag= 1;
+    }
+    echo $flag;
+}
+
+/*
  * Name: get_locations
  * Description: Get list of loacations
  * return: Array

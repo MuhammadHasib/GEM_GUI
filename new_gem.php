@@ -294,35 +294,17 @@ include "foot.php";
     $('.dropdown-menu a').on('click', function () {
 
         if ($(this).html() == "Long") {
-            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
-            });
-            $("#vers").text("L-");
-            $.ajax({
-                url: 'functions/ajaxActions.php?kindid=<?= $FOIL_KIND_OF_PART_ID; ?>&version=-L-',
-                success: function (data) {
-                    //$(".id").text(data);
-                    $(".serialInput").val($(".serial").text());
-                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
-                    });
-                }
-            });
-
+            $('#preloader').fadeIn('fast', function () {});
+            $(".serialInput").val($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
+            validateInput($(".serial").text());
         }
 
         if ($(this).html() == "Short") {
-            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
-            });
-            $("#vers").text("S-");
-            $.ajax({
-                url: 'functions/ajaxActions.php?kindid=<?= $FOIL_KIND_OF_PART_ID; ?>&version=-S-',
-                success: function (data) {
-                    //$(".id").text(data);
-                    $(".serialInput").val($(".serial").text());
-                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
-                    });
-                }
-            });
-
+            $('#preloader').fadeIn('fast', function () {});
+            $(".serialInput").val($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
+            validateInput($(".serial").text());
         }
 
 
@@ -331,17 +313,10 @@ include "foot.php";
     $(".serialValidation").on('blur', function(){
         if($(this).val() != "" ){
             $('.id').html($(this).val());
-            $(this).remove();
+           //$(this).remove();
             $(".serialInput").val($(".serial").text());
-            //check value inserted is not in DB
-//            $.ajax({
-//                url: 'functions/ajaxActions.php?kindid=<?= $FOIL_KIND_OF_PART_ID; ?>&version=-S-',
-//                success: function(data){
-//                            if(data=""){
-//                                $(".serialValidation").append('<i class="ace-icon fa fa-times-circle alert-danger">Already in  Databse</i>');
-//                            }
-//                        }
-//            });
+            validateInput($(".serial").text());
+
         }
         
          
@@ -353,4 +328,20 @@ include "foot.php";
         $("#partslist").show();
 $("#<?= $FOIL_ID; ?>").attr("class","active");
 })
+
+function validateInput(serial){
+    
+                //check value inserted is not in DB
+            $.ajax({
+                url: 'functions/ajaxActions.php?validateserial=true&partid='+serial,
+                success: function(data){
+                            if(data=1){
+                                $(".serialValidation").append('<i class="ace-icon fa fa-times-circle alert-danger">Already in  Databse</i>');
+                            }
+                            else{
+                                $('.alert-danger').remove();
+                            }
+                        }
+            });
+}
 </script>
