@@ -34,9 +34,9 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger ">
                         <form method="POST" action="new_gem_multi.php">
                             <div class="form-group">
                                 <label for="exampleInputFile">How many FOILs do you want to load history information for ?? </label>
-                                <input class="" name="numOfFoils" value="">
+                                <input class="" name="numOfFoils" value="" onblur="if($('this').val() != '' )$('.subbutt_at').attr('disabled', false);">
                             </div>
-                            <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" onblur="if($('this').val() != '' )$('.subbutt_at').attr('disabled', false);">Next</button>
+                            <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
                         </form>
                     <?php } ?>
 
