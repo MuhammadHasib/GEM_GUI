@@ -11,7 +11,7 @@ include "head.php";
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <?php
-echo '<div style="display: none" geble="alert" class="alert alert-danger ">
+echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
     </div>';
                 echo '<div style="display: none" geble="alert" class="alert alert-danger doublication">
@@ -191,7 +191,7 @@ include "foot.php";
             if ($(this).val() == '') {
                 console.log('empty');
                 $(this).prev().show();
-                $('.alert-danger').show();
+                $('.empty').show();
                 flag = false;
                 throw "Exit Error";
                 return false;
@@ -203,7 +203,7 @@ include "foot.php";
             if ($(this).val() == '') {
                 console.log('empty');
                 $(this).prev().show();
-                $('.alert-danger').show();
+                $('.empty').show();
                 flag = false;
                 throw "Exit Error";
                 return false;
