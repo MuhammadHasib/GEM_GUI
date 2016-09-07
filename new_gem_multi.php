@@ -55,10 +55,10 @@ include "head.php";
                                         
                                         <div class="form-group">
                                         <lable>RUN_BEGIN_TIMESTAMP</lable><br>
-                                        <input name="RUN_BEGIN_TIMESTAMP">
+                                        <input name="RUN_BEGIN_TIMESTAMP" class="date">
                                         </div>
                                         <lable>RUN_END_TIMESTAMP</lable><br>
-                                        <input name='RUN_END_TIMESTAMP'>
+                                        <input name='RUN_END_TIMESTAMP' class="date">
                                        
                                         <div class="form-group">
                                         <lable>LOCATION</lable><br>
@@ -153,5 +153,9 @@ include "foot.php";
     $("select[class^='chosen-select-foil-']").on('change', function (evt, params) {
         $(this).prev().prev().val($(this).chosen().val());
     });
+    jQuery(document).ready(function ($) {
+        $( ".date" ).datetimepicker();
+    })
+    
 
 </script>
