@@ -58,22 +58,25 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger ">
                                     <div class="panel-body">
                                         <div class="form-group">
                                         <lable>RUN Number:</lable><br>
-                                        <input name='RUN_NUMBER'>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name='RUN_NUMBER'>
                                         </div>
                                         
                                         <div class="form-group">
                                         <lable>RUN Begin timestamp:</lable><br>
-                                        <input name="RUN_BEGIN_TIMESTAMP" class="date">
+                                        <input class="runinput" name="RUN_BEGIN_TIMESTAMP" class="date">
                                         </div>
                                         
                                         <div class="form-group">
                                         <lable>RUN End timestamp:</lable><br>
-                                        <input name='RUN_END_TIMESTAMP' class="date">
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name='RUN_END_TIMESTAMP' class="date">
                                        </div>
                                         
                                         <div class="form-group">
                                         <lable>Location:</lable><br>
-                                        <input name="LOCATION" value="" hidden>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name="LOCATION" value="" hidden>
                                         <div class="dropdown">
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                 Choose Location
@@ -87,7 +90,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger ">
                                         
                                         <div class="form-group">
                                         <lable>Initiated by user:</lable><br>
-                                        <input name='INITIATED_BY_USER'>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name='INITIATED_BY_USER'>
                                         </div>
                                         
                                         <div class="form-group">
@@ -179,12 +183,23 @@ include "foot.php";
         // Check for doublicated fields values
         check_foils_different(e);
     });
-    
     function check_foils_empty(e){
     var ev = e;
     try{
     var flag = true;
     $('.foilinput').each(function () {
+            if ($(this).val() == '') {
+                console.log('empty');
+                $(this).prev().show();
+                $('.alert-danger').show();
+                flag = false;
+                throw "Exit Error";
+                return false;
+
+            }
+        });
+        
+       $('.runinput').each(function () {
             if ($(this).val() == '') {
                 console.log('empty');
                 $(this).prev().show();
