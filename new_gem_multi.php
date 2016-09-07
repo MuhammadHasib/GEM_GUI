@@ -23,20 +23,23 @@ include "head.php";
             <?php } ?>
             
             <?php if(isset($_POST['numOfFoils'])){ 
-                $i = $_POST['numOfFoils'];
+                $num = $_POST['numOfFoils'];
                 ?>
             
             <form method="POST" action="new_gem_multi.php">
-            <div class="form-group">
+             <input hidden="" value="<?= $num; ?>" name="numOfFoils">
+             <div class="form-group">
+                
                 <label for="exampleInputFile"> Pick a FOIL </label>
                 <div class="row">
                     <div class="col-md-4">
+                        <?php for($i = 1 ; $i <= $num; $i++) {?>
                         <div class="form-group">
                             <label for="exampleInputFile">FOIL <?= $i ?> </label>
                             <span class="alert-danger vfatalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                             <input class="vfatinput vfat0" name="foil<?= $i ?>" value="" hidden><br>
                             <!--multiple=""-->
-                            <select tabindex="-1"  class="chosen-select-foil-<?= $i ?>" style="" data-placeholder="Choose VFAT">
+                            <select tabindex="-1"  class="chosen-select-foil-<?= $i ?>" style="" data-placeholder="Choose FOIL">
                                 <option value=""></option>
                                 <optgroup label="Foil">
                                 <?php
@@ -50,7 +53,8 @@ include "head.php";
                             </select>
 
 
-                        </div>                                                
+                        </div>   
+                        <?php }?>
                     </div>
                 </div>
             </div>
