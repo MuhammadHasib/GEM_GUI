@@ -8,7 +8,14 @@ include "head.php";
     <div class="row">
 
         <?php include "side.php"; ?>
-
+        <?php
+echo '<div style="display: none" geble="alert" class="alert alert-danger ">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
+    </div>';
+                echo '<div style="display: none" geble="alert" class="alert alert-danger doublication">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Attention!</strong> Make sure you did not dublicate same FOIL .
+    </div>';
+                ?> 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">GEM FOIL History </h1>
             <div class="col-xs-12 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
@@ -29,7 +36,7 @@ include "head.php";
                                 <label for="exampleInputFile">How many FOILs do you want to load history information for ?? </label>
                                 <input class="" name="numOfFoils" value="">
                             </div>
-                            <button type="submit" class="btn btn-default btn-lg subbutt_at">Next</button>
+                            <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" onblur="if($('this').val() != '' )$('.subbutt_at').attr('disabled', false);">Next</button>
                         </form>
                     <?php } ?>
 
@@ -128,7 +135,7 @@ include "head.php";
                                 </div>
                             </div>
                                 </div>
-                            <button type="submit" class="btn btn-default btn-lg subbutt_at">Submit</button>
+                            <button type="submit" class="btn btn-default btn-lg subbutt_gen">Submit</button>
                         </form>
 
 <?php } ?>
@@ -164,6 +171,83 @@ include "foot.php";
     jQuery(document).ready(function ($) {
         $( ".date" ).datetimepicker();
     })
+    $(".subbutt_gen").on("click", function(){
+        //$(".foilinput").each();
+                // Check if one of them is empty
+        check_foils_empty(e);
+        // Check for doublicated fields values
+        check_foils_different(e);
+    });
     
+    function check_foils_empty(e){
+    var ev = e;
+    try{
+    var flag = true;
+    $('.foilinput').each(function () {
+            if ($(this).val() == '') {
+                console.log('empty');
+                $(this).prev().show();
+                $('.alert-danger').show();
+                flag = false;
+                throw "Exit Error";
+                return false;
+
+            }
+        });
+        
+    }
+    catch(e){ 
+        //alert('catch');
+        ev.preventDefault(); 
+        return false; 
+    }
+}
+
+function check_foils_different(e){
+    var ev = e;
+    try{ var count = 0;
+        var flag = true;
+        $('.foilinput').each(function () {
+            if ($(this).val() === '') {
+                $('.doublication').show();
+                //alert('stop');
+                flag = false;
+                throw "Exit Error";
+                return false;
+            }
+            if ($(this).val() !== '') {
+                var val1 = $(this).val();
+                var elem1 = $(this);
+                //console.log(val1);
+                $('.foilinput').each(function () {
+                    if ($(this).val() !== '') {
+                        if (val1 === $(this).val())
+                        {
+                            count = count + 1; //if found itself and another field, counter would be = 2
+                            if (count > 1) {
+                                console.log(val1+$(this).val());
+                                console.log('error');
+                                elem1.prev().show();
+                                $(this).prev().show();
+                                $('.doublication').show();
+                                //alert('stop');
+                                flag = false;
+                                throw "Exit Error";
+                                return false;
+                            }
+                        }
+                    }
+                });
+                count = 0;
+            }
+        });}
+    catch(e){
+        //alert('catch');
+        ev.preventDefault(); 
+        return false;
+    }
+    
+   
+}
 
 </script>
