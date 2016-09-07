@@ -12,7 +12,7 @@ include "head.php";
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">GEM FOIL History </h1>
             
-            <?php if(isset($_POST['numOfFoils'])){ ?>
+            <?php if(!isset($_POST['numOfFoils'])){ ?>
             <form method="POST" action="new_gem_multi.php">
                 <div class="form-group">
                     <label for="exampleInputFile">How many FOILs do you want to load history information for ?? </label>
