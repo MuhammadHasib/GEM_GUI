@@ -93,7 +93,7 @@ include "head.php";
                             <div class="form-group">
                                 <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;">  
                                     <div class="panel-body">
-                                        <label for="exampleInputFile"> Pick FOIL/s </label>
+                                        <h3 class="panel-title">  <i class="ace-icon glyphicon glyphicon-plus"></i> FOIL(s) related:</h3>
                                         <div class="row">
                                             <div class="col-md-4">
     <?php for ($i = 1; $i <= $num; $i++) { ?>
