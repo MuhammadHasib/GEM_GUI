@@ -47,16 +47,20 @@ include "head.php";
                                     <h3 class="panel-title">  <i class="ace-icon glyphicon glyphicon-cog"></i> HEADER information:</h3>
 
                                     <div class="panel-body">
-                                        <lable>RUN_NUMBER</lable>
-                                        <input name='RUN_NUMBER'><br>
+                                        <div class="form-group">
+                                        <lable>RUN_NUMBER</lable><br>
+                                        <input name='RUN_NUMBER'>
+                                        </div>
                                         
-                                        <lable>RUN_BEGIN_TIMESTAMP</lable>
-                                        <input name="RUN_BEGIN_TIMESTAMP"><br>
-                                        
-                                        <lable>RUN_END_TIMESTAMP</lable>
-                                        <input name='RUN_END_TIMESTAMP'><br>
-                                        
-                                        <lable>LOCATION</lable>
+                                        <div class="form-group">
+                                        <lable>RUN_BEGIN_TIMESTAMP</lable><br>
+                                        <input name="RUN_BEGIN_TIMESTAMP">
+                                        </div>
+                                        <lable>RUN_END_TIMESTAMP</lable><br>
+                                        <input name='RUN_END_TIMESTAMP'>
+                                       
+                                        <div class="form-group">
+                                        <lable>LOCATION</lable><br>
                                         <input name="LOCATION" value="" hidden>
                                         <div class="dropdown">
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -66,13 +70,18 @@ include "head.php";
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                                 <?php get_locations(); ?>
                                             </ul>
-                                        </div><br>
+                                        </div>
+                                        </div>
                                         
-                                        <lable>INITIATED_BY_USER</lable>
-                                        <input name='INITIATED_BY_USER'><br>
+                                        <div class="form-group">
+                                        <lable>INITIATED_BY_USER</lable><br>
+                                        <input name='INITIATED_BY_USER'>
+                                        </div>
                                         
-                                        <lable>COMMENT_DESCRIPTION</lable>
+                                        <div class="form-group">
+                                        <lable>COMMENT_DESCRIPTION</lable><br>
                                         <textarea name='COMMENT_DESCRIPTION'></textarea>
+                                        </div>
                                         
 
                                     </div>
