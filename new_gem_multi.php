@@ -8,7 +8,9 @@ include "head.php";
     <div class="row">
 
         <?php include "side.php"; ?>
-        <?php
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <?php
 echo '<div style="display: none" geble="alert" class="alert alert-danger ">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
     </div>';
@@ -16,7 +18,6 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger ">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Attention!</strong> Make sure you did not dublicate same FOIL .
     </div>';
                 ?> 
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">GEM FOIL History </h1>
             <div class="col-xs-12 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
                 <div class="panel-heading">
