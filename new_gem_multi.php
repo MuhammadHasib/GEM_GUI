@@ -34,7 +34,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger ">
                         <form method="POST" action="new_gem_multi.php">
                             <div class="form-group">
                                 <label for="exampleInputFile">How many FOILs do you want to load history information for ?? </label>
-                                <input class="" name="numOfFoils" value="" onblur="if($(this).val() !== '' )$('.subbutt_at').attr('disabled', false);">
+                                <input class="" name="numOfFoils" value=""  onfocusout="if($(this).val() !== '' )$('.subbutt_at').attr('disabled', false);">
                             </div>
                             <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
                         </form>
@@ -171,7 +171,7 @@ include "foot.php";
     jQuery(document).ready(function ($) {
         $( ".date" ).datetimepicker();
     })
-    $(".subbutt_gen").on("click", function(){
+    $(".subbutt_gen").on("click", function(e){
         //$(".foilinput").each();
                 // Check if one of them is empty
         check_foils_empty(e);
