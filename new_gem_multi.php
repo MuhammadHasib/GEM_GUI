@@ -28,7 +28,7 @@ include "head.php";
                     <label for="exampleInputFile">How many FOILs do you want to load history information for ?? </label>
                     <input class="" name="numOfFoils" value="">
                 </div>
-                 <button type="submit" class="btn btn-default btn-lg subbutt_at">Submit</button>
+                 <button type="submit" class="btn btn-default btn-lg subbutt_at">Next</button>
             </form>
             <?php } ?>
             
