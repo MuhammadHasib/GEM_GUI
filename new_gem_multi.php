@@ -49,19 +49,22 @@ include "head.php";
 
                                     <div class="panel-body">
                                         <div class="form-group">
-                                        <lable>RUN_NUMBER</lable><br>
+                                        <lable>RUN Number:</lable><br>
                                         <input name='RUN_NUMBER'>
                                         </div>
                                         
                                         <div class="form-group">
-                                        <lable>RUN_BEGIN_TIMESTAMP</lable><br>
+                                        <lable>RUN Begin timestamp:</lable><br>
                                         <input name="RUN_BEGIN_TIMESTAMP" class="date">
                                         </div>
-                                        <lable>RUN_END_TIMESTAMP</lable><br>
-                                        <input name='RUN_END_TIMESTAMP' class="date">
-                                       
+                                        
                                         <div class="form-group">
-                                        <lable>LOCATION</lable><br>
+                                        <lable>RUN End timestamp:</lable><br>
+                                        <input name='RUN_END_TIMESTAMP' class="date">
+                                       </div>
+                                        
+                                        <div class="form-group">
+                                        <lable>Location:</lable><br>
                                         <input name="LOCATION" value="" hidden>
                                         <div class="dropdown">
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -75,7 +78,7 @@ include "head.php";
                                         </div>
                                         
                                         <div class="form-group">
-                                        <lable>INITIATED_BY_USER</lable><br>
+                                        <lable>Initiated by user:</lable><br>
                                         <input name='INITIATED_BY_USER'>
                                         </div>
                                         
@@ -134,7 +137,12 @@ include "head.php";
             <?php
             //  Form Submitted , need to generate XML 
             if (isset($_POST['foilsnumbersubmitted'])) {
-                
+//                    RUN_NUMBER
+//                    RUN_BEGIN_TIMESTAMP
+//                    RUN_END_TIMESTAMP
+//                    LOCATION
+//                    INITIATED_BY_USER
+//                    COMMENT_DESCRIPTION
             }
             ?>
 
