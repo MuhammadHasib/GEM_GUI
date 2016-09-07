@@ -64,6 +64,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         
                                         <div class="form-group">
                                         <lable>RUN Begin timestamp:</lable><br>
+                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                         <input class="runinput" name="RUN_BEGIN_TIMESTAMP" class="date">
                                         </div>
                                         
