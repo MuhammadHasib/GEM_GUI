@@ -65,13 +65,13 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         <div class="form-group">
                                         <lable>RUN Begin timestamp:</lable><br>
                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                        <input class="runinput" name="RUN_BEGIN_TIMESTAMP" class="date">
+                                        <input class="runinput date" name="RUN_BEGIN_TIMESTAMP" >
                                         </div>
                                         
                                         <div class="form-group">
                                         <lable>RUN End timestamp:</lable><br>
                                          <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                        <input class="runinput" name='RUN_END_TIMESTAMP' class="date">
+                                        <input class="runinput date" name='RUN_END_TIMESTAMP' >
                                        </div>
                                         
                                         <div class="form-group">
