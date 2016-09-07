@@ -11,7 +11,7 @@ include "head.php";
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">GEM FOIL History </h1>
-            <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
+            <div class="col-xs-12 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
                 <div class="panel-heading">
                     <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>Foil History information</h3>
                 </div>
@@ -41,6 +41,7 @@ include "head.php";
 
                         <form method="POST" action="new_gem_multi.php">
                             <input hidden="" value="<?= $num; ?>" name="foilsnumbersubmitted">
+                            <div class="col-xs-6">
                             <div class="form-group">
                                 <div style="padding-left: 0px; padding-right: 0px;" class=" panel-info panel">
 
@@ -87,6 +88,8 @@ include "head.php";
                                     </div>
                                 </div>
                             </div>
+                            </div>
+                            <div class="col-xs-6">
                             <div class="form-group">
                                 <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;">  
                                     <div class="panel-body">
@@ -120,6 +123,7 @@ include "head.php";
                                     </div>
                                 </div>
                             </div>
+                                </div>
                             <button type="submit" class="btn btn-default btn-lg subbutt_at">Submit</button>
                         </form>
 
