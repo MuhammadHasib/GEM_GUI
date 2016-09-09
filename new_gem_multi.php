@@ -3,7 +3,13 @@
 include "head.php";
 ?>
 
-
+<style>
+    
+    .sublabel {
+        width: 100px;
+    }
+    
+</style>
 <div class="container-fluid">
     <div class="row">
 
@@ -131,7 +137,34 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 
                                                             </optgroup>
                                                         </select>
-
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">PI film Number: </label>
+                                                        <input name="PI_FILM_NUMBER_foil"<?= $i; ?> >
+                                                        </div>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">PI film Number:  </label>
+                                                        <input name="PROD_LOT_NUMBER_foil"<?= $i; ?>>
+                                                        </div>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">MPT Technician:  </label>
+                                                        <input name="MPT_TECHNICIAN_foil"<?= $i; ?>>
+                                                        </div>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Status </label>
+                                                        <input name="STATUS_foil"<?= $i; ?>>
+                                                        </div>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Comments</label>
+                                                        <textarea name="COMMENTS_foil"<?= $i; ?>></textarea>
+                                                        </div>
+                                                        <hr/>
+			
+			
 
                                                     </div>   
     <?php } ?>
@@ -156,6 +189,9 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 //                    LOCATION
 //                    INITIATED_BY_USER
 //                    COMMENT_DESCRIPTION
+                for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
+                    $_POST['foil'.$i];
+                }
             }
             ?>
 
