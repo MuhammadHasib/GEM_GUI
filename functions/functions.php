@@ -201,7 +201,7 @@ function part_is_insertd($partid){
 
 function get_locations() {
     $conn = database_connection();
-    $sql = "SELECT LOCATION_ID,INSTITUTION_ID ,LOCATION_NAME FROM CMS_GEM_CORE_MANAGEMNT.LOCATIONS WHERE IS_RECORD_DELETED = 'No'"; //select data or insert data
+    $sql = "SELECT LOCATION_ID,INSTITUTION_ID ,LOCATION_NAME FROM CMS_GEM_CORE_MANAGEMNT.LOCATIONS WHERE IS_RECORD_DELETED = 'F'"; //select data or insert data
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
     $arr = oci_execute($query);
