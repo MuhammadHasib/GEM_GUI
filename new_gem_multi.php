@@ -140,26 +140,31 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">PI film Number: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="PI_FILM_NUMBER_foil"<?= $i; ?> >
                                                         </div>
                                                         
                                                         <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">PI film Number:  </label>
+                                                        <label class="sublabel" for="exampleInputFile">Prod Lot Number:  </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="PROD_LOT_NUMBER_foil"<?= $i; ?>>
                                                         </div>
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">MPT Technician:  </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="MPT_TECHNICIAN_foil"<?= $i; ?>>
                                                         </div>
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Status </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="STATUS_foil"<?= $i; ?>>
                                                         </div>
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Comments</label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <textarea name="COMMENTS_foil"<?= $i; ?>></textarea>
                                                         </div>
                                                         <hr/>
@@ -189,6 +194,11 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 //                    LOCATION
 //                    INITIATED_BY_USER
 //                    COMMENT_DESCRIPTION
+//                PROD_LOT_NUMBER
+//                MPT_TECHNICIAN
+//                STATUS
+//                COMMENTS
+                
                 for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
                     $_POST['foil'.$i];
                 }
