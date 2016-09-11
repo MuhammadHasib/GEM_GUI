@@ -26,7 +26,7 @@ include "head.php";
             
             <a class="btn btn-default btn-app radius-4" href="new_gem_multi.php">
                 <i class="ace-icon glyphicon glyphicon-book"></i>
-                Foil History
+                Foil Data
                 <span class="badge badge-success"><i class="ace-icon glyphicon glyphicon-plus"></i></span>
             </a>
 

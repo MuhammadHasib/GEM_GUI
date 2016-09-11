@@ -159,8 +159,21 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Status </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="STATUS_foil"<?= $i; ?>>
+                                                        <input name="STATUS_foil"<?= $i; ?> hidden>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                Choose Status
+                                                                <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                               <li><span class="label label-info arrowed-right arrowed-in">Good</span></li>
+                                                               <li><span class="label label-success arrowed-in arrowed-in-right">Approved</span></li>
+                                                               <li><span class="label label-danger arrowed">Bad</span></li>
+                                                               <li><span class="label label-warning arrowed arrowed-right">Pending</span></li>
+                                                            </ul>
                                                         </div>
+                                                        </div>
+                                                        
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Comments</label>
@@ -188,7 +201,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
             <?php
             //  Form Submitted , need to generate XML 
             if (isset($_POST['foilsnumbersubmitted'])) {
-//                    RUN_NUMBER
+//                    $_POST['RUN_NUMBER']
 //                    RUN_BEGIN_TIMESTAMP
 //                    RUN_END_TIMESTAMP
 //                    LOCATION
