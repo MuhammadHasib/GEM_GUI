@@ -76,7 +76,7 @@ function generateDatasetXml($data) {
     $xml->save("gen_xml/dataset".$num.".xml"); // or die("Error");
  
     // Send the file to the spool area
-    //SendXML($LocalFilePATH);
+    SendXML($LocalFilePATH);
 
     return 1;
 }
