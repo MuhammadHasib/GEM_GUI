@@ -120,6 +120,10 @@
             //var x = $(this).html();
             //$("availablepart a[value='"+x+"']").remove();
         }
+         if ($(this).attr("class") == "label"){
+            $(this).parent().parent().parent().prev().val();
+            $(this).parent().parent().parent().prev().val($(this).html());
+        }
         
         $('.dropdown-menu a').dropdown("toggle");
         return false;
