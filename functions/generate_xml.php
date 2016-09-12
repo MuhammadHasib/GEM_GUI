@@ -10,8 +10,8 @@ include 'globals.php';
 function generateDatasetXml($data) {
 
         /* Error Reporting */
-//    error_reporting(E_ALL);
-//    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     
     $xml = new DOMDocument("1.0");
     
