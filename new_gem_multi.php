@@ -70,6 +70,12 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         </div>
                                         
                                         <div class="form-group">
+                                        <lable>RUN Type:</lable><br>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name='RUN_TYPE'>
+                                        </div>
+                                        
+                                        <div class="form-group">
                                         <lable>RUN Begin timestamp:</lable><br>
                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                         <input class="runinput date" name="RUN_BEGIN_TIMESTAMP" >
@@ -231,15 +237,18 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     $headType =array();
                     $foils =array();
                     $foil = array();
+                    $part = array();
+                    $partdata = array();
                     $data = array();
                     
                     // Header Data
-                    $headType['EXTENSION_TABLE_NAME'] ="";
-                    $headType['NAME'] = ""; 
+                    $headType['EXTENSION_TABLE_NAME'] ="FOIL_HISTORY_INFO";
+                    $headType['NAME'] = "GEM Foil History Information"; 
                     $head['TYPE'] = $headType;
                     
                     
                     $headRun['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
+                    $headRun['RUN_TYPE'] = $_POST['RUN_TYPE'];
                     $headRun['RUN_BEGIN_TIMESTAMP'] = $_POST['RUN_BEGIN_TIMESTAMP'];
                     $headRun['RUN_END_TIMESTAMP'] = $_POST['RUN_END_TIMESTAMP'];
                     $headRun['LOCATION'] = $_POST['LOCATION'];
@@ -253,11 +262,16 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     //$_POST['foil'.$i];   
                     $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_foil'.$i];
                     $foil['VERSION'] = $_POST['VERSION_foil'.$i];
-                    $foil['SERIAL_NUMBER'] = $_POST['foil'.$i];
-                    $foil['PROD_LOT_NUMBER'] = $_POST['PROD_LOT_NUMBER_foil'.$i];
-                    $foil['MPT_TECHNICIAN'] = $_POST['MPT_TECHNICIAN_foil'.$i];
-                    $foil['STATUS'] = $_POST['STATUS_foil'.$i];
-                    $foil['COMMENTS'] = $_POST['COMMENTS_foil'.$i];
+                    
+                    $part['SERIAL_NUMBER'] = $_POST['foil'.$i];
+                    $part['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
+                    $foil['PART'] = $part;
+                    
+                    $partdata['PROD_LOT_NUMBER'] = $_POST['PROD_LOT_NUMBER_foil'.$i];
+                    $partdata['MPT_TECHNICIAN'] = $_POST['MPT_TECHNICIAN_foil'.$i];
+                    $partdata['STATUS'] = $_POST['STATUS_foil'.$i];
+                    $partdata['COMMENTS'] = $_POST['COMMENTS_foil'.$i];
+                    $foil['DATA'] = $partdata;
                     
                     $foils['foil'.$i] = $foil;
                   
