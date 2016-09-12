@@ -55,9 +55,9 @@ function generateDatasetXml($data) {
     $xml->formatOutput = true;
 
     $num = str_replace("/", "-",$runnum);
-    $LocalFilePATH = "../gen_xml/dataset".$num.".xml";
+    $LocalFilePATH = "gen_xml/dataset".$num.".xml";
     //Generate the file and save it on directory
-    $xml->save("../gen_xml/dataset".$num.".xml"); // or die("Error");
+    $xml->save("gen_xml/dataset".$num.".xml"); // or die("Error");
  
     // Send the file to the spool area
     //SendXML($LocalFilePATH);
