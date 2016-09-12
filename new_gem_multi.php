@@ -55,7 +55,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 
                         <form method="POST" action="new_gem_multi.php">
                             <input hidden="" value="<?= $num; ?>" name="foilsnumbersubmitted">
-                            <div class="col-xs-6">
+                            <div class="row">
+                            <div class="col-xs-12">
                             <div class="form-group">
                                 <div style="padding-left: 0px; padding-right: 0px;" class=" panel-info panel">
 
@@ -111,7 +112,9 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                 </div>
                             </div>
                             </div>
-                            <div class="col-xs-6">
+                            </div>
+                            <div class="row">
+                            <div class="col-xs-12">
                             <div class="form-group">
                                 <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;">  
                                     <h3 class="panel-title">  <i class="ace-icon glyphicon glyphicon-plus"></i> FOIL(s) related:</h3>
@@ -121,6 +124,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                             <div class="col-md-4">
     <?php for ($i = 1; $i <= $num; $i++) { ?>
                                                     <div class="form-group">
+                                                        COMMENT_DESCRIPTION
                                                         <label for="exampleInputFile">FOIL <?= $i ?> </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input class="foilinput foil<?= $i ?>" name="foil<?= $i ?>" value="" hidden><br>
@@ -141,25 +145,25 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">PI film Number: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="PI_FILM_NUMBER_foil"<?= $i; ?> >
+                                                        <input name="PI_FILM_NUMBER_foil<?= $i; ?>" >
                                                         </div>
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Prod Lot Number:  </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="PROD_LOT_NUMBER_foil"<?= $i; ?>>
+                                                        <input name="PROD_LOT_NUMBER_foil<?= $i; ?>">
                                                         </div>
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">MPT Technician:  </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="MPT_TECHNICIAN_foil"<?= $i; ?>>
+                                                        <input name="MPT_TECHNICIAN_foil<?= $i; ?>">
                                                         </div>
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Status </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="STATUS_foil"<?= $i; ?> hidden>
+                                                        <input name="STATUS_foil<?= $i; ?>" hidden>
                                                         <div class="dropdown">
                                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                                 Choose Status
@@ -178,7 +182,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Comments</label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <textarea name="COMMENTS_foil"<?= $i; ?>></textarea>
+                                                        <textarea name="COMMENTS_foil<?= $i; ?>"></textarea>
                                                         </div>
                                                         <hr/>
 			
@@ -192,6 +196,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                 </div>
                             </div>
                                 </div>
+                                </div>
                             <button type="submit" class="btn btn-default btn-lg subbutt_gen">Submit</button>
                         </form>
 
@@ -201,16 +206,25 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
             <?php
             //  Form Submitted , need to generate XML 
             if (isset($_POST['foilsnumbersubmitted'])) {
-//                    $_POST['RUN_NUMBER']
-//                    RUN_BEGIN_TIMESTAMP
-//                    RUN_END_TIMESTAMP
-//                    LOCATION
-//                    INITIATED_BY_USER
-//                    COMMENT_DESCRIPTION
-//                PROD_LOT_NUMBER
-//                MPT_TECHNICIAN
-//                STATUS
-//                COMMENTS
+                    $head = array();
+                    $foils =array();
+                    $foil = array();
+                    // Header Data
+                    $head['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
+                    $head['RUN_BEGIN_TIMESTAMP'] = $_POST['RUN_BEGIN_TIMESTAMP'];
+                    $head['RUN_END_TIMESTAMP'] = $_POST['RUN_END_TIMESTAMP'];
+                    $head['LOCATION'] = $_POST['LOCATION'];
+                    $head['INITIATED_BY_USER'] = $_POST['INITIATED_BY_USER'];
+                    $head['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION'];
+                    
+                    
+                    
+                    //Foils Data
+                    $xx['SERIAL_NUMBER'] = $_POST['foil1,2,3,...'];
+                    $_POST['PROD_LOT_NUMBER_foil1,2,3,....'];
+                    $_POST['MPT_TECHNICIAN_foil1,2,3,....'];
+                    $_POST['STATUS_foil1,2,3,4...'];
+                    $_POST['COMMENTS_foil1,2,3,...'];
                 
                 for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
                     $_POST['foil'.$i];
