@@ -120,7 +120,7 @@
             //var x = $(this).html();
             //$("availablepart a[value='"+x+"']").remove();
         }
-         if ($(this).attr("class") == "label"){
+         if ($(this).hasClass('label')){
             $(this).parent().parent().parent().prev().val();
             $(this).parent().parent().parent().prev().val($(this).html());
         }
