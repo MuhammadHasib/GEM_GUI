@@ -226,6 +226,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     $head = array();
                     $foils =array();
                     $foil = array();
+                    $data = array();
                     // Header Data
                     $head['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
                     $head['RUN_BEGIN_TIMESTAMP'] = $_POST['RUN_BEGIN_TIMESTAMP'];
@@ -237,15 +238,22 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     
                     
                     //Foils Data
-                    $xx['SERIAL_NUMBER'] = $_POST['foil1,2,3,...'];
-                    $_POST['PROD_LOT_NUMBER_foil1,2,3,....'];
-                    $_POST['MPT_TECHNICIAN_foil1,2,3,....'];
-                    $_POST['STATUS_foil1,2,3,4...'];
-                    $_POST['COMMENTS_foil1,2,3,...'];
-                
-                for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
-                    $_POST['foil'.$i];
-                }
+                 for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
+                    //$_POST['foil'.$i];   
+                    $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_foil'.$i];
+                    $foil['VERSION'] = $_POST['VERSION_foil'.$i];
+                    $foil['SERIAL_NUMBER'] = $_POST['foil'.$i];
+                    $foil['PROD_LOT_NUMBER'] = $_POST['PROD_LOT_NUMBER_foil'.$i];
+                    $foil['MPT_TECHNICIAN'] = $_POST['MPT_TECHNICIAN_foil'.$i];
+                    $foil['STATUS'] = $_POST['STATUS_foil'.$i];
+                    $foil['COMMENTS'] = $_POST['COMMENTS_foil'.$i];
+                    
+                    $foils['foil'.$i] = $foil;
+                  
+                   }
+                   $data['head'] = $head;
+                   $data['foils'] = $foils;
+                   print_r($data);
             }
             ?>
 
