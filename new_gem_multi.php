@@ -36,7 +36,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 
                     <?php
                     // Access the page 1st time need to define number of foils having History info to be inserted
-                    if (!isset($_POST['numOfFoils'])) {
+                    if (!isset($_POST['numOfFoils']) && !isset($_POST['foilsnumbersubmitted'])) {
                         ?>
                         <form method="POST" action="new_gem_multi.php">
                             <div class="form-group">
