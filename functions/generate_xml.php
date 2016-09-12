@@ -46,12 +46,13 @@ function generateDatasetXml($data) {
             $root->appendChild($element);
             foreach ($value as $key1 => $value1) {
                 if(is_array ( $value1 )){
+                    $element1 = $xml->createElement($key1);
                     foreach ($value1 as $key2 => $value2) {
                     $subElement = $xml->createElement($key2);
                     $subElementText = $xml->createTextNode($value2);
                     $subElement->appendChild($subElementText);
-                    $element->appendChild($subElement);
-                    $dataset->appendChild($element);
+                    $element1->appendChild($subElement);
+                    $dataset->appendChild($element1);
                     }
                 }
                 else{
