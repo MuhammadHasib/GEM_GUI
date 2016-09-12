@@ -41,31 +41,32 @@ function generateDatasetXml($data) {
     
     foreach ($data['foils'] as $key => $value) {
         $dataset = $xml->createElement("DATA_SET");
-        if(is_array ( $value )){
-            
+        if (is_array($value)) {
+            $element = $xml->createElement($key);
+            $root->appendChild($element);
             foreach ($value as $key1 => $value1) {
-                if(is_array ( $value1 )){
+                if (is_array($value1)) {
                     $element1 = $xml->createElement($key1);
                     foreach ($value1 as $key2 => $value2) {
-                    $subElement = $xml->createElement($key2);
-                    $subElementText = $xml->createTextNode($value2);
-                    $subElement->appendChild($subElementText);
-                    $element1->appendChild($subElement);
-                    $dataset->appendChild($element1);
+                        $subElement = $xml->createElement($key2);
+                        $subElementText = $xml->createTextNode($value2);
+                        $subElement->appendChild($subElementText);
+                        $element1->appendChild($subElement);
+                        
                     }
-                }
-                else{
-                $subElement = $xml->createElement($key1);
-                $subElementText = $xml->createTextNode($value1);
-                $subElement->appendChild($subElementText);
-                $element->appendChild($subElement);
-                $dataset->appendChild($element);
+                    $dataset->appendChild($element1);
+                } else {
+                    $subElement = $xml->createElement($key1);
+                    $subElementText = $xml->createTextNode($value1);
+                    $subElement->appendChild($subElementText);
+                    $element->appendChild($subElement);
+                    $dataset->appendChild($element);
                 }
             }
         }
         $root->appendChild($dataset);
     }
-    
+
 
     $xml->formatOutput = true;
 
