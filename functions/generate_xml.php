@@ -1,6 +1,78 @@
 <?php
 include 'globals.php';
 /*
+ * Name: generateDatasetXml
+ * Description:  Generate XML file for loading datasets for FOILS.
+ * Usage: in add FOIL data page
+ * Author: Ola Aboamer [o.aboamer@cern.ch] 
+ */
+
+function generateDatasetXml($data) {
+
+        /* Error Reporting */
+//    error_reporting(E_ALL);
+//    ini_set('display_errors', 1);
+    
+    global $ROOT_BARCODE;
+    $xml = new DOMDocument("1.0");
+    
+    $root = $xml->createElement("ROOT");
+    $xml->appendChild($root);
+    
+    $header = $xml->createElement("HEADER");
+    foreach ($data['head'] as $key => $value) {
+        if(is_array ( $value )){
+            foreach ($value as $key => $value1) {
+                
+            }
+        }
+        $parts = $xml->createElement("");
+        $root->appendChild($parts);
+    }
+    $root->appendChild($header);
+    
+    
+    $parts = $xml->createElement("PARTS");
+    $root->appendChild($parts);
+
+    $part = $xml->createElement("PART");
+    $barcode = $xml->createElement("BARCODE");
+    $barcodeText = $xml->createTextNode($ROOT_BARCODE);
+    $barcode->appendChild($barcodeText);
+    $part->appendChild($barcode);
+    
+    
+    $child = $xml->createElement("CHILDREN");
+    $part1 = $xml->createElement("PART");
+    
+    $serial = $xml->createElement("SERIAL_NUMBER");
+    $serialText = $xml->createTextNode($partid);
+    $serial->appendChild($serialText);
+    $part1->appendChild($serial);
+    
+    $kindofpart = $xml->createElement("KIND_OF_PART");
+    $kindofpartText = $xml->createTextNode($kind);
+    $kindofpart->appendChild($kindofpartText);
+    $part1->appendChild($kindofpart);
+    
+    $child->appendChild($part1);
+    $part->appendChild($child);
+    $parts->appendChild($part);
+
+    $xml->formatOutput = true;
+
+    $serialNum = str_replace("/", "-",$partid);
+    $LocalFilePATH = "../gen_xml/" . $serialNum . "-detach.xml";
+    //Generate the file and save it on directory
+    $xml->save("../gen_xml/" . $serialNum . "-detach.xml"); // or die("Error");
+    echo "test test";
+    // Send the file to the spool area
+    //SendXML($LocalFilePATH);
+
+    return 1;
+}
+
+/*
  * Name: generateDetachXml
  * Description:  Generate XML files for detaching child parts from its parent parts.
  * Usage: in show pages deatach chils listed in there

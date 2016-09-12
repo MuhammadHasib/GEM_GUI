@@ -223,18 +223,29 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
             <?php
             //  Form Submitted , need to generate XML 
             if (isset($_POST['foilsnumbersubmitted'])) {
+                echo '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully generated list of Gem FOIL data as an XML 
+                    </div>';
                     $head = array();
+                    $headRun =array();
+                    $headType =array();
                     $foils =array();
                     $foil = array();
                     $data = array();
-                    // Header Data
-                    $head['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
-                    $head['RUN_BEGIN_TIMESTAMP'] = $_POST['RUN_BEGIN_TIMESTAMP'];
-                    $head['RUN_END_TIMESTAMP'] = $_POST['RUN_END_TIMESTAMP'];
-                    $head['LOCATION'] = $_POST['LOCATION'];
-                    $head['INITIATED_BY_USER'] = $_POST['INITIATED_BY_USER'];
-                    $head['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION'];
                     
+                    // Header Data
+                    $headType['EXTENSION_TABLE_NAME'] ="";
+                    $headType['NAME'] = ""; 
+                    $head['TYPE'] = $headType;
+                    
+                    
+                    $headRun['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
+                    $headRun['RUN_BEGIN_TIMESTAMP'] = $_POST['RUN_BEGIN_TIMESTAMP'];
+                    $headRun['RUN_END_TIMESTAMP'] = $_POST['RUN_END_TIMESTAMP'];
+                    $headRun['LOCATION'] = $_POST['LOCATION'];
+                    $headRun['INITIATED_BY_USER'] = $_POST['INITIATED_BY_USER'];
+                    $headRun['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION'];
+                    $head['RUN'] = $headRun;
                     
                     
                     //Foils Data
@@ -254,6 +265,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                    $data['head'] = $head;
                    $data['foils'] = $foils;
                    print_r($data);
+                   //generateDatasetXml($data);
+                   
             }
             ?>
 
