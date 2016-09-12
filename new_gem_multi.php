@@ -123,6 +123,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         <div class="row">
                                             <div class="col-md-4">
     <?php for ($i = 1; $i <= $num; $i++) { ?>
+                                                <div class="col-xs-6 col-md-4">
                                                     <div class="form-group">
                                                         COMMENT_DESCRIPTION
                                                         <label for="exampleInputFile">FOIL <?= $i ?> </label>
@@ -188,7 +189,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 			
 			
 
-                                                    </div>   
+                                                    </div>  
+                                                    </div>
     <?php } ?>
                                             </div>
                                         </div>
