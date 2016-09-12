@@ -13,59 +13,52 @@ function generateDatasetXml($data) {
 //    error_reporting(E_ALL);
 //    ini_set('display_errors', 1);
     
-    global $ROOT_BARCODE;
     $xml = new DOMDocument("1.0");
     
     $root = $xml->createElement("ROOT");
     $xml->appendChild($root);
     
+    $runnum = "";
+    
     $header = $xml->createElement("HEADER");
     foreach ($data['head'] as $key => $value) {
         if(is_array ( $value )){
-            foreach ($value as $key => $value1) {
-                
+            $element = $xml->createElement($key);
+            $root->appendChild($element);
+            foreach ($value as $key1 => $value1) {
+                if( $key1 == "RUN_NUMBER" ){ $runnum = $value1; }
+                $subElement = $xml->createElement($key1);
+                $subElementText = $xml->createTextNode($value1);
+                $subElement->appendChild($subElementText);
+                $element->appendChild($subElement);
             }
         }
-        $parts = $xml->createElement("");
-        $root->appendChild($parts);
     }
     $root->appendChild($header);
     
     
-    $parts = $xml->createElement("PARTS");
-    $root->appendChild($parts);
-
-    $part = $xml->createElement("PART");
-    $barcode = $xml->createElement("BARCODE");
-    $barcodeText = $xml->createTextNode($ROOT_BARCODE);
-    $barcode->appendChild($barcodeText);
-    $part->appendChild($barcode);
-    
-    
-    $child = $xml->createElement("CHILDREN");
-    $part1 = $xml->createElement("PART");
-    
-    $serial = $xml->createElement("SERIAL_NUMBER");
-    $serialText = $xml->createTextNode($partid);
-    $serial->appendChild($serialText);
-    $part1->appendChild($serial);
-    
-    $kindofpart = $xml->createElement("KIND_OF_PART");
-    $kindofpartText = $xml->createTextNode($kind);
-    $kindofpart->appendChild($kindofpartText);
-    $part1->appendChild($kindofpart);
-    
-    $child->appendChild($part1);
-    $part->appendChild($child);
-    $parts->appendChild($part);
+    $dataset = $xml->createElement("DATA_SET");
+    foreach ($data['foils'] as $key => $value) {
+        if(is_array ( $value )){
+            $element = $xml->createElement($key);
+            $root->appendChild($element);
+            foreach ($value as $key1 => $value1) {
+                $subElement = $xml->createElement($key1);
+                $subElementText = $xml->createTextNode($value1);
+                $subElement->appendChild($subElementText);
+                $element->appendChild($subElement);
+            }
+        }
+    }
+    $root->appendChild($dataset);
 
     $xml->formatOutput = true;
 
-    $serialNum = str_replace("/", "-",$partid);
-    $LocalFilePATH = "../gen_xml/" . $serialNum . "-detach.xml";
+    $num = str_replace("/", "-",$runnum);
+    $LocalFilePATH = "../gen_xml/" . $num . "-dataset.xml";
     //Generate the file and save it on directory
-    $xml->save("../gen_xml/" . $serialNum . "-detach.xml"); // or die("Error");
-    echo "test test";
+    $xml->save("../gen_xml/" . $num . "-dataset.xml"); // or die("Error");
+ 
     // Send the file to the spool area
     //SendXML($LocalFilePATH);
 

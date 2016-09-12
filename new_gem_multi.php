@@ -265,7 +265,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                    $data['head'] = $head;
                    $data['foils'] = $foils;
                    print_r($data);
-                   //generateDatasetXml($data);
+                   generateDatasetXml($data);
                    
             }
             ?>
