@@ -24,8 +24,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Attention!</strong> Make sure you did not dublicate same FOIL .
     </div>';
                 ?> 
-            <h1 class="page-header">GEM FOIL History </h1>
-            <div class="col-xs-12 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
+            <h1 class="page-header">GEM FOIL Data </h1>
+            <div class="col-xs-12 panel-info panel" style="padding-left: 0px; padding-right: 0px;" <?php if(isset($_POST['foilsnumbersubmitted'])){ echo "hidden";} ?> >
                 <div class="panel-heading">
                     <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>Foil Data Set</h3>
                 </div>
