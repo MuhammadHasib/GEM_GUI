@@ -166,10 +166,10 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                                 <span class="caret"></span>
                                                             </button>
                                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                               <li><span class="label label-info arrowed-right arrowed-in">Good</span></li>
-                                                               <li><span class="label label-success arrowed-in arrowed-in-right">Approved</span></li>
-                                                               <li><span class="label label-danger arrowed">Bad</span></li>
-                                                               <li><span class="label label-warning arrowed arrowed-right">Pending</span></li>
+                                                               <li class="label label-info arrowed-right arrowed-in">Good</li>
+                                                               <li class="label label-success arrowed-in arrowed-in-right">Approved</li>
+                                                               <li class="label label-danger arrowed">Bad</li>
+                                                               <li class="label label-warning arrowed arrowed-right">Pending</li>
                                                             </ul>
                                                         </div>
                                                         </div>
