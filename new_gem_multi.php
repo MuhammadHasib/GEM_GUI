@@ -302,7 +302,7 @@ include "foot.php";
     jQuery(document).ready(function ($) {
         $( ".date" ).datetimepicker();
         $.fn.datetimepicker.defaults = {
-            pickSeconds: true        // disables seconds in the time picker
+            pickSeconds: false        // disables seconds in the time picker
         };
     })
     $(".subbutt_gen").on("click", function(e){
