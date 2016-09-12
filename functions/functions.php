@@ -248,7 +248,7 @@ function get_locations() {
 
 function get_manufacturers() {
     $conn = database_connection();
-    $sql = "SELECT MANUFACTURER_ID,MANUFACTURER_NAME FROM CMS_GEM_CORE_CONSTRUCT.MANUFACTURERS "; //select data or insert data
+    $sql = "SELECT MANUFACTURER_ID,MANUFACTURER_NAME FROM CMS_GEM_CORE_CONSTRUCT.MANUFACTURERS WHERE IS_RECORD_DELETED = 'F'"; //select data or insert data
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
     $arr = oci_execute($query);
