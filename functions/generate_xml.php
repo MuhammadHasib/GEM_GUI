@@ -42,8 +42,8 @@ function generateDatasetXml($data) {
     foreach ($data['foils'] as $key => $value) {
         $dataset = $xml->createElement("DATA_SET");
         if (is_array($value)) {
-//            $element = $xml->createElement($key);
-//            $root->appendChild($element);
+            $element = $xml->createElement($key);
+            $root->appendChild($element);
             foreach ($value as $key1 => $value1) {
                 if (is_array($value1)) {
                     $element1 = $xml->createElement($key1);
@@ -59,8 +59,8 @@ function generateDatasetXml($data) {
                     $subElement = $xml->createElement($key1);
                     $subElementText = $xml->createTextNode($value1);
                     $subElement->appendChild($subElementText);
-                    $element->appendChild($subElement);
-                    $dataset->appendChild($element);
+//                    $element->appendChild($subElement);
+                    $dataset->appendChild($subElement);
                 }
             }
         }
