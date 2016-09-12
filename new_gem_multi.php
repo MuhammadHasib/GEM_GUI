@@ -117,20 +117,20 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                             <div class="col-xs-12">
                             <div class="form-group">
                                 <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;">  
-                                    <h2 class="panel-title">   FOIL(s) related:</h2>
+                                    <h2 class="panel-title">   Data Set(s):</h2>
                                     <div class="panel-body">
                                         
                                         <div class="row">
     <?php for ($i = 1; $i <= $num; $i++) { ?>
                                                 <div class="col-xs-6 col-md-4">
                                                     <div class="form-group">
-                                                        <h3 class="panel-title">  <i class="ace-icon glyphicon glyphicon-plus"></i> FOIL <?= $i ?></h3>
+                                                        <h3 class="panel-title">  <i class="ace-icon glyphicon glyphicon-plus"></i> FOIL  <?= $i ?></h3>
                                                         
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Description: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="COMMENT_DESCRIPTION_foil<?= $i; ?>" >
+                                                        <textarea name="COMMENT_DESCRIPTION_foil<?= $i; ?>" ></textarea>
                                                         </div>
                                                         
                                                         <div style="white-space:nowrap">
@@ -139,6 +139,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <input name="VERSION_foil<?= $i; ?>" >
                                                         </div>
                                                         
+                                                        <label for="exampleInputFile">Related FOIL: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input class="foilinput foil<?= $i ?>" name="foil<?= $i ?>" value="" hidden><br>
                                                         <!--multiple=""-->
