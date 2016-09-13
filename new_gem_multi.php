@@ -6,7 +6,7 @@ include "head.php";
 <style>
     
     .sublabel {
-        width: 100px;
+        width: 130px;
     }
     
 </style>

@@ -6,7 +6,7 @@ include "head.php";
 <style>
     
     .sublabel {
-        width: 100px;
+        width: 130px;
     }
     
 </style>
@@ -197,17 +197,13 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         
                                                         
                                                         <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile"><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> Destination:  </label>
+                                                        <label class="sublabel" for="exampleInputFile"><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span><i class="ace-icon glyphicon glyphicon-map-marker"></i> Destination:  </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="DESTINATION_part<?= $i; ?>">
                                                         </div>
                                                         
                                                         
-                                                         <div class="form-group">
-                                                        <lable>Date Shipped:</lable><br>
-                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input class="runinput date" name='DATE_SHIPPED' >
-                                                       </div>
+                                                         
                                                
                                                         
                                                         <div style="white-space:nowrap">
@@ -216,32 +212,19 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <input name="MODE_SHIPPED_part<?= $i; ?>">
                                                         </div>
                                                         
-                                                        
-                                                        
-                                                        
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Comments: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <textarea name="COMMENT_DESCRIPTION_part<?= $i; ?>" ></textarea>
                                                         </div>
+                                                        
+                                                        <div class="form-group">
+                                                        <lable>Date Shipped:</lable><br>
+                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input class="runinput date" name='DATE_SHIPPED' >
+                                                       </div>
 			
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Status </label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="STATUS_foil<?= $i; ?>" hidden>
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                                Choose Status
-                                                                <span class="caret"></span>
-                                                            </button>
-                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                                <li ><a herf="#" class="label label-info arrowed-right arrowed-in">Good</a></li>
-                                                                <li ><a herf="#" class="label label-success arrowed-in arrowed-in-right">Approved</a></li>
-                                                                <li ><a herf="#" class="label label-danger arrowed">Bad</a></li>
-                                                                <li ><a herf="#" class="label label-warning arrowed arrowed-right">Pending</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        </div>
+                                                        
 			
 			
 
