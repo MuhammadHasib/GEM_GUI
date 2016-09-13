@@ -47,7 +47,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                 <div class="form-group">
                                         <lable>Kind of parts:</lable><br>
                                          <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                        <input class="runinput" name="kind" value="" hidden id="kindofpart" onchange="if($(this).val() !== '' && $('.num').val() !== '')$('.subbutt_at').attr('disabled', false);">
+                                        <input class="runinput" name="kind" value="" hidden id="kindofpart" >
                                         <div class="dropdown">
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                 Choose kind
