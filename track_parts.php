@@ -24,10 +24,11 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Attention!</strong> Make sure you did not dublicate same FOIL .
     </div>';
                 ?> 
+            <img src="images/tracking1.png" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 100px; float: left;">
             <h1 class="page-header">GEM Component Tracking</h1>
             <div class="col-xs-12 panel-info panel" style="padding-left: 0px; padding-right: 0px;" <?php if(isset($_POST['foilsnumbersubmitted'])){ echo "hidden";} ?> >
                 <div class="panel-heading">
-                    <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>Foil Data Set</h3>
+                    <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>Tracking Information</h3>
                 </div>
                 <div class="panel-body">
 
@@ -40,12 +41,9 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                         ?>
                         <form method="POST" action="">
                             <div class="form-group">
-                                <label for="exampleInputFile">How many Parts do you want to load tracking information for ?? </label>
-                                <input class="num" name="numOfParts" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', false);">
-                                <br>
+                                
                                 <label for="exampleInputFile">Which Kind of parts?? </label>
                                 <div class="form-group">
-                                        <lable>Kind of parts:</lable><br>
                                          <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                         <input class="runinput" name="kind" value="" hidden id="kindofpart" >
                                         <div class="dropdown">
@@ -58,6 +56,11 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                             </ul>
                                         </div>
                                         </div>
+                                <br>
+                                <label for="exampleInputFile">How many Parts do you want to load tracking information for ?? </label>
+                                <input class="num" name="numOfParts" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', false);">
+                                
+                                
                             </div>
                             <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
                         </form>
