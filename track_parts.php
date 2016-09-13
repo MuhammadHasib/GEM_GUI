@@ -153,9 +153,12 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                     <div class="form-group" style="border: 1px solid #ccc;">
                                                         <div class="widget-header">
 									<h6 class="widget-title">
-										<i class="ace-icon fa fa-circle"></i> FOIL  <?= $i ?>
+										<i class="ace-icon fa fa-circle"></i> Part  <?= $i ?>
 									</h6>
 							</div>
+                                                        
+                                                         
+                                                        
                                                         
                                                          <div style="white-space:nowrap">
                                                         <label for="exampleInputFile">Related FOIL: </label>
@@ -176,41 +179,50 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         </select>
                                                         </div>
                                                         
-                                                         <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Version: </label>
+                                                                 
+                                                                 <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Data File Name:  </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="VERSION_foil<?= $i; ?>" >
-                                                        
+                                                        <input name="DATA_FILE_NAME_part<?= $i; ?>">
                                                         </div>
+                                                                 
                                                         
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Batch: </label>
+                                                        
+                                                                <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile"><i class="ace-icon glyphicon glyphicon-map-marker"></i> <span aria-hidden="true" class="glyphicon glyphicon-log-out"></span> Shipped From:  </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="VERSIONbatch<?= $i; ?>" >
-                                                        </div>
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">PI film Number: </label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="PI_FILM_NUMBER_foil<?= $i; ?>" >
+                                                        <input name="SHIPPED_FROM_part<?= $i; ?>">
                                                         </div>
                                                         
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Prod Lot Number:  </label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="PROD_LOT_NUMBER_foil<?= $i; ?>">
-                                                        </div>
+                                                        
                                                         
                                                         <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">MPT Technician:  </label>
+                                                        <label class="sublabel" for="exampleInputFile"><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> Destination:  </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="MPT_TECHNICIAN_foil<?= $i; ?>">
+                                                        <input name="DESTINATION_part<?= $i; ?>">
                                                         </div>
+                                                        
+                                                        
+                                                         <div class="form-group">
+                                                        <lable>Date Shipped:</lable><br>
+                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input class="runinput date" name='DATE_SHIPPED' >
+                                                       </div>
+                                               
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Mode Shipped:  </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="MODE_SHIPPED_part<?= $i; ?>">
+                                                        </div>
+                                                        
+                                                        
                                                         
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Comments: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <textarea name="COMMENT_DESCRIPTION_foil<?= $i; ?>" ></textarea>
+                                                        <textarea name="COMMENT_DESCRIPTION_part<?= $i; ?>" ></textarea>
                                                         </div>
 			
                                                         <div style="white-space:nowrap">
