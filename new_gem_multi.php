@@ -165,8 +165,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <label class="sublabel" for="exampleInputFile">Version: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="VERSION_foil<?= $i; ?>" >
-                                                        <input type="text" id="spinner-foil<?= $i; ?>" />
-							<div class="space-6"></div>
+                                                        
                                                         </div>
                                                         
                                                         <div style="white-space:nowrap">
