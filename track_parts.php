@@ -38,7 +38,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     // Access the page 1st time need to define number of foils having History info to be inserted
                     if (!isset($_POST['numOfParts']) && !isset($_POST['foilsnumbersubmitted'])) {
                         ?>
-                        <form method="POST" action="new_gem_multi.php">
+                        <form method="POST" action="">
                             <div class="form-group">
                                 <label for="exampleInputFile">How many Parts do you want to load tracking information for ?? </label>
                                 <input class="num" name="numOfParts" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', false);">
@@ -146,23 +146,15 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         
                                         <div class="row">
     <?php for ($i = 1; $i <= $num; $i++) { ?>
-                                                <div class="col-xs-6 col-md-4">
-                                                    <div class="form-group">
-                                                        <h3 class="panel-title">  <i class="ace-icon fa fa-circle"></i>  <?= $i ?></h3>
+                                                  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-16">
+                                                    <div class="form-group" style="border: 1px solid #ccc;">
+                                                        <div class="widget-header">
+									<h6 class="widget-title">
+										<i class="ace-icon fa fa-circle"></i> FOIL  <?= $i ?>
+									</h6>
+							</div>
                                                         
-                                                        
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Description: </label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <textarea name="COMMENT_DESCRIPTION_foil<?= $i; ?>" ></textarea>
-                                                        </div>
-                                                        
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Version: </label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="VERSION_foil<?= $i; ?>" >
-                                                        </div>
-                                                        
+                                                         <div style="white-space:nowrap">
                                                         <label for="exampleInputFile">Related FOIL: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input class="foilinput foil<?= $i ?>" name="foil<?= $i ?>" value="" hidden><br>
@@ -179,7 +171,20 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 
                                                             </optgroup>
                                                         </select>
+                                                        </div>
                                                         
+                                                         <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Version: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="VERSION_foil<?= $i; ?>" >
+                                                        
+                                                        </div>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Batch: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="VERSIONbatch<?= $i; ?>" >
+                                                        </div>
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">PI film Number: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
@@ -198,6 +203,13 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <input name="MPT_TECHNICIAN_foil<?= $i; ?>">
                                                         </div>
                                                         
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Comments: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <textarea name="COMMENT_DESCRIPTION_foil<?= $i; ?>" ></textarea>
+                                                        </div>
+			
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Status </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
@@ -215,14 +227,6 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                             </ul>
                                                         </div>
                                                         </div>
-                                                        
-                                                        
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Comments</label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <textarea name="COMMENTS_foil<?= $i; ?>"></textarea>
-                                                        </div>
-                                                        <hr/>
 			
 			
 
