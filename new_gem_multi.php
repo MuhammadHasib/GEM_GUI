@@ -135,16 +135,14 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <h3 class="panel-title">  <i class="ace-icon fa fa-circle"></i>  <?= $i ?></h3>
                                                         
                                                         
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Description: </label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <textarea name="COMMENT_DESCRIPTION_foil<?= $i; ?>" ></textarea>
-                                                        </div>
+                                                        
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Version: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="VERSION_foil<?= $i; ?>" >
+                                                        <input type="text" id="spinner1" />
+							<div class="space-6"></div>
                                                         </div>
                                                         
                                                         <label for="exampleInputFile">Related FOIL: </label>
@@ -205,6 +203,11 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         </div>
                                                         </div>
                                                         
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Comments: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <textarea name="COMMENT_DESCRIPTION_foil<?= $i; ?>" ></textarea>
+                                                        </div>
 			
 			
 
@@ -277,7 +280,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                    }
                    $data['head'] = $head;
                    $data['foils'] = $foils;
-                   print_r($data);
+                   //print_r($data);
                    generateDatasetXml($data);
                    
             }
@@ -303,6 +306,13 @@ include "foot.php";
         $.fn.datetimepicker.defaults = {
             pickSeconds: false        // disables seconds in the time picker
         };
+        
+        $('#spinner1').ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+				.closest('.ace-spinner')
+				.on('changed.fu.spinbox', function(){
+					//console.log($('#spinner1').val())
+				});
+                                
     })
     $(".subbutt_gen").on("click", function(e){
         //$(".foilinput").each();
