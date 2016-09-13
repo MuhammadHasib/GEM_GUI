@@ -131,24 +131,18 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         <div class="row">
     <?php for ($i = 1; $i <= $num; $i++) { ?>
                                                 <div class="col-xs-6 col-md-4">
-                                                    <div class="form-group">
+                                                    <div class="form-group" style="border: 1px solid #ccc;">
                                                         <div class="widget-header">
-									<h4 class="widget-title">
-										<i class="ace-icon fa fa-circle"></i>  <?= $i ?>
-									</h4>
+									<h6 class="widget-title">
+										<i class="ace-icon fa fa-circle"></i> FOIL  <?= $i ?>
+									</h6>
 							</div>
                                                         
                                                         
                                                         
                                                         
+                                                       
                                                         <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Version: </label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input name="VERSION_foil<?= $i; ?>" >
-                                                        <input type="text" id="spinner-foil<?= $i; ?>" />
-							<div class="space-6"></div>
-                                                        </div>
-                                                        
                                                         <label for="exampleInputFile">Related FOIL: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input class="foilinput foil<?= $i ?>" name="foil<?= $i ?>" value="" hidden><br>
@@ -165,6 +159,15 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 
                                                             </optgroup>
                                                         </select>
+                                                        </div>
+                                                        
+                                                         <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Version: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="VERSION_foil<?= $i; ?>" >
+                                                        <input type="text" id="spinner-foil<?= $i; ?>" />
+							<div class="space-6"></div>
+                                                        </div>
                                                         
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Batch: </label>
