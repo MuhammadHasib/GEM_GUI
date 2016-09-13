@@ -141,8 +141,9 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <label class="sublabel" for="exampleInputFile">Version: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="VERSION_foil<?= $i; ?>" >
-                                                        <input type="text" id="spinner1" />
-							<div class="space-6"></div>
+                                                        
+                                                        <div class="ace-spinner middle" style="width: 125px;"><div class="input-group"><input type="text" id="spinner1" class="spinbox-input form-control text-center"><div class="spinbox-buttons input-group-btn btn-group-vertical">					<button class="btn spinbox-up btn-sm btn-info" type="button">						<i class="icon-only  ace-icon fa fa-chevron-up"></i>					</button>					<button class="btn spinbox-down btn-sm btn-info" type="button">						<i class="icon-only  ace-icon fa fa-chevron-down"></i>					</button>				</div></div></div>
+                                                        
                                                         </div>
                                                         
                                                         <label for="exampleInputFile">Related FOIL: </label>
