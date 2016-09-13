@@ -141,7 +141,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <label class="sublabel" for="exampleInputFile">Version: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="VERSION_foil<?= $i; ?>" >
-                                                        <input type="text" id="spinner-foil<?= $i; ?>" />
+                                                        <input type="text" class="spinner-foil" />
 							<div class="space-6"></div>
                                                         </div>
                                                         
@@ -307,7 +307,7 @@ include "foot.php";
             pickSeconds: false        // disables seconds in the time picker
         };
         
-        $("select[id^='spinner-foil-']").ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+        $(".spinner-foil").ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
 				.closest('.ace-spinner')
 				.on('changed.fu.spinbox', function(){
 					//console.log($('#spinner1').val())
