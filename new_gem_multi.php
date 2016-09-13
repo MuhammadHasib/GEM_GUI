@@ -309,11 +309,8 @@ include "foot.php";
         };
         
         $('#spinner1').ace_spinner({});
-        $('#spinner1').ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
-				.closest('.ace-spinner')
-				.on('changed.fu.spinbox', function(){
-					//console.log($('#spinner1').val())
-				});
+        $('#spinner1').ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'});
+				
                                 
     })
     $(".subbutt_gen").on("click", function(e){
