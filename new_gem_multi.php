@@ -306,13 +306,21 @@ include "foot.php";
         $.fn.datetimepicker.defaults = {
             pickSeconds: false        // disables seconds in the time picker
         };
+        <?php 
         
-        $("input[id^='spinner-foil']").ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+        ?>
+                
+          <?php 
+          if (isset($_POST['foilsnumbersubmitted'])){}
+          for( $x = 1; $x < $_POST['foilsnumbersubmitted']; $x++){
+              
+          ?>      
+            $("#spinner-foil<?= $x; ?>").ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
 				.closest('.ace-spinner')
 				.on('changed.fu.spinbox', function(){
 					//console.log($('#spinner1').val())
 				});
-                                
+        <?php }?>         
     })
     $(".subbutt_gen").on("click", function(e){
         //$(".foilinput").each();
