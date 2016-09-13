@@ -27,6 +27,8 @@
 <script type="text/javascript" src="plugins/chosen_v1.4.2/chosen.jquery.js" charset="UTF-8"></script>
 <!-- ace scripts -->
 <script src="ace-master/assets/js/ace-elements.min.js"></script>
+<script src="ace-master/assets/js/ace.min.js"></script>
+
 
 <script type="text/javascript">
     function doSomething() {
