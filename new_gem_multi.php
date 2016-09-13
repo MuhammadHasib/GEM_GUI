@@ -200,13 +200,6 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         </div>
                                                         </div>
                                                         
-                                                        
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Comments</label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <textarea name="COMMENTS_foil<?= $i; ?>"></textarea>
-                                                        </div>
-                                                        <hr/>
 			
 			
 
@@ -270,7 +263,6 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     $partdata['PROD_LOT_NUMBER'] = $_POST['PROD_LOT_NUMBER_foil'.$i];
                     $partdata['MPT_TECHNICIAN'] = $_POST['MPT_TECHNICIAN_foil'.$i];
                     $partdata['STATUS'] = $_POST['STATUS_foil'.$i];
-                    $partdata['COMMENTS'] = $_POST['COMMENTS_foil'.$i];
                     $foil['DATA'] = $partdata;
                     
                     $foils['foil'.$i] = $foil;
