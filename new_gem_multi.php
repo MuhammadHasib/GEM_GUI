@@ -266,6 +266,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     $part['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
                     $foil['PART'] = $part;
                     
+                    $partdata['PI_FILM_NUMBER'] = $_POST['PI_FILM_NUMBER_foil'.$i];
                     $partdata['PROD_LOT_NUMBER'] = $_POST['PROD_LOT_NUMBER_foil'.$i];
                     $partdata['MPT_TECHNICIAN'] = $_POST['MPT_TECHNICIAN_foil'.$i];
                     $partdata['STATUS'] = $_POST['STATUS_foil'.$i];
