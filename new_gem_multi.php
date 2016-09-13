@@ -191,6 +191,13 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <input name="MPT_TECHNICIAN_foil<?= $i; ?>">
                                                         </div>
                                                         
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Comments: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <textarea name="COMMENT_DESCRIPTION_foil<?= $i; ?>" ></textarea>
+                                                        </div>
+			
                                                         <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">Status </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
@@ -208,13 +215,6 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                             </ul>
                                                         </div>
                                                         </div>
-                                                        
-                                                        <div style="white-space:nowrap">
-                                                        <label class="sublabel" for="exampleInputFile">Comments: </label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <textarea name="COMMENT_DESCRIPTION_foil<?= $i; ?>" ></textarea>
-                                                        </div>
-			
 			
 
                                                     </div>  
