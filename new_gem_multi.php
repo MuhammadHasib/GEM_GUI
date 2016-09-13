@@ -130,7 +130,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         
                                         <div class="row">
     <?php for ($i = 1; $i <= $num; $i++) { ?>
-                                                <div class="col-xs-6 col-md-4">
+                                                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-16">
                                                     <div class="form-group" style="border: 1px solid #ccc;">
                                                         <div class="widget-header">
 									<h6 class="widget-title">
