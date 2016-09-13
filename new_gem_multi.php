@@ -312,7 +312,7 @@ include "foot.php";
                 
           <?php 
           if (isset($_POST['numOfFoils'])){}
-          for( $x = 1; $x < $_POST['numOfFoils']; $x++){
+          for( $x = 1; $x <= $_POST['numOfFoils']; $x++){
               
           ?>      
             $("#spinner-foil<?= $x; ?>").ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
