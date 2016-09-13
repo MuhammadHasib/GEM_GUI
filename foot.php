@@ -124,6 +124,10 @@
             $(this).parent().parent().parent().prev().val();
             $(this).parent().parent().parent().prev().val($(this).html());
         }
+        if ($(this).attr("class") == "kinds"){
+            $(this).parent().parent().parent().prev().val();
+            $(this).parent().parent().parent().prev().val($(this).html());
+        }
         
         $('.dropdown-menu a').dropdown("toggle");
         return false;
