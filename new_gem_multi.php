@@ -165,6 +165,11 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         </select>
                                                         
                                                         <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Batch: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="VERSIONbatch<?= $i; ?>" >
+                                                        </div>
+                                                        <div style="white-space:nowrap">
                                                         <label class="sublabel" for="exampleInputFile">PI film Number: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input name="PI_FILM_NUMBER_foil<?= $i; ?>" >
@@ -257,6 +262,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     $foil['VERSION'] = $_POST['VERSION_foil'.$i];
                     
                     $part['SERIAL_NUMBER'] = $_POST['foil'.$i];
+                    $part['VERSION'] = "Batch ".$_POST['VERSIONbatch'.$i];
                     $part['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
                     $foil['PART'] = $part;
                     
