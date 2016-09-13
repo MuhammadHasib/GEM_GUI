@@ -132,7 +132,11 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
     <?php for ($i = 1; $i <= $num; $i++) { ?>
                                                 <div class="col-xs-6 col-md-4">
                                                     <div class="form-group">
-                                                        <h3 class="panel-title">  <i class="ace-icon fa fa-circle"></i>  <?= $i ?></h3>
+                                                        <div class="widget-header">
+									<h4 class="widget-title">
+										<i class="ace-icon fa fa-circle"></i>  <?= $i ?>
+									</h4>
+							</div>
                                                         
                                                         
                                                         
