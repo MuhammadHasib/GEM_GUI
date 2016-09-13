@@ -249,8 +249,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     
                     $headRun['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
                     $headRun['RUN_TYPE'] = $_POST['RUN_TYPE'];
-                    $headRun['RUN_BEGIN_TIMESTAMP'] = strtotime($_POST['RUN_BEGIN_TIMESTAMP']);
-                    $headRun['RUN_END_TIMESTAMP'] = strtotime($_POST['RUN_END_TIMESTAMP']);
+                    $headRun['RUN_BEGIN_TIMESTAMP'] = date($_POST['RUN_BEGIN_TIMESTAMP'].':s');
+                    $headRun['RUN_END_TIMESTAMP'] = date($_POST['RUN_END_TIMESTAMP'].':s');
                     $headRun['LOCATION'] = $_POST['LOCATION'];
                     $headRun['INITIATED_BY_USER'] = $_POST['INITIATED_BY_USER'];
                     $headRun['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION'];
