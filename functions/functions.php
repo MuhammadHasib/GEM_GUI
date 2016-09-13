@@ -294,6 +294,31 @@ function get_institutes() {
 }
 
 /*
+ * Name: get_kinds
+ * Description: Get list of manufacturers
+ * return: Array
+ * Autor: Ola Aboamer [o.aboamer@cern.ch]
+ */
+
+function get_kinds() {
+    $conn = database_connection();
+    $sql = "SELECT KIND_OF_PART_ID,DISPLAY_NAME FROM CMS_GEM_CORE_CONSTRUCT.KINDS_OF_PARTS WHERE IS_RECORD_DELETED = 'F'"; //select data or insert data
+    $query = oci_parse($conn, $sql);
+    //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
+    $arr = oci_execute($query);
+
+    $result_arr = array();
+    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+        echo '<li><a href="#" class="kinds" kind-id="' . $row['KIND_OF_PART_ID'] . '">' . $row['DISPLAY_NAME'] . '</a></li>';
+
+//                $temp['man_id']= $row['MANUFACTURER_ID'];
+//                $temp['man_name']= $row['MANUFACTURER_NAME'];
+//            $result_arr[] = $temp;
+    }
+    return 1;
+}
+
+/*
  * Name: get_available_parts (parts with no parent)
  * Description: Get list of parts ( Foil,Drift,Readout, chamber) not attached to chambers according to v (L or S) and kind
  * return: Array

@@ -1,757 +1,414 @@
+
 <?php
 include "head.php";
-
 ?>
 
-
-<body class="no-skin">
+<style>
     
+    .sublabel {
+        width: 100px;
+    }
+    
+</style>
+<div class="container-fluid">
+    <div class="row">
 
-    <div class="main-container ace-save-state" id="main-container">
-        <script type="text/javascript">
-            try {
-                ace.settings.loadState('main-container')
-            } catch (e) {
-            }
-        </script>
+        <?php include "side.php"; ?>
 
- <?php
-include "side.php";
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <?php
+echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
+    </div>';
+                echo '<div style="display: none" geble="alert" class="alert alert-danger doublication">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Attention!</strong> Make sure you did not dublicate same FOIL .
+    </div>';
+                ?> 
+            <h1 class="page-header">GEM Component Tracking</h1>
+            <div class="col-xs-12 panel-info panel" style="padding-left: 0px; padding-right: 0px;" <?php if(isset($_POST['foilsnumbersubmitted'])){ echo "hidden";} ?> >
+                <div class="panel-heading">
+                    <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>Foil Data Set</h3>
+                </div>
+                <div class="panel-body">
 
-?>
-<!-- main-content -->
-        <div class=" col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <div class="main-content-inner">
-                
-                <?php include "breadcrumb.php"; ?>
 
-                <div class="page-content">
 
-<!--                    <div class="page-header">
-                        <h1>
-                            Tables
-                            <small>
-                                <i class="ace-icon fa fa-angle-double-right"></i>
-                                Static &amp; Dynamic Tables
-                            </small>
-                        </h1>
-                    </div>-->
-                    <!-- /.page-header -->
 
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <!-- PAGE CONTENT BEGINS -->
-                            <!--<h3 class="header smaller lighter blue">jQuery dataTables</h3>
+                    <?php
+                    // Access the page 1st time need to define number of foils having History info to be inserted
+                    if (!isset($_POST['numOfParts']) && !isset($_POST['foilsnumbersubmitted'])) {
+                        ?>
+                        <form method="POST" action="new_gem_multi.php">
+                            <div class="form-group">
+                                <label for="exampleInputFile">How many Parts do you want to load tracking information for ?? </label>
+                                <input class="num" name="numOfParts" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', false);">
+                                <br>
+                                <label for="exampleInputFile">Which Kind of parts?? </label>
+                                <div class="form-group">
+                                        <lable>Kind of parts:</lable><br>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name="kind" value="" hidden id="kindofpart" onchange="if($(this).val() !== '' && $('.num').val() !== '')$('.subbutt_at').attr('disabled', false);">
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                Choose kind
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <?php get_kinds(); ?>
+                                            </ul>
+                                        </div>
+                                        </div>
+                            </div>
+                            <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
+                        </form>
+                    <?php } ?>
 
-										<div class="clearfix">
-											<div class="pull-right tableTools-container"></div>
-										</div>-->
+                    <?php
+                    //  number of foils having History info to be inserted, defined , generate form 
+                    if (isset($_POST['numOfParts'])) {
+                        $num = $_POST['numOfParts'];
+                        ?>
+
+                        <form method="POST" action="new_gem_multi.php">
+                            <input hidden="" value="<?= $num; ?>" name="foilsnumbersubmitted">
                             <div class="row">
-                                <div class="col-xs-12">
-                                    <table id="simple-table" class="table  table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th class="center">
-<!--                                                    <label class="pos-rel">
-                                                        <input type="checkbox" class="ace" />
-                                                        <span class="lbl"></span>
-                                                    </label>-->
-                                                    #
-                                                </th>
-                                                <th>Details</th>
-                                                <th class="detail-col">Barcode/Serial</th>
-                                                <th>Kind of Part</th>
-                                                
-                                                <th class="hidden-480">User Responsible</th>
+                            <div class="col-xs-12">
+                            <div class="form-group">
+                                <div style="padding-left: 0px; padding-right: 0px;" class=" panel-info panel">
+                                    <div class="widget-header widget-header-large">
+                                    <h4 class="widget-title"> <i class="ace-icon glyphicon glyphicon-cog"></i> HEADER information:</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                        <lable>RUN Number:</lable><br>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name='RUN_NUMBER'>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                        <lable>RUN Type:</lable><br>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name='RUN_TYPE'>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                        <lable>RUN Begin timestamp:</lable><br>
+                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput date" name="RUN_BEGIN_TIMESTAMP" >
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                        <lable>RUN End timestamp:</lable><br>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput date" name='RUN_END_TIMESTAMP' >
+                                       </div>
+                                        
+                                        <div class="form-group">
+                                        <lable>Location:</lable><br>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name="LOCATION" value="" hidden>
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                Choose Location
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <?php get_locations(); ?>
+                                            </ul>
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                        <lable>Initiated by user:</lable><br>
+                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                        <input class="runinput" name='INITIATED_BY_USER'>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                        <lable>COMMENT_DESCRIPTION</lable><br>
+                                        <textarea name='COMMENT_DESCRIPTION'></textarea>
+                                        </div>
+                                        
 
-                                                <th>
-                                                    <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-                                                    Created at
-                                                </th>
-                                                <th class="hidden-480">Status</th>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-xs-12">
+                            <div class="form-group">
+                                <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;">
+                                    <div class="widget-header widget-header-large">
+                                    <h4 class="widget-title">   Data Set(s):</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        
+                                        <div class="row">
+    <?php for ($i = 1; $i <= $num; $i++) { ?>
+                                                <div class="col-xs-6 col-md-4">
+                                                    <div class="form-group">
+                                                        <h3 class="panel-title">  <i class="ace-icon fa fa-circle"></i>  <?= $i ?></h3>
+                                                        
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Description: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <textarea name="COMMENT_DESCRIPTION_foil<?= $i; ?>" ></textarea>
+                                                        </div>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Version: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="VERSION_foil<?= $i; ?>" >
+                                                        </div>
+                                                        
+                                                        <label for="exampleInputFile">Related FOIL: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input class="foilinput foil<?= $i ?>" name="foil<?= $i ?>" value="" hidden><br>
+                                                        <!--multiple=""-->
+                                                        <select tabindex="-1"  class="chosen-select-foil-<?= $i ?>" style="" data-placeholder="Choose FOIL">
+                                                            <option value=""></option>
+                                                            <optgroup label="Foil">
+                                                                <?php
+                                                                $arr = list_parts($FOIL_KIND_OF_PART_ID);
+                                                                foreach ($arr as $value) {
+                                                                    echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
+                                                                }
+                                                                ?>
 
-                                                
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td class="center">
-                                                    1
-                                                </td>
-
-                                                <td class="center">
-                                                    <div class="action-buttons">
-                                                        <a href="#" class="green bigger-140 show-details-btn" title="Show Details">
-                                                            <i class="ace-icon fa fa-angle-double-down"></i>
-                                                            <span class="sr-only">Details</span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-
-                                                <td>
-                                                    <a href="#">878657575675</a>
-                                                </td>
-                                                <td>GEM FOIL</td>
-                                                <td class="hidden-480">Alex</td>
-                                                <td>Feb 12</td>
-
-                                                <td class="hidden-480">
-                                                    <span class="label label-sm label-warning">Shipped</span>
-                                                </td>
-
-<!--                                                <td>
-                                                    <div class="hidden-sm hidden-xs btn-group">
-                                                        <button class="btn btn-xs btn-success">
-                                                            <i class="ace-icon fa fa-check bigger-120"></i>
-                                                        </button>
-
-                                                        <button class="btn btn-xs btn-info">
-                                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
-                                                        </button>
-
-                                                        <button class="btn btn-xs btn-danger">
-                                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                        </button>
-
-                                                        <button class="btn btn-xs btn-warning">
-                                                            <i class="ace-icon fa fa-flag bigger-120"></i>
-                                                        </button>
-                                                    </div>
-
-                                                    <div class="hidden-md hidden-lg">
-                                                        <div class="inline pos-rel">
-                                                            <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                                                <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                                                            </optgroup>
+                                                        </select>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">PI film Number: </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="PI_FILM_NUMBER_foil<?= $i; ?>" >
+                                                        </div>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Prod Lot Number:  </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="PROD_LOT_NUMBER_foil<?= $i; ?>">
+                                                        </div>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">MPT Technician:  </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="MPT_TECHNICIAN_foil<?= $i; ?>">
+                                                        </div>
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Status </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="STATUS_foil<?= $i; ?>" hidden>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                Choose Status
+                                                                <span class="caret"></span>
                                                             </button>
-
-                                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                                                <li>
-                                                                    <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                                                                        <span class="blue">
-                                                                            <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-
-                                                                <li>
-                                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-                                                                        <span class="green">
-                                                                            <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-
-                                                                <li>
-                                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                                                                        <span class="red">
-                                                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
+                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                                <li ><a herf="#" class="label label-info arrowed-right arrowed-in">Good</a></li>
+                                                                <li ><a herf="#" class="label label-success arrowed-in arrowed-in-right">Approved</a></li>
+                                                                <li ><a herf="#" class="label label-danger arrowed">Bad</a></li>
+                                                                <li ><a herf="#" class="label label-warning arrowed arrowed-right">Pending</a></li>
                                                             </ul>
                                                         </div>
-                                                    </div>
-                                                </td>-->
-                                            </tr>
-
-                                            <tr class="detail-row">
-                                                <td colspan="8">
-                                                    <div class="table-detail">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-2">
-                                                                <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="images/foil2.png" />
-                                                                    <br />
-                                                                    <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-                                                                        <div class="inline position-relative">
-                                                                            <a class="user-title-label" href="#">
-                                                                                <i class="ace-icon fa fa-circle light-green"></i>
-                                                                                &nbsp;
-                                                                                <span class="white">Alex M. Doe</span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-xs-12 col-sm-7">
-                                                                <div class="space visible-xs"></div>
-
-                                                                <div class="profile-user-info profile-user-info-striped">
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Username </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>alexdoe</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Location </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>CERN</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> From/To </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>38</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Date shipping </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>2010/06/20</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last modified </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>3 hours ago</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Description  </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>Bio</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-<!--                                                            <div class="col-xs-12 col-sm-3">
-                                                                <div class="space visible-xs"></div>
-                                                                <h4 class="header blue lighter less-margin">Send a message to Alex</h4>
-
-                                                                <div class="space-6"></div>
-
-                                                                <form>
-                                                                    <fieldset>
-                                                                        <textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
-                                                                    </fieldset>
-
-                                                                    <div class="hr hr-dotted"></div>
-
-                                                                    <div class="clearfix">
-                                                                        <label class="pull-left">
-                                                                            <input type="checkbox" class="ace" />
-                                                                            <span class="lbl"> Email me a copy</span>
-                                                                        </label>
-
-                                                                        <button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
-                                                                            Submit
-                                                                            <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>-->
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    2
-                                                </td>
-
-                                                <td class="center">
-                                                    <div class="action-buttons">
-                                                        <a href="#" class="green bigger-140 show-details-btn" title="Show Details">
-                                                            <i class="ace-icon fa fa-angle-double-down"></i>
-                                                            <span class="sr-only">Details</span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-
-                                                <td>
-                                                    <a href="#">base.com</a>
-                                                </td>
-                                                <td>$35</td>
-                                                <td class="hidden-480">2,595</td>
-                                                <td>Feb 18</td>
-
-                                                <td class="hidden-480">
-                                                    <span class="label label-sm label-success">Registered</span>
-                                                </td>
-
-                                                
-                                            </tr>
-
-                                            <tr class="detail-row">
-                                                <td colspan="8">
-                                                    <div class="table-detail">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-2">
-                                                                <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="images/ROPCB.png" />
-                                                                    <br />
-                                                                    <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-                                                                        <div class="inline position-relative">
-                                                                            <a class="user-title-label" href="#">
-                                                                                <i class="ace-icon fa fa-circle light-green"></i>
-                                                                                &nbsp;
-                                                                                <span class="white">Alex M. Doe</span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-xs-12 col-sm-7">
-                                                                <div class="space visible-xs"></div>
-
-                                                                <div class="profile-user-info profile-user-info-striped">
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Username </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>alexdoe</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Location </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>DELHI</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> From/To </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>38</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Date shipping </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>2010/06/20</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last modified </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>3 hours ago</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Description  </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>Bio</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            
+                                                        
+                                                        
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Comments</label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <textarea name="COMMENTS_foil<?= $i; ?>"></textarea>
                                                         </div>
+                                                        <hr/>
+			
+			
+
+                                                    </div>  
                                                     </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    3
-                                                </td>
-
-                                                <td class="center">
-                                                    <div class="action-buttons">
-                                                        <a href="#" class="green bigger-140 show-details-btn" title="Show Details">
-                                                            <i class="ace-icon fa fa-angle-double-down"></i>
-                                                            <span class="sr-only">Details</span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-
-                                                <td>
-                                                    <a href="#">max.com</a>
-                                                </td>
-                                                <td>$60</td>
-                                                <td class="hidden-480">4,400</td>
-                                                <td>Mar 11</td>
-
-                                                <td class="hidden-480">
-                                                    <span class="label label-sm label-warning">Expiring</span>
-                                                </td>
-
-                                                
-                                            </tr>
-
-                                            <tr class="detail-row">
-                                                <td colspan="8">
-                                                    <div class="table-detail">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-2">
-                                                                <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="images/opto1.png" />
-                                                                    <br />
-                                                                    <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-                                                                        <div class="inline position-relative">
-                                                                            <a class="user-title-label" href="#">
-                                                                                <i class="ace-icon fa fa-circle light-green"></i>
-                                                                                &nbsp;
-                                                                                <span class="white">Alex M. Doe</span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-xs-12 col-sm-7">
-                                                                <div class="space visible-xs"></div>
-
-                                                                <div class="profile-user-info profile-user-info-striped">
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Username </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>alexdoe</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Location </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>INFN</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> From/To </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>38</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Date shipping </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>2010/06/20</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last modified </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>3 hours ago</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Description  </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>Bio</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    4
-                                                </td>
-
-                                                <td class="center">
-                                                    <div class="action-buttons">
-                                                        <a href="#" class="green bigger-140 show-details-btn" title="Show Details">
-                                                            <i class="ace-icon fa fa-angle-double-down"></i>
-                                                            <span class="sr-only">Details</span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-
-                                                <td>
-                                                    <a href="#">best.com</a>
-                                                </td>
-                                                <td>$75</td>
-                                                <td class="hidden-480">6,500</td>
-                                                <td>Apr 03</td>
-
-                                                <td class="hidden-480">
-                                                    <span class="label label-sm label-inverse arrowed-in">Flagged</span>
-                                                </td>
-
-                                                
-                                            </tr>
-
-                                            <tr class="detail-row">
-                                                <td colspan="8">
-                                                    <div class="table-detail">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-2">
-                                                                <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="images/DRIFTPCB.png" />
-                                                                    <br />
-                                                                    <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-                                                                        <div class="inline position-relative">
-                                                                            <a class="user-title-label" href="#">
-                                                                                <i class="ace-icon fa fa-circle light-green"></i>
-                                                                                &nbsp;
-                                                                                <span class="white">Alex M. Doe</span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-xs-12 col-sm-7">
-                                                                <div class="space visible-xs"></div>
-
-                                                                <div class="profile-user-info profile-user-info-striped">
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Username </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>alexdoe</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Location </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>TIF</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> From/To </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>38</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Date shipping </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>2010/06/20</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last modified </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>3 hours ago</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Description  </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>Bio</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="center">
-                                                    5
-                                                </td>
-
-                                                <td class="center">
-                                                    <div class="action-buttons">
-                                                        <a href="#" class="green bigger-140 show-details-btn" title="Show Details">
-                                                            <i class="ace-icon fa fa-angle-double-down"></i>
-                                                            <span class="sr-only">Details</span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-
-                                                <td>
-                                                    <a href="#">pro.com</a>
-                                                </td>
-                                                <td>$55</td>
-                                                <td class="hidden-480">4,250</td>
-                                                <td>Jan 21</td>
-
-                                                <td class="hidden-480">
-                                                   <span class="label label-sm label-info arrowed arrowed-righ">Sold</span>
-                                                </td>
-
-                                               
-                                            </tr>
-
-                                            <tr class="detail-row">
-                                                <td colspan="8">
-                                                    <div class="table-detail">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-2">
-                                                                <div class="text-center">
-                                                                    <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="images/GEB.png" />
-                                                                    <br />
-                                                                    <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-                                                                        <div class="inline position-relative">
-                                                                            <a class="user-title-label" href="#">
-                                                                                <i class="ace-icon fa fa-circle light-green"></i>
-                                                                                &nbsp;
-                                                                                <span class="white">Alex M. Doe</span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-xs-12 col-sm-7">
-                                                                <div class="space visible-xs"></div>
-
-                                                                <div class="profile-user-info profile-user-info-striped">
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Username </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>alexdoe</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Location </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                                            <span>904</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> From/To </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>38</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Date shipping </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>2010/06/20</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Last modified </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>3 hours ago</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="profile-info-row">
-                                                                        <div class="profile-info-name"> Description  </div>
-
-                                                                        <div class="profile-info-value">
-                                                                            <span>Bio</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div><!-- /.span -->
-                            </div><!-- /.row -->
-
-                            <div class="hr hr-18 dotted hr-double"></div>
-
-<!--                            <h4 class="pink">
-                                <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
-                                <a href="#modal-table" role="button" class="green" data-toggle="modal"> Table Inside a Modal Box </a>
-                            </h4>-->
-
-
-
-
-                            <!-- PAGE CONTENT ENDS -->
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.page-content -->
-            </div>
-        </div><!-- /.main-content -->
-
-<!--        <div class="footer">
-            <div class="footer-inner">
-                <div class="footer-content">
-                    <span class="bigger-120">
-                        <span class="blue bolder">Ace</span>
-                        Application &copy; 2013-2014
-                    </span>
-
-                    &nbsp; &nbsp;
-                    <span class="action-buttons">
-                        <a href="#">
-                            <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-                        </a>
-
-                        <a href="#">
-                            <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-                        </a>
-
-                        <a href="#">
-                            <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
-                        </a>
-                    </span>
+    <?php } ?>
+                                      
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                                </div>
+                            <button type="submit" class="btn btn-default btn-lg subbutt_gen">Submit</button>
+                        </form>
+
+<?php } ?>
                 </div>
             </div>
-        </div>-->
+            <?php
+            //  Form Submitted , need to generate XML 
+            if (isset($_POST['foilsnumbersubmitted'])) {
+                echo '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully generated list of Gem FOIL data as an XML 
+                    </div>';
+                    $head = array();
+                    $headRun =array();
+                    $headType =array();
+                    $foils =array();
+                    $foil = array();
+                    $part = array();
+                    $partdata = array();
+                    $data = array();
+                    
+                    // Header Data
+                    $headType['EXTENSION_TABLE_NAME'] ="FOIL_HISTORY_INFO";
+                    $headType['NAME'] = "GEM Foil History Information"; 
+                    $head['TYPE'] = $headType;
+                    
+                    
+                    $headRun['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
+                    $headRun['RUN_TYPE'] = $_POST['RUN_TYPE'];
+                    $headRun['RUN_BEGIN_TIMESTAMP'] = date($_POST['RUN_BEGIN_TIMESTAMP'].':s');
+                    $headRun['RUN_END_TIMESTAMP'] = date($_POST['RUN_END_TIMESTAMP'].':s');
+                    $headRun['LOCATION'] = $_POST['LOCATION'];
+                    $headRun['INITIATED_BY_USER'] = $_POST['INITIATED_BY_USER'];
+                    $headRun['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION'];
+                    $head['RUN'] = $headRun;
+                    
+                    
+                    //Foils Data
+                 for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
+                    //$_POST['foil'.$i];   
+                    $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_foil'.$i];
+                    $foil['VERSION'] = $_POST['VERSION_foil'.$i];
+                    
+                    $part['SERIAL_NUMBER'] = $_POST['foil'.$i];
+                    $part['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
+                    $foil['PART'] = $part;
+                    
+                    $partdata['PROD_LOT_NUMBER'] = $_POST['PROD_LOT_NUMBER_foil'.$i];
+                    $partdata['MPT_TECHNICIAN'] = $_POST['MPT_TECHNICIAN_foil'.$i];
+                    $partdata['STATUS'] = $_POST['STATUS_foil'.$i];
+                    $partdata['COMMENTS'] = $_POST['COMMENTS_foil'.$i];
+                    $foil['DATA'] = $partdata;
+                    
+                    $foils['foil'.$i] = $foil;
+                  
+                   }
+                   $data['head'] = $head;
+                   $data['foils'] = $foils;
+                   print_r($data);
+                   generateDatasetXml($data);
+                   
+            }
+            ?>
 
-        
-    </div><!-- /.main-container -->
+        </div>
+    </div>
+</div>
+
+
 
 <?php
 include "foot.php";
-include "foot_panel.html";
-
 ?>
 <script>
-        $("#track").attr("class", "active");
-    </script>
+    $("select[class^='chosen-select-foil-']").chosen();
+
+    $("select[class^='chosen-select-foil-']").on('change', function (evt, params) {
+        $(this).prev().prev().val($(this).chosen().val());
+    });
+    jQuery(document).ready(function ($) {
+        $( ".date" ).datetimepicker();
+        $.fn.datetimepicker.defaults = {
+            pickSeconds: false        // disables seconds in the time picker
+        };
+    })
+    $(".subbutt_gen").on("click", function(e){
+        //$(".foilinput").each();
+                // Check if one of them is empty
+        check_foils_empty(e);
+        // Check for doublicated fields values
+        check_foils_different(e);
+    });
+    function check_foils_empty(e){
+    var ev = e;
+    try{
+    var flag = true;
+    $('.foilinput').each(function () {
+            if ($(this).val() == '') {
+                console.log('empty');
+                $(this).prev().show();
+                $('.empty').show();
+                flag = false;
+                throw "Exit Error";
+                return false;
+
+            }
+        });
+        
+       $('.runinput').each(function () {
+            if ($(this).val() == '') {
+                console.log('empty');
+                $(this).prev().show();
+                $('.empty').show();
+                flag = false;
+                throw "Exit Error";
+                return false;
+
+            }
+        });
+        
+    }
+    catch(e){ 
+        //alert('catch');
+        ev.preventDefault(); 
+        return false; 
+    }
+}
+
+function check_foils_different(e){
+    var ev = e;
+    try{ var count = 0;
+        var flag = true;
+        $('.foilinput').each(function () {
+            if ($(this).val() === '') {
+                $('.doublication').show();
+                //alert('stop');
+                flag = false;
+                throw "Exit Error";
+                return false;
+            }
+            if ($(this).val() !== '') {
+                var val1 = $(this).val();
+                var elem1 = $(this);
+                //console.log(val1);
+                $('.foilinput').each(function () {
+                    if ($(this).val() !== '') {
+                        if (val1 === $(this).val())
+                        {
+                            count = count + 1; //if found itself and another field, counter would be = 2
+                            if (count > 1) {
+                                console.log(val1+$(this).val());
+                                console.log('error');
+                                elem1.prev().show();
+                                $(this).prev().show();
+                                $('.doublication').show();
+                                //alert('stop');
+                                flag = false;
+                                throw "Exit Error";
+                                return false;
+                            }
+                        }
+                    }
+                });
+                count = 0;
+            }
+        });}
+    catch(e){
+        //alert('catch');
+        ev.preventDefault(); 
+        return false;
+    }
+    
+   
+}
+
+</script>
