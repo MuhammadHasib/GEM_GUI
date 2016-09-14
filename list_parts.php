@@ -21,7 +21,7 @@ include "head.php";
 
                     <!-- Columns are always 50% wide -->
                     <div class="row">
-                        <div class="col-xs-6 center-block">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <h4 class="sub-header"> <img src="images/ROPCB.png" width="20%"><!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span> --> Readout board </h4>
 
                             <a href="new_readout.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
@@ -36,13 +36,13 @@ include "head.php";
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <h4 class="sub-header"><img src="images/DRIFTPCB.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> Drift board </h4>
 
                             <a href="new_drift.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
                             <a href="list_parts_drift.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                           <h4 class="sub-header"><img src="images/VFAT_1.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> VFAT </h4>
 
                             <a href="new_vfat.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
@@ -52,13 +52,13 @@ include "head.php";
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                <h4 class="sub-header"><img src="images/GEB.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> GEM Electronic Board </h4>
 
                             <a href="new_geb.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
                             <a href="list_parts_geb.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <h4 class="sub-header"><img src="images/opto1.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> OptoHybrid </h4>
 
                             <a href="new_opto.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
@@ -68,7 +68,7 @@ include "head.php";
                     </div>
                 </div>
 
-                <div class="col-xs-6 center-block">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 center-block">
 
                     <h1 class="page-header">Attach</h1>
 

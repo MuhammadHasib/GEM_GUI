@@ -96,7 +96,7 @@ function get_list_part_ID($part_id) {
     // Database connection 
     $conn = database_connection();
 
-    $sql = "SELECT PART_ID,SERIAL_NUMBER,RECORD_INSERTION_USER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "'"; //select data or insert data
+    $sql = "SELECT PART_ID,SERIAL_NUMBER,RECORD_INSERTION_USER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND IS_RECORD_DELETED = 'F'"; //select data or insert data
     // Execute query  
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
@@ -273,7 +273,7 @@ function get_manufacturers() {
 
 function get_institutes() {
     $conn = database_connection();
-    $sql = "SELECT INSTITUTION_ID,INSTITUTE_CODE,NAME FROM CMS_GEM_CORE_MANAGEMNT.INSTITUTIONS "; //select data or insert data
+    $sql = "SELECT INSTITUTION_ID,INSTITUTE_CODE,NAME FROM CMS_GEM_CORE_MANAGEMNT.INSTITUTIONS WHERE IS_RECORD_DELETED = 'F'"; //select data or insert data
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
     $arr = oci_execute($query);
@@ -386,7 +386,7 @@ function get_available_parts_nohtml_noversion($part_id) {
     // Database connection 
     $conn = database_connection();
 
-    $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND PART_ID not in (select PART_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; //select data or insert data 
+    $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND IS_RECORD_DELETED = 'F' AND PART_ID not in (select PART_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; //select data or insert data 
 
 
     $query = oci_parse($conn, $sql);
@@ -422,14 +422,14 @@ function get_available_parts_nochild($part_id, $version, $relationID = "NA") {
         // Filtering GEBs that has less than 24 VFATS childs
         if ($relationID != "NA" && $relationID == $VFAT2_TO_GEB) {
             $sql = "SELECT PART_ID , SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS P1
-                WHERE  KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%'
+                WHERE  KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND IS_RECORD_DELETED = 'F'
                 AND (select COUNT(PART_PARENT_ID) from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE WHERE PART_PARENT_ID = P1.PART_ID AND RELATIONSHIP_ID ='".$relationID."' ) < 24
                 ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc";
         }
         // Filtering GEBs that has less than 1 OptoHybrid Child
         if ($relationID != "NA" && $relationID == $OPTOHYBRID_TO_GEB) {
             $sql = "SELECT PART_ID , SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS P1
-                WHERE  KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%'
+                WHERE  KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND IS_RECORD_DELETED = 'F'
                 AND (select COUNT(PART_PARENT_ID) from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE WHERE PART_PARENT_ID = P1.PART_ID AND RELATIONSHIP_ID ='".$relationID."' ) < 1
                 ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc";
         }
@@ -437,7 +437,7 @@ function get_available_parts_nochild($part_id, $version, $relationID = "NA") {
     // Other part Like Readout ( has only one GEB child ) so check will be only on confirming that 
     // there is no current entry for this Readout in Tree table as a parent (i.e: can attatch child to it)
     else {   
-        $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND PART_ID not in (select PART_PARENT_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; //select data or insert data 
+        $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND IS_RECORD_DELETED = 'F' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND PART_ID not in (select PART_PARENT_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; //select data or insert data 
     }
 
     $query = oci_parse($conn, $sql);
@@ -481,7 +481,7 @@ function get_attached_parts($part_id) {
     // Database connection 
     $conn = database_connection();
 
-    $sql = "select PART_ID, RELATIONSHIP_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE where PART_PARENT_ID='" . $part_id . "'"; //select data or insert data 
+    $sql = "select PART_ID, RELATIONSHIP_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE where PART_PARENT_ID='" . $part_id . "' AND IS_RECORD_DELETED = 'F'"; //select data or insert data 
 
 
     $query = oci_parse($conn, $sql);
@@ -572,7 +572,7 @@ function list_chambers() {
     // Database connection 
     $conn = database_connection();
     global $CHAMBER_KIND_OF_PART_ID;
-    $sql = "SELECT SERIAL_NUMBER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $CHAMBER_KIND_OF_PART_ID . "'"; //select data or insert data
+    $sql = "SELECT SERIAL_NUMBER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $CHAMBER_KIND_OF_PART_ID . "' AND IS_RECORD_DELETED = 'F'"; //select data or insert data
     // Execute query  
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
@@ -598,7 +598,7 @@ function list_parts($kindId) {
 // Database connection 
     $conn = database_connection();
     
-   $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $kindId . "'" ;
+   $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $kindId . "' AND IS_RECORD_DELETED = 'F' " ;
 
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
@@ -614,4 +614,32 @@ function list_parts($kindId) {
     }
     return 1;
  
+}
+
+/*
+ * Name: getKindIdByKindName
+ * Description: get id of certian kind of part
+ * Parameter: $kind : kind of part name
+ * usage: gloabal file and tracking script
+ * return: id
+ * Autor: Ola Aboamer [o.aboamer@cern.ch]
+ */
+function getKindIdByKindName($kind){
+    // Database connection 
+    $conn = database_connection();
+    
+   $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $kindId . "' AND IS_RECORD_DELETED = 'F'" ;
+       $query = oci_parse($conn, $sql);
+    //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
+    $arr = oci_execute($query);
+
+    $result_arr = array();
+
+    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+
+            echo '<option>' . $row['SERIAL_NUMBER'] . '</option>';
+  
+       
+    }
+    return 1;
 }

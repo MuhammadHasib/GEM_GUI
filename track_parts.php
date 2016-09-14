@@ -68,8 +68,9 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 
                     <?php
                     //  number of foils having History info to be inserted, defined , generate form 
-                    if (isset($_POST['numOfParts'])) {
+                    if (isset($_POST['numOfParts']) && isset($_POST['kind'])) {
                         $num = $_POST['numOfParts'];
+                        $kind = $_POST['kind'];
                         ?>
 
                         <form method="POST" action="new_gem_multi.php">
@@ -153,7 +154,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                     <div class="form-group" style="border: 1px solid #ccc;">
                                                         <div class="widget-header">
 									<h6 class="widget-title">
-										<i class="ace-icon fa fa-circle"></i> Part  <?= $i ?>
+										<i class="ace-icon fa fa-circle"></i>   <?= $kind.' '.$i ?>
 									</h6>
 							</div>
                                                         
@@ -161,13 +162,13 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         
                                                         
                                                          <div style="white-space:nowrap">
-                                                        <label for="exampleInputFile">Related FOIL: </label>
+                                                        <label for="exampleInputFile">Related <?= $kind; ?>: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input class="foilinput foil<?= $i ?>" name="foil<?= $i ?>" value="" hidden><br>
+                                                        <input class="foilinput foil<?= $i ?>" name="part<?= $i ?>" value="" hidden><br>
                                                         <!--multiple=""-->
-                                                        <select tabindex="-1"  class="chosen-select-foil-<?= $i ?>" style="" data-placeholder="Choose FOIL">
+                                                        <select tabindex="-1"  class="chosen-select-part-<?= $i ?>" style="" data-placeholder="Choose <?= $kind; ?>">
                                                             <option value=""></option>
-                                                            <optgroup label="Foil">
+                                                            <optgroup label="Part">
                                                                 <?php
                                                                 $arr = list_parts($FOIL_KIND_OF_PART_ID);
                                                                 foreach ($arr as $value) {
@@ -202,8 +203,6 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <input name="DESTINATION_part<?= $i; ?>">
                                                         </div>
                                                         
-                                                        
-                                                         
                                                
                                                         
                                                         <div style="white-space:nowrap">
@@ -221,7 +220,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <div class="form-group">
                                                         <lable>Date Shipped:</lable><br>
                                                          <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input class="runinput date" name='DATE_SHIPPED' >
+                                                        <input class="runinput date" name='DATE_SHIPPED_part<?= $i; ?>' >
                                                        </div>
 			
                                                         
@@ -312,9 +311,9 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 include "foot.php";
 ?>
 <script>
-    $("select[class^='chosen-select-foil-']").chosen();
+    $("select[class^='chosen-select-part-']").chosen();
 
-    $("select[class^='chosen-select-foil-']").on('change', function (evt, params) {
+    $("select[class^='chosen-select-part-']").on('change', function (evt, params) {
         $(this).prev().prev().val($(this).chosen().val());
     });
     jQuery(document).ready(function ($) {
