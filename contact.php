@@ -12,7 +12,7 @@ include "head.php";
 		$human = intval($_POST['human']);
 		$from = 'GEM DB Contact Form'; 
 		$to = 'ola.aboamer@cern.ch'; 
-		$subject = $_POST['subject'];;
+		$subject = "GEM_GUI_".$_POST['subject'];;
 		
 		$body ="From: $name\n E-Mail: $email\n Message:\n $message";
 		// Check if name has been entered
