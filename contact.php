@@ -12,7 +12,7 @@ include "head.php";
 		$human = intval($_POST['human']);
 		$from = 'GEM DB Contact Form'; 
 		$to = 'ola.aboamer@cern.ch'; 
-		$subject = 'Message from Contact Demo ';
+		$subject = $_POST['subject'];;
 		
 		$body ="From: $name\n E-Mail: $email\n Message:\n $message";
 		// Check if name has been entered
@@ -26,7 +26,7 @@ include "head.php";
 		}
                 
                 // Check if email has been entered and is valid
-		if (!$_POST['subject'] || !filter_var($_POST['subject'], FILTER_VALIDATE_EMAIL)) {
+		if (!$_POST['subject'] ) {
 			$errSubject = 'Please enter a subject';
 		}
 		
@@ -72,7 +72,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
                                         <div class="form-group">
 						<label for="subject" class="col-sm-2 control-label">Subject</label>
 						<div class="col-sm-10">
-							<input class="form-control" id="subject" name="subject" hidden="" >
+							<input class="form-control" id="subject" name="subject" style=" display: none;" >
                                                         <select onchange="$(this).prev().val($(this).val());">
                                                             <option>Choose Subject</option>
                                                             <option>Report Problem</option>
