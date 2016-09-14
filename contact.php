@@ -72,7 +72,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
                                         <div class="form-group">
 						<label for="subject" class="col-sm-2 control-label">Subject</label>
 						<div class="col-sm-10">
-							<input class="form-control" id="subject" name="subject" hidden >
+							<input class="form-control" id="subject" name="subject" hidden="" >
                                                         <select onchange="$(this).prev().val($(this).val());">
                                                             <option>Choose Subject</option>
                                                             <option>Report Problem</option>
