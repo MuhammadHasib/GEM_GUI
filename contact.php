@@ -24,6 +24,11 @@ include "head.php";
 		if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 			$errEmail = 'Please enter a valid email address';
 		}
+                
+                // Check if email has been entered and is valid
+		if (!$_POST['subject'] || !filter_var($_POST['subject'], FILTER_VALIDATE_EMAIL)) {
+			$errSubject = 'Please enter a subject';
+		}
 		
 		//Check if message has been entered
 		if (!$_POST['message']) {
@@ -62,6 +67,19 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
 						<div class="col-sm-10">
 							<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo $userInfo['email']; ?><?php /*echo htmlspecialchars($_POST['email']);*/ ?>">
 							<?php echo "<p class='text-danger'>$errEmail</p>";?>
+						</div>
+					</div>
+                                        <div class="form-group">
+						<label for="subject" class="col-sm-2 control-label">Subject</label>
+						<div class="col-sm-10">
+							<input class="form-control" id="subject" name="subject" >
+                                                        <select onchange="$(this).prev().val($(this).va());">
+                                                            <option>Report Problem</option>
+                                                            <option>Request Feature</option>
+                                                            <option>General Question</option>
+                                                          
+                                                        </select>
+							<?php echo "<p class='text-danger'>$errSubject</p>";?>
 						</div>
 					</div>
 					<div class="form-group">

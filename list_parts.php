@@ -27,7 +27,7 @@ include "head.php";
                             <a href="new_readout.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
                             <a href="list_parts_readout.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
                         </div> <!-- First row first cell end -->
-                        <div class="col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <h4 class="sub-header"> <img src="images/foil2.png" width="20%"><!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span> -->GEM foil </h4>
 
                             <a href="new_gem_step1.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new </button></a>
