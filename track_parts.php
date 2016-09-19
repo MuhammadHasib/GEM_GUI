@@ -64,7 +64,14 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                             </div>
                             <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
                         </form>
-                    <?php } ?>
+                    <?php 
+                    
+                       $query = get_kinds_set_global();
+    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+        echo '<a href="#" class="kinds" kind-id="' . $row['KIND_OF_PART_ID'] . '">' . $row['DISPLAY_NAME'] . '</a>';
+    }
+    
+                    } ?>
 
                     <?php
                     //  number of foils having History info to be inserted, defined , generate form 

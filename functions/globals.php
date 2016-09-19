@@ -1,5 +1,5 @@
 <?php
-
+include "functions.php";
 /*
  *  Usage: Contains all the global values , that will be commonly used in the application.
  *  Author: Ola Aboamer [o.aboamer@cern.ch]
@@ -113,3 +113,4 @@ $ROOT_KIND_OF_PART ="GEM Detector ROOT";
 $ROOT_SERIAL_NUM="ROOT";
 
 
+ 
