@@ -65,7 +65,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                             <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
                         </form>
                     <?php 
-                    
+                        error_reporting(E_ALL);
+    ini_set('display_errors', 1);
                        $query = get_kinds_set_global();
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
         echo '<a href="#" class="kinds" kind-id="' . $row['KIND_OF_PART_ID'] . '">' . $row['DISPLAY_NAME'] . '</a>';
