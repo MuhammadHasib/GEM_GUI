@@ -658,5 +658,5 @@ function get_kinds_set_global() {
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
     $arr = oci_execute($query);
 
-    return $arr;
+    return $query;
 }
