@@ -1,5 +1,4 @@
 <?php
-include "functions.php";
 /*
  *  Usage: Contains all the global values , that will be commonly used in the application.
  *  Author: Ola Aboamer [o.aboamer@cern.ch]
