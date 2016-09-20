@@ -7,7 +7,7 @@ include 'globals.php';
  * Author: Ola Aboamer [o.aboamer@cern.ch] 
  */
 
-function generateDatasetXml($data) {
+function generateDatasetXml($data, $filename = "dataset") {
 
         /* Error Reporting */
     error_reporting(E_ALL);
@@ -71,9 +71,9 @@ function generateDatasetXml($data) {
     $xml->formatOutput = true;
 
     $num = str_replace("/", "-",$runnum);
-    $LocalFilePATH = "gen_xml/dataset".$num.".xml";
+    $LocalFilePATH = "gen_xml/".$filename.$num.".xml";
     //Generate the file and save it on directory
-    $xml->save("gen_xml/dataset".$num.".xml"); // or die("Error");
+    $xml->save("gen_xml/".$filename.$num.".xml"); // or die("Error");
  
     // Send the file to the spool area
     SendXML($LocalFilePATH);

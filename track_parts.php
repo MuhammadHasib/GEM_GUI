@@ -133,6 +133,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         <textarea name='COMMENT_DESCRIPTION'></textarea>
                                         </div>
                                         
+                                        <input name="KIND_OF_PART" value="<?= $kind; ?>" hidden="true">
 
                                     </div>
                                 </div>
@@ -222,6 +223,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                          <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input class="runinput date" name='DATE_SHIPPED_part<?= $i; ?>' >
                                                        </div>
+                                                        
 			
                                                         
 			
@@ -279,15 +281,17 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     //$_POST['foil'.$i];   
                     $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_foil'.$i];
                     $foil['VERSION'] = $_POST['VERSION_foil'.$i];
+                    $foil['DATA_FILE_NAME'] = $_POST['DATA_FILE_NAME_part'.$i];
+                    
                     
                     $part['SERIAL_NUMBER'] = $_POST['foil'.$i];
-                    $part['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
+                    $part['KIND_OF_PART'] = $_POST['KIND_OF_PART'];
                     $foil['PART'] = $part;
                     
-                    $partdata['PROD_LOT_NUMBER'] = $_POST['PROD_LOT_NUMBER_foil'.$i];
-                    $partdata['MPT_TECHNICIAN'] = $_POST['MPT_TECHNICIAN_foil'.$i];
-                    $partdata['STATUS'] = $_POST['STATUS_foil'.$i];
-                    $partdata['COMMENTS'] = $_POST['COMMENTS_foil'.$i];
+                    $partdata['SHIPPED_FROM'] = $_POST['SHIPPED_FROM_part'.$i];
+                    $partdata['DESTINATION'] = $_POST['DESTINATION_part'.$i];
+                    $partdata['MODE_SHIPPED'] = $_POST['MODE_SHIPPED_part'.$i];
+                    $partdata['DATE_SHIPPED'] = date($_POST['DATE_SHIPPED_part'.$i].':s');
                     $foil['DATA'] = $partdata;
                     
                     $foils['foil'.$i] = $foil;
@@ -296,7 +300,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                    $data['head'] = $head;
                    $data['foils'] = $foils;
                    print_r($data);
-                   generateDatasetXml($data);
+                   generateDatasetXml($data, "tracking".str_replace(" ", "_", $_POST['KIND_OF_PART']));
                    
             }
             ?>
