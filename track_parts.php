@@ -279,12 +279,12 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     //Foils Data
                  for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
                     //$_POST['foil'.$i];   
-                    $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_foil'.$i];
-                    $foil['VERSION'] = $_POST['VERSION_foil'.$i];
+                    $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_part'.$i];
+                    $foil['VERSION'] = $_POST['VERSION_part'.$i];
                     $foil['DATA_FILE_NAME'] = $_POST['DATA_FILE_NAME_part'.$i];
                     
                     
-                    $part['SERIAL_NUMBER'] = $_POST['foil'.$i];
+                    $part['SERIAL_NUMBER'] = $_POST['part'.$i];
                     $part['KIND_OF_PART'] = $_POST['KIND_OF_PART'];
                     $foil['PART'] = $part;
                     
