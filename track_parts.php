@@ -133,7 +133,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         <textarea name='COMMENT_DESCRIPTION'></textarea>
                                         </div>
                                         
-                                        <input name="KIND_OF_PART" value="<?= $kind; ?>" hidden="true">
+                                        <input name="KIND_OF_PART" value="<?= getKindNameByKindId($kind); ?>" hidden="true">
 
                                     </div>
                                 </div>
