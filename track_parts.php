@@ -73,7 +73,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                         $kind = $_POST['kind'];
                         ?>
 
-                        <form method="POST" action="new_gem_multi.php">
+                    <form method="POST" action="track_parts.php">
                             <input hidden="" value="<?= $num; ?>" name="foilsnumbersubmitted">
                             <div class="row">
                             <div class="col-xs-12">
