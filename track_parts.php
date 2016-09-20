@@ -304,7 +304,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                  for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
                     //$_POST['foil'.$i];   
                     $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_part'.$i];
-                    $foil['VERSION'] = $_POST['VERSION_part'.$i];
+//                    $foil['VERSION'] = $_POST['VERSION_part'.$i];
                     $foil['DATA_FILE_NAME'] = $_POST['DATA_FILE_NAME_part'.$i];
                     
                     
