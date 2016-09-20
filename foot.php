@@ -130,7 +130,7 @@
         }
         if ($(this).attr("class") == "kinds"){
             $(this).parent().parent().parent().prev().val();
-            $(this).parent().parent().parent().prev().val($(this).html());
+            $(this).parent().parent().parent().prev().val($(this).attr('kind-id'));
             if($(this).val() !== '' && $('.num').val() !== '')$('.subbutt_at').attr('disabled', false);
         }
         

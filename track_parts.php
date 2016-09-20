@@ -64,15 +64,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                             </div>
                             <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
                         </form>
-                    <?php 
-                        error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-                       $query = get_kinds_set_global();
-    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
-        echo '<a href="#" class="kinds" kind-id="' . $row['KIND_OF_PART_ID'] . '">' . $row['DISPLAY_NAME'] . '</a>';
-    }
-    
-                    } ?>
+                    <?php } ?>
 
                     <?php
                     //  number of foils having History info to be inserted, defined , generate form 
@@ -178,7 +170,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                             <option value=""></option>
                                                             <optgroup label="Part">
                                                                 <?php
-                                                                $arr = list_parts($FOIL_KIND_OF_PART_ID);
+                                                                $arr = list_parts($kind);
                                                                 foreach ($arr as $value) {
                                                                     echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
                                                                 }

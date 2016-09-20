@@ -10,9 +10,9 @@ include "globals.php";
  */
 
 function database_connection() {
-    $accountname = "CMS_GEM_APPUSER_R";
-    $password = "GEM_Reader_2015";
-    $servername = "int2r1-v.cern.ch:10121/int2r.cern.ch";
+    global $accountname ;
+    global $password ;
+    global $servername ;
 
 //load oci8 library if not load automatically
     if (!extension_loaded('oci8')) {
@@ -644,19 +644,3 @@ function getKindIdByKindName($kind){
     return 1;
 }
 
-/*
- * Name: get_kinds_set_global
- * Description: Get list of manufacturers
- * return: Array
- * Autor: Ola Aboamer [o.aboamer@cern.ch]
- */
-
-function get_kinds_set_global() {
-    $conn = database_connection();
-    $sql = "SELECT KIND_OF_PART_ID,DISPLAY_NAME FROM CMS_GEM_CORE_CONSTRUCT.KINDS_OF_PARTS WHERE IS_RECORD_DELETED = 'F'"; 
-    $query = oci_parse($conn, $sql);
-    //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
-    $arr = oci_execute($query);
-
-    return $query;
-}
