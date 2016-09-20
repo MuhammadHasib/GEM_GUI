@@ -5,7 +5,7 @@ $accountname = "CMS_GEM_APPUSER_R";
 $password = "GEM_Reader_2015";
 $servername = "int2r1-v.cern.ch:10121/int2r.cern.ch";
   
-$resultArr = get_kinds_set_globals($accountname,$password,$servername);
+
         
 /*
  * Name: get_kinds_set_globals
@@ -39,6 +39,7 @@ function get_kinds_set_globals($accountname,$password,$servername) {
     return $result;
 }
 
+$resultArr = get_kinds_set_globals($accountname,$password,$servername);
 /*
  *  Usage: Contains all the global values , that will be commonly used in the application.
  *  Author: Ola Aboamer [o.aboamer@cern.ch]
