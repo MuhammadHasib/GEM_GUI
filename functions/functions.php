@@ -2,31 +2,7 @@
 
 include "globals.php";
 
-/*
- * Name: database_connection
- * Description:  Start db connection
- * Return: return Connection otherwise return 0
- * Author: Ola Aboamer [o.aboamer@cern.ch] 
- */
 
-function database_connection() {
-    global $accountname ;
-    global $password ;
-    global $servername ;
-
-//load oci8 library if not load automatically
-    if (!extension_loaded('oci8')) {
-        dl("php_oci8.dll");
-    }
-    //connect to database     
-    $conn = oci_connect($accountname, $password, $servername);
-    if (!$conn) {
-        $e = oci_error();
-        trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
-        return $e;
-    } else
-        return $conn;
-}
 
 /*
  * Name: get_part_ID
