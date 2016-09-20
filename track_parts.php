@@ -224,7 +224,31 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <input class="runinput date" name='DATE_SHIPPED_part<?= $i; ?>' >
                                                        </div>
                                                         
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">Status </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="STATUS_part<?= $i; ?>" hidden>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                Choose Status
+                                                                <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                                <li ><a herf="#" class="label label-info arrowed-right arrowed-in">Good</a></li>
+                                                                <li ><a herf="#" class="label label-success arrowed-in arrowed-in-right">Approved</a></li>
+                                                                <li ><a herf="#" class="label label-danger arrowed">Bad</a></li>
+                                                                <li ><a herf="#" class="label label-warning arrowed arrowed-right">Pending</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        </div>
+                                                        <div style="white-space:nowrap">
+                                                        <label class="sublabel" for="exampleInputFile">ADDN SHIPPING INFO:  </label>
+                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
+                                                        <input name="ADDN_SHIPPING_INFO_part<?= $i; ?>">
+                                                        </div>
+                                                        
 			
+
                                                         
 			
 			
@@ -291,6 +315,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     $partdata['SHIPPED_FROM'] = $_POST['SHIPPED_FROM_part'.$i];
                     $partdata['DESTINATION'] = $_POST['DESTINATION_part'.$i];
                     $partdata['MODE_SHIPPED'] = $_POST['MODE_SHIPPED_part'.$i];
+                    $partdata['STATUS'] = $_POST['STATUS_part'.$i];
+                    $partdata['ADDN_SHIPPING_INFO'] = $_POST['ADDN_SHIPPING_INFO_part'.$i];
                     $partdata['DATE_SHIPPED'] = date($_POST['DATE_SHIPPED_part'.$i].':s');
                     $foil['DATA'] = $partdata;
                     
