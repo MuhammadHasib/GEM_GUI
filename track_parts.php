@@ -154,7 +154,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                     <div class="form-group" style="border: 1px solid #ccc;">
                                                         <div class="widget-header">
 									<h6 class="widget-title">
-										<i class="ace-icon fa fa-circle"></i>   <?= $kind.' '.$i ?>
+										<i class="ace-icon fa fa-circle"></i>   <?= getKindNameByKindId($kind).' '.$i ?>
 									</h6>
 							</div>
                                                         
@@ -162,7 +162,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         
                                                         
                                                          <div style="white-space:nowrap">
-                                                        <label for="exampleInputFile">Related <?= $kind; ?>: </label>
+                                                             <label for="exampleInputFile">Related <?= getKindNameByKindId($kind); ?>: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input class="foilinput foil<?= $i ?>" name="part<?= $i ?>" value="" hidden><br>
                                                         <!--multiple=""-->

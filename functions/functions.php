@@ -600,11 +600,39 @@ function list_parts($kindId) {
  * return: id
  * Autor: Ola Aboamer [o.aboamer@cern.ch]
  */
-function getKindIdByKindName($kind){
+//function getKindIdByKindName($kind){
+//    // Database connection 
+//    $conn = database_connection();
+//    
+//   $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $kindId . "' AND IS_RECORD_DELETED = 'F'" ;
+//       $query = oci_parse($conn, $sql);
+//    //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
+//    $arr = oci_execute($query);
+//
+//    $result_arr = array();
+//
+//    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+//
+//            echo '<option>' . $row['SERIAL_NUMBER'] . '</option>';
+//  
+//       
+//    }
+//    return 1;
+//}
+
+/*
+ * Name: getKindNameByKindId
+ * Description: get name of certian kind of part
+ * Parameter: $kindid : kind of part id
+ * usage: gloabal file and tracking script
+ * return: name
+ * Autor: Ola Aboamer [o.aboamer@cern.ch]
+ */
+function getKindNameByKindId($kindid){
     // Database connection 
     $conn = database_connection();
     
-   $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $kindId . "' AND IS_RECORD_DELETED = 'F'" ;
+   $sql = "SELECT DISPLAY_NAME FROM CMS_GEM_CORE_CONSTRUCT.KINDS_OF_PARTS WHERE KIND_OF_PART_ID ='". $kindid."' AND IS_RECORD_DELETED = 'F'" ;
        $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
     $arr = oci_execute($query);
@@ -613,7 +641,7 @@ function getKindIdByKindName($kind){
 
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
 
-            echo '<option>' . $row['SERIAL_NUMBER'] . '</option>';
+            return $row['DISPLAY_NAME'];
   
        
     }
