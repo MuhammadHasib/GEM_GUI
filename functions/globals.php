@@ -4,7 +4,7 @@
  *  Author: Ola Aboamer [o.aboamer@cern.ch]
 */
 
-include "globals_functions.php";
+include_once "globals_functions.php";
 
 // Get KIND OF PARTS IDs from DB
 $resultArr = get_kinds_set_globals();
