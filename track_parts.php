@@ -261,8 +261,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                     $data = array();
                     
                     // Header Data
-                    $headType['EXTENSION_TABLE_NAME'] ="FOIL_HISTORY_INFO";
-                    $headType['NAME'] = "GEM Foil History Information"; 
+                    $headType['EXTENSION_TABLE_NAME'] ="GEM_COMPONENT_TRACKING";
+                    $headType['NAME'] = "GEM Component Tracking Data"; 
                     $head['TYPE'] = $headType;
                     
                     
