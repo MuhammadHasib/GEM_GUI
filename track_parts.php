@@ -166,7 +166,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input class="foilinput foil<?= $i ?>" name="part<?= $i ?>" value="" hidden><br>
                                                         <!--multiple=""-->
-                                                        <select tabindex="-1"  class="chosen-select-part-<?= $i ?>" style="" data-placeholder="Choose <?= $kind; ?>">
+                                                        <select tabindex="-1"  class="chosen-select-part-<?= $i ?>" style="" data-placeholder="Choose <?= getKindNameByKindId($kind); ?>">
                                                             <option value=""></option>
                                                             <optgroup label="Part">
                                                                 <?php
