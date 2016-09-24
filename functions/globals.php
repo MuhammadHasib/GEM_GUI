@@ -7,7 +7,11 @@
 include_once "globals_functions.php";
 
 // Get KIND OF PARTS IDs from DB
-$resultArr = get_kinds_set_globals();
+$resultArr = get_parts_kinds_set_globals();
+// Get KIND OF Conditions IDs from DB
+$resultArr_kinds = get_conditions_kinds_set_globals();
+// Get part to part relations IDs from DB
+$resultArr_p2pr = get_part_part_relns_set_globals();
 
 /* Kind of parts Constants */
 /*
@@ -163,13 +167,48 @@ $GEB_ID = "GEMElectronicsBoard";
 
 
 /***** Part to Part Relationship IDs *****/
-$VFAT2_TO_GEB="10000000000005639";
-$OPTOHYBRID_TO_GEB="10000000000005239";
-$GEB_TO_READOUT="10000000000004839";
-$READOUT_TO_CHAMBER="10000000000002000";
-$FOIL_TO_CHAMBER="10000000000002001";
-$DRIFT_TO_CHAMBER="10000000000002002";
+//$VFAT2_TO_GEB="10000000000005639";
+$VFAT2_TO_GEB = $resultArr_p2pr['AutoAssigned: GEM VFAT2 --> GEM Electronics Board'];
 
+//$OPTOHYBRID_TO_GEB="10000000000005239";
+$OPTOHYBRID_TO_GEB = $resultArr_p2pr['AutoAssigned: GEM Opto Hybrid --> GEM Electronics Board'];
+
+//$GEB_TO_READOUT="10000000000004839";
+$GEB_TO_READOUT = $resultArr_p2pr['AutoAssigned: GEM Electronics Board --> GEM Readout PCB'];
+
+//$READOUT_TO_CHAMBER="10000000000002000";
+$READOUT_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Readout PCB --> GEM Chamber'];
+
+//$FOIL_TO_CHAMBER="10000000000002001";
+$FOIL_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Foil --> GEM Chamber'];
+
+//$DRIFT_TO_CHAMBER="10000000000002002";
+$DRIFT_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Drift PCB --> GEM Chamber'];
+
+
+
+
+
+/**
+ * 
+ * AutoAssigned: GEM Chamber --> GEM Detector ROOT
+AutoAssigned: GEM Drift PCB --> GEM Chamber
+AutoAssigned: GEM Drift PCB --> GEM Foil
+AutoAssigned: GEM Electronics Board --> GEM Readout PCB
+AutoAssigned: GEM Foil --> GEM Chamber
+AutoAssigned: GEM Foil --> GEM Detector ROOT
+AutoAssigned: GEM Foil --> GEM Foil
+AutoAssigned: GEM Opto Hybrid --> GEM Electronics Board
+AutoAssigned: GEM Readout PCB --> GEM Chamber
+AutoAssigned: GEM Readout PCB --> GEM Detector ROOT
+AutoAssigned: GEM Readout PCB --> GEM Foil
+AutoAssigned: GEM VFAT --> GEM Readout PCB
+AutoAssigned: GEM VFAT2 --> GEM Electronics Board
+AutoAssigned: Generic GEM parent part --> GEM Detector ROOT
+AutoAssigned: Generic GEM part --> Generic GEM parent part
+GEMDetectorRoot-GEMDetectorRoot
+ * 
+ * **/
 
 
 /****** Root part Information *****/
@@ -177,5 +216,5 @@ $ROOT_BARCODE= "CMS-GEM-ROOT";
 $ROOT_KIND_OF_PART ="GEM Detector ROOT";
 $ROOT_SERIAL_NUM="ROOT";
 
-
- 
+/**** Conditions Kinds IDs****/
+ $TRACKING_CONDITION_ID = $resultArr_kinds['GEM Component Tracking Data'] ;

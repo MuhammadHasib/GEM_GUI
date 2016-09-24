@@ -278,7 +278,8 @@ function get_institutes() {
 
 function get_kinds() {
     $conn = database_connection();
-    $sql = "SELECT KIND_OF_PART_ID AS kid ,DISPLAY_NAME FROM CMS_GEM_CORE_CONSTRUCT.KINDS_OF_PARTS WHERE IS_RECORD_DELETED = 'F' JOIN CMS_GEM_CORE_COND.COND_TO_PART_RLTNSHPS ON kid = KIND_OF_PART_ID"; 
+    //$sql = "SELECT KIND_OF_PART_ID,DISPLAY_NAME FROM CMS_GEM_CORE_CONSTRUCT.KINDS_OF_PARTS WHERE IS_RECORD_DELETED = 'F'"; 
+    $sql = "SELECT KIND_OF_PART_ID,DISPLAY_NAME FROM CMS_GEM_CORE_CONSTRUCT.KINDS_OF_PARTS WHERE IS_RECORD_DELETED = 'F' AND  KIND_OF_PART_ID IN ( SELECT KIND_OF_PART_ID FROM CMS_GEM_CORE_COND.COND_TO_PART_RLTNSHPS where KIND_OF_CONDITION_ID='10000000000004019' )";
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
     $arr = oci_execute($query);
