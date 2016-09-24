@@ -271,14 +271,14 @@ function get_institutes() {
 
 /*
  * Name: get_kinds
- * Description: Get list of manufacturers
+ * Description: Get list of kind of parts which has relation to tracking condition 
  * return: Array
  * Autor: Ola Aboamer [o.aboamer@cern.ch]
  */
 
 function get_kinds() {
     $conn = database_connection();
-    $sql = "SELECT KIND_OF_PART_ID,DISPLAY_NAME FROM CMS_GEM_CORE_CONSTRUCT.KINDS_OF_PARTS WHERE IS_RECORD_DELETED = 'F'"; //select data or insert data
+    $sql = "SELECT KIND_OF_PART_ID AS kid ,DISPLAY_NAME FROM CMS_GEM_CORE_CONSTRUCT.KINDS_OF_PARTS WHERE IS_RECORD_DELETED = 'F' JOIN CMS_GEM_CORE_COND.COND_TO_PART_RLTNSHPS ON kid = KIND_OF_PART_ID"; 
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
     $arr = oci_execute($query);
