@@ -133,13 +133,7 @@ include "head.php";
                   <td>himenaeos</td>
                   <td>Curabitur</td>
                 </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
+               
               </tbody>
             </table>
           </div>
