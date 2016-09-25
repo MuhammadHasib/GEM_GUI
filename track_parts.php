@@ -153,11 +153,10 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
     <?php for ($i = 1; $i <= $num; $i++) { ?>
                                                   <div class="col-lg-4 col-md-4 col-sm-8 col-xs-16">
                                                     <div class="form-group" style="border: 1px solid #ccc;">
-                                                        <div class="widget-header">
-									<h6 class="widget-title">
-										<i class="ace-icon fa fa-circle"></i>   <?= getKindNameByKindId($kind).' '.$i ?>
-									</h6>
-							</div>
+                                                        
+                                                        <div class="widget-header widget-header-blue widget-header-flat">
+										<h5 class="widget-title lighter"><i class="ace-icon fa fa-circle"></i>   <?= getKindNameByKindId($kind).' '.$i ?></h5>
+                                                        </div>
                                                         
                                                          
                                                         
