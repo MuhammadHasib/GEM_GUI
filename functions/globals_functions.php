@@ -73,7 +73,7 @@ function get_conditions_kinds_set_globals() {
     //connect to database     
     $conn = database_connection();
     
-    $sql = "SELECT KIND_OF_CONDITION_ID, NAME FROM CMS_GEM_CORE_COND.PART_TO_PART_RLTNSHPS WHERE IS_RECORD_DELETED = 'F'"; 
+    $sql = "SELECT KIND_OF_CONDITION_ID, NAME FROM CMS_GEM_CORE_COND.KINDS_OF_CONDITIONS WHERE IS_RECORD_DELETED = 'F'"; 
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
     $arr = oci_execute($query);
