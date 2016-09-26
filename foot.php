@@ -133,6 +133,23 @@
             $(this).parent().parent().parent().prev().val($(this).attr('kind-id'));
             if($(this).val() !== '' && $('.num').val() !== '')$('.subbutt_at').attr('disabled', false);
         }
+        if ($(this).attr("class") == "searchbysdv"){
+            $(this).parent().parent().parent().prev().val();
+            $(this).parent().parent().parent().prev().val($(this).val());
+            $(".sdv").show();
+            $(".epd").hide();
+            $(".epd").find("input").empty();
+            
+        }
+        if ($(this).attr("class") == "searchbyepd"){
+            $(this).parent().parent().parent().prev().val();
+            $(this).parent().parent().parent().prev().val($(this).val());
+            $(".sdv").hide();
+            $(".epd").show();
+            $(".sdv").find("input").empty();
+        }
+        
+        
         
         $('.dropdown-menu a').dropdown("toggle");
         return false;

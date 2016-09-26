@@ -45,7 +45,7 @@ include "head.php";
                                         </ul>
                                     </div>
                               </div> 
-                              <div class="form-group" class="sdv">
+                              <div class="form-group" class="sdv" >
                                   <label >Sector:</label>
                                   <input name="sector" value="" hidden>
                                     <div class="dropdown">
@@ -54,26 +54,35 @@ include "head.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a class="searchbysdv" href="#"> SECTOR - DEPTH - VFAT_POSN </a></li>
-                                            <li><a class="searchbyepd" href="#"> IETA - IPHI - DEPTH </a></li>
+                                            <?= getSectors(); ?>
                                         </ul>
                                     </div>
                                   <br/>
-                                  <label >Depth:</label>
+                                  <div style="white-space:nowrap">
+                                  <label class="sublabel" >Depth:</label>
                                   <input value="" name="sector">
+                                  </div>
                                   <br/>
-                                  <label >VFAT position:</label>
+                                  <div style="white-space:nowrap">
+                                  <label class="sublabel" >VFAT position:</label>
                                   <input value="" name="sector">
+                                  </div>
                               </div>
-                              <div class="form-group" class="sdv">
-                                  <label >IETA:</label>
+                              <div class="form-group" class="epd">
+                                  <div style="white-space:nowrap">
+                                  <label class="sublabel" >IETA:</label>
                                   <input value="" name="sector">
+                                  </div>
                                   <br/>
-                                  <label >IPHI:</label>
+                                  <div style="white-space:nowrap">
+                                  <label class="sublabel" >IPHI:</label>
                                   <input value="" name="sector">
+                                  </div>
                                   <br/>
-                                  <label >Depth:</label>
+                                  <div style="white-space:nowrap">
+                                  <label class="sublabel" >Depth:</label>
                                   <input value="" name="sector">
+                                  </div>
                               </div>
                                     
                                 <button type="submit" class="btn btn-default btn-lg subbutt_gen">Submit</button>

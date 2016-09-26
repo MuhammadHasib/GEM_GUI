@@ -90,6 +90,7 @@ include_once "functions/globals.php";
 	<link href="css/dashboard.css" rel="stylesheet">
         <link href="bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
         <link href="plugins/chosen_v1.4.2/chosen.css" rel="stylesheet" media="screen">
+        <link href="css/custom_GEM.css" rel="stylesheet">
         
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

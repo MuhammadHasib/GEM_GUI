@@ -3,13 +3,7 @@
 include "head.php";
 ?>
 
-<style>
-    
-    .sublabel {
-        width: 130px;
-    }
-    
-</style>
+
 <div class="container-fluid">
     <div class="row">
 

@@ -651,3 +651,30 @@ function getKindNameByKindId($kindid){
     return 1;
 }
 
+/*
+ * Name: getSectors
+ * Description: get sectors name from VFAT_CHANNEL_MAPPING
+ * Parameter: NA
+ * usage: list sectors in page of Search for pin number by channel info
+ * return: html
+ * Autor: Ola Aboamer [o.aboamer@cern.ch]
+ */
+function getSectors(){
+    // Database connection 
+    $conn = database_connection();
+    
+   $sql = "SELECT SECTOR FROM CMS_GEM_MUON_COND.GEM_VFAT_CHANNELS GROUP BY SECTOR ORDER BY SECTOR ASC" ;
+       $query = oci_parse($conn, $sql);
+    //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
+    $arr = oci_execute($query);
+
+    $result_arr = array();
+
+    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+
+            echo '<li><a class="sector" href="#">' . $row['SECTOR'] . '</a></li>';
+  
+       
+    }
+    return 1;
+}
