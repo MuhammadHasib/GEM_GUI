@@ -1,5 +1,5 @@
 <?php
-include 'globals.php';
+include_once 'globals.php';
 /*
  * Name: generateDatasetXml
  * Description:  Generate XML file for loading datasets for FOILS.
