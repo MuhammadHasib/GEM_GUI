@@ -12,7 +12,7 @@ include "head.php";
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header"><img src="images/sc2.png" width="4%">Super-Chambers List</h1>
 
-<!--<a href="new_sup_chamber.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new super-chamber</button></a>-->
+<a href="new_sup_chamber.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new super-chamber</button></a>
 <!--<form class="navbar-form navbar-right">
            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> <input class="form-control" placeholder="Search for chamber" type="text">
           </form> -->

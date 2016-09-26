@@ -114,6 +114,7 @@ include "head.php";
                             <div class="panel-body">
                                 <span class="text-muted"></span>
                                 <div class="form-group">
+                                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-16">
                                     <label for="exampleInputEmail1">Choose 1st Chamber:</label>
                                     <!--<p class="help-block">help text here.</p> -->  
                                     <input name="chamber1Id" value="" hidden>
@@ -145,6 +146,8 @@ include "head.php";
                                             <li><a class="FOIL-VI2" href="#"> GE1/1-VI-L-GHENT-0005</a></li>
                                         </ul>
                                     </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-16 col-xs-36">  <img style="width: 100%;" src="images/superChamber-singles.png"></div>
                                 </div>
                                 
                                 

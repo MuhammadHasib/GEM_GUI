@@ -70,9 +70,9 @@ $_SESSION['user'] = $userInfo['login'];
 ?>
 
 <?php
-include "functions/functions.php";
-include "functions/generate_xml.php";
-include "functions/globals.php";
+include_once "functions/functions.php";
+include_once "functions/generate_xml.php";
+include_once "functions/globals.php";
 
 ?>
 
