@@ -144,7 +144,7 @@
             $(this).parent().parent().parent().prev().val($(this).val());
             $(".sdv").show();
             $(".epd").hide();
-            $(".epd").find("input").empty();
+            $(".epd").find("input").val("");
             
         }
         if ($(this).attr("class") == "searchbyepd"){
@@ -152,7 +152,7 @@
             $(this).parent().parent().parent().prev().val($(this).val());
             $(".sdv").hide();
             $(".epd").show();
-            $(".sdv").find("input").empty();
+            $(".sdv").find("input").val("");
         }
         
         

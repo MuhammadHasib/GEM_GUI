@@ -26,7 +26,7 @@ include "head.php";
                 </div>
                 <div class="panel-body">
 
-                    <div class="row">
+                    <div class="row col-xs-6 ">
 
                         <form method="POST" action="search_channels_pin.php">
                             <div class="form-group">
@@ -45,7 +45,7 @@ include "head.php";
                             </div> 
                             <div class="form-group sdv"  >
                                 <label >Sector:</label>
-                                <input name="sector" value="" hidden>
+                                <input name="SECTOR" value="" hidden>
                                 <!--multiple=""-->
                                 <select tabindex="-1"  class="chosen-select-sector" style="" data-placeholder="Choose Sector">
                                     <option value=""></option>
@@ -57,38 +57,58 @@ include "head.php";
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >Depth:</label>
-                                    <input value="" name="sector">
+                                    <input value="" name="DEPTH">
                                 </div>
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >VFAT position:</label>
-                                    <input value="" name="sector">
+                                    <input value="" name="VFAT_POSN">
                                 </div>
                             </div>
                             <div class="form-group epd" >
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >IETA:</label>
-                                    <input value="" name="sector">
+                                    <input value="" name="IETA">
                                 </div>
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >IPHI:</label>
-                                    <input value="" name="sector">
+                                    <input value="" name="IPHI">
                                 </div>
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >Depth:</label>
-                                    <input value="" name="sector">
+                                    <input value="" name="DEPTH">
                                 </div>
                             </div>
-
-                            <button type="submit" class="btn btn-default btn-lg subbutt_gen">Submit</button>
+                            
+<!--CHANNEL_MAP_ID
+SUBDET
+SECTOR
+TYPE
+ZPOSN
+IETA
+IPHI
+DEPTH
+VFAT_POSN
+DET_STRIP
+VFAT_CHAN
+CONN_PIN-->
+                            <button type="submit" class="btn btn-default btn-lg subbutt_gen">Search</button>
                         </form>
                     </div>
                 </div>
 
             </div>
 
+            <?php if(!isset($_POST['query'])) { ?>
+             <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;"  >
+                <div class="widget-header widget-header-blue widget-header-flat">
+                    <h4 class="widget-title">   Search Result:</h4>
+                </div>
+                 <div class="panel-body"></div>
+                 </div>
+            <?php }?>
         </div>
 
     </div>
