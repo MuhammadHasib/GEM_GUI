@@ -119,9 +119,9 @@ include "head.php";
 
                                         <div class="form-group longchambers">
                                             <label for="exampleInputFile">Choose Chamber 1:</label>
-                                            <input class="gebl" name="chamberl1" value="" hidden><br>
+                                            <input class="chamber-l1 chamberinput " name="chamberl1" value="" hidden><br>
                                             <!--multiple=""-->
-                                            <select tabindex="-1"  class="chosen-select-gebl" style="width: 350px; " data-placeholder="Choose Long Chambers ">
+                                            <select tabindex="-1"  class="chosen-select-chamber-l1"  data-placeholder="Choose Long Chambers " elementvalue="chamber-l1">
                                                 <option value=""></option>
                                                 <optgroup label="Long">
                                                     <?php
@@ -136,9 +136,9 @@ include "head.php";
                                             </select>
                                             <br/>
                                             <label for="exampleInputFile">Choose Chamber 2:</label>
-                                            <input class="gebl" name="chamberl2" value="" hidden><br>
+                                            <input class="chamber-l2 chamberinput " name="chamberl2" value="" hidden><br>
                                             <!--multiple=""-->
-                                            <select tabindex="-1"  class="chosen-select-gebl" style="width: 350px; " data-placeholder="Choose Long Chambers ">
+                                            <select tabindex="-1"  class="chosen-select-chamber-l2"  data-placeholder="Choose Long Chambers " elementvalue="chamber-l2">
                                                 <option value=""></option>
                                                 <optgroup label="Long">
                                                     <?php
@@ -156,9 +156,9 @@ include "head.php";
                                         </div>
                                         <div class="form-group shortchambers" hidden="true">
                                             <label for="exampleInputFile">Choose Chamber 1:</label>
-                                            <input class="gebl" name="chambers1" value="" hidden><br>
+                                            <input class="chamber-s1 chamberinput " name="chambers1" value="" hidden><br>
                                             <!--multiple=""-->
-                                            <select tabindex="-1"  class="chosen-select-gebl" style="width: 350px; " data-placeholder="Choose short Chambers ">
+                                            <select tabindex="-1"  class="chosen-select-chamber-s1"  data-placeholder="Choose short Chambers " elementvalue="chamber-s1">
                                                 <option value=""></option>
                                                 <optgroup label="short">
                                                     <?php
@@ -173,9 +173,9 @@ include "head.php";
                                             </select>
                                             <br/>
                                             <label for="exampleInputFile">Choose Chamber 2:</label>
-                                            <input class="gebl" name="chambers2" value="" hidden><br>
+                                            <input class="chamber-s2 chamberinput " name="chambers2" value="" hidden><br>
                                             <!--multiple=""-->
-                                            <select tabindex="-1"  class="chosen-select-gebl" style="width: 350px; " data-placeholder="Choose short Chambers ">
+                                            <select tabindex="-1"  class="chosen-select-chamber-s2"  data-placeholder="Choose short Chambers " elementvalue="chamber-s2">
                                                 <option value=""></option>
                                                 <optgroup label="short">
                                                     <?php
@@ -232,3 +232,40 @@ include "head.php";
 <?php
 include "foot.php";
 ?>
+<script>
+
+
+  /**
+     * [4] When selecting Long or Short version , run Ajax get latest ID Short or Long.
+     */
+    $('.dropdown-menu a').on('click', function () {
+
+        if ($(this).html() == "Long") {
+
+            $(".longchambers").show();
+            $(".shortchambers").hide();
+            $(".chamber-s1,.chamber-s2").val("");
+
+        }
+
+        if ($(this).html() == "Short") {
+
+            $(".shortchambers").show();
+            $(".longchambers").hide();
+            $(".chamber-l1,.chamber-l2").val("");
+
+        }
+
+
+
+
+    })
+    
+    $("select[class^='chosen-select-chamber-']").on('change', function (evt, params) {
+        
+        $('.'+$(this).attr("elementvalue")).val($(this).chosen().val());
+        alert($(this).chosen().val());
+    });
+
+    
+</script>

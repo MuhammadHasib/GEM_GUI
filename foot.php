@@ -133,6 +133,7 @@
             $(this).parent().parent().parent().prev().val($(this).attr('kind-id'));
             if($(this).val() !== '' && $('.num').val() !== '')$('.subbutt_at').attr('disabled', false);
         }
+        // used in Search channel page
         if ($(this).attr("class") == "searchbysdv"){
             $(this).parent().parent().parent().prev().val();
             $(this).parent().parent().parent().prev().val($(this).val());
