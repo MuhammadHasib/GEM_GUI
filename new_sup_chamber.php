@@ -161,7 +161,7 @@ include "head.php";
                                                 <option value=""></option>
                                                 <optgroup label="short">
                                                     <?php
-                                                    $arr = get_available_parts_nohtml($CHAMBER_KIND_OF_PART_ID, "-L-");
+                                                    $arr = get_available_parts_nohtml($CHAMBER_KIND_OF_PART_ID, "-S-");
                                                     foreach ($arr as $value) {
                                                         echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
                                                     }
@@ -178,7 +178,7 @@ include "head.php";
                                                 <option value=""></option>
                                                 <optgroup label="short">
                                                     <?php
-                                                    $arr = get_available_parts_nohtml($CHAMBER_KIND_OF_PART_ID, "-L-");
+                                                    $arr = get_available_parts_nohtml($CHAMBER_KIND_OF_PART_ID, "-S-");
                                                     foreach ($arr as $value) {
                                                         echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
                                                     }
