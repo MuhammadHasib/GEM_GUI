@@ -141,7 +141,7 @@
         // used in Search channel page
         if ($(this).attr("class") == "searchbysdv"){
             $(".searchby").val("");
-            $(".searchby").val($(this).val());
+            $(".searchby").val($(this).html());
             $(".sdv").show();
             $(".epd").hide();
             $(".epd").find("input").val("");
@@ -149,7 +149,7 @@
         }
         if ($(this).attr("class") == "searchbyepd"){
             $(".searchby").val("");
-            $(".searchby").val($(this).val());
+            $(".searchby").val($(this).html());
             $(".sdv").hide();
             $(".epd").show();
             $(".sdv").find("input").val("");
