@@ -100,5 +100,8 @@ include "head.php";
 include "foot.php";
 ?>
 <script>
+    
+    $(".sdv,.epd").hide();
+    
     $("#map").attr("class", "active");
 </script>
