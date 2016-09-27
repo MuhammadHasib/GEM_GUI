@@ -32,6 +32,7 @@ function validateInput(serial){
 
 // Used to validate required inputs not empty use in Search Channel pin Page
 function check_emptyness(e){
+    alert("2");
     var ev = e;
     try{
     if($(".searchby").val !== "")

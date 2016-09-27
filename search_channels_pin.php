@@ -129,6 +129,7 @@ include "foot.php";
     $("#map").attr("class", "active");
     
         $(".subbutt_gen").on("click", function(e){
+            alert("1");
         // Check if one of them is empty
         check_emptyness(e);
     });
