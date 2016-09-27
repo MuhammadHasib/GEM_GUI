@@ -36,7 +36,7 @@ include "head.php";
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Serial Number</label>
-                                    <div class="serial"><span class="name">SUP-GE1/1-VI-</span><span class="version">VERSION</span><span class="between">-</span><span class="institute">INSTITUTE</span><span class="id">-0010</span></div>
+                                    <div class="serial"><span class="name">SUP-GE1/1-VI-</span><span class="version">VERSION</span><span class="between">-</span><span class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -50,27 +50,42 @@ include "head.php";
                                             <li><a href="#">Short</a></li>
                                         </ul>
                                     </div><br>
+                                    <label> Institute: </label><br>
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             Choose Institute
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Bari</a></li>
-                                            <li><a href="#">CERN</a></li>
-                                            <li><a href="#">Florida Tech(FIT)</a></li>
-                                            <li><a href="#">Frascati(LNF)</a></li>
-                                            <li><a href="#">Ghent</a></li>
-                                            <li><a href="#">BARC</a></li>
-                                            <li><a href="#">Delhi</a></li>
+                                            <?= get_institutes(); ?>
                                         </ul>
                                     </div>
+                                </div>
+                                <div class="dropdown">
+                                    <label> 4 digits Serial </label><br>
+                                    <input placeholder="XXXX" class="serialValidation">
+                                    <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Databse</i>
+                                    <i class="ace-icon fa fa-check-circle alert-success newId" style="display: none"> Valid Serial</i>
+                                </div><br>
+                                <div class="form-group">
+                                    <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
+                                    <input name="barcode" >
                                 </div>
                                 <div class="form-group">
                                     <label> Manufacturer name </label><br>
                                     <input name="manufacturer" >
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Choose Manufacturer
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <?= get_manufacturers(); ?>
+                                        </ul>
+                                    </div>
+                                    
                                 </div>
-                                <div class="form-group">
+<!--                                <div class="form-group">
                                     <div class="control-group">
                                         <label class="control-label">Manufacture date</label>
                                         <div class="controls input-append date form_datetime" data-date="2015-08-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
@@ -80,8 +95,8 @@ include "head.php";
                                         </div>
                                         <input type="hidden" id="dtp_input1" value="2015-08-16T05:25:07" />
                                     </div>
-                                </div>
-                                <div class="form-group">
+                                </div>-->
+<!--                                <div class="form-group">
                                     <label>  Status </label>
                                     <input name="driftId" value="" hidden>
                                     <div class="dropdown">
@@ -97,14 +112,14 @@ include "head.php";
                                             <li><a class="status" href="#"> <span class="label label-default">Under Test</span></a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div>-->
 
-                                <div class="form-group">
+<!--                                <div class="form-group">
 
                                     <label> Add picture </label><br>
                                     <input class="testDiod" type="file">
 
-                                </div>
+                                </div>-->
 
                             </div>
                         </div>
@@ -223,7 +238,7 @@ include "head.php";
 
 
                 </form>
-<?php } ?>
+            <?php } ?>
         </div>
     </div>
 </div>
@@ -233,9 +248,9 @@ include "foot.php";
 ?>
 <script>
 
-  $(".chosen-select-chamber-s2, .chosen-select-chamber-s1").chosen();
-  $(".shortchambers").hide();
-  /**
+    $(".chosen-select-chamber-s2, .chosen-select-chamber-s1").chosen();
+    $(".shortchambers").hide();
+    /**
      * [4] When selecting Long or Short version , run Ajax get latest ID Short or Long.
      */
     $('.dropdown-menu a').on('click', function () {
@@ -262,9 +277,23 @@ include "foot.php";
 
     })
     
-    $("select[class^='chosen-select-chamber-']").on('change', function (evt, params) {
+    
+    $(".serialValidation").on('blur', function(){
+        if($(this).val() != "" ){
+            $('#preloader').fadeIn('fast', function () {});
+            $('.id').html($(this).val());
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
+
+        }
         
-        $('.'+$(this).attr("elementvalue")).val($(this).chosen().val());
+    })
+    
+
+    $("select[class^='chosen-select-chamber-']").on('change', function (evt, params) {
+
+        $('.' + $(this).attr("elementvalue")).val($(this).chosen().val());
         alert($(this).chosen().val());
     });
 

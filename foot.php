@@ -28,6 +28,8 @@
 <!-- ace scripts -->
 <script src="ace-master/assets/js/ace-elements.min.js"></script>
 <script src="ace-master/assets/js/ace.min.js"></script>
+<script src="plugins/custom_GEM.js"></script>
+
 
 
 <script type="text/javascript">
