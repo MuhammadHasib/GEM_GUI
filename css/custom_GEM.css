@@ -15,6 +15,6 @@ and open the template in the editor.
     .sdv,.epd {
       display: none; 
     }
-    .chosen-select-chamber-l1,.chosen-select-chamber-l2,.chosen-select-chamber-s1,.chosen-select-chamber-s2, select[class^="chosen-select"]{
+    .chosen-select-chamber-l1,.chosen-select-chamber-l2,.chosen-select-chamber-s1,.chosen-select-chamber-s2, select[class^="chosen-select"],select[class^="chosen-select-part-"]{
         width: 150 px;
     }
