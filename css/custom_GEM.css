@@ -12,7 +12,7 @@ and open the template in the editor.
         width: 130px;
     }
     
-    .sdv,.epd {
+    .sdv,.epd, .shortchambers {
       display: none; 
     }
     .chosen-select-chamber-l1,.chosen-select-chamber-l2,.chosen-select-chamber-s1,.chosen-select-chamber-s2, select[class^="chosen-select"],select[class^="chosen-select-part-"]{

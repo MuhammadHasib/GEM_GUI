@@ -153,7 +153,7 @@ include "head.php";
 
 
                                         </div>
-                                        <div class="form-group shortchambers" hidden="true">
+                                        <div class="form-group shortchambers" >
                                             <label for="exampleInputFile">Choose Chamber 1:</label>
                                             <input class="chamber-s1 chamberinput " name="chambers1" value="" hidden><br>
                                             <!--multiple=""-->
