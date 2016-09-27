@@ -13,11 +13,9 @@ include "head.php";
             <h1 class="page-header">Quality control list</h1>
 
 
-            
+            <ul class="list-group">
 
-                <!--
-                <ul class="list-group">
-                <li class="list-group-item"><div class="panel panel-default">
+                <!--<li class="list-group-item"><div class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title">Visual Inspection</h3>
                 </div>
@@ -37,9 +35,8 @@ include "head.php";
                 <!--<li class="list-group-item" style="text-align:center">
                         <span class="label label-warning"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Notification !!</span>
                           <div class="alert alert-warning" role="alert" style="text-align: center;"><span aria-hidden="true" class="glyphicon glyphicon-wrench"></span> Still Under Development, We'll keep you informed Soon <span aria-hidden="true" class="glyphicon glyphicon-hourglass"></span></div>
-                </li>
-                </ul>
-                -->
+                </li>-->
+                <li class="list-group-item">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-8 col-xs-16">
                         <img  src="images/cosmicStand.png">
@@ -57,9 +54,9 @@ include "head.php";
                     </div>
                     
                 </div>
-                
+                </li>
 
-            
+            </ul>
 
         </div>
 
