@@ -222,7 +222,7 @@
             $(".chosen-select-vfat22").chosen();
             $(".chosen-select-vfat23").chosen();
             $(".chosen-select-sector").chosen();
-            
+            $("select[class^='chosen-select']").chosen();
 
 
 
