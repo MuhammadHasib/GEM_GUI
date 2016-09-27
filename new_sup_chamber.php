@@ -252,6 +252,7 @@ include "foot.php";
 
             $(".shortchambers").show();
             $(".longchambers").hide();
+            $("select[class^='chosen-select-chamber-']").chosen();
             $(".chamber-l1,.chamber-l2").val("");
 
         }
