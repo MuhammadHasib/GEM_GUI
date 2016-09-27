@@ -8,7 +8,8 @@ include "head.php";
     <div class="row">
 <?php include "side.php"; ?>
         <div class="col-xs-6 col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-           echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
+           
+            <div style="display: none" geble="alert" class="alert alert-danger empty">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
     </div>
             <!--<h1 class="page-header">Search By pin number for channel info</h1>-->
@@ -32,6 +33,8 @@ include "head.php";
                     <div class="row col-xs-6 ">
 
                         <form method="POST" action="search_channels_pin.php">
+                            
+                            <input class="query" name="query" hidden="true">
                             <div class="form-group">
                                 <label >Search by:</label>
                                 <input class="searchby required" name="searchby" value="" hidden>
@@ -104,7 +107,12 @@ CONN_PIN-->
 
             </div>
 
-            <?php if(isset($_POST['query'])) { ?>
+            <?php if(isset($_POST['query'])) { 
+//                if($_POST['query'] == "sdv")
+//                if($_POST['query'] == "epd")
+                print_r($_POST);
+                ?>
+            
              <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;"  >
                 <div class="widget-header widget-header-blue widget-header-flat">
                     <h4 class="widget-title">   Search Result:</h4>
@@ -129,7 +137,7 @@ include "foot.php";
     $("#map").attr("class", "active");
     
         $(".subbutt_gen").on("click", function(e){
-            alert("1");
+ 
         // Check if one of them is empty
         check_emptyness(e);
     });

@@ -32,7 +32,7 @@ function validateInput(serial){
 
 // Used to validate required inputs not empty use in Search Channel pin Page
 function check_emptyness(e){
-    alert("2");
+ 
     var ev = e;
     try{
     if($(".searchby").val() !== "")
@@ -43,6 +43,9 @@ function check_emptyness(e){
                 throw "Exit Error";
                 return false;
             }
+            else{
+                $(".query").val("sdv");
+            }
         }
         if($(".searchby").val == "IETA - IPHI - DEPTH"){
             if( $(".ieta").val() == "" || $(".iphi").val() == "" || $(".depth1").val() == "" ){
@@ -50,7 +53,11 @@ function check_emptyness(e){
                 throw "Exit Error";
                 return false;
             }
+            else{
+                $(".query").val("epd");
+            }
         }
+        
         
     }
     else
