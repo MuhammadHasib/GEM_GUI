@@ -29,3 +29,39 @@ function validateInput(serial){
                         }
             });
 }
+
+// Used to validate required inputs not empty use in Search Channel pin Page
+function check_emptyness(e){
+    var ev = e;
+    try{
+    if($(".searchby").val !== "")
+    {
+        if($(".searchby").val == "SECTOR - DEPTH - VFAT_POSN"){
+            if( $(".vfatpos").val() == "" || $(".sector").val() == "" || $(".depth").val() == "" ){
+                $('.empty').show();
+                throw "Exit Error";
+                return false;
+            }
+        }
+        if($(".searchby").val == "IETA - IPHI - DEPTH"){
+            if( $(".ieta").val() == "" || $(".iphi").val() == "" || $(".depth1").val() == "" ){
+                $('.empty').show();
+                throw "Exit Error";
+                return false;
+            }
+        }
+        
+    }
+    else
+    {
+        $('.empty').show();
+        throw "Exit Error";
+        return false;
+    }
+    }
+    catch(e){ 
+        //alert('catch');
+        ev.preventDefault(); 
+        return false; 
+    }
+}

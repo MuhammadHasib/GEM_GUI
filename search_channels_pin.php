@@ -8,6 +8,9 @@ include "head.php";
     <div class="row">
 <?php include "side.php"; ?>
         <div class="col-xs-6 col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+           echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
+    </div>
             <!--<h1 class="page-header">Search By pin number for channel info</h1>-->
 
 
@@ -31,21 +34,21 @@ include "head.php";
                         <form method="POST" action="search_channels_pin.php">
                             <div class="form-group">
                                 <label >Search by:</label>
-                                <input name="searchby" value="" hidden>
+                                <input class="searchby required" name="searchby" value="" hidden>
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         Choose Search by
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        <li><a class="searchbysdv" href="#"> SECTOR - DEPTH - VFAT_POSN </a></li>
-                                        <li><a class="searchbyepd" href="#"> IETA - IPHI - DEPTH </a></li>
+                                        <li><a class="searchbysdv" href="#">SECTOR - DEPTH - VFAT_POSN</a></li>
+                                        <li><a class="searchbyepd" href="#">IETA - IPHI - DEPTH</a></li>
                                     </ul>
                                 </div>
                             </div> 
                             <div class="form-group sdv"  >
                                 <label >Sector:</label>
-                                <input name="SECTOR" value="" hidden>
+                                <input class="sector" name="SECTOR" value="" hidden>
                                 <!--multiple=""-->
                                 <select tabindex="-1"  class="chosen-select-sector" style="" data-placeholder="Choose Sector">
                                     <option value=""></option>
@@ -57,28 +60,28 @@ include "head.php";
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >Depth:</label>
-                                    <input value="" name="DEPTH">
+                                    <input class="depth" value="" name="DEPTH">
                                 </div>
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >VFAT position:</label>
-                                    <input value="" name="VFAT_POSN">
+                                    <input class="vfatpos" value="" name="VFAT_POSN">
                                 </div>
                             </div>
                             <div class="form-group epd" >
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >IETA:</label>
-                                    <input value="" name="IETA">
+                                    <input class="ieta" value="" name="IETA">
                                 </div>
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >IPHI:</label>
-                                    <input value="" name="IPHI">
+                                    <input class="iphi" value="" name="IPHI">
                                 </div>
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >Depth:</label>
-                                    <input value="" name="DEPTH">
+                                    <input class="depth1" value="" name="DEPTH">
                                 </div>
                             </div>
                             
@@ -101,7 +104,7 @@ CONN_PIN-->
 
             </div>
 
-            <?php if(!isset($_POST['query'])) { ?>
+            <?php if(isset($_POST['query'])) { ?>
              <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;"  >
                 <div class="widget-header widget-header-blue widget-header-flat">
                     <h4 class="widget-title">   Search Result:</h4>
@@ -124,4 +127,9 @@ include "foot.php";
     $(".sdv,.epd").hide();
     
     $("#map").attr("class", "active");
+    
+        $(".subbutt_gen").on("click", function(e){
+        // Check if one of them is empty
+        check_emptyness(e);
+    });
 </script>

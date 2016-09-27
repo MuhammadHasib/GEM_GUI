@@ -140,16 +140,16 @@
         }
         // used in Search channel page
         if ($(this).attr("class") == "searchbysdv"){
-            $(this).parent().parent().parent().prev().val();
-            $(this).parent().parent().parent().prev().val($(this).val());
+            $(".searchby").val("");
+            $(".searchby").val($(this).val());
             $(".sdv").show();
             $(".epd").hide();
             $(".epd").find("input").val("");
             
         }
         if ($(this).attr("class") == "searchbyepd"){
-            $(this).parent().parent().parent().prev().val();
-            $(this).parent().parent().parent().prev().val($(this).val());
+            $(".searchby").val("");
+            $(".searchby").val($(this).val());
             $(".sdv").hide();
             $(".epd").show();
             $(".sdv").find("input").val("");
