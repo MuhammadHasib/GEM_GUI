@@ -672,9 +672,9 @@ function getSectors(){
 
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
 
-            echo '<li><a class="sector" href="#">' . $row['SECTOR'] . '</a></li>';
+            echo '<option>' . $row['SECTOR'] . '</option>';
   
        
     }
-    return 1;
+    return ;
 }

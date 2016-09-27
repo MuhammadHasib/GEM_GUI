@@ -4,26 +4,27 @@ include "head.php";
 <div class="container-fluid">
     <div class="row">
 
-<?php include "side.php"; ?>
+        <?php include "side.php"; ?>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h2 class="sub-header"><img src="images/sc2.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Super-Chamber  </h2>
 
-                <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    
-                    if(isset($_POST['serial'])){
-    echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully created Super Chamber <strong>ID:</strong> '.$_POST['serial'].
-                    '</div>';}
-                    
-} else {
-    
-    echo '<div style="display: none" role="alert" class="alert alert-danger ">
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                if (isset($_POST['serial'])) {
+                    echo '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully created Super Chamber <strong>ID:</strong> ' . $_POST['serial'] .
+                    '</div>';
+                }
+            } else {
+
+                echo '<div style="display: none" role="alert" class="alert alert-danger ">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
     </div>';
-    ?> 
+                ?> 
 
-            
+
                 <form method="POST" action="new_sup_chamber.php">
 
                     <div class="row">
@@ -97,12 +98,12 @@ include "head.php";
                                         </ul>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
-                                   
-                                        <label> Add picture </label><br>
-                                        <input class="testDiod" type="file">
-                                    
+
+                                    <label> Add picture </label><br>
+                                    <input class="testDiod" type="file">
+
                                 </div>
 
                             </div>
@@ -115,46 +116,90 @@ include "head.php";
                                 <span class="text-muted"></span>
                                 <div class="form-group">
                                     <div class="col-lg-4 col-md-4 col-sm-8 col-xs-16">
-                                    <label for="exampleInputEmail1">Choose 1st Chamber:</label>
-                                    <!--<p class="help-block">help text here.</p> -->  
-                                    <input name="chamber1Id" value="" hidden>
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Choose Chamber
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a class="FOIL-VI1" href="#"> GE1/1-VI-L-CERN-0001</a></li>
-                                            <li><a class="FOIL-VI1" href="#"> GE1/1-VI-S-BARI-0002</a></li>
-                                            <li><a class="FOIL-VI1" href="#"> GE1/1-VI-L-BARI-0003</a></li>
-                                            <li><a class="FOIL-VI1" href="#"> GE1/1-VI-S-CERN-0004</a></li>
-                                            <li><a class="FOIL-VI1" href="#"> GE1/1-VI-L-GHENT-0005</a></li>
-                                        </ul>
-                                    </div><br>
-                                    <label for="exampleInputEmail1">Choose 2nd Chamber:</label>
-                                    <input name="chamber2Id" value="" hidden>
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Choose Chamber
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a class="FOIL-VI2" href="#"> GE1/1-VI-L-CERN-0001</a></li>
-                                            <li><a class="FOIL-VI2" href="#"> GE1/1-VI-S-BARI-0002</a></li>
-                                            <li><a class="FOIL-VI2" href="#"> GE1/1-VI-L-BARI-0003</a></li>
-                                            <li><a class="FOIL-VI2" href="#"> GE1/1-VI-S-CERN-0004</a></li>
-                                            <li><a class="FOIL-VI2" href="#"> GE1/1-VI-L-GHENT-0005</a></li>
-                                        </ul>
-                                    </div>
+
+                                        <div class="form-group longchambers">
+                                            <label for="exampleInputFile">Choose Chamber 1:</label>
+                                            <input class="gebl" name="chamberl1" value="" hidden><br>
+                                            <!--multiple=""-->
+                                            <select tabindex="-1"  class="chosen-select-gebl" style="width: 350px; " data-placeholder="Choose Long Chambers ">
+                                                <option value=""></option>
+                                                <optgroup label="Long">
+                                                    <?php
+                                                    $arr = get_available_parts_nohtml($CHAMBER_KIND_OF_PART_ID, "-L-");
+                                                    foreach ($arr as $value) {
+                                                        echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
+                                                    }
+                                                    ?>
+
+                                                </optgroup>
+
+                                            </select>
+                                            <br/>
+                                            <label for="exampleInputFile">Choose Chamber 2:</label>
+                                            <input class="gebl" name="chamberl2" value="" hidden><br>
+                                            <!--multiple=""-->
+                                            <select tabindex="-1"  class="chosen-select-gebl" style="width: 350px; " data-placeholder="Choose Long Chambers ">
+                                                <option value=""></option>
+                                                <optgroup label="Long">
+                                                    <?php
+                                                    $arr = get_available_parts_nohtml($CHAMBER_KIND_OF_PART_ID, "-L-");
+                                                    foreach ($arr as $value) {
+                                                        echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
+                                                    }
+                                                    ?>
+
+                                                </optgroup>
+
+                                            </select>
+
+
+                                        </div>
+                                        <div class="form-group shortchambers" hidden="true">
+                                            <label for="exampleInputFile">Choose Chamber 1:</label>
+                                            <input class="gebl" name="chambers1" value="" hidden><br>
+                                            <!--multiple=""-->
+                                            <select tabindex="-1"  class="chosen-select-gebl" style="width: 350px; " data-placeholder="Choose short Chambers ">
+                                                <option value=""></option>
+                                                <optgroup label="short">
+                                                    <?php
+                                                    $arr = get_available_parts_nohtml($CHAMBER_KIND_OF_PART_ID, "-L-");
+                                                    foreach ($arr as $value) {
+                                                        echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
+                                                    }
+                                                    ?>
+
+                                                </optgroup>
+
+                                            </select>
+                                            <br/>
+                                            <label for="exampleInputFile">Choose Chamber 2:</label>
+                                            <input class="gebl" name="chambers2" value="" hidden><br>
+                                            <!--multiple=""-->
+                                            <select tabindex="-1"  class="chosen-select-gebl" style="width: 350px; " data-placeholder="Choose short Chambers ">
+                                                <option value=""></option>
+                                                <optgroup label="short">
+                                                    <?php
+                                                    $arr = get_available_parts_nohtml($CHAMBER_KIND_OF_PART_ID, "-L-");
+                                                    foreach ($arr as $value) {
+                                                        echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
+                                                    }
+                                                    ?>
+
+                                                </optgroup>
+
+                                            </select>
+
+
+                                        </div>
                                     </div>
                                     <div class="col-lg-8 col-md-8 col-sm-16 col-xs-36">  <img style="width: 100%;" src="images/superChamber-singles.png"></div>
                                 </div>
-                                
-                                
+
+
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-xs-12 panel-info panel " style="padding-left: 0px; padding-right: 0px;">
                             <div class="panel-heading ">
@@ -179,7 +224,7 @@ include "head.php";
 
 
                 </form>
-            <?php } ?>
+<?php } ?>
         </div>
     </div>
 </div>

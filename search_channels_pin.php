@@ -54,9 +54,18 @@ include "head.php";
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <?= getSectors(); ?>
+                                            
                                         </ul>
                                     </div>
+                                  <input class="sectorinput" name="sector" value="" hidden><br>
+                                                        <!--multiple=""-->
+                                                        <select tabindex="-1"  class="chosen-select-sector" style="" data-placeholder="Choose Sector">
+                                                            <option value=""></option>
+                                                            <optgroup label="sectors ">
+                                                                    <?= getSectors(); ?>
+                                                            </optgroup>
+                                                        </select>
+                                    
                                   <br/>
                                   <div style="white-space:nowrap">
                                   <label class="sublabel" >Depth:</label>

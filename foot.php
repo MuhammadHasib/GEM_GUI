@@ -220,6 +220,8 @@
             $(".chosen-select-vfat21").chosen();
             $(".chosen-select-vfat22").chosen();
             $(".chosen-select-vfat23").chosen();
+            $(".chosen-select-sector").chosen();
+            
 
 
 
