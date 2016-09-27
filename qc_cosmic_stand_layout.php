@@ -21,7 +21,7 @@ include "head.php";
                   <div class="panel-body">
 
                       <div class="row">
-
+                          <img src="images/cosmicStand.png">
                       </div>
                   </div>
 

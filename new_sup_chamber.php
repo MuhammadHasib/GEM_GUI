@@ -34,7 +34,7 @@ include "head.php";
                             </div>
                             <div class="panel-body">
                             <!-- <span class="text-muted">List single chambers</span> -->
-                                <div class="form-group">
+                                <div class="form-group">&nbsp;<b style=" color: red">*</b>
                                     <label for="exampleInputEmail1">Serial Number</label>
                                     <div class="serial"><span class="name">SUP-GE1/1-VI-</span><span class="version">VERSION</span><span class="between">-</span><span class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
@@ -49,19 +49,23 @@ include "head.php";
                                             <li><a href="#">Long</a></li>
                                             <li><a href="#">Short</a></li>
                                         </ul>
-                                    </div><br>
-                                    <label> Institute: </label><br>
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Choose Institute
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <?= get_institutes(); ?>
-                                        </ul>
                                     </div>
                                 </div>
-                                <div class="dropdown">
+                                <div class="form-group">&nbsp;<b style=" color: red">*</b>
+                                        <label for="exampleInputFile" >Institute</label>
+                                        <input name="Institute" value="" hidden>
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                Choose Institute
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <?php get_institutes(); ?>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                <div class="dropdown">&nbsp;<b style=" color: red">*</b>
                                     <label> 4 digits Serial </label><br>
                                     <input placeholder="XXXX" class="serialValidation">
                                     <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Databse</i>
