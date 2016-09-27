@@ -267,5 +267,5 @@ include "foot.php";
         alert($(this).chosen().val());
     });
 
-    $(".shortchambers").chosen();
+
 </script>
