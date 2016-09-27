@@ -35,7 +35,7 @@ function check_emptyness(e){
     alert("2");
     var ev = e;
     try{
-    if($(".searchby").val !== "")
+    if($(".searchby").val() !== "")
     {
         if($(".searchby").val == "SECTOR - DEPTH - VFAT_POSN"){
             if( $(".vfatpos").val() == "" || $(".sector").val() == "" || $(".depth").val() == "" ){
