@@ -130,7 +130,6 @@ include "head.php";
                                                         echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
                                                     }
                                                     ?>
-
                                                 </optgroup>
 
                                             </select>
@@ -252,7 +251,7 @@ include "foot.php";
 
             $(".shortchambers").show();
             $(".longchambers").hide();
-            $("select[class^='chosen-select-chamber-']").chosen();
+            $(".chosen-select-chamber-s2, .chosen-select-chamber-s1").chosen();
             $(".chamber-l1,.chamber-l2").val("");
 
         }
