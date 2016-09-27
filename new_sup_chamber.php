@@ -233,7 +233,7 @@ include "foot.php";
 ?>
 <script>
 
-  $(".shortchambers").chosen();
+  $(".chosen-select-chamber-s2, .chosen-select-chamber-s1").chosen();
   /**
      * [4] When selecting Long or Short version , run Ajax get latest ID Short or Long.
      */
