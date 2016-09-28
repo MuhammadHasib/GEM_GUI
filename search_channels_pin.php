@@ -53,7 +53,7 @@ include "head.php";
                                 <label >Sector:</label>
                                 <input class="sector" name="SECTOR" value="" hidden>
                                 <!--multiple=""-->
-                                <select tabindex="-1"  class="chosen-select-sector" style="" data-placeholder="Choose Sector">
+                                <select tabindex="-1"  class="chosen-select-sector" style="" data-placeholder="Choose Sector" elementvalue="sector">
                                     <option value=""></option>
                                     <optgroup label="sectors ">
                                         <?= getSectors(); ?>
@@ -84,7 +84,7 @@ include "head.php";
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >Depth:</label>
-                                    <input class="depth1" value="" name="DEPTH">
+                                    <input class="depth1" value="" name="DEPTH1">
                                 </div>
                             </div>
                             
@@ -140,5 +140,10 @@ include "foot.php";
  
         // Check if one of them is empty
         check_emptyness(e);
+    });
+    $(".chosen-select-sector").on('change', function (evt, params) {
+
+        $('.' + $(this).attr("elementvalue")).val($(this).chosen().val());
+        //alert($(this).chosen().val());
     });
 </script>

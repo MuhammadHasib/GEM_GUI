@@ -298,7 +298,7 @@ include "foot.php";
     $("select[class^='chosen-select-chamber-']").on('change', function (evt, params) {
 
         $('.' + $(this).attr("elementvalue")).val($(this).chosen().val());
-        alert($(this).chosen().val());
+        //alert($(this).chosen().val());
     });
 
 
