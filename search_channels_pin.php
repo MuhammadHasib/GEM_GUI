@@ -142,7 +142,7 @@ include "foot.php";
             <?php
     }
           
-    if($_POST['query'] == "epd") {
+    elseif($_POST['query'] == "epd") {
              ?>
                  $(".sdv").hide();
              <?php
