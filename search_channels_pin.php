@@ -34,7 +34,7 @@ include "head.php";
 
                         <form method="POST" action="search_channels_pin.php">
                             
-                            <input class="query" name="query" hidden="true">
+                            <input class="query" name="query" hidden>
                             <div class="form-group">
                                 <label >Search by:</label>
                                 <input class="searchby required" name="searchby" value="" hidden>
