@@ -119,11 +119,12 @@ CONN_PIN-->
                     $arr['DEPTH'] = $_POST['DEPTH'];
                     $arr['VFAT_POSN'] = $_POST['VFAT_POSN'];
                 }
-                if ($_POST['query'] == "epd")
+                if ($_POST['query'] == "epd"){
                       
                     $arr['IETA'] = $_POST['IETA'];
                     $arr['DEPTH'] = $_POST['DEPTH1'];
                     $arr['IPHI'] = $_POST['IPHI'];
+                }
                 ?>
                 
              <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;"  >
