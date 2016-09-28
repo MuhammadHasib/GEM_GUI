@@ -38,23 +38,19 @@ function check_emptyness(e){
     if($(".searchby").val() !== "")
     {
         if($(".searchby").val == "SECTOR - DEPTH - VFAT_POSN"){
+            $(".query").val("sdv");
             if( $(".vfatpos").val() == "" || $(".sector").val() == "" || $(".depth").val() == "" ){
                 $('.empty').show();
                 throw "Exit Error";
                 return false;
             }
-            else{
-                $(".query").val("sdv");
-            }
         }
         if($(".searchby").val == "IETA - IPHI - DEPTH"){
+             $(".query").val("epd");
             if( $(".ieta").val() == "" || $(".iphi").val() == "" || $(".depth1").val() == "" ){
                 $('.empty').show();
                 throw "Exit Error";
                 return false;
-            }
-            else{
-                $(".query").val("epd");
             }
         }
         
