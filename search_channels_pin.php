@@ -132,13 +132,29 @@ CONN_PIN-->
                     <h4 class="widget-title">   Search Result:</h4>
                 </div>
                  <div class="panel-body">
-                     <?php print_r(searchPinNum($arr)); ?>
-                     
+                     <?php $items = searchPinNum($arr) ; ?>
+                     <table class="table table-striped">
+                             <thead>
+                                 <tr>
+                                     <th>Channel Map Id</th>
+                   <!--                  <th>Status</th>-->
+                                     <th> PIN number </th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <?php foreach ($items as $key => $value) {
+                                                  echo "<tr>";
+                                                  echo "<th>".$key."</th><th>".$value."</th>";
+                                                  echo "</tr>";
+                                                  
+                                     }
+                                 ?>
+                             </tbody>
+                         </table>
+
+                     </div>
                  </div>
-                 </div>
-            <?php 
-                 
-                }?>
+                 <?php }?>
         </div>
 
     </div>
