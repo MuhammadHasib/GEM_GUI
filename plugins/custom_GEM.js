@@ -37,8 +37,7 @@ function check_emptyness(e){
     try{
     if($(".searchby").val() !== "")
     {
-        if($(".searchby").val == "SECTOR - DEPTH - VFAT_POSN"){
-            alert("sdv");
+        if($(".searchby").val() == "SECTOR - DEPTH - VFAT_POSN"){ 
             $(".query").val("sdv");
             if( $(".vfatpos").val() == "" || $(".sector").val() == "" || $(".depth").val() == "" ){
                 $('.empty').show();
@@ -46,8 +45,7 @@ function check_emptyness(e){
                 return false;
             }
         }
-        if($(".searchby").val == "IETA - IPHI - DEPTH"){
-            alert("epd");
+        if($(".searchby").val() == "IETA - IPHI - DEPTH"){
              $(".query").val("epd");
             if( $(".ieta").val() == "" || $(".iphi").val() == "" || $(".depth1").val() == "" ){
                 $('.empty').show();

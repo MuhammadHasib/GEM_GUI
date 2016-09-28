@@ -49,9 +49,13 @@ include "head.php";
                                     </ul>
                                 </div>
                             </div> 
-                            <div class="form-group sdv"  >
+                            
+                             
+                
+                
+                            <div class="form-group sdv" <?php if(isset($_POST['query']) && $_POST['query'] == "sdv" ) { echo "style='display:block;'";} ?>  >
                                 <label >Sector:</label>
-                                <input class="sector" name="SECTOR" value="" hidden>
+                                <input class="sector" name="SECTOR" value="<?php if(isset($_POST['SECTOR']) ) { echo $_POST['SECTOR'];} ?>" hidden>
                                 <!--multiple=""-->
                                 <select tabindex="-1"  class="chosen-select-sector" style="" data-placeholder="Choose Sector" elementvalue="sector">
                                     <option value=""></option>
@@ -63,28 +67,28 @@ include "head.php";
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >Depth:</label>
-                                    <input class="depth" value="" name="DEPTH">
+                                    <input class="depth" value="<?php if(isset($_POST['DEPTH']) ) { echo $_POST['DEPTH'];} ?>" name="DEPTH">
                                 </div>
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >VFAT position:</label>
-                                    <input class="vfatpos" value="" name="VFAT_POSN">
+                                    <input class="vfatpos" value="<?php if(isset($_POST['VFAT_POSN']) ) { echo $_POST['VFAT_POSN'];} ?>" name="VFAT_POSN">
                                 </div>
                             </div>
-                            <div class="form-group epd" >
+                            <div class="form-group epd" <?php if(isset($_POST['query']) && $_POST['query'] == "epd" ) { echo "style='display:block;'"; } ?> >
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >IETA:</label>
-                                    <input class="ieta" value="" name="IETA">
+                                    <input class="ieta" value="<?php if(isset($_POST['IETA']) ) { echo $_POST['IETA'];} ?>" name="IETA">
                                 </div>
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >IPHI:</label>
-                                    <input class="iphi" value="" name="IPHI">
+                                    <input class="iphi" value="<?php if(isset($_POST['IPHI']) ) { echo $_POST['IPHI'];} ?>" name="IPHI">
                                 </div>
                                 <br/>
                                 <div style="white-space:nowrap">
                                     <label class="sublabel" >Depth:</label>
-                                    <input class="depth1" value="" name="DEPTH1">
+                                    <input class="depth1" value="<?php if(isset($_POST['DEPTH1']) ) { echo $_POST['DEPTH1'];} ?>" name="DEPTH1">
                                 </div>
                             </div>
                             
