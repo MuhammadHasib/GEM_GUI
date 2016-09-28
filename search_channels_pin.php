@@ -148,7 +148,6 @@ include "foot.php";
              <?php
     }
     ?>
-    $(".sdv,.epd").hide();
     
     $("#map").attr("class", "active");
     
