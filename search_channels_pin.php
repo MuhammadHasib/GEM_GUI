@@ -147,8 +147,11 @@ include "foot.php";
                  $(".sdv").hide();
              <?php
     }
+    else{
     ?>
-    
+        $(".sdv,.epd").hide();
+    <?php } 
+    ?>
     $("#map").attr("class", "active");
     
         $(".subbutt_gen").on("click", function(e){
