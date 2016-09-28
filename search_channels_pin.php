@@ -135,7 +135,19 @@ CONN_PIN-->
 include "foot.php";
 ?>
 <script>
-    
+    <?php 
+    if($_POST['query'] == "sdv") {
+            ?>
+                $(".epd").hide();
+            <?php
+    }
+          
+    if($_POST['query'] == "epd") {
+             ?>
+                 $(".sdv").hide();
+             <?php
+    }
+    ?>
     $(".sdv,.epd").hide();
     
     $("#map").attr("class", "active");
