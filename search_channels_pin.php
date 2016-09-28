@@ -136,8 +136,11 @@ CONN_PIN-->
                      <table class="table table-striped">
                              <thead>
                                  <tr>
-                                     <th>Channel Map Id</th>
+                                     <th>Sector</th>
                    <!--                  <th>Status</th>-->
+                                     <?php foreach ($arr as $key => $value) {
+                                                      echo "<th>".$key."</th>" ;  
+                                                     }?>
                                      <th> PIN number </th>
                                  </tr>
                              </thead>
@@ -145,6 +148,9 @@ CONN_PIN-->
                                  <?php foreach ($items as $key => $value) {
                                                   echo "<tr>";
                                                   echo "<th>".$key."</th><th>".$value."</th>";
+                                                  foreach ($arr as $key => $value) {
+                                                      echo "<th>".$value."</th>" ;  
+                                                     }
                                                   echo "</tr>";
                                                   
                                      }
