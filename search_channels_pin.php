@@ -138,10 +138,11 @@ CONN_PIN-->
                                  <tr>
                                      <th>Sector</th>
                    <!--                  <th>Status</th>-->
+                                     <th> PIN number </th>
                                      <?php foreach ($arr as $key => $value) {
                                                       echo "<th>".$key."</th>" ;  
                                                      }?>
-                                     <th> PIN number </th>
+                                     
                                  </tr>
                              </thead>
                              <tbody>
