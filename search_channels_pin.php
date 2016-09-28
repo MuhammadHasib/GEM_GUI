@@ -111,19 +111,33 @@ CONN_PIN-->
 
             </div>
 
-            <?php if(isset($_POST['query'])) { 
-//                if($_POST['query'] == "sdv")
-//                if($_POST['query'] == "epd")
-                print_r($_POST);
+            <?php if(isset($_POST['query'])) {
+                $arr = array();
+                if ($_POST['query'] == "sdv") {
+
+                    $arr['SECTOR'] = $_POST['SECTOR'];
+                    $arr['DEPTH'] = $_POST['DEPTH'];
+                    $arr['VFAT_POSN'] = $_POST['VFAT_POSN'];
+                }
+                if ($_POST['query'] == "epd")
+                      
+                    $arr['IETA'] = $_POST['IETA'];
+                    $arr['DEPTH'] = $_POST['DEPTH1'];
+                    $arr['IPHI'] = $_POST['IPHI'];
                 ?>
-            
+                
              <div class=" panel-info panel" style="padding-left: 0px; padding-right: 0px;"  >
                 <div class="widget-header widget-header-blue widget-header-flat">
                     <h4 class="widget-title">   Search Result:</h4>
                 </div>
-                 <div class="panel-body"></div>
+                 <div class="panel-body">
+                     <?php print_r(searchPinNum($arr)); ?>
+                     
                  </div>
-            <?php }?>
+                 </div>
+            <?php 
+                 
+                }?>
         </div>
 
     </div>

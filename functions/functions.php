@@ -678,3 +678,57 @@ function getSectors(){
     }
     return ;
 }
+
+/*
+ * Name: searchPinNum
+ * Description: get pin number from VFAT_CHANNEL_MAPPING
+ * Parameter: array
+ * usage:  Search for pin number by channel info
+ * return: array
+ * Autor: Ola Aboamer [o.aboamer@cern.ch]
+ */
+function searchPinNum($search){
+    
+    $queryString ="";
+    $i = 0;
+    $len = count($search);
+    foreach ($search as $key => $value) {
+        if ($i == $len - 1) {
+            // last
+            $queryString += " " . $key . "= '" . $value . "'";
+        } else {
+            $queryString += " " . $key . "= '" . $value . "' AND";
+            $i++;
+        }
+    }
+
+    // Database connection 
+    $conn = database_connection();
+    
+   $sql = "SELECT CHANNEL_MAP_ID,CONN_PIN FROM CMS_GEM_MUON_COND.GEM_VFAT_CHANNELS WHERE". $queryString ;
+       $query = oci_parse($conn, $sql);
+    //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
+    $arr = oci_execute($query);
+
+    $result = array();
+//    CHANNEL_MAP_ID
+//SUBDET
+//SECTOR
+//TYPE
+//ZPOSN
+//IETA
+//IPHI
+//DEPTH
+//VFAT_POSN
+//DET_STRIP
+//VFAT_CHAN
+//CONN_PIN
+    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+
+           $result [$row['CHANNEL_MAP_ID']] = $row['CONN_PIN'];
+  
+       
+    }
+    
+    return $result;
+}
