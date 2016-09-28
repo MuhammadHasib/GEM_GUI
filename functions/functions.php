@@ -706,9 +706,10 @@ function searchPinNum($search){
     $conn = database_connection();
     
    $sql = "SELECT CHANNEL_MAP_ID,CONN_PIN FROM CMS_GEM_MUON_COND.GEM_VFAT_CHANNELS WHERE". $queryString ;
-       $query = oci_parse($conn, $sql);
+   echo $sql;
+       //$query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
-    $arr = oci_execute($query);
+    //$arr = oci_execute($query);
 
     $result = array();
 //    CHANNEL_MAP_ID
@@ -723,12 +724,12 @@ function searchPinNum($search){
 //DET_STRIP
 //VFAT_CHAN
 //CONN_PIN
-    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
-
-           $result [$row['CHANNEL_MAP_ID']] = $row['CONN_PIN'];
-  
-       
-    }
+//    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+//
+//           $result [$row['CHANNEL_MAP_ID']] = $row['CONN_PIN'];
+//  
+//       
+//    }
     
     return $result;
 }
