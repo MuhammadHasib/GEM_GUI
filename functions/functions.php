@@ -705,7 +705,7 @@ function searchPinNum($search){
     // Database connection 
     $conn = database_connection();
     
-   $sql = "SELECT CHANNEL_MAP_ID,CONN_PIN FROM CMS_GEM_MUON_COND.GEM_VFAT_CHANNELS WHERE". $queryString ;
+   $sql = "SELECT CHANNEL_MAP_ID,CONN_PIN FROM CMS_GEM_MUON_COND.GEM_VFAT_CHANNELS WHERE". $queryString . "ORDER BY CONN_PIN ASC" ;
 //   echo $sql;
        $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
