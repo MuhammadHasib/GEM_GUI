@@ -695,9 +695,9 @@ function searchPinNum($search){
     foreach ($search as $key => $value) {
         if ($i == $len - 1) {
             // last
-            $queryString += " " . $key . "= '" . $value . "'";
+            $queryString .= " " . $key . "= '" . $value . "'";
         } else {
-            $queryString += " " . $key . "= '" . $value . "' AND";
+            $queryString .= " " . $key . "= '" . $value . "' AND";
             $i++;
         }
     }
@@ -705,7 +705,7 @@ function searchPinNum($search){
     // Database connection 
     $conn = database_connection();
     
-   $sql = "SELECT CHANNEL_MAP_ID,CONN_PIN FROM CMS_GEM_MUON_COND.GEM_VFAT_CHANNELS WHERE". $queryString ;
+   $sql = "SELECT CHANNEL_MAP_ID,CONN_PIN FROM CMS_GEM_MUON_COND.GEM_VFAT_CHANNELS WHERE ". $queryString ;
    echo $sql;
        //$query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed
