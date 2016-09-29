@@ -712,6 +712,7 @@ function searchPinNum($search){
     $arr = oci_execute($query);
 
     $result = array();
+    $itr = array();
 //    CHANNEL_MAP_ID
 //SUBDET
 //SECTOR
@@ -725,8 +726,8 @@ function searchPinNum($search){
 //VFAT_CHAN
 //CONN_PIN
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
-
-           $result [$row['SECTOR']] = $row['CONN_PIN'];
+           $itr[$row['SECTOR']] = $row['CONN_PIN'];
+           $result [$row['CHANNEL_MAP_ID']] = $itr;
   
        
     }

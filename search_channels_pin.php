@@ -148,7 +148,7 @@ CONN_PIN-->
                              <tbody>
                                  <?php foreach ($items as $key => $value) {
                                                   echo "<tr>";
-                                                  echo "<th>".$key."</th><th>".$value."</th>";
+                                                  echo "<th>".$value['SECTOR']."</th><th>".$value['CONN_PIN']."</th>";
                                                   foreach ($arr as $key => $value) {
                                                       echo "<th>".$value."</th>" ;  
                                                      }
