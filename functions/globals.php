@@ -188,11 +188,12 @@ $FOIL_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Foil --> GEM Chamber'];
 //$DRIFT_TO_CHAMBER="10000000000002002";
 $DRIFT_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Drift PCB --> GEM Chamber'];
 
-
+$CHAMBER_TO_SUPER_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Chamber --> GEM Detector ROOT'];
 
 
 
 /**
+ * 
  * 
  * AutoAssigned: GEM Chamber --> GEM Detector ROOT
 AutoAssigned: GEM Drift PCB --> GEM Chamber

@@ -456,6 +456,7 @@ function get_attached_parts($part_id) {
     global $VFAT_KIND_OF_PART_NAME;
     global $OPTOHYBRID_KIND_OF_PART_NAME;
     global $GEB_KIND_OF_PART_NAME;
+    global $CHAMBER_TO_SUPER_CHAMBER;
 
     // Database connection 
     $conn = database_connection();
@@ -506,8 +507,12 @@ function get_attached_parts($part_id) {
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
             echo '<li class="list-group-item"><label> VFAT:</label> <a href="show_vfat.php?id=' . $serial . '">' . $serial . '</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="' . $serial . '" kind="' . $VFAT_KIND_OF_PART_NAME . '"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
-        } else {
-            
+        }
+        // Chamber -> Super Chamber
+        else if($row['RELATIONSHIP_ID'] === $CHAMBER_TO_SUPER_CHAMBER){
+            $serialarr = getSerialById($row['PART_ID']);
+            $serial = $serialarr[0]['SERIAL_NUMBER'];
+            echo '<li class="list-group-item"><label> Chamber:</label> <a href="show_chamber.php?id=' . $serial . '">' . $serial . '</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="' . $serial . '" kind="' . $CHAMBER_KIND_OF_PART_NAME . '"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
         }
     }
     return 1;
