@@ -36,7 +36,7 @@ include "head.php";
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">&nbsp;<b style=" color: red">*</b>
                                     <label for="exampleInputEmail1">Serial Number</label>
-                                    <div class="serial"><span class="name">SUP-GE1/1-VI-</span><span class="version">VERSION</span><span class="between">-</span><span class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">SUPER-GE1/1-VII-</span><span class="version">VERSION</span><span class="between">-</span><span class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
