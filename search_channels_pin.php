@@ -37,10 +37,10 @@ include "head.php";
                             <input class="query" name="query" hidden>
                             <div class="form-group">
                                 <label >Search by:</label>
-                                <input class="searchby required" name="searchby" value="" hidden>
+                                <input class="searchby required" name="searchby" value="<?php if(isset($_POST['query']) && $_POST['query'] == "sdv" ) { echo "SECTOR - DEPTH - VFAT_POSN";} if(isset($_POST['query']) && $_POST['query'] == "epd" ) { echo "IETA - IPHI - DEPTH";} ?> " hidden>
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Choose Search by
+                                        <?php if(isset($_POST['query']) && $_POST['query'] == "sdv" ) { echo "SECTOR - DEPTH - VFAT_POSN";} if(isset($_POST['query']) && $_POST['query'] == "epd" ) { echo "IETA - IPHI - DEPTH";} else{ echo "Choose Search by";} ?>
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -177,6 +177,8 @@ include "foot.php";
     if($_POST['query'] == "sdv") {
             ?>
                 $(".epd").hide();
+                    $('.chosen-select-sector').val("<?= $_POST['SECTOR']; ?>");
+                    $('.chosen-select-sector').trigger("chosen:updated");
             <?php
     }
           
