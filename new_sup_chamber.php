@@ -326,7 +326,7 @@ include "foot.php";
          }
          else if($('#dropdownMenu1').text() == "Short"){
              if($('.chamber-s1').val().length !== 0 && $('.chamber-s2').val().length !== 0){
-                 else if($('.chamber-s1').val().length !== 0 && $('.chamber-s2').val().length !== 0){
+                 if($('.chamber-s1').val().length !== 0 && $('.chamber-s2').val().length !== 0){
                  if($('.chamber-s1').val() == $('.chamber-s2').val()){
                      $(".same").show();
                      $(".empt").hide();
