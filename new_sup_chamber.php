@@ -305,11 +305,15 @@ include "foot.php";
     });
 
  $(".subbutt_ch").click(function () {
-     if($('#dropdownMenu1').text().length !== 0  || $('.serialInput').val().length !== 0 || $('.intituteinput').val().length !== 0 )
-     {
+     alert('click');
+     if($('#dropdownMenu1').text().length !== 0  && $('.serialInput').val().length !== 0 && $('.intituteinput').val().length !== 0 )
+     {   alert('version etc not empty');
          if($('#dropdownMenu1').text() == "Long"){
+             alert('long');
              if($('.chamber-l1').val().length !== 0 && $('.chamber-l2').val().length !== 0){
+                 alert('lc not empty');
                  if($('.chamber-l1').val() == $('.chamber-l2').val()){
+                     alert('same l');
                      $(".same").show();
                      $(".empt").hide();
                      $('html, body').animate({scrollTop: 0}, 0);
@@ -318,6 +322,7 @@ include "foot.php";
              }
              
              else{
+                 alert('lc empty');
                  $(".empt").show();
                  $('html, body').animate({scrollTop: 0}, 0);
                  return false;
@@ -325,9 +330,11 @@ include "foot.php";
              
          }
          else if($('#dropdownMenu1').text() == "Short"){
+             alert('short');
              if($('.chamber-s1').val().length !== 0 && $('.chamber-s2').val().length !== 0){
-                 if($('.chamber-s1').val().length !== 0 && $('.chamber-s2').val().length !== 0){
+                 alert('sc not empty');
                  if($('.chamber-s1').val() == $('.chamber-s2').val()){
+                     alert('same s');
                      $(".same").show();
                      $(".empt").hide();
                      $('html, body').animate({scrollTop: 0}, 0);
@@ -335,15 +342,16 @@ include "foot.php";
                  }
              }
              else{
+                 alert('sc empty');
                  $(".empt").show();
                  $('html, body').animate({scrollTop: 0}, 0);
                  return false;
              }
-             }
+             
          }
      }
      else{
-         
+         alert('version etc empty');
          $(".empt").show();
          $('html, body').animate({scrollTop: 0}, 0);
          return false;
