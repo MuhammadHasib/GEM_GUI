@@ -39,7 +39,7 @@ include "head.php";
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">&nbsp;<b style=" color: red">*</b>
                                     <label for="exampleInputEmail1">Serial Number</label>
-                                    <div class="serial"><span class="name">SUPER-GE1/1-VII-</span><span class="version">VERSION</span><span class="between">-</span><span class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">SUPER-GE1/1-VII-</span><span class="version">VERSION</span><span class="between">-</span><span id="inst" class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -279,7 +279,11 @@ include "foot.php";
 
         }
 
+        if ($(this).attr('class') == "institue") {
 
+            $("#inst").text($(this).html());
+
+        }
 
 
     })
@@ -288,7 +292,7 @@ include "foot.php";
     $(".serialValidation").on('blur', function(){
         if($(this).val() != "" ){
             $('#preloader').fadeIn('fast', function () {});
-            $('.id').html($(this).val());
+            $('.id').html("-"+$(this).val());
             $(".serialInput").val($(".serial").text());
             validateInput($(".serial").text());
             $('#preloader').fadeOut('fast', function () {});
@@ -306,9 +310,9 @@ include "foot.php";
 
  $(".subbutt_ch").click(function () {
      alert('click');
-     if($('#dropdownMenu1').text().length !== 0  && $('.serialInput').val().length !== 0 && $('.intituteinput').val().length !== 0 )
+     if($('.version').val().length !== 0  && $('.serialInput').val().length !== 0 && $('.intituteinput').val().length !== 0 )
      {   alert('version etc not empty');
-         if($('#dropdownMenu1').text() == "Long"){
+         if($('.version').val() == "L"){
              alert('long');
              if($('.chamber-l1').val().length !== 0 && $('.chamber-l2').val().length !== 0){
                  alert('lc not empty');
@@ -329,7 +333,7 @@ include "foot.php";
              }
              
          }
-         else if($('#dropdownMenu1').text() == "Short"){
+         else if($('.version').val() == "S"){
              alert('short');
              if($('.chamber-s1').val().length !== 0 && $('.chamber-s2').val().length !== 0){
                  alert('sc not empty');
