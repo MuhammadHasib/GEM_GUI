@@ -19,8 +19,11 @@ include "head.php";
                 }
             } else {
 
-                echo '<div style="display: none" role="alert" class="alert alert-danger ">
-      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
+                echo '<div style="display: none" role="alert" class="alert alert-danger empt">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields. <strong>Also</strong> make sure you attached all parts.
+    </div>';
+                echo '<div  style="display: none" role="alert" class="alert alert-danger same ">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong>  Make sure you did not choose same foil twice.
     </div>';
                 ?> 
 
@@ -53,7 +56,7 @@ include "head.php";
                                 </div>
                                 <div class="form-group">&nbsp;<b style=" color: red">*</b>
                                         <label for="exampleInputFile" >Institute</label>
-                                        <input name="Institute" value="" hidden>
+                                        <input class="intituteinput" name="Institute" value="" hidden>
                                         <div class="dropdown">
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                 Choose Institute
@@ -77,7 +80,7 @@ include "head.php";
                                 </div>
                                 <div class="form-group">
                                     <label> Manufacturer name </label><br>
-                                    <input name="manufacturer" >
+                                    <input name="manufacturer" hidden="true" >
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             Choose Manufacturer
@@ -237,7 +240,7 @@ include "head.php";
 
 
 
-                    <button type="submit" class="btn btn-default subbutt">Submit</button>   
+                    <button type="submit" class="btn btn-default subbutt_ch">Submit</button>   
 
 
 
@@ -301,5 +304,45 @@ include "foot.php";
         //alert($(this).chosen().val());
     });
 
+ $(".subbutt_ch").click(function () {
+     if($('#dropdownMenu1').text().length() !== 0  || $('.serialInput').val().length() !== 0 || $('.intituteinput').val().length() !== 0 )
+     {
+         if($('#dropdownMenu1').text() == "Long"){
+             if($('.chamber-l1').val().length() !== 0 && $('.chamber-l2').val().length() !== 0){
+                 if($('.chamber-l1').val() == $('.chamber-l2').val()){
+                     $(".same").show();
+                     $(".empt").hide();
+                     $('html, body').animate({scrollTop: 0}, 0);
+                     return false;
+                 }
+             }
+             else if($('.chamber-s1').val().length() !== 0 && $('.chamber-s2').val().length() !== 0){
+                 if($('.chamber-s1').val() == $('.chamber-s2').val()){
+                     $(".same").show();
+                     $(".empt").hide();
+                     $('html, body').animate({scrollTop: 0}, 0);
+                     return false;
+                 }
+             }
+             else{
+                 $(".empt").show();
+                 $('html, body').animate({scrollTop: 0}, 0);
+                 return false;
+             }
+             
+         }
+         else if($('#dropdownMenu1').text() == "Short"){
+             if($('.chamber-s1').val().length() !== 0 && $('.chamber-s2').val().length() !== 0)
+         }
+     }
+     else{
+         
+         $(".empt").show();
+         $('html, body').animate({scrollTop: 0}, 0);
+         return false;
+     }
+                
+     
+ })
 
 </script>
