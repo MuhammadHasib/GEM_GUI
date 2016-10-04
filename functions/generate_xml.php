@@ -198,7 +198,20 @@ function generateXml($arr) {
                             }
                             $preattr->appendChild($attr);
                             $part1->appendChild($preattr);
-                        } else {
+                        } elseif ($key1 == "attr1") {
+                            $preattr = $xml->createElement("PREDEFINED_ATTRIBUTES");
+                            $attr = $xml->createElement("ATTRIBUTE");
+
+
+                            foreach ($value1 as $key2 => $value2) {
+                                $tag = $xml->createElement($key2);
+                                $tagText = $xml->createTextNode($value2);
+                                $tag->appendChild($tagText);
+                                $attr->appendChild($tag);
+                            }
+                            $preattr->appendChild($attr);
+                            $part1->appendChild($preattr);
+                        }else {
 
                             $tag = $xml->createElement($key1);
                             $tagText = $xml->createTextNode($value1);
