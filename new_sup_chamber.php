@@ -383,7 +383,7 @@ include "foot.php";
          if($('.version').val() == "L"){
              //alert('long');
              if($('.chamber-l1').val().length !== 0 && $('.chamber-l2').val().length !== 0){
-                 ((alert('lc not empty');
+                 //alert('lc not empty');
                  if($('.chamber-l1').val() == $('.chamber-l2').val()){
                      ((alert('same l');
                      $(".same").show();
