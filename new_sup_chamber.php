@@ -385,7 +385,7 @@ include "foot.php";
              if($('.chamber-l1').val().length !== 0 && $('.chamber-l2').val().length !== 0){
                  //alert('lc not empty');
                  if($('.chamber-l1').val() == $('.chamber-l2').val()){
-                     ((alert('same l');
+                     //alert('same l');
                      $(".same").show();
                      $(".empt").hide();
                      $('html, body').animate({scrollTop: 0}, 0);
