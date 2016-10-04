@@ -185,7 +185,7 @@ function generateXml($arr) {
                     $part1 = $xml->createElement("PART");
 
                     foreach ($value[$j] as $key1 => $value1) {
-                        if ($key1 == "attr" || $key1= "attr1") {
+                        if ($key1 == "attr" || $key1 == "attr1") {
                             $preattr = $xml->createElement("PREDEFINED_ATTRIBUTES");
                             $attr = $xml->createElement("ATTRIBUTE");
 
