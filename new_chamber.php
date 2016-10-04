@@ -96,7 +96,7 @@ if ($serial_num_of_newest_part) {
                         $temp[$RECORD_INSERTION_USER] = $logName;
                     }
 
-                    if (isset($_POST['manufacturer'])) {
+                    if (isset($_POST['manufacturer']) && !empty($_POST['manufacturer']) ) {
                         //echo $_POST['manufacturer'];
                         $temp[$MANUFACTURER] = $_POST['manufacturer'];
                     }
