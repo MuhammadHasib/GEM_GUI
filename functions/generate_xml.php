@@ -241,7 +241,7 @@ function generateXml($arr) {
     //Generate the file and save it on directory
     $xml->save("gen_xml/" . $serialNum . ".xml"); // or die("Error");
     // Send the file to the spool area
-    SendXML($LocalFilePATH);
+    //SendXML($LocalFilePATH);
 
     return 1;
 }

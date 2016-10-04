@@ -45,6 +45,8 @@ $resultArr_p2pr = get_part_part_relns_set_globals();
 //Kind of part id for Chambers
 //$CHAMBER_KIND_OF_PART_ID = "10000000000001719";
 $CHAMBER_KIND_OF_PART_ID = $resultArr['GEM Chamber'];
+//Kind of part id for Super Chambers
+$SUPER_CHAMBER_KIND_OF_PART_ID = $resultArr['GEM Super Chamber'];
 //Kind of part id for Drift boards
 //$DRIFT_KIND_OF_PART_ID = "10000000000001599";
 $DRIFT_KIND_OF_PART_ID = $resultArr['GEM Drift PCB'];
@@ -93,6 +95,8 @@ $CAENA422A_KIND_OF_PART_ID = $resultArr['CAEN A422A Charge Sensitive Preamp'];
 //2nd Names
 //Kind of part name for Chambers
 $CHAMBER_KIND_OF_PART_NAME = "GEM Chamber";
+//Kind of part name for Super Chambers
+$SUPER_CHAMBER_KIND_OF_PART_NAME = "GEM Super Chamber";
 //Kind of part name for Drift boards
 $DRIFT_KIND_OF_PART_NAME = "GEM Drift PCB";
 //Kind of part name for GEM Foils
@@ -188,6 +192,7 @@ $FOIL_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Foil --> GEM Chamber'];
 //$DRIFT_TO_CHAMBER="10000000000002002";
 $DRIFT_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Drift PCB --> GEM Chamber'];
 
+//
 $CHAMBER_TO_SUPER_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Chamber --> GEM Detector ROOT'];
 
 

@@ -13,9 +13,77 @@ include "head.php";
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 if (isset($_POST['serial'])) {
+                    
+                    $temp = array();
+                    $arr = array();
                     echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully created Super Chamber <strong>ID:</strong> ' . $_POST['serial'] .
+      <strong>Well done!</strong> You successfully Generated XML for Super Chamber <strong>ID:</strong> ' . $_POST['serial'] .
                     '</div>';
+                    
+                    $temp[$SERIAL_NUMBER] = $_POST['serial'];
+                    $temp[$NAME_LABEL] = $_POST['serial'];
+                    if (isset($_POST['location'])) {
+                        //echo $_POST['location'];
+                        $temp[$LOCATION] = $_POST['location'];
+                    }
+                    if (isset($_POST['comment'])) {
+                        //echo $_POST['comment'];
+                        $temp[$COMMENT_DESCRIPTION] = $_POST['comment'];
+                    }
+                    if (isset($_POST['barcode'])) {
+                        //echo $_POST['barcode'];
+                        $temp[$BARCODE] = $_POST['barcode'];
+                    }
+
+                    $kindOfPart = $SUPER_CHAMBER_KIND_OF_PART_NAME;
+                    //echo  $kindOfPart;
+                    $temp[$KIND_OF_PART] = $kindOfPart;
+
+
+                    if (isset($logName)) {
+                        //echo $logName;
+                        $temp[$RECORD_INSERTION_USER] = $logName;
+                    }
+
+                    if (isset($_POST['manufacturer'])) {
+                        //echo $_POST['manufacturer'];
+                        $temp[$MANUFACTURER] = $_POST['manufacturer'];
+                    }
+
+                    
+                    $childs = array();
+                    $child = array();
+                    $subchild = array();
+                    if (!empty($_POST['ros'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['ros'];
+                        $child['KIND_OF_PART'] = $READOUT_KIND_OF_PART_NAME;
+                        $childs[] = $child;
+                    }
+                    if (!empty($_POST['drifts'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['drifts'];
+                        $child['KIND_OF_PART'] = $DRIFT_KIND_OF_PART_NAME;
+                        $childs[] = $child;
+                    }
+                    
+                    if (!empty($_POST['foil1s'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['foil1s'];
+                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
+                        $subchild['NAME'] = "Foil Position";
+                        $subchild['VALUE'] = "1";
+                        $child ['attr'] = $subchild;
+                        $childs[] = $child;
+                    }
+                    if (!empty($_POST['foil2s'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['foil2s'];
+                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
+                        $subchild['NAME'] = "Foil Position";
+                        $subchild['VALUE'] = "2";
+                        $child ['attr'] = $subchild;
+                        $childs[] = $child;
+                    }
+                    $temp['children'] = $childs;
+                    $arr[] = $temp;
+                     generateXml($arr);
                 }
             } else {
 
@@ -309,15 +377,15 @@ include "foot.php";
     });
 
  $(".subbutt_ch").click(function () {
-     alert('click');
+//     alert('click');
      if($('.version').val().length !== 0  && $('.serialInput').val().length !== 0 && $('.intituteinput').val().length !== 0 )
-     {   alert('version etc not empty');
+     {   //alert('version etc not empty');
          if($('.version').val() == "L"){
-             alert('long');
+             //alert('long');
              if($('.chamber-l1').val().length !== 0 && $('.chamber-l2').val().length !== 0){
-                 alert('lc not empty');
+                 ((alert('lc not empty');
                  if($('.chamber-l1').val() == $('.chamber-l2').val()){
-                     alert('same l');
+                     ((alert('same l');
                      $(".same").show();
                      $(".empt").hide();
                      $('html, body').animate({scrollTop: 0}, 0);
@@ -326,7 +394,7 @@ include "foot.php";
              }
              
              else{
-                 alert('lc empty');
+                 //alert('lc empty');
                  $(".empt").show();
                  $('html, body').animate({scrollTop: 0}, 0);
                  return false;
@@ -334,11 +402,11 @@ include "foot.php";
              
          }
          else if($('.version').val() == "S"){
-             alert('short');
+             //alert('short');
              if($('.chamber-s1').val().length !== 0 && $('.chamber-s2').val().length !== 0){
-                 alert('sc not empty');
+                 //alert('sc not empty');
                  if($('.chamber-s1').val() == $('.chamber-s2').val()){
-                     alert('same s');
+                     //alert('same s');
                      $(".same").show();
                      $(".empt").hide();
                      $('html, body').animate({scrollTop: 0}, 0);
@@ -346,7 +414,7 @@ include "foot.php";
                  }
              }
              else{
-                 alert('sc empty');
+                 //alert('sc empty');
                  $(".empt").show();
                  $('html, body').animate({scrollTop: 0}, 0);
                  return false;
@@ -355,7 +423,7 @@ include "foot.php";
          }
      }
      else{
-         alert('version etc empty');
+         //alert('version etc empty');
          $(".empt").show();
          $('html, body').animate({scrollTop: 0}, 0);
          return false;
