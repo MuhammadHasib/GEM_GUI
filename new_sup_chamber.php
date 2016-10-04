@@ -54,31 +54,50 @@ include "head.php";
                     $childs = array();
                     $child = array();
                     $subchild = array();
-                    if (!empty($_POST['ros'])) {
-                        $child['SERIAL_NUMBER'] = $_POST['ros'];
-                        $child['KIND_OF_PART'] = $READOUT_KIND_OF_PART_NAME;
+                    if (!empty($_POST['chamberl1'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['chamberl1'];
+                        $child['KIND_OF_PART'] = $CHAMBER_KIND_OF_PART_NAME;
+                        $subchild['NAME'] = "Chamber Type";
+                        $subchild['VALUE'] = "L";
+                        $child ['attr'] = $subchild;
+                        $subchild['NAME'] = "Depth";
+                        $subchild['VALUE'] = "1";
+                        $child ['attr1'] = $subchild;
                         $childs[] = $child;
                     }
-                    if (!empty($_POST['drifts'])) {
-                        $child['SERIAL_NUMBER'] = $_POST['drifts'];
-                        $child['KIND_OF_PART'] = $DRIFT_KIND_OF_PART_NAME;
+                    if (!empty($_POST['chamberl2'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['chamberl2'];
+                        $child['KIND_OF_PART'] = $CHAMBER_KIND_OF_PART_NAME;
+                        $subchild['NAME'] = "Chamber Type";
+                        $subchild['VALUE'] = "L";
+                        $child ['attr'] = $subchild;
+                        $subchild['NAME'] = "Depth";
+                        $subchild['VALUE'] = "2";
+                        $child ['attr1'] = $subchild;
                         $childs[] = $child;
                     }
                     
-                    if (!empty($_POST['foil1s'])) {
-                        $child['SERIAL_NUMBER'] = $_POST['foil1s'];
-                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
-                        $subchild['NAME'] = "Foil Position";
-                        $subchild['VALUE'] = "1";
+                    if (!empty($_POST['chambers1'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['chambers1'];
+                        $child['KIND_OF_PART'] = $CHAMBER_KIND_OF_PART_NAME;
+                        $subchild['NAME'] = "Chamber Type";
+                        $subchild['VALUE'] = "S";
                         $child ['attr'] = $subchild;
+                        $subchild['NAME'] = "Depth";
+                        $subchild['VALUE'] = "1";
+                        $child ['attr1'] = $subchild;
+                        
                         $childs[] = $child;
                     }
-                    if (!empty($_POST['foil2s'])) {
-                        $child['SERIAL_NUMBER'] = $_POST['foil2s'];
-                        $child['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
-                        $subchild['NAME'] = "Foil Position";
-                        $subchild['VALUE'] = "2";
+                    if (!empty($_POST['chambers2'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['chambers2'];
+                        $child['KIND_OF_PART'] = $CHAMBER_KIND_OF_PART_NAME;
+                        $subchild['NAME'] = "Chamber Type";
+                        $subchild['VALUE'] = "S";
                         $child ['attr'] = $subchild;
+                        $subchild['NAME'] = "Depth";
+                        $subchild['VALUE'] = "2";
+                        $child ['attr1'] = $subchild;
                         $childs[] = $child;
                     }
                     $temp['children'] = $childs;
