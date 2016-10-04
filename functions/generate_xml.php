@@ -185,7 +185,7 @@ function generateXml($arr) {
                     $part1 = $xml->createElement("PART");
 
                     foreach ($value[$j] as $key1 => $value1) {
-                        if ($key1 == "attr" || $key1 == "attr1") {
+                        if ($key1 == "attr") {
                             $preattr = $xml->createElement("PREDEFINED_ATTRIBUTES");
                             $attr = $xml->createElement("ATTRIBUTE");
 
@@ -241,7 +241,7 @@ function generateXml($arr) {
     //Generate the file and save it on directory
     $xml->save("gen_xml/" . $serialNum . ".xml"); // or die("Error");
     // Send the file to the spool area
-    SendXML($LocalFilePATH);
+    //SendXML($LocalFilePATH);
 
     return 1;
 }
