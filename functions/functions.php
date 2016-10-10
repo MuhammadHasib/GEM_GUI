@@ -308,7 +308,7 @@ function get_available_parts($part_id, $version) {
     // Database connection 
     $conn = database_connection();
 
-    $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND PART_ID not in (select PART_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; //select data or insert data 
+    $sql = "SELECT SERIAL_NUMBER FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $part_id . "' AND SERIAL_NUMBER LIKE '%" . $version . "%' AND IS_RECORD_DELETED = 'F' AND PART_ID not in (select PART_ID from CMS_GEM_CORE_CONSTRUCT.PHYSICAL_PARTS_TREE) ORDER BY SUBSTR(SERIAL_NUMBER, -4)  asc"; //select data or insert data 
 
 
     $query = oci_parse($conn, $sql);
