@@ -235,6 +235,12 @@ if ($serial_num_of_newest_part) {
                                         </div>
 
                                     </div>
+                                    <div class="dropdown">&nbsp;<b style=" color: red">*</b>
+                                    <label> 4 digits Serial </label><br>
+                                    <input placeholder="XXXX" class="serialValidation">
+                                    <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Databse</i>
+                                    <i class="ace-icon fa fa-check-circle alert-success newId" style="display: none"> Valid Serial</i>
+                                </div><br>
                                     <div class="form-group">
                                         <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
                                         <input name="barcode" >
@@ -646,54 +652,54 @@ include "foot.php";
     /**
      * [4] When selecting Long or Short version , run Ajax get latest ID Short or Long.
      */
-    $('.dropdown-menu a').on('click', function () {
-
-        if ($(this).html() == "Long") {
-            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
-            });
-            $("#vers").text("L-");
-            $.ajax({
-                url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>&version=-L-',
-                success: function (data) {
-                    $(".id").text(data);
-                    $(".serialInput").val($(".serial").text());
-                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
-                    });
-                    $(".longfoils,.longdrifts,.longreads").show();
-                    $(".shortfoils,.shortdrifts,.shortreads").hide();
-                    $(".ros, .drifts, .foil1s, .foil2s, .foil3s").val("");
-
-                }
-            });
-
-        }
-
-        if ($(this).html() == "Short") {
-            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
-            });
-            $("#vers").text("S-");
-            $.ajax({
-                url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>&version=-S-',
-                success: function (data) {
-                    $(".id").text(data);
-                    $(".serialInput").val($(".serial").text());
-                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
-                    });
-                    $(".shortfoils,.shortdrifts,.shortreads").show();
-                    $(".longfoils,.longdrifts,.longreads").hide();
-                    $(".rol, .driftl, .foil1l, .foil2l, .foil3l").val("");
-                }
-            });
-
-        }
-
-        if ($(this).attr('class') == "institue") {
-
-            $("#inst").text($(this).html());
-            $(".serialInput").val($(".serial").text());
-
-        }
-    })
+//    $('.dropdown-menu a').on('click', function () {
+//
+//        if ($(this).html() == "Long") {
+//            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
+//            });
+//            $("#vers").text("L-");
+//            $.ajax({
+//                url: 'functions/ajaxActions.php?kindid=<? $CHAMBER_KIND_OF_PART_ID; ?>&version=-L-',
+//                success: function (data) {
+//                    $(".id").text(data);
+//                    $(".serialInput").val($(".serial").text());
+//                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
+//                    });
+//                    $(".longfoils,.longdrifts,.longreads").show();
+//                    $(".shortfoils,.shortdrifts,.shortreads").hide();
+//                    $(".ros, .drifts, .foil1s, .foil2s, .foil3s").val("");
+//
+//                }
+//            });
+//
+//        }
+//
+//        if ($(this).html() == "Short") {
+//            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
+//            });
+//            $("#vers").text("S-");
+//            $.ajax({
+//                url: 'functions/ajaxActions.php?kindid=<? $CHAMBER_KIND_OF_PART_ID; ?>&version=-S-',
+//                success: function (data) {
+//                    $(".id").text(data);
+//                    $(".serialInput").val($(".serial").text());
+//                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
+//                    });
+//                    $(".shortfoils,.shortdrifts,.shortreads").show();
+//                    $(".longfoils,.longdrifts,.longreads").hide();
+//                    $(".rol, .driftl, .foil1l, .foil2l, .foil3l").val("");
+//                }
+//            });
+//
+//        }
+//
+//        if ($(this).attr('class') == "institue") {
+//
+//            $("#inst").text($(this).html());
+//            $(".serialInput").val($(".serial").text());
+//
+//        }
+//    })
 
 
     $('.imgclick').on('click', function () {
@@ -753,6 +759,17 @@ include "foot.php";
     });
 
 
+    $(".serialValidation").on('blur', function(){
+        if($(this).val() != "" ){
+            $('#preloader').fadeIn('fast', function () {});
+            $('.id').html("-"+$(this).val());
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
+
+        }
+        
+    })
 
 </script>
 <?php /*
