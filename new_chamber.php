@@ -205,7 +205,7 @@ if ($serial_num_of_newest_part) {
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">GE1/1-VII-</span><span id="vers" ><?= $serial_num[2]; ?>-</span><span id="inst" ><?= $serial_num[3]; ?></span>-<span class="id"><?= str_pad($serial_num[4] + 1, 4, 0, STR_PAD_LEFT); ?></span></div>
+                                    <div class="serial"><span class="name">GE1/1-VII-</span><span id="vers" >VERSION-</span><span id="inst" >INSTITUTE</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
