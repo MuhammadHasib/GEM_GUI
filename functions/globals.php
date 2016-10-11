@@ -42,6 +42,8 @@ $resultArr_p2pr = get_part_part_relns_set_globals();
  * GEM Electronics Board  
  */
 // 1st IDs
+// GEM Detector ROOT
+$ROOT_KIND_OF_PART_ID = $resultArr['GEM Detector ROOT'];
 //Kind of part id for Chambers
 //$CHAMBER_KIND_OF_PART_ID = "10000000000001719";
 $CHAMBER_KIND_OF_PART_ID = $resultArr['GEM Chamber'];
@@ -224,6 +226,9 @@ GEMDetectorRoot-GEMDetectorRoot
 $ROOT_BARCODE= "CMS-GEM-ROOT";
 $ROOT_KIND_OF_PART ="GEM Detector ROOT";
 $ROOT_SERIAL_NUM="ROOT";
+//Kind of part name for ROOT
+$ROOT_KIND_OF_PART_NAME = "GEM Detector ROOT";
+$ROOT_PART_ID = getROOT($ROOT_KIND_OF_PART_ID);
 
 /**** Conditions Kinds IDs****/
  $TRACKING_CONDITION_ID = $resultArr_kinds['GEM Component Tracking Data'] ;
