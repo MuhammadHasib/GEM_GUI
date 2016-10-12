@@ -68,9 +68,10 @@ if ($serial_num_of_newest_part) {
 
                     $temp = array();
                     $arr = array();
+                    /*
                     echo '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully created Gem Chamber <strong>ID:</strong> ' . $_POST['serial'] .
-                    '</div>';
+                    '</div>';*/
                     $temp[$SERIAL_NUMBER] = $_POST['serial'];
                     $temp[$NAME_LABEL] = $_POST['serial'];
                     if (isset($_POST['location'])) {
@@ -191,6 +192,7 @@ if ($serial_num_of_newest_part) {
                     }
                     else{
                         //Faild to load
+                        echo 'error';
                     }
                 }
             } else {
