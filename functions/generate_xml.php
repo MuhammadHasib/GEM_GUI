@@ -254,9 +254,9 @@ function generateXml($arr) {
     //Generate the file and save it on directory
     $xml->save("gen_xml/" . $serialNum . ".xml"); // or die("Error");
     // Send the file to the spool area
-    SendXML($LocalFilePATH);
+    $res_arr = SendXML($LocalFilePATH);
 
-    return 1;
+    return $res_arr;
 }
 
 /*
@@ -291,9 +291,10 @@ function SendXML($LocalFilePATH) {
     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
     //Printing Status Code and execution return 
+    $res_arr = array();
     if($status_code == "200"){
         echo '</br><span class="label label-success"> <b>Status code:</b>'.$status_code.'</span> ';
-        echo '<hr><div class="alert alert-success" role="alert"><b>Execution return:</b>'.$return.'</div>';
+        echo '<hr><div class="alert alert-success" role="alert"><b>Execution return:</b>'.$return.'</div>'; 
     }
     else if($status_code == "503"){
         echo '</br><span class="label label-danger"> <b>Status code:</b>'.$status_code.'</span> ';
@@ -303,7 +304,10 @@ function SendXML($LocalFilePATH) {
         echo '</br><span class="label label-warning"> <b>Status code:</b>'.$status_code.'</span> ';
         echo '<hr><div class="alert alert-warning" role="alert"><b>Execution return:</b>'.$return.'</div>';
     }
+    $res_arr['statuscode'] = $status_code;
+    $res_arr['return'] = $return;
     
-
     curl_close($ch);
+    return $res_arr;
+    
 }

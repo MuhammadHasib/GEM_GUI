@@ -181,7 +181,17 @@ if ($serial_num_of_newest_part) {
 //                if ((isset($_POST['ros']) && isset($_POST['drifts']) && isset($_POST['foil1s'])&& isset($_POST['foil2s']) && isset($_POST['foil3s'])) || (isset($_POST['rol']) && isset($_POST['driftl'])&& isset($_POST['foil1l']) && isset($_POST['foil2l']) && isset($_POST['foil3l'])) ){}
 //                    echo "TEST TEST".$_POST['rol'].$_POST['driftl'].$_POST['foil1l'].$_POST['foil2l'].$_POST['foil3l'];
                     //.ros, .drifts, .foil1s, .foil2s, .foil3s, rol, .driftl, .foil1l, .foil2l, .foil3l
-                    generateXml($arr);
+                    $res_arr = generateXml($arr);
+                    if($res_arr['statuscode'] == '200'){
+                        // Submitted Loaded into DB
+                        session_start();
+                        $_SESSION['post_return'] = $res_arr;
+                        // redirect to confirm page
+                        header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php');
+                    }
+                    else{
+                        //Faild to load
+                    }
                 }
             } else {
 
