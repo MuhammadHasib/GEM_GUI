@@ -2,10 +2,9 @@
 
 
            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-print_r($_POST);
-	/*Error Reporting */
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
+               include_once "functions/functions.php";
+                include_once "functions/generate_xml.php";
+                include_once "functions/globals.php";
                 if (isset($_POST['serial'])) {
 
 
