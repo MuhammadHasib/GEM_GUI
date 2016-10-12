@@ -1,76 +1,18 @@
 <?php
-include "head.php";
-?>
-<style>
-    /* Flashing */
-    .hover13 a:hover img {
-        opacity: 1;
-        -webkit-animation: flash 1.5s;
-        animation: flash 1.5s;
-        border: 1px inset;
-    }
-    @-webkit-keyframes flash {
-        0% {
-            opacity: .4;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-    @keyframes flash {
-        0% {
-            opacity: .4;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
 
-
-    .rellists{
-        display: none;
-    }
-
-    .rellists .dropdown{
-        margin: 15px;
-    }
-
-</style>
-<?php
-$serial_num_of_newest_part = get_part_ID($CHAMBER_KIND_OF_PART_ID);
-if ($serial_num_of_newest_part) {
-    $serial_num = explode('-', $serial_num_of_newest_part);
-} else {
-    $serial_num = array();
-    $serial_num[2] = "L";
-    $serial_num[3] = "CERN";
-    $serial_num[4] = 0000;
-}
-//echo $serial_num[3];
-//echo $serial_num[4];
-//echo "loacations"; print_r(get_locations());
-//echo "<br>institutes"; print_r(get_institutes());
-//echo "<br>Manufacturers";print_r(get_manufacturers());
-?>
-<div class="container-fluid" >
-    <div class="row">
-
-        <?php include "side.php"; ?>
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h2 class="sub-header"> <img src="images/c2.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Chamber  </h2>
-
-            <?php
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+           if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+               include_once "functions/functions.php";
+                include_once "functions/generate_xml.php";
+                include_once "functions/globals.php";
                 if (isset($_POST['serial'])) {
 
 
                     $temp = array();
                     $arr = array();
+                    /*
                     echo '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully created Gem Chamber <strong>ID:</strong> ' . $_POST['serial'] .
-                    '</div>';
+                    '</div>';*/
                     $temp[$SERIAL_NUMBER] = $_POST['serial'];
                     $temp[$NAME_LABEL] = $_POST['serial'];
                     if (isset($_POST['location'])) {
@@ -182,9 +124,83 @@ if ($serial_num_of_newest_part) {
 //                    echo "TEST TEST".$_POST['rol'].$_POST['driftl'].$_POST['foil1l'].$_POST['foil2l'].$_POST['foil3l'];
                     //.ros, .drifts, .foil1s, .foil2s, .foil3s, rol, .driftl, .foil1l, .foil2l, .foil3l
                     $res_arr = generateXml($arr);
-                    
+                    if($res_arr['statuscode'] == '200'){
+                        // Submitted Loaded into DB
+                        session_start();
+                        $_SESSION['post_return'] = $res_arr;
+                        // redirect to confirm page
+                        header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php');
+                    }
+                    else{
+                        //Faild to load
+                        echo 'error';
+                    }
                 }
-            } else {
+            }
+
+include "head.php";
+?>
+<style>
+    /* Flashing */
+    .hover13 a:hover img {
+        opacity: 1;
+        -webkit-animation: flash 1.5s;
+        animation: flash 1.5s;
+        border: 1px inset;
+    }
+    @-webkit-keyframes flash {
+        0% {
+            opacity: .4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes flash {
+        0% {
+            opacity: .4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+    .rellists{
+        display: none;
+    }
+
+    .rellists .dropdown{
+        margin: 15px;
+    }
+
+</style>
+<?php
+//$serial_num_of_newest_part = get_part_ID($CHAMBER_KIND_OF_PART_ID);
+//if ($serial_num_of_newest_part) {
+//    $serial_num = explode('-', $serial_num_of_newest_part);
+//} else {
+//    $serial_num = array();
+//    $serial_num[2] = "L";
+//    $serial_num[3] = "CERN";
+//    $serial_num[4] = 0000;
+//}
+//echo $serial_num[3];
+//echo $serial_num[4];
+//echo "loacations"; print_r(get_locations());
+//echo "<br>institutes"; print_r(get_institutes());
+//echo "<br>Manufacturers";print_r(get_manufacturers());
+?>
+<div class="container-fluid" >
+    <div class="row">
+
+        <?php include "side.php"; ?>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h2 class="sub-header"> <img src="images/c2.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Chamber  </h2>
+
+            <?php
+  if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
                 echo '<div style="display: none" role="alert" class="alert alert-danger empt">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields. <strong>Also</strong> make sure you attached all parts.
@@ -585,11 +601,11 @@ include "foot.php";
         /**
          * [1] Ajax to refresh the Id once enter the page ( 1st time landing )
          */
-        $.ajax({
-            url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>',
-            success: function () { /*alert('test');*/
-            }
-        });
+//        $.ajax({
+//            url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>',
+//            success: function () { /*alert('test');*/
+//            }
+//        });
 
         /**
          * [2] Ajax to refresh the Id every 10 seconds to check for updated ID
