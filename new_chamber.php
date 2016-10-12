@@ -718,7 +718,7 @@ include "foot.php";
 
         if ($(this).html() == "Long") {
             
-            $("#vers").text("L-");
+            $("#vers").text("L");
             $(".longfoils,.longdrifts,.longreads").show();
             $(".shortfoils,.shortdrifts,.shortreads").hide();
             $(".ros, .drifts, .foil1s, .foil2s, .foil3s").val("");
@@ -727,7 +727,7 @@ include "foot.php";
 
         if ($(this).html() == "Short") {
             
-            $("#vers").text("S-");
+            $("#vers").text("S");
             $(".shortfoils,.shortdrifts,.shortreads").show();
             $(".longfoils,.longdrifts,.longreads").hide();
             $(".rol, .driftl, .foil1l, .foil2l, .foil3l").val("");
