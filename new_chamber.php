@@ -711,6 +711,36 @@ include "foot.php";
 //        }
 //    })
 
+    /**
+     * [4] When selecting Long or Short version , run Ajax get latest ID Short or Long.
+     */
+    $('.dropdown-menu a').on('click', function () {
+
+        if ($(this).html() == "Long") {
+            
+            $("#vers").text("L-");
+            $(".longfoils,.longdrifts,.longreads").show();
+            $(".shortfoils,.shortdrifts,.shortreads").hide();
+            $(".ros, .drifts, .foil1s, .foil2s, .foil3s").val("");
+
+        }
+
+        if ($(this).html() == "Short") {
+            
+            $("#vers").text("S-");
+            $(".shortfoils,.shortdrifts,.shortreads").show();
+            $(".longfoils,.longdrifts,.longreads").hide();
+            $(".rol, .driftl, .foil1l, .foil2l, .foil3l").val("");
+
+        }
+
+        if ($(this).attr('class') == "institue") {
+
+            $("#inst").text($(this).html());
+            $(".serialInput").val($(".serial").text());
+
+        }
+    })
 
     $('.imgclick').on('click', function () {
         $(this).next().toggle("fast", "swing");
