@@ -1,67 +1,6 @@
 <?php
-include "head.php";
-?>
-<style>
-    /* Flashing */
-    .hover13 a:hover img {
-        opacity: 1;
-        -webkit-animation: flash 1.5s;
-        animation: flash 1.5s;
-        border: 1px inset;
-    }
-    @-webkit-keyframes flash {
-        0% {
-            opacity: .4;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-    @keyframes flash {
-        0% {
-            opacity: .4;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
 
-
-    .rellists{
-        display: none;
-    }
-
-    .rellists .dropdown{
-        margin: 15px;
-    }
-
-</style>
-<?php
-$serial_num_of_newest_part = get_part_ID($CHAMBER_KIND_OF_PART_ID);
-if ($serial_num_of_newest_part) {
-    $serial_num = explode('-', $serial_num_of_newest_part);
-} else {
-    $serial_num = array();
-    $serial_num[2] = "L";
-    $serial_num[3] = "CERN";
-    $serial_num[4] = 0000;
-}
-//echo $serial_num[3];
-//echo $serial_num[4];
-//echo "loacations"; print_r(get_locations());
-//echo "<br>institutes"; print_r(get_institutes());
-//echo "<br>Manufacturers";print_r(get_manufacturers());
-?>
-<div class="container-fluid" >
-    <div class="row">
-
-        <?php include "side.php"; ?>
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h2 class="sub-header"> <img src="images/c2.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Chamber  </h2>
-
-            <?php
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+           if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 if (isset($_POST['serial'])) {
 
@@ -195,7 +134,71 @@ if ($serial_num_of_newest_part) {
                         echo 'error';
                     }
                 }
-            } else {
+            }
+
+include "head.php";
+?>
+<style>
+    /* Flashing */
+    .hover13 a:hover img {
+        opacity: 1;
+        -webkit-animation: flash 1.5s;
+        animation: flash 1.5s;
+        border: 1px inset;
+    }
+    @-webkit-keyframes flash {
+        0% {
+            opacity: .4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes flash {
+        0% {
+            opacity: .4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+    .rellists{
+        display: none;
+    }
+
+    .rellists .dropdown{
+        margin: 15px;
+    }
+
+</style>
+<?php
+$serial_num_of_newest_part = get_part_ID($CHAMBER_KIND_OF_PART_ID);
+if ($serial_num_of_newest_part) {
+    $serial_num = explode('-', $serial_num_of_newest_part);
+} else {
+    $serial_num = array();
+    $serial_num[2] = "L";
+    $serial_num[3] = "CERN";
+    $serial_num[4] = 0000;
+}
+//echo $serial_num[3];
+//echo $serial_num[4];
+//echo "loacations"; print_r(get_locations());
+//echo "<br>institutes"; print_r(get_institutes());
+//echo "<br>Manufacturers";print_r(get_manufacturers());
+?>
+<div class="container-fluid" >
+    <div class="row">
+
+        <?php include "side.php"; ?>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h2 class="sub-header"> <img src="images/c2.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Chamber  </h2>
+
+            <?php
+  if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
                 echo '<div style="display: none" role="alert" class="alert alert-danger empt">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields. <strong>Also</strong> make sure you attached all parts.
