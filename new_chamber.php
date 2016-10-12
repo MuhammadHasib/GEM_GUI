@@ -1,4 +1,5 @@
 <?php
+print_r($_SERVER);
 
            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
