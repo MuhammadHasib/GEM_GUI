@@ -1,6 +1,5 @@
 <?php
 
-
            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                include_once "functions/functions.php";
                 include_once "functions/generate_xml.php";
@@ -127,7 +126,7 @@
                     $res_arr = generateXml($arr);
                     if($res_arr['statuscode'] == '200'){
                         // Submitted Loaded into DB
-                        session_start();
+//                        session_start();
                         $_SESSION['post_return'] = $res_arr;
                         // redirect to confirm page
                         header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php');
@@ -177,15 +176,15 @@ include "head.php";
 
 </style>
 <?php
-$serial_num_of_newest_part = get_part_ID($CHAMBER_KIND_OF_PART_ID);
-if ($serial_num_of_newest_part) {
-    $serial_num = explode('-', $serial_num_of_newest_part);
-} else {
-    $serial_num = array();
-    $serial_num[2] = "L";
-    $serial_num[3] = "CERN";
-    $serial_num[4] = 0000;
-}
+//$serial_num_of_newest_part = get_part_ID($CHAMBER_KIND_OF_PART_ID);
+//if ($serial_num_of_newest_part) {
+//    $serial_num = explode('-', $serial_num_of_newest_part);
+//} else {
+//    $serial_num = array();
+//    $serial_num[2] = "L";
+//    $serial_num[3] = "CERN";
+//    $serial_num[4] = 0000;
+//}
 //echo $serial_num[3];
 //echo $serial_num[4];
 //echo "loacations"; print_r(get_locations());
@@ -602,11 +601,11 @@ include "foot.php";
         /**
          * [1] Ajax to refresh the Id once enter the page ( 1st time landing )
          */
-        $.ajax({
-            url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>',
-            success: function () { /*alert('test');*/
-            }
-        });
+//        $.ajax({
+//            url: 'functions/ajaxActions.php?kindid=<?= $CHAMBER_KIND_OF_PART_ID; ?>',
+//            success: function () { /*alert('test');*/
+//            }
+//        });
 
         /**
          * [2] Ajax to refresh the Id every 10 seconds to check for updated ID
