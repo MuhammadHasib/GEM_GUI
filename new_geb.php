@@ -3,15 +3,15 @@ include "head.php";
 ?>
 
 <?php
-$serial_num_of_newest_part = get_part_ID($GEB_KIND_OF_PART_ID);
-if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
-    $serial_num = explode('-', $serial_num_of_newest_part);
-    
-} else {  
-    $serial_num = array();
-    $serial_num[2] = "L";
-    $serial_num[3] = 0000;
-}
+//$serial_num_of_newest_part = get_part_ID($GEB_KIND_OF_PART_ID);
+//if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
+//    $serial_num = explode('-', $serial_num_of_newest_part);
+//    
+//} else {  
+//    $serial_num = array();
+//    $serial_num[2] = "L";
+//    $serial_num[3] = 0000;
+//}
 //echo $serial_num[3];
 //echo $serial_num[4];
 //echo "loacations"; print_r(get_locations());
@@ -87,7 +87,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">GEB-RO-</span><span id="vers" ><?= $serial_num[2]; ?></span><span class="id">-<?= str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT); ?></span></div>
+                                    <div class="serial"><span class="name">GEB-RO-</span><span id="vers" class="version">VERSION</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -101,6 +101,12 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                                             <li><a href="#">Long</a></li>
                                             <li><a href="#">Short</a></li>
                                         </ul>
+                                    </div><br>
+                                     <div class="dropdown">
+                                        <label> 4 digits Serial </label><br>
+                                    <input placeholder="XXXX" class="serialValidation">
+                                    <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Database</i>
+                                    <i class="ace-icon fa fa-check-circle alert-success newId" style="display: none"> Valid Serial</i>
                                     </div><br>
                                     <div class="form-group">
                                         <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
@@ -293,40 +299,45 @@ include "foot.php";
      */
     $('.dropdown-menu a').on('click', function () {
 
-        if ($(this).html() == "Long") {
-            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
-            });
-            $("#vers").text("L-");
-            $.ajax({
-                url: 'functions/ajaxActions.php?kindid=<?= $GEB_KIND_OF_PART_ID; ?>&version=-L-',
-                success: function (data) {
-                    $(".id").text(data);
-                    $(".serialInput").val($(".serial").text());
-                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
-                    });
-                }
-            });
-
+        iif ($(this).html() == "Long") {
+            $('#preloader').fadeIn('fast', function () {});
+            $("#vers").text("L");
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
         }
 
         if ($(this).html() == "Short") {
-            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
-            });
-            $("#vers").text("S-");
-            $.ajax({
-                url: 'functions/ajaxActions.php?kindid=<?= $GEB_KIND_OF_PART_ID; ?>&version=-S-',
-                success: function (data) {
-                    $(".id").text(data);
-                    $(".serialInput").val($(".serial").text());
-                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
-                    });
-                }
-            });
+            $('#preloader').fadeIn('fast', function () {});
+            $("#vers").text("S");
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
+        }
+
+        if ($(this).attr('class') == "batchnum") {
+            $('#preloader').fadeIn('fast', function () {});
+            $(".batch").text($(this).html());
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
 
         }
 
 
   })
+      $(".serialValidation").on('blur', function(){
+        if($(this).val() != "" ){
+            $('#preloader').fadeIn('fast', function () {});
+            $('.id').html("-"+$(this).val());
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
+
+        }
+        
+    })
+  
   
      jQuery(document).ready(function($) {
 $("#partslist").show();

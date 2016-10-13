@@ -86,7 +86,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">VFAT-VI-</span><span id="vers" ><?= $serial_num[2]; ?></span><span class="id">-<?= str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT); ?></span></div>
+                                    <div class="serial"><span class="name">VFAT-VI-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX<?php /* str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT); */ ?></span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -100,6 +100,12 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                                             <li><a href="#">1</a></li>
                                             <li><a href="#">2</a></li>
                                         </ul>
+                                    </div><br>
+                                     <div class="dropdown">
+                                        <label> 4 digits Serial </label><br>
+                                    <input placeholder="XXXX" class="serialValidation">
+                                    <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Database</i>
+                                    <i class="ace-icon fa fa-check-circle alert-success newId" style="display: none"> Valid Serial</i>
                                     </div><br>
                                     <div class="form-group">
                                         <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
@@ -292,40 +298,46 @@ include "foot.php";
      */
     $('.dropdown-menu a').on('click', function () {
 
-        if ($(this).html() == "1") {
-            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
-            });
-            $("#vers").text("1-");
-            $.ajax({
-                url: 'functions/ajaxActions.php?kindid=<?= $VFAT_KIND_OF_PART_ID; ?>&version=-1-',
-                success: function (data) {
-                    $(".id").text(data);
-                    $(".serialInput").val($(".serial").text());
-                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
-                    });
-                }
-            });
-
+        if ($(this).html() == "Long") {
+            $('#preloader').fadeIn('fast', function () {});
+            $("#vers").text("L");
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
         }
 
-        if ($(this).html() == "2") {
-            $('#preloader').fadeIn('fast', function () {/*$(this).remove();*/
-            });
-            $("#vers").text("2-");
-            $.ajax({
-                url: 'functions/ajaxActions.php?kindid=<?= $VFAT_KIND_OF_PART_ID; ?>&version=-2-',
-                success: function (data) {
-                    $(".id").text(data);
-                    $(".serialInput").val($(".serial").text());
-                    $('#preloader').fadeOut('fast', function () {/*$(this).remove();*/
-                    });
-                }
-            });
+        if ($(this).html() == "Short") {
+            $('#preloader').fadeIn('fast', function () {});
+            $("#vers").text("S");
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
+        }
+
+        if ($(this).attr('class') == "batchnum") {
+            $('#preloader').fadeIn('fast', function () {});
+            $(".batch").text($(this).html());
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
 
         }
 
 
     })
+    
+        $(".serialValidation").on('blur', function(){
+        if($(this).val() != "" ){
+            $('#preloader').fadeIn('fast', function () {});
+            $('.id').html("-"+$(this).val());
+            $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
+            $('#preloader').fadeOut('fast', function () {});
+
+        }
+        
+    })
+    
  jQuery(document).ready(function($) {
  
  $("#partslist").show();
