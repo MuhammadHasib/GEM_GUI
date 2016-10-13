@@ -86,7 +86,7 @@ include "head.php";
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">PCB-RO-B<span class="batch">1</span>-</span><span id="vers" class="version" >VERSION</span>-<span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">PCB-RO-B<span class="batch">1</span>-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
