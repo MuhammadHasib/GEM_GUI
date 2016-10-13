@@ -320,7 +320,7 @@ include "foot.php";
 
         if ($(this).html() == "Long") {
             $('#preloader').fadeIn('fast', function () {});
-            $("#vers").text("L-");
+            $("#vers").text("L");
             $(".serialInput").val($(".serial").text());
             validateInput($(".serial").text());
             $('#preloader').fadeOut('fast', function () {});
@@ -328,7 +328,7 @@ include "foot.php";
 
         if ($(this).html() == "Short") {
             $('#preloader').fadeIn('fast', function () {});
-            $("#vers").text("S-");
+            $("#vers").text("S");
             $(".serialInput").val($(".serial").text());
             validateInput($(".serial").text());
             $('#preloader').fadeOut('fast', function () {});
