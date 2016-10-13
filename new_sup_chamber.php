@@ -158,7 +158,7 @@ include "head.php";
                                 <div class="dropdown">&nbsp;<b style=" color: red">*</b>
                                     <label> 4 digits Serial </label><br>
                                     <input placeholder="XXXX" class="serialValidation">
-                                    <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Databse</i>
+                                    <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Database</i>
                                     <i class="ace-icon fa fa-check-circle alert-success newId" style="display: none"> Valid Serial</i>
                                 </div><br>
                                 <div class="form-group">

@@ -86,7 +86,7 @@ include "head.php";
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">PCB-RO-B<span class="batch">1</span>-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">PCB-RO-VII-B<span class="batch">1</span>-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -122,7 +122,7 @@ include "head.php";
                                     <div class="dropdown">&nbsp;<b style=" color: red">*</b>
                                     <label> 4 digits Serial </label><br>
                                     <input placeholder="XXXX" class="serialValidation">
-                                    <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Databse</i>
+                                    <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Database</i>
                                     <i class="ace-icon fa fa-check-circle alert-success newId" style="display: none"> Valid Serial</i>
                                 </div><br>
                                     <div class="form-group">
