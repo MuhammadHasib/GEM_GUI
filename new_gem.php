@@ -3,15 +3,15 @@ include "head.php";
 ?>
 
 <?php
-$serial_num_of_newest_part = get_part_ID($FOIL_KIND_OF_PART_ID);
-if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
-    $serial_num = explode('-', $serial_num_of_newest_part);
-    
-} else {  
-    $serial_num = array();
-    $serial_num[2] = "L";
-    $serial_num[3] = 0000;
-}
+//$serial_num_of_newest_part = get_part_ID($FOIL_KIND_OF_PART_ID);
+//if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
+//    $serial_num = explode('-', $serial_num_of_newest_part);
+//    
+//} else {  
+//    $serial_num = array();
+//    $serial_num[2] = "L";
+//    $serial_num[3] = 0000;
+//}
 //echo $serial_num[3];
 //echo $serial_num[4];
 //echo "loacations"; print_r(get_locations());
@@ -87,7 +87,7 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">FOIL-B<span class="batch">1</span>-</span><span id="vers" ><?= $serial_num[2]; ?></span><span class="id">-XXXX<?php /*str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT);*/ ?></span></div>
+                                    <div class="serial"><span class="name">FOIL-B<span class="batch">1</span>-</span><span id="vers" class="version" >VERSION</span>-<span class="id">-XXXX<?php /*str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT);*/ ?></span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -348,14 +348,12 @@ include "foot.php";
     $(".serialValidation").on('blur', function(){
         if($(this).val() != "" ){
             $('#preloader').fadeIn('fast', function () {});
-            $('.id').html($(this).val());
+            $('.id').html("-"+$(this).val());
             $(".serialInput").val($(".serial").text());
             validateInput($(".serial").text());
             $('#preloader').fadeOut('fast', function () {});
 
         }
-        
-         
         
     })
     
@@ -365,28 +363,5 @@ include "foot.php";
 $("#<?= $FOIL_ID; ?>").attr("class","active");
 })
 
-function validateInput(serial){
-    
-                //check value inserted is not in DB
-            $.ajax({
-                url: 'functions/ajaxActions.php?validateserial=true&partid='+serial,
-                success: function(data){
-                            if(data == 1){
-                                $(".exist").show('');
-                                $(".serialValidation").addClass('alert-danger');
-                                return false;
-                            }
-                            else{
-                                $('.exist').hide();
-                                $(".serialValidation").removeClass('alert-danger');
-                                $(".serialValidation").addClass('alert-success');
-                                $(".newId").show();
-                                
-                                $(".newId").delay(700).fadeOut('fast');
-                                $(".serialValidation").delay(700).removeClass('alert-success');
-                                
-                            }
-                        }
-            });
-}
+
 </script>
