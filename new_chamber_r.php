@@ -211,7 +211,7 @@ include "head.php";
                 ?> 
 
 
-                <form method="POST" action="new_chamber.php">
+                <form method="POST" action="new_chamber_r.php">
 
                     <div class="row">
                         <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
