@@ -126,8 +126,8 @@
                     $res_arr = generateXml($arr);
                     
 //                        // Submitted Loaded into DB
-
-                        $_SESSION['post_return'] = serialize($res_arr);
+                        session_start() ;
+                        $_SESSION['post_return'] = $res_arr;
 //                        $msg = "success";
 //                        $statusCode = $res_arr['statuscode'];
 //                        $return = $res_arr['return'];
@@ -730,6 +730,8 @@ include "foot.php";
             $(".longfoils,.longdrifts,.longreads").show();
             $(".shortfoils,.shortdrifts,.shortreads").hide();
             $(".ros, .drifts, .foil1s, .foil2s, .foil3s").val("");
+             $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
 
         }
 
@@ -739,6 +741,8 @@ include "foot.php";
             $(".shortfoils,.shortdrifts,.shortreads").show();
             $(".longfoils,.longdrifts,.longreads").hide();
             $(".rol, .driftl, .foil1l, .foil2l, .foil3l").val("");
+             $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
 
         }
 
@@ -746,6 +750,7 @@ include "foot.php";
 
             $("#inst").text($(this).html());
             $(".serialInput").val($(".serial").text());
+            validateInput($(".serial").text());
 
         }
     })

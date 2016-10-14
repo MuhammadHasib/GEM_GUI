@@ -15,7 +15,7 @@ include "head.php";
           <h1 class="page-header">Successfully Submitted </h1>
 
 <?php 
-    print_r(unserialize($_SESSION['post_return']));
+    print_r($_SESSION['post_return']);
 //    print_r($_GET['statusCode']);
 //    print_r($_GET['return']);
  
