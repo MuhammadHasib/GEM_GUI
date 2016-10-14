@@ -126,13 +126,13 @@
                     $res_arr = generateXml($arr);
                     
 //                        // Submitted Loaded into DB
-                        session_start();
-//                        $_SESSION['post_return'] = $res_arr;
-                        $msg = "success";
-                        $statusCode = $res_arr['statuscode'];
-                        $return = $res_arr['return'];
+
+                        $_SESSION['post_return'] = $res_arr;
+//                        $msg = "success";
+//                        $statusCode = $res_arr['statuscode'];
+//                        $return = $res_arr['return'];
                         // redirect to confirm page
-                        header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php?msg='.$msg."&statusCode=".$statusCode."&return=".$return);
+                        header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                     
                     
                 }
