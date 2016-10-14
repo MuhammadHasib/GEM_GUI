@@ -127,7 +127,7 @@
                     
 //                        // Submitted Loaded into DB
 
-                        $_SESSION['post_return'] = $res_arr;
+                        $_SESSION['post_return'] = serialize($res_arr);
 //                        $msg = "success";
 //                        $statusCode = $res_arr['statuscode'];
 //                        $return = $res_arr['return'];
