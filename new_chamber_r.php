@@ -133,6 +133,7 @@
 //                        $return = $res_arr['return'];
                         // redirect to confirm page
                         header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                        die();
                     
                     
                 }
