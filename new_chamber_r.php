@@ -126,7 +126,7 @@
                     $res_arr = generateXml($arr);
                     
 //                        // Submitted Loaded into DB
-//                        session_start();
+                        session_start();
 //                        $_SESSION['post_return'] = $res_arr;
                         $msg = "success";
                         $statusCode = $res_arr['statuscode'];
