@@ -777,7 +777,7 @@ function get_tracking_info($serial) {
             $result1[] = $itr;
         }
         // if datasets found get tracking info
-        if (sizeof($result1) >= 1) {
+        if ( sizeof($result1) >= 0) {
             foreach ($result1 as $key => $value) {
                 $run = $value['COND_RUN_ID'];
                 $sql = "SELECT SHIPPED_FROM,DESTINATION,DATE_SHIPPED,MODE_SHIPPED,ADDN_SHIPPING_INFO,STATUS FROM CMS_GEM_MUON_COND.GEM_COMPONENT_TRACKING WHERE CONDITION_DATA_SET_ID = '" .$value['CONDITION_DATA_SET_ID']. "'";
