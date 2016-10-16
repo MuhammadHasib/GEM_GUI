@@ -23,6 +23,7 @@ include "head.php";
             
           <a class="btn btn-default btn-app radius-4" href="list_tracking_info.php">
                 <span aria-hidden="true" class="glyphicon glyphicon-globe"></span>
+                <br>
                 List <br>Tracking info
                 <span class="badge badge-success"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></span>
             </a>

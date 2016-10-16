@@ -808,6 +808,7 @@ include "foot.php";
             return false;
             }
         }
+        $('#preloader').fadeIn('fast');
 
     });
 

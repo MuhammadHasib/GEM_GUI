@@ -1,24 +1,13 @@
-<?php
-include "head.php";
-?>
-<div class="container-fluid">
-    <div class="row">
-
-        <?php include "side.php"; ?>
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h2 class="sub-header"><img src="images/sc2.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Super-Chamber  </h2>
-
             <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+               include_once "functions/functions.php";
+                include_once "functions/generate_xml.php";
+                include_once "functions/globals.php";
                 if (isset($_POST['serial'])) {
                     
                     $temp = array();
                     $arr = array();
-                    echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully Generated XML for Super Chamber <strong>ID:</strong> ' . $_POST['serial'] .
-                    '</div>';
+                    
                     
                     $temp[$SERIAL_NUMBER] = $_POST['serial'];
                     $temp[$NAME_LABEL] = $_POST['serial'];
@@ -102,9 +91,35 @@ include "head.php";
                     }
                     $temp['children'] = $childs;
                     $arr[] = $temp;
-                     generateXml($arr);
+                     $res_arr = generateXml($arr);
+                    
+                    // Set session variables with the return 
+                    session_start() ;
+                    $_SESSION['post_return'] = $res_arr;
+                    $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully Generated XML for GEM Super Chamber <strong>ID:</strong> ' . $_POST['serial'] .
+                    '</div>';
+                    // redirect to confirm page
+                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                        die();
                 }
-            } else {
+            } 
+            
+else {
+            ?>
+
+
+<?php
+include "head.php";
+?>
+<div class="container-fluid">
+    <div class="row">
+
+        <?php include "side.php"; ?>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h2 class="sub-header"><img src="images/sc2.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Super-Chamber  </h2>
+
 
                 echo '<div style="display: none" role="alert" class="alert alert-danger empt">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields. <strong>Also</strong> make sure you attached all parts.
@@ -440,6 +455,7 @@ include "foot.php";
              }
              
          }
+         $('#preloader').fadeIn('fast');
      }
      else{
          //alert('version etc empty');

@@ -1,4 +1,75 @@
-
+<?php
+            //  Form Submitted , need to generate XML 
+            if (isset($_POST['foilsnumbersubmitted'])) {
+                    include_once "functions/functions.php";
+                    include_once "functions/generate_xml.php";
+                    include_once "functions/globals.php";
+                    $head = array();
+                    $headRun =array();
+                    $headType =array();
+                    $foils =array();
+                    $foil = array();
+                    $part = array();
+                    $partdata = array();
+                    $data = array();
+                    
+                    // Header Data
+                    $headType['EXTENSION_TABLE_NAME'] ="GEM_COMPONENT_TRACKING";
+                    $headType['NAME'] = "GEM Component Tracking Data"; 
+                    $head['TYPE'] = $headType;
+                    
+                    
+                    $headRun['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
+                    $headRun['RUN_TYPE'] = $_POST['RUN_TYPE'];
+                    $headRun['RUN_BEGIN_TIMESTAMP'] = date($_POST['RUN_BEGIN_TIMESTAMP'].':s');
+                    $headRun['RUN_END_TIMESTAMP'] = date($_POST['RUN_END_TIMESTAMP'].':s');
+                    $headRun['LOCATION'] = $_POST['LOCATION'];
+                    $headRun['INITIATED_BY_USER'] = $_POST['INITIATED_BY_USER'];
+                    $headRun['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION'];
+                    $head['RUN'] = $headRun;
+                    
+                    
+                    //Foils Data
+                 for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
+                    //$_POST['foil'.$i];   
+                    $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_part'.$i];
+                    $foil['VERSION'] = $_POST['VERSION_part'.$i];
+                    $foil['DATA_FILE_NAME'] = $_POST['DATA_FILE_NAME_part'.$i];
+                    
+                    
+                    $part['SERIAL_NUMBER'] = $_POST['part'.$i];
+                    $part['KIND_OF_PART'] = $_POST['KIND_OF_PART'];
+                    $foil['PART'] = $part;
+                    
+                    $partdata['SHIPPED_FROM'] = $_POST['SHIPPED_FROM_part'.$i];
+                    $partdata['DESTINATION'] = $_POST['DESTINATION_part'.$i];
+                    $partdata['MODE_SHIPPED'] = $_POST['MODE_SHIPPED_part'.$i];
+                    $partdata['STATUS'] = $_POST['STATUS_part'.$i];
+                    $partdata['ADDN_SHIPPING_INFO'] = $_POST['ADDN_SHIPPING_INFO_part'.$i];
+                    $partdata['DATE_SHIPPED'] = date($_POST['DATE_SHIPPED_part'.$i].':s');
+                    $foil['DATA'] = $partdata;
+                    
+                    $foils['foil'.$i] = $foil;
+                  
+                   }
+                   $data['head'] = $head;
+                   $data['foils'] = $foils;
+                   //print_r($data);
+                   $res_arr =generateDatasetXml($data, "tracking".str_replace(" ", "-", $_POST['KIND_OF_PART']));
+                 
+                    
+                    // Set session variables with the return 
+                    session_start() ;
+                    $_SESSION['post_return'] = $res_arr;
+                    $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully generated XML file for list of Components tracking info 
+                    </div>';
+                    // redirect to confirm page
+                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                        die();
+                   
+            }
+            ?>
 <?php
 include "head.php";
 ?>
@@ -273,67 +344,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 <?php } ?>
                 </div>
             </div>
-            <?php
-            //  Form Submitted , need to generate XML 
-            if (isset($_POST['foilsnumbersubmitted'])) {
-                echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully generated list of Gem FOIL data as an XML 
-                    </div>';
-                    $head = array();
-                    $headRun =array();
-                    $headType =array();
-                    $foils =array();
-                    $foil = array();
-                    $part = array();
-                    $partdata = array();
-                    $data = array();
-                    
-                    // Header Data
-                    $headType['EXTENSION_TABLE_NAME'] ="GEM_COMPONENT_TRACKING";
-                    $headType['NAME'] = "GEM Component Tracking Data"; 
-                    $head['TYPE'] = $headType;
-                    
-                    
-                    $headRun['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
-                    $headRun['RUN_TYPE'] = $_POST['RUN_TYPE'];
-                    $headRun['RUN_BEGIN_TIMESTAMP'] = date($_POST['RUN_BEGIN_TIMESTAMP'].':s');
-                    $headRun['RUN_END_TIMESTAMP'] = date($_POST['RUN_END_TIMESTAMP'].':s');
-                    $headRun['LOCATION'] = $_POST['LOCATION'];
-                    $headRun['INITIATED_BY_USER'] = $_POST['INITIATED_BY_USER'];
-                    $headRun['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION'];
-                    $head['RUN'] = $headRun;
-                    
-                    
-                    //Foils Data
-                 for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
-                    //$_POST['foil'.$i];   
-                    $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_part'.$i];
-                    $foil['VERSION'] = $_POST['VERSION_part'.$i];
-                    $foil['DATA_FILE_NAME'] = $_POST['DATA_FILE_NAME_part'.$i];
-                    
-                    
-                    $part['SERIAL_NUMBER'] = $_POST['part'.$i];
-                    $part['KIND_OF_PART'] = $_POST['KIND_OF_PART'];
-                    $foil['PART'] = $part;
-                    
-                    $partdata['SHIPPED_FROM'] = $_POST['SHIPPED_FROM_part'.$i];
-                    $partdata['DESTINATION'] = $_POST['DESTINATION_part'.$i];
-                    $partdata['MODE_SHIPPED'] = $_POST['MODE_SHIPPED_part'.$i];
-                    $partdata['STATUS'] = $_POST['STATUS_part'.$i];
-                    $partdata['ADDN_SHIPPING_INFO'] = $_POST['ADDN_SHIPPING_INFO_part'.$i];
-                    $partdata['DATE_SHIPPED'] = date($_POST['DATE_SHIPPED_part'.$i].':s');
-                    $foil['DATA'] = $partdata;
-                    
-                    $foils['foil'.$i] = $foil;
-                  
-                   }
-                   $data['head'] = $head;
-                   $data['foils'] = $foils;
-                   //print_r($data);
-                   generateDatasetXml($data, "tracking".str_replace(" ", "-", $_POST['KIND_OF_PART']));
-                   
-            }
-            ?>
+            
 
         </div>
     </div>

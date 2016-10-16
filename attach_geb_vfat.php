@@ -16,6 +16,9 @@ include "head.php";
             <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //     var_dump($_POST);
+                    include_once "functions/functions.php";
+                    include_once "functions/generate_xml.php";
+                    include_once "functions/globals.php";
                 // Flag that refers to all vfats ar Set or Not
                 $flag = 1;
                 for( $i= 0; $i<24 ; $i++ )
@@ -29,8 +32,9 @@ include "head.php";
                     $childs = array();
                     $child = array();
                     $subchild = array();
+                    $msg = "";
                     if ($_POST['version'] == "L") {
-                        echo '<div role="alert" class="alert alert-success">
+                        $msg = '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully attached 24 VFATs to GEB [' . $_POST['gebl'] . ']   </div>';
                         $temp[$SERIAL_NUMBER] = $_POST['gebl'];
                         $temp[$KIND_OF_PART] = $GEB_KIND_OF_PART_NAME;
@@ -46,7 +50,7 @@ include "head.php";
                         $temp['filename'] = $_POST['gebl']."to24VFATS";
                     }
                     if ($_POST['version'] == "S") {
-                        echo '<div role="alert" class="alert alert-success">
+                        $msg = '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully attached 24 VFATs to GEB [' . $_POST['gebs'] . ']   </div>';
 
                         $temp[$SERIAL_NUMBER] = $_POST['gebs'];
@@ -68,7 +72,15 @@ include "head.php";
                     //print_r($arr);
                    
 
-                    generateXml($arr);
+                    $res_arr = generateXml($arr);
+                    
+                    // Set session variables with the return 
+                    session_start() ;
+                    $_SESSION['post_return'] = $res_arr;
+                    $_SESSION['new_chamber_ntfy'] = $msg;
+                    // redirect to confirm page
+                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                        die();
                 }
             } else {
 
@@ -873,7 +885,7 @@ include "foot.php";
 //            return false;
 //     }
 
-
+$('#preloader').fadeIn('fast');
 
     })
 
@@ -901,7 +913,7 @@ function check_vfats_empty(e){
 
             }
         });
-        
+        $('#preloader').fadeIn('fast');
     }
     catch(e){ 
         //alert('catch');
@@ -947,7 +959,9 @@ function check_vfats_different(e){
                 });
                 count = 0;
             }
-        });}
+        });
+        $('#preloader').fadeIn('fast');
+    }
     catch(e){
         //alert('catch');
         ev.preventDefault(); 

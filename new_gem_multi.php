@@ -1,4 +1,71 @@
-
+ <?php
+            //  Form Submitted , need to generate XML 
+            if (isset($_POST['foilsnumbersubmitted'])) {
+                include_once "functions/functions.php";
+                include_once "functions/generate_xml.php";
+                include_once "functions/globals.php";
+                    $head = array();
+                    $headRun =array();
+                    $headType =array();
+                    $foils =array();
+                    $foil = array();
+                    $part = array();
+                    $partdata = array();
+                    $data = array();
+                    
+                    // Header Data
+                    $headType['EXTENSION_TABLE_NAME'] ="FOIL_HISTORY_INFO";
+                    $headType['NAME'] = "GEM Foil History Information"; 
+                    $head['TYPE'] = $headType;
+                    
+                    
+                    $headRun['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
+                    $headRun['RUN_TYPE'] = $_POST['RUN_TYPE'];
+                    $headRun['RUN_BEGIN_TIMESTAMP'] = date($_POST['RUN_BEGIN_TIMESTAMP'].':s');
+                    $headRun['RUN_END_TIMESTAMP'] = date($_POST['RUN_END_TIMESTAMP'].':s');
+                    $headRun['LOCATION'] = $_POST['LOCATION'];
+                    $headRun['INITIATED_BY_USER'] = $_POST['INITIATED_BY_USER'];
+                    $headRun['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION'];
+                    $head['RUN'] = $headRun;
+                    
+                    
+                    //Foils Data
+                 for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
+                    //$_POST['foil'.$i];   
+                    $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_foil'.$i];
+                    $foil['VERSION'] = $_POST['VERSION_foil'.$i];
+                    
+                    $part['SERIAL_NUMBER'] = $_POST['foil'.$i];
+                    $part['VERSION'] = "Batch ".$_POST['VERSIONbatch'.$i];
+                    $part['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
+                    $foil['PART'] = $part;
+                    
+                    $partdata['PI_FILM_NUMBER'] = $_POST['PI_FILM_NUMBER_foil'.$i];
+                    $partdata['PROD_LOT_NUMBER'] = $_POST['PROD_LOT_NUMBER_foil'.$i];
+                    $partdata['MPT_TECHNICIAN'] = $_POST['MPT_TECHNICIAN_foil'.$i];
+                    $partdata['STATUS'] = $_POST['STATUS_foil'.$i];
+                    $foil['DATA'] = $partdata;
+                    
+                    $foils['foil'.$i] = $foil;
+                  
+                   }
+                   $data['head'] = $head;
+                   $data['foils'] = $foils;
+                   //print_r($data);
+                   $res_arr = generateDatasetXml($data);
+                    
+                    // Set session variables with the return 
+                    session_start() ;
+                    $_SESSION['post_return'] = $res_arr;
+                    $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
+                    </div>';
+                    // redirect to confirm page
+                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                        die();
+                   
+            }
+            ?>
 <?php
 include "head.php";
 ?>
@@ -229,64 +296,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
 <?php } ?>
                 </div>
             </div>
-            <?php
-            //  Form Submitted , need to generate XML 
-            if (isset($_POST['foilsnumbersubmitted'])) {
-                echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully generated list of Gem FOIL data as an XML 
-                    </div>';
-                    $head = array();
-                    $headRun =array();
-                    $headType =array();
-                    $foils =array();
-                    $foil = array();
-                    $part = array();
-                    $partdata = array();
-                    $data = array();
-                    
-                    // Header Data
-                    $headType['EXTENSION_TABLE_NAME'] ="FOIL_HISTORY_INFO";
-                    $headType['NAME'] = "GEM Foil History Information"; 
-                    $head['TYPE'] = $headType;
-                    
-                    
-                    $headRun['RUN_NUMBER'] = $_POST['RUN_NUMBER'];
-                    $headRun['RUN_TYPE'] = $_POST['RUN_TYPE'];
-                    $headRun['RUN_BEGIN_TIMESTAMP'] = date($_POST['RUN_BEGIN_TIMESTAMP'].':s');
-                    $headRun['RUN_END_TIMESTAMP'] = date($_POST['RUN_END_TIMESTAMP'].':s');
-                    $headRun['LOCATION'] = $_POST['LOCATION'];
-                    $headRun['INITIATED_BY_USER'] = $_POST['INITIATED_BY_USER'];
-                    $headRun['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION'];
-                    $head['RUN'] = $headRun;
-                    
-                    
-                    //Foils Data
-                 for($i = 1; $i <= $_POST['foilsnumbersubmitted']; $i++){
-                    //$_POST['foil'.$i];   
-                    $foil['COMMENT_DESCRIPTION'] = $_POST['COMMENT_DESCRIPTION_foil'.$i];
-                    $foil['VERSION'] = $_POST['VERSION_foil'.$i];
-                    
-                    $part['SERIAL_NUMBER'] = $_POST['foil'.$i];
-                    $part['VERSION'] = "Batch ".$_POST['VERSIONbatch'.$i];
-                    $part['KIND_OF_PART'] = $FOIL_KIND_OF_PART_NAME;
-                    $foil['PART'] = $part;
-                    
-                    $partdata['PI_FILM_NUMBER'] = $_POST['PI_FILM_NUMBER_foil'.$i];
-                    $partdata['PROD_LOT_NUMBER'] = $_POST['PROD_LOT_NUMBER_foil'.$i];
-                    $partdata['MPT_TECHNICIAN'] = $_POST['MPT_TECHNICIAN_foil'.$i];
-                    $partdata['STATUS'] = $_POST['STATUS_foil'.$i];
-                    $foil['DATA'] = $partdata;
-                    
-                    $foils['foil'.$i] = $foil;
-                  
-                   }
-                   $data['head'] = $head;
-                   $data['foils'] = $foils;
-                   //print_r($data);
-                   generateDatasetXml($data);
-                   
-            }
-            ?>
+           
 
         </div>
     </div>
@@ -358,7 +368,7 @@ include "foot.php";
 
             }
         });
-        
+        $('#preloader').fadeIn('fast');
     }
     catch(e){ 
         //alert('catch');
@@ -404,7 +414,9 @@ function check_foils_different(e){
                 });
                 count = 0;
             }
-        });}
+        });
+        $('#preloader').fadeIn('fast');
+    }
     catch(e){
         //alert('catch');
         ev.preventDefault(); 

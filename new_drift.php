@@ -1,39 +1,11 @@
 <?php
-include "head.php";
-?>
-
-<?php
-//$serial_num_of_newest_part = get_part_ID($DRIFT_KIND_OF_PART_ID);
-//if ($serial_num_of_newest_part) {
-//    $serial_num = explode('-', $serial_num_of_newest_part);
-//} else {
-//    $serial_num = array();
-//    $serial_num[3] = "L";
-//    $serial_num[4] = 0000;
-//}
-//echo $serial_num[3];
-//echo $serial_num[4];
-//echo "loacations"; print_r(get_locations());
-//echo "<br>institutes"; print_r(get_institutes());
-//echo "<br>Manufacturers";print_r(get_manufacturers());
-?>
-<div class="container-fluid" >
-    <div class="row">
-
-        <?php include "side.php"; ?>
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h2 class="sub-header"><img src="images/DRIFTPCB.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Drift  </h2>
-
-            <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+               include_once "functions/functions.php";
+                include_once "functions/generate_xml.php";
+                include_once "functions/globals.php";
                 if (isset($_POST['serial'])) {
                     $temp =array();
                     $arr = array();
-                    echo '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully created Gem PCB drift <strong>ID:</strong> ' . $_POST['serial'] .
-                    '</div>';
                     $temp[$SERIAL_NUMBER] = $_POST['serial'];
                     $temp[$NAME_LABEL] = $_POST['serial'];
                     if (isset($_POST['location']) && !empty($_POST['location'])) {
@@ -65,10 +37,48 @@ include "head.php";
                     }
                     $arr[] = $temp;
                     
-                    generateXml($arr);
+                    $res_arr = generateXml($arr);
+                    
+                    // Set session variables with the return 
+                    session_start() ;
+                    $_SESSION['post_return'] = $res_arr;
+                    $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully created XML file for GEM PCB drift <strong>ID:</strong> ' . $_POST['serial'] .
+                    '</div>';
+                    // redirect to confirm page
+                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                        die();
                 }
             } else {
+?>
+<?php
+include "head.php";
+?>
 
+<?php
+//$serial_num_of_newest_part = get_part_ID($DRIFT_KIND_OF_PART_ID);
+//if ($serial_num_of_newest_part) {
+//    $serial_num = explode('-', $serial_num_of_newest_part);
+//} else {
+//    $serial_num = array();
+//    $serial_num[3] = "L";
+//    $serial_num[4] = 0000;
+//}
+//echo $serial_num[3];
+//echo $serial_num[4];
+//echo "loacations"; print_r(get_locations());
+//echo "<br>institutes"; print_r(get_institutes());
+//echo "<br>Manufacturers";print_r(get_manufacturers());
+?>
+<div class="container-fluid" >
+    <div class="row">
+
+        <?php include "side.php"; ?>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h2 class="sub-header"><img src="images/DRIFTPCB.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Drift  </h2>
+
+            <?php 
                 echo '<div style="display: none" role="alert" class="alert alert-danger ">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
     </div>';
