@@ -766,7 +766,6 @@ function get_tracking_info($serial) {
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
         $result = $row['PART_ID'];
     }
-    print_r($result);
     // if found get its condition datasets where kind of condition == $TRACKING_CONDITION_ID
     if ($result != '') {
         $sql1 = "SELECT CONDITION_DATA_SET_ID, COND_RUN_ID FROM CMS_GEM_CORE_COND.COND_DATA_SETS WHERE PART_ID ='" . $result . "' AND KIND_OF_CONDITION_ID ='" . $TRACKING_CONDITION_ID . "' ";
@@ -779,8 +778,6 @@ function get_tracking_info($serial) {
             $itr['COND_RUN_ID'] = $row1['COND_RUN_ID'];
             $result1[] = $itr;
         }
-        print_r($result1);
-        echo "<br>SIZE".sizeof($result1)."<br>";
         // if datasets found get tracking info
         if ( sizeof($result1) >= 1) {
             foreach ($result1 as $key => $value) {
@@ -800,7 +797,6 @@ function get_tracking_info($serial) {
                     $result2[] = $itr1;
                 }
             }
-            print_r($result2);
         } else {
             //no data sets found 
             return -1;

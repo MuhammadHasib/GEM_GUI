@@ -49,10 +49,11 @@ include "head.php";
               <tbody>
                   <?php $items= get_tracking_info($_POST['serialnum']);
           //print_r($drifts);
-                 
+           $i = 1;      
           foreach( $items as $item){
                
               echo '<tr>
+                  <td>' .$i .' </td>
                   <td>'.$item['SHIPPED_FROM'].'</td>
                   <td>'.$item['DESTINATION'].'</td>
                   <td>'.$item['DATE_SHIPPED'].'</td>
@@ -62,6 +63,7 @@ include "head.php";
                   
                   
                 </tr>';
+              $i++;
           }
           
           ?>
