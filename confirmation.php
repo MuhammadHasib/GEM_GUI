@@ -23,16 +23,16 @@ if(isset($_SESSION['post_return']) && isset($_SESSION['new_chamber_ntfy'])){
     
     echo $ntfn;
     
-    if($session['statusCode'] == "200"){
-        echo '</br><span class="label label-success"> <b>Status code:</b>'.$session['statusCode'].'</span> ';
+    if($session['statuscode'] == "200"){
+        echo '</br><span class="label label-success"> <b>Status code:</b>'.$session['statuscode'].'</span> ';
         echo '<hr><div class="alert alert-success" role="alert"><b>Execution return:</b>'.$session['return'].'</div>'; 
     }
-    else if($session['statusCode'] == "503"){
-        echo '</br><span class="label label-danger"> <b>Status code:</b>'.$session['statusCode'].'</span> ';
+    else if($session['statuscode'] == "503"){
+        echo '</br><span class="label label-danger"> <b>Status code:</b>'.$session['statuscode'].'</span> ';
         echo '<hr><div class="alert alert-danger" role="alert"><b>Execution return:</b>'.$session['return'].'</div>';
     }
     else{
-        echo '</br><span class="label label-warning"> <b>Status code:</b>'.$session['statusCode'].'</span> ';
+        echo '</br><span class="label label-warning"> <b>Status code:</b>'.$session['statuscode'].'</span> ';
         echo '<hr><div class="alert alert-warning" role="alert"><b>Execution return:</b>'.$session['return'].'</div>';
     }
 }
