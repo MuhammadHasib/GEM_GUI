@@ -1,19 +1,4 @@
-
 <?php
-include "head.php";
-?>
-
-
-<div class="container-fluid">
-    <div class="row">
-
-        <?php include "side.php"; ?>
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Attach VFATs to GEB</h1>
-            <img src="images/GEB-VFAT.png" width="20%" style="margin-bottom: 10px; border-radius: 20px;">
-
-            <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //     var_dump($_POST);
                     include_once "functions/functions.php";
@@ -83,6 +68,22 @@ include "head.php";
                         die();
                 }
             } else {
+                ?>
+<?php
+include "head.php";
+?>
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <?php include "side.php"; ?>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Attach VFATs to GEB</h1>
+            <img src="images/GEB-VFAT.png" width="20%" style="margin-bottom: 10px; border-radius: 20px;">
+
+            <?php
 
                 echo '<div style="display: none" geble="alert" class="alert alert-danger ">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
