@@ -125,14 +125,14 @@
                     //.ros, .drifts, .foil1s, .foil2s, .foil3s, rol, .driftl, .foil1l, .foil2l, .foil3l
                     $res_arr = generateXml($arr);
                     
-//                        // Submitted Loaded into DB
-                        session_start() ;
-                        $_SESSION['post_return'] = $res_arr;
-//                        $msg = "success";
-//                        $statusCode = $res_arr['statuscode'];
-//                        $return = $res_arr['return'];
-                        // redirect to confirm page
-                        header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    // Set session variables with the return 
+                    session_start() ;
+                    $_SESSION['post_return'] = $res_arr;
+                    $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
+      <strong>Well done!</strong> You successfully created Gem Chamber <strong>ID:</strong> ' . $_POST['serial'] .
+                    '</div>';
+                    // redirect to confirm page
+                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                     
                     
