@@ -741,3 +741,69 @@ function searchPinNum($search){
     
     return $result;
 }
+
+/*
+ * Name: get_tracking_info
+ * Description: get tracking info by item Serial number
+ * Parameter: array
+ * usage:   list tracking info page 
+ * return: array
+ * Autor: Ola Aboamer [o.aboamer@cern.ch]
+ */
+function get_tracking_info($serial) {
+
+    global $TRACKING_CONDITION_ID;
+    $result2 = array();
+    // Database connection 
+    $conn = database_connection();
+    //Get part id by its serial number
+    $sql = "SELECT PART_ID FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE SERIAL_NUMBER='" . $serial . "'";
+
+    $query = oci_parse($conn, $sql);
+    $arr = oci_execute($query);
+    $result = '';
+
+    while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+        $result = $row['PART_ID'];
+    }
+    // if found get its condition datasets where kind of condition == $TRACKING_CONDITION_ID
+    if ($result != '') {
+        $sql = "SELECT CONDITION_DATA_SET_ID, COND_RUN_ID FROM CMS_GEM_CORE_COND.COND_DATA_SETS WHERE PART_ID ='" . $result . " AND KIND_OF_CONDITION_ID ='" . $TRACKING_CONDITION_ID . "' ";
+        $result1 = array();
+        $itr = array();
+        while ($row1 = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+            $itr['CONDITION_DATA_SET_ID'] = $row1['CONDITION_DATA_SET_ID'];
+            $itr['COND_RUN_ID'] = $row1['COND_RUN_ID'];
+            $result1[] = $itr;
+        }
+        // if datasets found get tracking info
+        if (sizeof($result1) >= 1) {
+            foreach ($result1 as $key => $value) {
+                $run = $value['COND_RUN_ID'];
+                $sql = "SELECT SHIPPED_FROM,DESTINATION,DATE_SHIPPED,MODE_SHIPPED,ADDN_SHIPPING_INFO,STATUS FROM CMS_GEM_MUON_COND.GEM_COMPONENT_TRACKING WHERE CONDITION_DATA_SET_ID = '" .$value['CONDITION_DATA_SET_ID']. "'";
+                $itr = array();
+                while ($row1 = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
+                    $itr['SHIPPED_FROM'] = $row1['SHIPPED_FROM'];
+                    $itr['DESTINATION'] = $row1['DESTINATION'];
+                    $itr['DATE_SHIPPED'] = $row1['DATE_SHIPPED'];
+                    $itr['MODE_SHIPPED'] = $row1['MODE_SHIPPED'];
+                    $itr['ADDN_SHIPPING_INFO'] = $row1['ADDN_SHIPPING_INFO'];
+                    $itr['STATUS'] = $row1['STATUS'];
+                    $itr['COND_RUN_ID'] = $run;
+                    $result2[] = $itr;
+                }
+            }
+            
+        } else {
+            //no data sets found 
+            return -1;
+        }
+    } else {
+        //no part with this serial
+        return 0;
+    }
+
+
+
+    return $result2;
+}

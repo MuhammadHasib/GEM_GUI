@@ -43,7 +43,7 @@ include "head.php";
           </div>
           
           <div class="row placeholders">
-              <a href="track_parts.php">
+              <a href="track_parts_step1.php">
             <div class="col-xs-6 col-sm-3 placeholder">
                 <img src="images/tracking1.png" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 150px;">
               <h4>Track Parts</h4>
