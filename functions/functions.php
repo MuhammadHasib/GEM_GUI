@@ -769,7 +769,7 @@ function get_tracking_info($serial) {
     print_r($result);
     // if found get its condition datasets where kind of condition == $TRACKING_CONDITION_ID
     if ($result != '') {
-        $sql1 = "SELECT CONDITION_DATA_SET_ID, COND_RUN_ID FROM CMS_GEM_CORE_COND.COND_DATA_SETS WHERE PART_ID ='" . $result . " AND KIND_OF_CONDITION_ID ='" . $TRACKING_CONDITION_ID . "' ";
+        $sql1 = "SELECT CONDITION_DATA_SET_ID, COND_RUN_ID FROM CMS_GEM_CORE_COND.COND_DATA_SETS WHERE PART_ID ='" . $result . "' AND KIND_OF_CONDITION_ID ='" . $TRACKING_CONDITION_ID . "' ";
         echo $sql1;
         $query1 = oci_parse($conn, $sql1);
         $result1 = array();
