@@ -85,6 +85,9 @@ include_once "functions/globals.php";
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>GEM detector database</title>
  
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+
     <!-- Bootstrap -->
     <link href="css/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/dashboard.css" rel="stylesheet">

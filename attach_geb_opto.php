@@ -195,18 +195,18 @@ include "foot.php";
 $('.chosen-select-opto').on('change', function (evt, params) {
         $('.opto').val($(this).chosen().val());
         alert($(this).chosen().val());
-        alert($(".opto").val().length);
+        //alert($(".opto").val().length);
     });
 
 
     $('.chosen-select-gebl').on('change', function (evt, params) {
         $('.gebl').val($(this).chosen().val());
-        alert($(this).chosen().val());
+        //alert($(this).chosen().val());
     });
 
     $('.chosen-select-gebs').on('change', function (evt, params) {
         $('.gebs').val($(this).chosen().val());
-        alert($(this).chosen().val());
+        //alert($(this).chosen().val());
     });
 
 
