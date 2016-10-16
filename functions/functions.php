@@ -770,8 +770,8 @@ function get_tracking_info($serial) {
     // if found get its condition datasets where kind of condition == $TRACKING_CONDITION_ID
     if ($result != '') {
         $sql1 = "SELECT CONDITION_DATA_SET_ID, COND_RUN_ID FROM CMS_GEM_CORE_COND.COND_DATA_SETS WHERE PART_ID ='" . $result . "' AND KIND_OF_CONDITION_ID ='" . $TRACKING_CONDITION_ID . "' ";
-        echo $sql1;
         $query1 = oci_parse($conn, $sql1);
+        $arr1 = oci_execute($query1);
         $result1 = array();
         $itr = array();
         while ($row1 = oci_fetch_array($query1, OCI_ASSOC + OCI_RETURN_NULLS)) {
@@ -787,16 +787,17 @@ function get_tracking_info($serial) {
                 $run = $value['COND_RUN_ID'];
                 $sql2 = "SELECT SHIPPED_FROM,DESTINATION,DATE_SHIPPED,MODE_SHIPPED,ADDN_SHIPPING_INFO,STATUS FROM CMS_GEM_MUON_COND.GEM_COMPONENT_TRACKING WHERE CONDITION_DATA_SET_ID = '" .$value['CONDITION_DATA_SET_ID']. "'";
                 $query2 = oci_parse($conn, $sql2);
-                $itr = array();
+                $arr2 = oci_execute($query2);
+                $itr1 = array();
                 while ($row2 = oci_fetch_array($query2, OCI_ASSOC + OCI_RETURN_NULLS)) {
-                    $itr['SHIPPED_FROM'] = $row2['SHIPPED_FROM'];
-                    $itr['DESTINATION'] = $row2['DESTINATION'];
-                    $itr['DATE_SHIPPED'] = $row2['DATE_SHIPPED'];
-                    $itr['MODE_SHIPPED'] = $row2['MODE_SHIPPED'];
-                    $itr['ADDN_SHIPPING_INFO'] = $row2['ADDN_SHIPPING_INFO'];
-                    $itr['STATUS'] = $row2['STATUS'];
-                    $itr['COND_RUN_ID'] = $run;
-                    $result2[] = $itr;
+                    $itr1['SHIPPED_FROM'] = $row2['SHIPPED_FROM'];
+                    $itr1['DESTINATION'] = $row2['DESTINATION'];
+                    $itr1['DATE_SHIPPED'] = $row2['DATE_SHIPPED'];
+                    $itr1['MODE_SHIPPED'] = $row2['MODE_SHIPPED'];
+                    $itr1['ADDN_SHIPPING_INFO'] = $row2['ADDN_SHIPPING_INFO'];
+                    $itr1['STATUS'] = $row2['STATUS'];
+                    $itr1['COND_RUN_ID'] = $run;
+                    $result2[] = $itr1;
                 }
             }
             print_r($result2);
