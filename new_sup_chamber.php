@@ -120,7 +120,7 @@ include "head.php";
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h2 class="sub-header"><img src="images/sc2.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Super-Chamber  </h2>
 
-
+<?php
                 echo '<div style="display: none" role="alert" class="alert alert-danger empt">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields. <strong>Also</strong> make sure you attached all parts.
     </div>';
