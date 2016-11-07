@@ -15,9 +15,7 @@ $response = curl_exec($handle);
 
 /* Check for 404 (file not found). */
 $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-if($httpCode == 404) {
-    /* Handle 404 here. */
-}
+
 echo $httpCode;
 
 curl_close($handle);
