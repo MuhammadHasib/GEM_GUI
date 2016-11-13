@@ -141,7 +141,7 @@ include "head.php";
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">&nbsp;<b style=" color: red">*</b>
                                     <label for="exampleInputEmail1">Serial Number</label>
-                                    <div class="serial"><span class="name">SUPER-GE1/1-VII-</span><span class="version">VERSION</span><span class="between">-</span><span id="inst" class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">GE1/1-SC</span><span class="version">VERSION</span><!--<span class="between">-</span><span id="inst" class="institute">INSTITUTE</span>--><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -156,6 +156,7 @@ include "head.php";
                                         </ul>
                                     </div>
                                 </div>
+                                <?php /*
                                 <div class="form-group">&nbsp;<b style=" color: red">*</b>
                                         <label for="exampleInputFile" >Institute</label>
                                         <input class="intituteinput" name="Institute" value="" hidden>
@@ -169,7 +170,7 @@ include "head.php";
                                             </ul>
                                         </div>
 
-                                    </div>
+                                    </div>  */ ?>
                                 <div class="dropdown">&nbsp;<b style=" color: red">*</b>
                                     <label> 4 digits Serial </label><br>
                                     <input placeholder="XXXX" class="serialValidation">
@@ -381,11 +382,11 @@ include "foot.php";
 
         }
 
-        if ($(this).attr('class') == "institue") {
-
-            $("#inst").text($(this).html());
-
-        }
+//        if ($(this).attr('class') == "institue") {
+//
+//            $("#inst").text($(this).html());
+//
+//        }
 
 
     })
