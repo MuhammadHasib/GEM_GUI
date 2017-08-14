@@ -58,6 +58,8 @@ $FOIL_KIND_OF_PART_ID = $resultArr['GEM Foil'];
 //Kind of part id for Readout boards
 //$READOUT_KIND_OF_PART_ID = "10000000000001679";
 $READOUT_KIND_OF_PART_ID = $resultArr['GEM Readout PCB'];
+//$FRAME_KIND_OF_PART_ID = "10000000000001679";
+$FRAME_KIND_OF_PART_ID = $resultArr['GEM External Frame'];
 //Kind of part id for VFAT chips
 //$VFAT_KIND_OF_PART_ID = "10000000000001699";
 $VFAT_KIND_OF_PART_ID = $resultArr['GEM VFAT2'];
@@ -105,6 +107,8 @@ $DRIFT_KIND_OF_PART_NAME = "GEM Drift PCB";
 $FOIL_KIND_OF_PART_NAME = "GEM Foil";
 //Kind of part name for Readout boards
 $READOUT_KIND_OF_PART_NAME = "GEM Readout PCB";
+//Kind of part name for Readout boards
+$FRAME_KIND_OF_PART_NAME = "GEM External Frame";
 //Kind of part name for VFAT chips
 $VFAT_KIND_OF_PART_NAME = "GEM VFAT2";
 //Kind of part name for Optohybrids
@@ -158,6 +162,8 @@ $DRIFT_ID = "GEMDriftPCB";
 $FOIL_ID = "GEMFoil";
 //Kind of part name for Readout boards
 $READOUT_ID = "GEMReadoutPCB";
+//Kind of part name for Readout boards
+$FRAME_ID = "GEMExternalFrame";
 //Kind of part name for VFAT chips
 $VFAT_ID = "GEMVFAT";
 //Kind of part name for Optohybrids
@@ -187,6 +193,9 @@ $GEB_TO_READOUT = $resultArr_p2pr['AutoAssigned: GEM Electronics Board --> GEM R
 
 //$READOUT_TO_CHAMBER="10000000000002000";
 $READOUT_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Readout PCB --> GEM Chamber'];
+
+//$READOUT_TO_CHAMBER="10000000000002000";
+$FRAME_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM External Frame --> GEM Chamber'];
 
 //$FOIL_TO_CHAMBER="10000000000002001";
 $FOIL_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Foil --> GEM Chamber'];

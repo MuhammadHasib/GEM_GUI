@@ -14,8 +14,20 @@ function database_connection() {
 $accountname = "CMS_GEM_APPUSER_R";
 $password = "GEM_Reader_2015";
 $servername = "int2r1-v.cern.ch:10121/int2r.cern.ch";
-  
-
+/*
+$accountname = "CMS_GEM_APPUSER_R";
+$password = "GEM_Reader_2015";
+$servername = "(DESCRIPTION=(ADDRESS= (PROTOCOL=TCP) (HOST=cmsonr1-adg1-s.cern.ch) (PORT=10121) )
+                      (ADDRESS= (PROTOCOL=TCP) (HOST=cmsonr2-adg1-s.cern.ch) (PORT=10121) )
+                     (LOAD_BALANCE=on)
+                     (ENABLE=BROKEN)
+                      (CONNECT_DATA=
+                     (SERVER=DEDICATED)
+                     (SERVICE_NAME=cms_omds_adg.cern.ch)
+                      )
+                  )";
+ 
+*/
 //load oci8 library if not load automatically
     if (!extension_loaded('oci8')) {
         dl("php_oci8.dll");

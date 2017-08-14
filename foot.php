@@ -4,7 +4,8 @@
 
 <footer>
     <div class="footer text-center">
-        <p class="4">&copy; Copyright 2015</p> <p>Developed By: <a href="https://profiles.web.cern.ch/762283" target="_blank">Ola Aboamer</a></p>
+        <!--<p class="4">&copy; Copyright 2015</p> <p>Developed By: <a href="https://profiles.web.cern.ch/762283" target="_blank">ola Aboamer</a></p>-->
+        <p class="4">&copy; Copyright 2015</p> <p>Developed By: <a href="https://profiles.web.cern.ch/749910" target="_blank">Ola & Hasib</a></p>
     </div>
 </footer>
 
@@ -18,11 +19,11 @@
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<script src="../../dist/js/bootstrap.min.js"></script>
+<script src="ace-master/assets/js/bootstrap.min.js"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="../../assets/js/vendor/holder.min.js"></script>
+<script src="ace-master/assets/js/holder.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="ace-master/assets/js/ie10-viewport-bug-workaround.js"></script>
 
 <script type="text/javascript" src="bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
@@ -42,7 +43,7 @@
     }
 
     $('.dropdown-menu a').on('click', function () {
-        //alert($(this).html());
+        ($(this).html());
         
         //Set the drop down list to the selected value
         $(this).parent().parent().prev().empty();
@@ -157,9 +158,9 @@
         
         
         
-        $('.dropdown-menu a').dropdown("toggle");
+        $('.dropdown-menu  a ').dropdown("toggle");
         return false;
-        //$('.dropdown-toggle').html($(this).html() + '<span class="caret"></span>');    
+        $('.dropdown-toggle').html($(this).html() + '<span class="caret"></span>');    
     })
 
     $(".testDiod").change(function () {

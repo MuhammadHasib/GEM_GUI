@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ROOT>
+  <PARTS>
+    <PART>
+      <SERIAL_NUMBER>PCB-RO-VI-S-0001</SERIAL_NUMBER>
+      <KIND_OF_PART>GEM Readout PCB</KIND_OF_PART>
+      <CHILDREN>
+        <PART>
+          <SERIAL_NUMBER>GEB-RO-S-0001</SERIAL_NUMBER>
+          <KIND_OF_PART>GEM Electronics Board</KIND_OF_PART>
+        </PART>
+      </CHILDREN>
+    </PART>
+  </PARTS>
+</ROOT>

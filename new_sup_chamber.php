@@ -141,7 +141,7 @@ include "head.php";
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">&nbsp;<b style=" color: red">*</b>
                                     <label for="exampleInputEmail1">Serial Number</label>
-                                    <div class="serial"><span class="name">GE1/1-SC</span><span class="version">VERSION</span><!--<span class="between">-</span><span id="inst" class="institute">INSTITUTE</span>--><span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">GE1/1-SC-</span><span class="version">VERSION</span><!--<span class="between">-</span><span id="inst" class="institute">INSTITUTE</span>--><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -181,7 +181,7 @@ include "head.php";
                                     <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
                                     <input name="barcode" >
                                 </div>
-                                <div class="form-group">
+                               <!-- <div class="form-group">
                                     <label> Manufacturer name </label><br>
                                     <input name="manufacturer" hidden="true" >
                                     <div class="dropdown">
@@ -194,7 +194,7 @@ include "head.php";
                                         </ul>
                                     </div>
                                     
-                                </div>
+                                </div>-->
 <!--                                <div class="form-group">
                                     <div class="control-group">
                                         <label class="control-label">Manufacture date</label>

@@ -272,8 +272,11 @@ function SendXML($LocalFilePATH) {
 //CURL
     $username = $_SESSION['user'];
     $password = "kucr3PREruVUchAwEc";
-    $target_url = "http://gem-machine-a.cern.ch/cmsdbldr/gem/int2r";
-//    $target_url = "http://gem-machine-b.cern.ch/cmsdbldr/gem/int2r";
+    //$password = "y9ucrou0oubra";
+   $target_url = "http://gem-machine-a.cern.ch/cmsdbldr/gem/int2r";
+   //$target_url = "http://gem-machine-b.cern.ch/cmsdbldr/gem/int2r";
+    //$target_url = "http://cmsgem.cern.ch/gem/cmsdbldr";
+   // $target_url = "http://cmsgem.cern.ch/gem/cmsdbldr/gem/omds";
      
 
     $file_name_with_full_path = realpath($LocalFilePATH);
@@ -284,6 +287,7 @@ function SendXML($LocalFilePATH) {
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
     curl_setopt($ch, CURLOPT_TIMEOUT, 120);
+    //curl_setopt($ch, CURLOPT_TIMEOUT, 20);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);

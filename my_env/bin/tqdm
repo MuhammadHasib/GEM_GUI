@@ -1,0 +1,10 @@
+#!/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'tqdm==4.11.2','console_scripts','tqdm'
+__requires__ = 'tqdm==4.11.2'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('tqdm==4.11.2', 'console_scripts', 'tqdm')()
+    )

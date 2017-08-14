@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ROOT>
+  <PARTS>
+    <PART>
+      <SERIAL_NUMBER>PCB-DR-B7-S-5000</SERIAL_NUMBER>
+      <NAME_LABEL>PCB-DR-B7-S-5000</NAME_LABEL>
+      <LOCATION>904</LOCATION>
+      <BARCODE>aaaa</BARCODE>
+      <KIND_OF_PART>GEM Drift PCB</KIND_OF_PART>
+    </PART>
+  </PARTS>
+</ROOT>

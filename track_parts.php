@@ -129,10 +129,11 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         </div>
                                 <br>
                                 <label for="exampleInputFile">How many Parts do you want to load tracking information for ?? </label>
-                                <input class="num" name="numOfParts" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', false);">
+                                <input class="num" name="numOfParts" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', true);">
                                 
                                 
                             </div>
+                            <!--<button type="submit" class="btn btn-default btn-lg subbutt_at" >Next</button>-->
                             <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
                         </form>
                     <?php } ?>

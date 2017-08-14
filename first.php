@@ -50,7 +50,7 @@ include "head.php";
               <span class="text-muted">track all components</span>
             </div>
             </a>
-              <a href="search_channels_pin.php">
+              <a href="Homes.php">
             <div class="col-xs-6 col-sm-3 placeholder">
                 <img src="images/tracking_channels1.png" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 150px;">
               <h4>GEM Channel Mapping</h4>

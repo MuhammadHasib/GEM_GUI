@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ROOT>
+  <PARTS>
+    <PART>
+      <SERIAL_NUMBER>SUPER-GE1/1-VII-L-CERN-0003</SERIAL_NUMBER>
+      <NAME_LABEL>SUPER-GE1/1-VII-L-CERN-0003</NAME_LABEL>
+      <COMMENT_DESCRIPTION>Test Add Super chamber GUI</COMMENT_DESCRIPTION>
+      <BARCODE>1234987654</BARCODE>
+      <KIND_OF_PART>GEM Super Chamber</KIND_OF_PART>
+      <RECORD_INSERTION_USER>oaboamer</RECORD_INSERTION_USER>
+      <CHILDREN>
+        <PART>
+          <SERIAL_NUMBER>GE1/1-VII-L-CERN-0005</SERIAL_NUMBER>
+          <KIND_OF_PART>GEM Chamber</KIND_OF_PART>
+          <PREDEFINED_ATTRIBUTES>
+            <ATTRIBUTE>
+              <NAME>Chamber Type</NAME>
+              <VALUE>L</VALUE>
+            </ATTRIBUTE>
+          </PREDEFINED_ATTRIBUTES>
+          <PREDEFINED_ATTRIBUTES>
+            <ATTRIBUTE>
+              <NAME>Depth</NAME>
+              <VALUE>1</VALUE>
+            </ATTRIBUTE>
+          </PREDEFINED_ATTRIBUTES>
+        </PART>
+        <PART>
+          <SERIAL_NUMBER>GE1/1-VII-L-CERN-0006</SERIAL_NUMBER>
+          <KIND_OF_PART>GEM Chamber</KIND_OF_PART>
+          <PREDEFINED_ATTRIBUTES>
+            <ATTRIBUTE>
+              <NAME>Chamber Type</NAME>
+              <VALUE>L</VALUE>
+            </ATTRIBUTE>
+          </PREDEFINED_ATTRIBUTES>
+          <PREDEFINED_ATTRIBUTES>
+            <ATTRIBUTE>
+              <NAME>Depth</NAME>
+              <VALUE>2</VALUE>
+            </ATTRIBUTE>
+          </PREDEFINED_ATTRIBUTES>
+        </PART>
+      </CHILDREN>
+    </PART>
+  </PARTS>
+</ROOT>

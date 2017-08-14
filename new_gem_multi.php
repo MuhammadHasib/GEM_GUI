@@ -51,7 +51,7 @@
                    }
                    $data['head'] = $head;
                    $data['foils'] = $foils;
-                   //print_r($data);
+                   print_r($data);
                    $res_arr = generateDatasetXml($data);
                     
                     // Set session variables with the return 
@@ -107,7 +107,8 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                 <label for="exampleInputFile">How many FOILs do you want to load history information for ?? </label>
                                 <input class="" name="numOfFoils" value=""  onblur="if($(this).val() !== '' )$('.subbutt_at').attr('disabled', false);">
                             </div>
-                            <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
+                            <!--<button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>-->
+                            <button type="submit" class="btn btn-default btn-lg subbutt_at">Next</button>
                         </form>
                     <?php } ?>
 
@@ -140,13 +141,13 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         </div>
                                         
                                         <div class="form-group">
-                                        <lable>RUN Begin timestamp:</lable><br>
+                                        <lable>Test Begin:</lable><br>
                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                         <input class="runinput date" name="RUN_BEGIN_TIMESTAMP" >
                                         </div>
                                         
                                         <div class="form-group">
-                                        <lable>RUN End timestamp:</lable><br>
+                                        <lable>Test End :</lable><br>
                                          <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                         <input class="runinput date" name='RUN_END_TIMESTAMP' >
                                        </div>
