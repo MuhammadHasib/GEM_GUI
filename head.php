@@ -128,7 +128,7 @@ vertical-align:text-center; border-radius: 25px; margin-top: -8px;">  GEM Detect
           </form> 
             
           <ul class="nav navbar-nav navbar-right">
-            <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $userInfo['name'];?></a></li>
+            <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $logName;?></a></li>
             <li><a href="first.php">Dashboard</a></li>
             <!-- <li><a href="#">Settings</a></li> -->
             <!--  <li><a href="profile.php">Profile</a></li> -->
