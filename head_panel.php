@@ -31,6 +31,3 @@
 <script src="ace-master/assets/js/html5shiv.min.js"></script>
 <script src="ace-master/assets/js/respond.min.js"></script>
 <![endif]-->
-
-
-

@@ -273,7 +273,7 @@ function SendXML($LocalFilePATH) {
     $username = $_SESSION['user'];
     $password = "kucr3PREruVUchAwEc";
     //$password = "y9ucrou0oubra";
-   $target_url = "http://gem-machine-a.cern.ch/cmsdbldr/gem/int2r";
+   $target_url = "http://gem-machine-b.cern.ch/cmsdbldr/gem/int2r";
    //$target_url = "http://gem-machine-b.cern.ch/cmsdbldr/gem/int2r";
     //$target_url = "http://cmsgem.cern.ch/gem/cmsdbldr";
    // $target_url = "http://cmsgem.cern.ch/gem/cmsdbldr/gem/omds";

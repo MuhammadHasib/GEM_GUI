@@ -56,7 +56,7 @@ $xml = simplexml_load_string($result);
 //print_r($xml);
 $userInfo = (array)$xml;
 session_start();
-$_SESSION['user'] = $userInfo['login'];
+//$_SESSION['user'] = $userInfo['login'];
 //print_r($userInfo);
 //print_r($data);
 //echo $userInfo['name'];
@@ -139,4 +139,4 @@ vertical-align:text-center; border-radius: 25px; margin-top: -8px;">  GEM Detect
         </div>
       </div>
     </nav>
-<?php include "head_panel.php"; ?>
+<//?php include "head_panel.php"; ?>

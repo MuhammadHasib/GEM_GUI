@@ -1,3 +1,7 @@
+
+<?php
+include "head.php";
+?>
 <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     include_once "functions/functions.php";
@@ -25,14 +29,14 @@
                         //echo  $kindOfPart;
                         $temp[$KIND_OF_PART] = $kindOfPart;
                     
-                   
+                   	echo $logName;
 	  	        $temp[$RECORD_INSERTION_USER] = $logName;
  
-                    if (isset($logName)) {
-                        echo $logName;
-                        $temp[$RECORD_INSERTION_USER] = $logName;
+                    //if (isset($logName)) {
+                      //  echo $logName;
+                      //  $temp[$RECORD_INSERTION_USER] = $logName;
                         //$temp[$RECORD_INSERTION_USER] = $logName;
-                    }
+                    //}
                   
                     if (isset($_POST['manufacturer']) && !empty($_POST['manufacturer'])) {
                         //echo $_POST['manufacturer'];
@@ -43,7 +47,7 @@
                     $res_arr = generateXml($arr);
                     
                     // Set session variables with the return 
-                    session_start() ;
+                    //session_start() ;
                     $_SESSION['post_return'] = $res_arr;
                     $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully created XML file for GEM PCB Readout <strong>ID:</strong> ' . $_POST['serial'] .
@@ -54,7 +58,8 @@
                 }
             } else {
                 ?>
-<?php
+<?php include "head_panel.php"; ?>
+<//?php
 include "head.php";
 ?>
 <style>
