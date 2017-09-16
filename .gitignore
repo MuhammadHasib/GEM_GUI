@@ -3,3 +3,4 @@
 gui_errors.log
 *.xml
 .htaccess
+*.pyc
