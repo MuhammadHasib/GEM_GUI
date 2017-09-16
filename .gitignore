@@ -5,3 +5,4 @@ gui_errors.log
 .htaccess
 *.pyc
 .xlsx
+.xlsm
