@@ -2,3 +2,4 @@
 /gen_xml/
 gui_errors.log
 *.xml
+.htaccess
