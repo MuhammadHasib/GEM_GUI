@@ -23,7 +23,7 @@
 
             <select name="viewtype" onChange="window.open(this.value,'_parent')">
                 <option disabled selected hidden>Please Choose...</option>
-              <option value="view.php">Cosmic VFAT Channels</option>
+                <option value="view.php">Cosmic VFAT Channels</option>
                 <option value="view2.php">GEM AMC13 Configuration</option>
                 <option value="view3.php">GEM Chamber Parts</option>
                 <option value="view4.php">GEM IPADRS Map</option>
