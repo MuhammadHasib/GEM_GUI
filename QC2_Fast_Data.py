@@ -2,7 +2,6 @@
 from datetime import datetime,date,time
 from time import sleep
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
-#import serial
 import time
 import xlrd
 from xlrd import xldate
@@ -15,7 +14,6 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, MetaData, Table, and_
 from sqlalchemy.sql import select
-#import cx_Oracle
 
 
 
